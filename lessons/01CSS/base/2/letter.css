@@ -1,0 +1,8 @@
+p{
+
+}
+.letter{ font-weight:bolder; text-align:right;}
+.information{ white-space:pre; text-align:right;}
+p.information span {text-align:right;font-style: italic;}
+.name{font-weight:bolder; text-decoration: underline;font-style:oblique;font-family: 'Bad Script'; font-size:120%;}
+.message{font-family: 'Bad Script';}
