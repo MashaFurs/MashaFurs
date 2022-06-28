@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block{
+            width: 15em;
+            background-color: #cccccc;
+            height: fit-content;
+            
+        
+        }
+        .article{
+            background-color: #aaaaaa;
+            margin-bottom:.2em;
+            padding-top:1px;
+            
+        }
+        .footer{
+            background-color: #ccc;
+            
+
+    
+        }
+        .wrap{
+            background-color: #dbdbdb;
+            display: flex;
+            flex-direction: row;
+        }
+        .partarticle{
+            flex-direction: column;
+            width: 100%;
+        }
+        .pict_row{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+        .footer{
+            margin-top: .2em;
+            padding-top: 1px;
+        }
+        
+    </style>
+    
+
+</head>
+<body>
+<div class="wrap">
+
+    <div class="block">
+        <h4>Блок навигации</h4>
+        <ul>
+            <li>Ширина 15 em</li>
+            <li>Должен присутствовать цвет фона</li>
+            <li>Располагается слева</li>
+            <li>Блок навигации наполните контентом достаточным, чтобы по высоте он начинал захватывать вторую статью,как показано в данном примере.</li>
+            
+        </ul>
+    </div>
+
+    <div class="partarticle">
+    <div class="article">
+        <h4>Статья 1</h4>
+    Размер блока:<br>
+    Занимает всю доступную ширину<br>
+    Должен присутствовать цвет фона<br>
+    Во всех "статьях" сделайте отступ снизу от соседней равным 2 em, при помощи свойства margin-bottom.
+    </div>
+    <div class="article">
+        
+        <h4>Статья 2</h4>
+    Размер блока:<br>
+    Занимает всю доступную ширину<br>
+    Должен присутствовать цвет фона<br>
+    Во всех "статьях" сделайте отступ снизу от соседней равным 2 em, при помощи свойства margin-bottom.<br>
+    Картинка вставлена при помощи тега, плавание организовано по правому краю внутри данной картинки.
+
+    
+    <div class="pict">
+        <div class="pict_row">
+    <div class="img">
+        <img src="pict.jpg">
+    </div>
+
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+</div>
+
+    <div class="footer">
+        <p>Нижний блок, подвал. Занимает всю доступную ширину. Высота определяется помещенным внутрь контентом. </p>
+    </div>
+
+</body>
+</html>
