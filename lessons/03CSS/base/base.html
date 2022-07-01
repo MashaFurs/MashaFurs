@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .wrap{
+            display: flex;
+            flex-direction: row;
+        }
+        div>div{ width: 200px;
+            border: solid grey 1px; position: relative; cursor: pointer;
+            }
+        .monday{
+            background-color: aqua;
+             
+        }
+        .tuesday{
+            background-color: greenyellow;
+            
+            }
+        .wednesday{
+            background-color: aquamarine;
+             
+        }
+        .thursday{
+            background-color: pink;
+             
+        }
+        .friday{
+            background-color: navajowhite;
+             
+        }
+        .saturday{
+            background-color: violet;
+             
+        }
+        div.wrap2 {width: 170px; display: none;}
+        div.wrap2 > div { background-color: yellow; border: solid lightseagreen 1px; cursor: pointer }
+        div.wrap > div:hover div.wrap2 { display: block; position: absolute; left: 20%; top: 70%; z-index: 1 }
+        @media all and (max-width:800px) {
+            .wrap{display: flex;
+            flex-direction: column;}
+        }
+    </style>
+    
+
+</head>
+<body>
+<div class="wrap">
+
+    <div class="monday">
+        Понедельник
+        <div class="wrap2"> 
+            <div>Завтрак</div>
+            <div>Обед</div>
+            <div>Ужин</div>
+        </div>  
+    </div>
+
+
+    <div class="tuesday">
+        Вторник
+        <div class="wrap2">
+            <div>Завтрак</div>
+            <div>Обед</div>
+            <div>Ужин</div>
+        </div>
+    </div>
+
+
+    <div class="wednesday" >
+        Среда
+        <div class="wrap2">
+            <div>Завтрак</div>
+            <div>Обед</div>
+            <div>Ужин</div>
+        </div>
+   </div>
+
+
+   <div class="thursday" > 
+    Четверг
+    <div class="wrap2">
+        <div>Завтрак</div>
+        <div>Обед</div>
+        <div>Ужин</div>
+    </div>
+</div>
+
+
+<div class="friday" >
+    Пятница
+    <div class="wrap2">
+        <div>Завтрак</div>
+        <div>Обед</div>
+        <div>Ужин</div>
+    </div>
+</div>
+
+
+<div class="saturday" >
+    Суббота
+    <div class="wrap2">
+        <div>Завтрак</div>
+        <div>Обед</div>
+        <div>Ужин</div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+    
+
+</body>
+</html>
