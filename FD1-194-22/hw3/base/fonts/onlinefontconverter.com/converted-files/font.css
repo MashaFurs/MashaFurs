@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'RubikWetPaint-Regular';
+  src: url('RubikWetPaint-Regular.eot');
+  src: url('RubikWetPaint-Regular.eot?#iefix') format('embedded-opentype'),
+       url('RubikWetPaint-Regular.svg#RubikWetPaint-Regular') format('svg'),
+       url('RubikWetPaint-Regular.ttf') format('truetype'),
+       url('RubikWetPaint-Regular.woff') format('woff'),
+       url('RubikWetPaint-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
