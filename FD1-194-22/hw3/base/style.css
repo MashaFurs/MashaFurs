@@ -1,0 +1,20 @@
+h1{
+    text-align: center;
+}
+.container{
+    background-color:rgba(254, 240, 254, 0.838);
+}
+.first{
+    font-family: 'Marck Script', cursive;
+}
+.one{
+    font-family: 'Marck Script', cursive;
+    font-size: 18px;
+}
+.second{
+    font-family: 'RubikWetPaint-Regular';
+}
+.two{
+    font-family: 'RubikWetPaint-Regular';
+    font-size: 18px;
+}
