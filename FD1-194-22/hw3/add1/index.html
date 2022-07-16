@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLORS</title>
+    <style>
+      h1,h4{
+        text-align: center;
+      } 
+      .img{
+        text-align: center;
+      }
+      p{
+        font-size: 20px;
+      }
+      table{
+        border-spacing: 15px 1px;
+        margin: auto;
+      }
+     
+      td{
+        font-weight: bolder;
+        text-align: center;
+        font-size: 20px;
+      }
+      .text{
+        text-align: center;
+      }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns">
+                <h1>Что за цвета<font color="#BruceWillis"> #BruceWillis</font>, <font color="#CANDY">#CANDY</font> и т.д и как они получаются? </h1>
+                <p>Первое, на что можно обратить внимание-это то, что перед названием цвета стоит <strong>#</strong>. Именно это указывает на то, что используются числа в <strong>шестнадцатеричном коде</strong>.</p>
+                <p>Шестнадцатеричная система базируется на числе 16. Цифры будут следующие: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F. </p>
+                <p>Первые две цифры определяют <font color="red">красную</font> составляющую цвета, цифры с третьей по четвертую — <font color="green">зеленую</font>, а последние две цифры— <font color="blue">синюю</font>.</p>
+                <p class="img"><img src="IMG.PNG" alt="RGB" title="RGB"></p>
+                <p>Каждый из трех цветов — красный, зеленый и синий — может принимать значения от 00 до FF.</p>
+                <h4>Так как же образуются цвета <font color="#BruceWillis"> #BruceWillis</font>, <font color="#CANDY">#CANDY</font>? </h4>
+                <p>Разберем на примере цвета <font color="#BruceWillis"> #BruceWillis</font>.</p>
+                <p>&bull; Первое, что надо сделать-это заменить все неправильные символы (которые не соответствуют шестнадцатеричной системе) нулями 0.</p>
+                    <table>
+                        <tr>
+                            <td>B</td>
+                            <td>r</td>
+                            <td>u</td>
+                            <td>c</td>
+                            <td>e</td>
+                            <td>W</td>
+                            <td>i</td>
+                            <td>l</td>
+                            <td>l</td>
+                            <td>i</td>
+                            <td>s</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>c</td>
+                            <td>e</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                <p>&bull;Вторым делом,надо “добить” число нулями до количества знаков, делимого на 3 (11 -> 12), получаем:</p>
+                    <table>
+                        <tr>
+                            <td>B</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>c</td>
+                            <td>e</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><font color="red">0</font></td>
+                        </tr>
+                    </table>
+                <p>&bull;Разбиваем на три группы, каждая из которых отвечает за одну компоненту RGB:</p>
+                <table>
+                    <tr>
+                        <td>B</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>c <font color="red">|</font></td>
+                        <td>e</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0 <font color="red">|</font></td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <font color="grey" size="2px">(red)</font></td>
+                        <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G <font color="grey" size="2px">(green)</font></td>
+                        <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B <font color="grey" size="2px">(blue)</font></td>
+                    </tr>
+                </table>
+            <p>&bull;Обрезаем каждый из аргументов справа, оставляя 2 символа, и получаем наш результат:</p>
+            <table>
+                <tr>
+                    <td>B</td>
+                    <td>0</td>
+                    <td><s>&nbsp;0&nbsp;</s></td>
+                    <td><s>&nbsp;c&nbsp;</s> <font color="red">|</font></td>
+                    <td>e</td>
+                    <td>0</td>
+                    <td><s>&nbsp;0&nbsp;</s></td>
+                    <td><s>&nbsp;0&nbsp;</s><font color="red">|</font></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td><s>&nbsp;0&nbsp;</s></td>
+                    <td><s>&nbsp;0&nbsp;</s></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>B</td>
+                    <td>0 <font color="red">|</font></td>
+                    <td>e</td>
+                    <td>0 <font color="red">|</font></td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        <p class="text"><strong>Вот и получаем мы следующее:#B0e000</strong></p>
+        <p class="text"><strong>Если ввести в цветовой модели RGB значение #B0e000, то получится цвет <font color="#BruceWillis"> #BruceWillis</font> </strong></p>
+        <p>Аналогично будет и с цветом <font color="#CANDY">#CANDY</font>.<ol>
+            <li>CANDY &#129034; CA0D0</li>
+            <li>CA0D0<font color="red">0</font></li>
+            <li>RCB=#CA0D00</li>
+        </ol>
+        </p>
+    
+            </div>
+        </div>
+    </div>  
+</body>
+</html>
