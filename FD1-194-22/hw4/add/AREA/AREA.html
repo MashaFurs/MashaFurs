@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AREA</title>   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+<style>
+   
+    h1,h4,h5{
+        text-align: center;
+    }
+    code{
+        font-size: 16px;
+    }
+    .example{
+        text-align: center;
+        margin-bottom: -11px;
+    }
+    li{
+        font-size: 16px;
+    }
+    a{
+        text-decoration: none;
+    }
+    .row2{
+        text-align:left;
+    }
+    .one{
+        margin-left: -28px;
+    }
+    .two{
+        margin-left: -37px;
+    }
+    .three{
+        margin-left: -56px;
+    }
+  
+</style>
+</head>
+<body>
+ <div class="container">
+    <div class="row">
+        <div class="twelve columns">
+            <h1>Тег &lt;area&gt;</h1>
+            <p>Для  того, чтоб лучше понимать , как работает тег &lt;area&gt; давайте разберем, что же такое <strong>КАРТА ИЗОБРАЖЕНИЙ (Image Map)</strong>?</p>
+            <h4>Карта изображений (Image Map)</h4>
+            <p>Карта изображений (Image Map) позволяет привязывать ссылки к фрагментам изображения. Щелкая мышью на отдельных частях изображения, пользователь может переходить по той или иной ссылке на разные Web-страницы.</p>
+            <p><ul>
+                <li>Для указания браузеру, что изображение является картой, в тег <strong> &lt;img&gt;</strong> необходимо ввести дополнительный атрибут <strong>usemap</strong>, определяющий имя карты изображения. Перед этим именем ставится знак <strong> "#"</strong>. Он является ссылкой на описание конфигурации карты, которая задается тегом<strong>&lt;map&gt;</strong>.</li>
+                <li>Значение атрибута <strong> name</strong> тега <strong> &lt;map&gt;</strong>  должно соответствовать имени в <strong>usemap</strong>,  в отличие от тега <strong>&lt;img&gt;</strong> мы задаем имя без решетки <strong> "#"</strong>.</li>
+                <li>Размещаем тег <strong> &lt;area&gt; </strong>, которые определяют интерактивные области в изображении-карте.</li></ul></p>
+             <p class="example">Пример записи кода КАРТЫ ИЗОБРАЖЕНИЙ (Image Map) в HTML:</p>
+             <pre><code>
+&lt;body&gt;
+    &lt;p&gt;
+        &lt;img src="image.png" alt="Навигация" usemap="<strong><font color="green">#navigation</font></strong>"&gt;
+    &lt;/p&gt;
+    &lt;map name="<strong><font color="green">navigation</font></strong>"&gt;
+        &lt;area shape = "circle" coords = "200,75,50" href = "green.html" alt = "круг."&gt;
+    &lt;/map&gt;
+&lt;/body&gt;
+                </code>
+            </pre>
+
+        <h4>Как же работает тег &lt;area&gt; ?</h4>
+        <p>Каждый тэг &lt;AREA&gt; определяет активные области изображения, которые являются ссылками. Тэг &lt;AREA&gt;задает форму области, ее размеры, устанавливает адрес документа, на который следует сделать ссылку, а также имя окна или фрейма, куда браузер будет загружать документ. Этот тэг всегда располагается в контейнере &lt;map&gt;, который связывает координаты областей с изображением. </p>
+        <h5>Атрибуты тега &lt;area&gt;</h5>
+        <ol>
+            <li><a href="http://htmlbook.ru/html/area/href" target="_blank" title="href">Href</a> - Задает адрес документа, на который следует перейти.</li>
+            <li><a href="http://htmlbook.ru/html/area/alt" target="_blank" title="alt">Alt</a> - Альтернативный текст для области изображения.</li>
+            <li><a href="http://htmlbook.ru/html/area/nohref" target="_blank" title="nohref">Nohref</a> - Область без ссылки на другой документ. Удобен для вырезания дыр.</li>
+            <li><a href="http://htmlbook.ru/html/area/accesskey" target="_blank" title="accesskey">Accesskey</a> - Переход к области с помощью комбинации клавиш.</li>
+            <li><a href="http://htmlbook.ru/html/area/hreflang" target="_blank" title="hreflang">Hreflang</a> - Указывает язык документа, на который ведет ссылка.</li>
+            <li><a href="http://htmlbook.ru/html/area/tabindex" target="_blank" title="tabindex">Tabindex</a> - Задает последовательность перехода между элементами с помощью клавиши Tab.</li>
+            <li><a href="http://htmlbook.ru/html/area/target" target="_blank" title="target">Target</a> - Имя окна или фрейма, куда браузер будет загружать документ.</li>
+            <li><a href="http://htmlbook.ru/html/area/type" target="_blank" title="type">Type</a>- Устанавливает MIME-тип документа, на который ведёт ссылка.</li>
+            <li><a href="http://htmlbook.ru/html/area/shape" target="_blank" title="shape">Shape</a>-очертания области. Возможные значения атрибута:<ul>
+                <li>rect-прямоугольник;</li>
+                <li>circle-круг;</li>
+                <li>poly-многоугольник.</li>
+                <li>default-указывает всю область.</li>
+            </ul></li>
+            <li><a href="http://htmlbook.ru/html/area/coords" target="_blank" title="coords">Coords</a>-Координаты области. Координаты отсчитываются в пикселях от левого верхнего угла изображения, которому соответствует значение 0, 0. Первое число является координатой по горизонтали, второе — по вертикали. </li>
+        </ol>
+        </div>
+    </div>
+    <div class="row2">
+        <div class="four columns"><img class="one" src="1.png" width="318px" height="222px"alt="Координаты для прямоугольника" title="Координаты для прямоугольника"><br><br><p>Для прямоугольника (shape="rect") определяется четыре координаты — X1, Y1, X2, Y2.</p></div>
+        <div class="four columns"><img class="two" src="2.png" width="318px" height="222px" alt="Координаты для окружности" title="Координаты для окружности"><br><br><p>Для окружности (shape="circle") определяется три координаты — координаты центра окружности (X, Y) и ее радиус (R).</p></div>
+        <div class="four columns"><img class="three" src="3.png " width="318px" height="222px" alt="Координаты для полигона" title="Координаты для полигона"><br><br><p>Для полигона (многоугольника) (shape="poly") последовательно указываются координаты каждой вершины (X1, Y1, X2, Y2, и т.д. :)</p></div>
+    </div>
+
+    <div class="row">
+        <div class="twelve columns">
+            <h5>Пример карты изображений</h5>
+            <p>Нажмите на планшет, чашку чая или круасан на изображении ниже:</p>
+            <p>
+                <img src="img.jpg" alt="good_morning" title="good_morning" usemap="#morning">
+                <map name="morning">
+                    <area shape="rect" coords="610,85,813,409" href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D0%BD%D1%88%D0%B5%D1%82%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80" alt="планшет" target="_blank">
+                    <area shape = "circle" coords = "520,474,60" href = "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%B9%D0%BB%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%87%D0%B0%D0%B9" alt = "цейлонский чай" target="_blank">
+                    <area shape="poly" coords="91,413,169,348,227,350,249, 370,285,334,329,321,349,405,374,461,406,495,315,534,248,513,152,538,105,488" href="https://drazhin.by/kruassany/" alt="круасcаны" target="_blank">
+                </map>
+            </p>
+        </div>
+    </div>
+
+ </div>
+</body>
+</html>
