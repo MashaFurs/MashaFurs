@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>STARS</title>
+<style>
+.str{
+  width: 75px;
+  height: 78px;
+  background-image: url(star0.png);
+}
+.wrap{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.str:hover ~ .str{
+        background-image: url("star1.png");
+        width: 75px;
+        height: 78px;
+        cursor: pointer;
+}
+.str:hover{
+  background-image: url("star1.png");
+        width: 75px;
+        height: 78px;
+        cursor: pointer;
+}
+</style>
+  </head>
+  <body>
+  <div class="wrap">
+    <div class="str"></div>
+    <div class="str"></div>
+    <div class="str"></div>
+    <div class="str"></div>
+    <div class="str"></div>
+  </div>
+  </body>
+</html>
