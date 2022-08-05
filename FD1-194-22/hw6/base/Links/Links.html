@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>LINKS</title>
+<style>
+/* Reset CSS 	*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,caption, tbody, tfoot, thead,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+
+/* Ссылки расположены в строку, потому что li сделали inline-block */
+div { 
+	
+    padding: 10px;
+    margin-top: 5px;
+}
+ul>li{
+   display: inline-block;
+}
+ul>li a{
+   padding: 13px 15px;
+   color: green;
+}
+a:hover {
+ color:red;
+}
+/* 1-й способ постановки разделителя через before	*/
+.one ul>li a:before{
+ content: '|';     
+ color: red;
+ font-weight: bold;
+ font-size: 15px;
+ margin-right: 30px;
+}
+.one ul > li:first-child a:before{
+ content: '';
+}
+
+/* 2-й способ постановки разделителя через after 	*/
+.two ul>li a:after{
+  content: '|';     
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 30px;
+}
+.two ul > li:last-child a:after{
+  content: '';
+}
+
+/*Разделительную полосу вставила cпомощью li+li */
+.ten ul>li a{
+	padding: 0px 0px;
+	color: green;
+}
+.ten a:hover {
+  color:red;
+}
+.ten li+li{
+	border-left: 1px solid red;
+	padding-right: 29px;
+    padding-left: 29px;
+}
+.ten li:first-child{
+	padding-right: 29px;
+    padding-left: 29px;
+}
+p{
+	font-weight: bolder;
+}
+
+/*Разделительную полосу вставила придав li border*/
+.nine li{
+	border-right: 1px solid red;
+	padding-right: 29px;
+    padding-left: 29px;
+}
+.nine li:last-child{
+	border: 0px;
+}
+.nine ul>li a{
+	padding: 0px 0px;
+	color: green;
+}
+.nine a:hover {
+  color:red;
+}
+
+/* Ссылки расположены в строку, потому что li сделали block и затем зафлотили влево, а разделитель сделали благодаря border */
+.three ul>li{
+	display:block;
+	float: left;
+	border-right: 1px solid red;
+	}
+div.three{
+	overflow: hidden;
+}
+.three ul>li a{
+	padding-right: 29px;
+    padding-left: 29px;
+	color: green;
+}
+.three li:last-child{
+	border: 0px;
+}
+.three a:hover {
+  color:red;
+}
+
+/*Горизонтальное меню сделала c помощью flex*/
+.eight ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+.eight li{
+	display: block;
+}
+.eight li{
+	color: green;
+	border-right: 1px solid red;
+	padding-right: 29px;
+    padding-left: 29px;
+}
+.eight li:last-child{
+	border: 0px;
+}
+.eight ul>li a{
+	padding: 0px 0px;
+	color: green;
+}
+.eight a:hover {
+  color:red;
+}
+
+/* Ссылки расположены в строку, потому что li сделали inline */
+
+.four ul>li{
+   display: inline;
+}
+/* 1-й способ постановки разделителя через before	*/
+.four ul>li a:before{
+ content: '|';     
+ color: red;
+ font-weight: bold;
+ font-size: 15px;
+ margin-right: 30px;
+}
+.four ul > li:first-child a:before{
+ content: '';
+}
+/* 2-й способ постановки разделителя через after 	*/
+.five ul>li a:after{
+  content: '|';     
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 30px;
+}
+.five ul > li:last-child a:after{
+  content: '';
+}
+
+/*Горизонтальное меню сделала с помощью таблицы, разделитель вставила как border */
+table a{
+	color: green;
+	padding-right: 29px;
+    padding-left: 29px;
+}
+td{
+	border-right: 1px solid red;
+}
+.six td:last-child{
+	border: 0px;
+}
+
+/*Горизонтальное меню сделала просто вставив в div a и разделительную полосу сделала просто придав a border */
+.seven a{
+	color: green;
+	border-right: 1px solid red;
+	padding-right: 29px;
+    padding-left: 29px;
+}
+.seven a:last-child{
+	border: 0px;
+}
+.seven a:hover {
+  color:red;
+}
+
+/*Ссылки расположены в строку, потому что li сделали inline-block. А разделитель вставили через img. */
+img{
+    margin-bottom: -10px;
+}
+
+
+</style>
+</head>
+  <body>
+
+    <p>Ссылки расположены в строку, потому что li сделали inline-block. Разделитель через before.</p>
+    <div class="one">
+        <ul>
+            <li><a href="https://catalog.onliner.by/" title="catalog">Первая ссылка</a></li>
+            <li><a href="https://www.onliner.by/" title="news">Вторая ссылка</a></li>
+            <li><a href="https://ab.onliner.by/" title="cars">Третья ссылка</a></li>
+            <li><a href="https://r.onliner.by/pk/" title="rent">Четвертая ссылка</a></li>
+            <li><a href="https://forum.onliner.by/" title="forum">Пятая ссылка</a></li>
+        </ul>
+    </div><br><br>
+
+    <p>Ссылки расположены в строку, потому что li сделали inline-block. Разделитель через after.</p>
+<div class="two">
+	<ul>
+		<li><a href="https://catalog.onliner.by/" title="catalog">Первая ссылка</a></li>
+		<li><a href="https://www.onliner.by/" title="news">Вторая ссылка</a></li>
+		<li><a href="https://ab.onliner.by/" title="cars">Третья ссылка</a></li>
+		<li><a href="https://r.onliner.by/pk/" title="rent">Четвертая ссылка</a></li>
+		<li><a href="https://forum.onliner.by/" title="forum">Пятая ссылка</a></li>
+	</ul>
+</div><br><br>
+
+<p>Ссылки расположены в строку, потому что li сделали inline-block.Разделительную полосу вставила cпомощью li+li</p>
+<div class="ten">
+	<ul>
+		<li><a href="https://catalog.onliner.by/" title="catalog">Первая ссылка</a></li>
+		<li><a href="https://www.onliner.by/" title="news">Вторая ссылка</a></li>
+		<li><a href="https://ab.onliner.by/" title="cars">Третья ссылка</a></li>
+		<li><a href="https://r.onliner.by/pk/" title="rent">Четвертая ссылка</a></li>
+		<li><a href="https://forum.onliner.by/" title="forum">Пятая ссылка</a></li>
+	</ul>
+</div><br><br>
+
+<p>Ссылки расположены в строку, потому что li сделали inline-block.Разделительную полосу вставила придав li border</p>
+<div class="nine">
+	<ul>
+		<li><a href="https://catalog.onliner.by/" title="catalog">Первая ссылка</a></li>
+		<li><a href="https://www.onliner.by/" title="news">Вторая ссылка</a></li>
+		<li><a href="https://ab.onliner.by/" title="cars">Третья ссылка</a></li>
+		<li><a href="https://r.onliner.by/pk/" title="rent">Четвертая ссылка</a></li>
+		<li><a href="https://forum.onliner.by/" title="forum">Пятая ссылка</a></li>
+	</ul>
+</div><br><br>
+
+<p><p>Ссылки расположены в строку, потому что li сделали inline-block.Разделительную полосу вставила cпомощью img.</p></p>
+<div class="eleven">
+	<ul>
+		<li><a href="https://catalog.onliner.by/" title="catalog">Первая ссылка</a></li><img src="red.png">
+		<li><a href="https://www.onliner.by/" title="news">Вторая ссылка</a></li><img src="red.png">
+		<li><a href="https://ab.onliner.by/" title="cars">Третья ссылка</a></li><img src="red.png">
+		<li><a href="https://r.onliner.by/pk/" title="rent">Четвертая ссылка</a></li><img src="red.png">
+		<li><a href="https://forum.onliner.by/" title="forum">Пятая ссылка</a></li><img src="red.png">
+	</ul>
+</div><br><br>
+
+<p>Ссылки расположены в строку, потому что li сделали block и затем зафлотили влево, а разделитель сделали благодаря border.</p>
+<div class="three">
+	<ul>
+		<li><a href="https://catalog.onliner.by/" title="catalog">Первая ссылка</a></li>
+		<li><a href="https://www.onliner.by/" title="news">Вторая ссылка</a></li>
+		<li><a href="https://ab.onliner.by/" title="cars">Третья ссылка</a></li>
+		<li><a href="https://r.onliner.by/pk/" title="rent">Четвертая ссылка</a></li>
+		<li><a href="https://forum.onliner.by/" title="forum">Пятая ссылка</a></li>
+	</ul>
+</div><br><br>
+
+<p>Горизонтальное меню сделала c помощью flex. Разделительная через border.</p>
+<div class="eight">
+	<ul>
+		<li><a href="https://catalog.onliner.by/" title="catalog">Первая ссылка</a></li>
+		<li><a href="https://www.onliner.by/" title="news">Вторая ссылка</a></li>
+		<li><a href="https://ab.onliner.by/" title="cars">Третья ссылка</a></li>
+		<li><a href="https://r.onliner.by/pk/" title="rent">Четвертая ссылка</a></li>
+		<li><a href="https://forum.onliner.by/" title="forum">Пятая ссылка</a></li>
+	</ul>
+</div><br><br>
+
+<p>Ссылки расположены в строку, потому что li сделали inline. Разделитель через before.</p>
+<div class="four">
+	<ul>
+		<li><a href="https://catalog.onliner.by/" title="catalog">Первая ссылка</a></li>
+		<li><a href="https://www.onliner.by/" title="news">Вторая ссылка</a></li>
+		<li><a href="https://ab.onliner.by/" title="cars">Третья ссылка</a></li>
+		<li><a href="https://r.onliner.by/pk/" title="rent">Четвертая ссылка</a></li>
+		<li><a href="https://forum.onliner.by/" title="forum">Пятая ссылка</a></li>
+	</ul>
+</div><br><br>
+
+<p>Ссылки расположены в строку, потому что li сделали inline. Разделитель через after.</p>
+<div class="five">
+	<ul>
+		<li><a href="https://catalog.onliner.by/" title="catalog">Первая ссылка</a></li>
+		<li><a href="https://www.onliner.by/" title="news">Вторая ссылка</a></li>
+		<li><a href="https://ab.onliner.by/" title="cars">Третья ссылка</a></li>
+		<li><a href="https://r.onliner.by/pk/" title="rent">Четвертая ссылка</a></li>
+		<li><a href="https://forum.onliner.by/" title="forum">Пятая ссылка</a></li>
+	</ul>
+</div><br><br>
+
+<p>Горизонтальное меню сделала с помощью таблицы, разделитель вставила как border.</p>
+<div class="six">
+	<table>
+		<tr>
+			<td><a href="https://catalog.onliner.by/" title="catalog">Первая ссылка</a></td>
+			<td><a href="https://www.onliner.by/" title="news">Вторая ссылка</a></td>
+			<td><a href="https://ab.onliner.by/" title="cars">Третья ссылка</a></td>
+			<td><a href="https://r.onliner.by/pk/" title="rent">Четвертая ссылка</a></td>
+			<td><a href="https://forum.onliner.by/" title="forum">Пятая ссылка</a></td>
+		</tr>
+	</table>
+</div><br><br>
+
+<p>Горизонтальное меню сделала просто вставив в div a и разделительную полосу сделала просто придав a border.</p>
+<div class="seven">
+	
+			<a href="https://catalog.onliner.by/" title="catalog">Первая ссылка</a>
+			<a href="https://www.onliner.by/" title="news">Вторая ссылка</a>
+			<a href="https://ab.onliner.by/" title="cars">Третья ссылка</a>
+			<a href="https://r.onliner.by/pk/" title="rent">Четвертая ссылка</a>
+			<a href="https://forum.onliner.by/" title="forum">Пятая ссылка</a>
+	
+</div><br><br>
+  </body>
+</html>
