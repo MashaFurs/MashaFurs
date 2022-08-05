@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Picture</title>
+<style>
+body{
+  font-size: 20px;
+  background-color:#f9fbe7;
+  background-image: url(background.png);
+  background-repeat: no-repeat;
+  background-position-y: -48px;
+  background-position-x: 50%;
+  background-size: 469px 237px;
+}
+h1,h2{
+  text-align: center;
+}
+.one{
+  background-color: #ece9e066;
+  font-size: 16px;
+}
+code{
+  font-size: 16px;
+  
+}
+caption{font-size:24px;
+        padding-bottom: 15px;
+}
+tr:first-child{
+  font-weight: bolder;
+  text-align: center;
+}
+table {
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+text-align: left;
+border-collapse: separate;
+border-spacing: 5px;
+background: #ECE9E0;
+color: black;
+border: 16px solid #ECE9E0;
+border-radius: 20px;
+}
+th {
+font-size: 18px;
+padding: 10px;
+}
+td {
+background: #F5D7BF;
+padding: 10px;
+}
+.img{
+  text-align: center;
+}
+
+.conclusion {
+  margin-left: 0;
+  list-style: none;
+  counter-reset: li;
+  font-family: calibri;
+}
+.conclusion li {
+  padding: 10px 0;
+  position: relative;
+  left: 1.5em;
+  margin-bottom: 0.75em;
+  padding-left: 1em;
+  background: #ECE9E0;
+}
+.conclusion li:before {
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1.5em;
+  width: 1.875em;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background: #F5D7BF;
+  border-bottom-left-radius: 70em;
+  border-top-left-radius: 70em;
+  counter-increment: li;
+  content: counter(li);
+}
+
+</style>
+</head>
+  
+<body>
+   <h1>HTML тег &lt;picture>&gt;</h1><br><br>
+   <p>HTML-элемент <strong>&lt;picture&gt;</strong> служит контейнером для <strong>одного или более элементов &lt;source&gt;</strong> и <strong>одного элемента &lt;img&gt;</strong> для обеспечения оптимальной версии изображения для различных размеров экрана.</p>
+   <h2>Для чего все это нужно?</h2>
+   <p>Эта конструкция позволяет выводить то или иное изображение в зависимости от условий.<br>
+    Браузер рассмотрит каждый из дочерних элементов <strong>&lt;source&gt;</strong> и выберет один, соответствующий лучшему совпадению; если совпадений среди элементов <strong>&lt;source&gt;</strong> найдено не будет, то будет выбран файл, указанный  атрибутом  <strong>src элемента &lt;img&gt;</strong>. </p>
+   <h2>Синтаксис</h2>
+   <p>HTML тег &lt;picture&gt; парный, содержимое записывается между открывающим (&lt;picture&gt;) и закрывающим (&lt;/picture&gt;) тегами.</p>
+   <p>Элемент &lt;picture&gt; может содержать один и более элементов &lt;source&gt; и один элемент &lt;img&gt;, который является последним дочерним элементом в блоке.</p>
+   <pre class="one">
+    <code>
+    &lt;picture&gt;
+      &lt;source media="..."&gt;
+      &lt;source media="..."&gt;
+      &lt;img src="..."&gt;
+    &lt;/picture&gt;
+   </code>
+  </pre>
+  <h2>Элемент &lt;source&gt;</h2>
+  <table >
+    <caption>Элемент &lt;source&gt; имеет следующие атрибуты:</caption>
+    <tr>
+      <td>Атрибут</td>
+      <td>Описание</td>
+      <td>Пример</td>
+    </tr>
+    <tr>
+      <td>media</td>
+      <td>Условие при котором буде выводиться именно этот тег source, а конкретно именно то изображение, которое в нем прописано</td>
+      <td><pre><code>
+&lt;picture&gt;
+  &lt;source srcset="big.jpg" media="(min-width: 600px)"&gt;
+  &lt;img src="small.jpg" alt="Абстрактное изображение"&gt;
+&lt;/picture&gt;
+      </code></pre>При ширине экрана от 600 пикселей будет загружено изображение из тега &lt;source&gt;. В других случаях — из тега &lt;img&gt;.</td>
+    </tr>
+    <tr>
+      <td>srcset</td>
+      <td>В атрибуте srcset через запятую перечисляются строки, которые дают браузеру информацию об изображениях. Каждая строка состоит из следующих частей:
+        <ul>
+          <li>URL изображения (например,1024x768.png);</li>
+          <li>Целое число, за которым идёт буква w (например, 1024w). Число указывает на ширину изображения в пикселях;</li>
+          <li>Число, за которым идёт буква x (например, 1.5x). Число указывает на плотность пикселей, для которой будет использоваться изображение.</li>
+        </ul>
+      </td>
+      <td>
+        <pre>
+          <code>
+&lt;source srcset="640x480.png 1x, 1280x960.png 2x"&gt;
+          </code>
+        </pre>Эта запись означает, что для экранов с обычной плотностью пикселей будет использовано изображение 640x480.png, а для экранов с удвоенной плотностью пикселей (например, для retina-экранов) — 1280x960.png.<br><br>
+      </td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>Содержит указание на MIME-тип медиафайла. Если у нас есть несколько одинаковых видеофайлов разного формата, то атрибут type помогает выбрать первый поддерживаемый браузером.</td>
+      <td>
+        <pre>
+          <code>
+&lt;picture&gt;
+  &lt;source srcset="test.avif" type="image/avif"&gt;
+  &lt;source srcset="test.webp" type="image/webp"&gt;
+  &lt;img src="test.png" alt="test image"&gt;
+&lt;/picture>
+          </code>
+        </pre>В показанный выше пример включены три типа изображений в форматах avif, webp и png. Сначала браузер попробует формат avif, если не получится, то попробует webp. Если браузер не поддерживает ни один из них, то использует изображение png.
+      </td>
+    </tr>
+    <tr>
+      <td>sizes</td>
+      <td>Атрибут sizes говорит браузеру, какой ширины нам понадобится изображение из текущего элемента <source> при отрисовке страницы. Можно сказать, что браузер определяет ширину слота для изображения. Так мы заранее сообщаем браузеру, сколько места на странице «забронировать» под изображение. Значением атрибута может быть либо абсолютное значение (например, 150px или 30em), либо относительное от вьюпорта (например, 20vw). Значения в процентах не разрешены.</td>
+      <td>Атрибуты srcset и sizes эффективно работают в паре. Рассмотрим пример:
+        <pre>
+          <code>
+&lt;source
+  srcset="640x480.png 640w, 1024x768.png 1024w"
+  sizes="(max-width: 1200px) 50vw, 1024px"&gt;
+          </code>
+        </pre>
+      </td>
+    </tr>
+  </table><br><br>
+  <p>Для этого элемента доступны глобальные <a href="https://wm-school.ru/tags/ref_standardattributes.html">атрибуты</a> и <a href="https://wm-school.ru/tags/ref_eventattributes.html">события</a>.</p>
+  <h2>Браузерная совместимость</h2>
+  <p class="img"><img src="table.png" alt="table" title="table"></p>
+  <h2>Пример:</h2>
+  <picture>
+    <source srcset="sunset.jpg" type="image/jpg" media="(min-width:1330px)">
+    <source srcset="travel.jpg" type="image/jpg" media="(min-width:992px)">
+    <source srcset="beach.jpg" type="image/jpg" media="(max-width:992px)">
+    <img src="sunset.jpg" alt="ocean" title="ocean">
+  </picture>
+  <h2>Выводы:</h3>
+    <ol class="conclusion">
+      <li>Можно получить адаптив не применяя CSS</li>
+      <li>При использовании конструкции picture можно существенно ускорить верстку. На мобильном экране (на экране меньше 992 px) загрузится только маленькое изображение,которое весит значительно меньше, чем изображение ,которое будет загружаться при большом экране.</li>
+      <li>Благодаря атрибуту type можно использовать современные форматы изображений (например WebP), что еще больше может оптимизировать верстку.</li>
+    </ol>
+</body>
+</html>
