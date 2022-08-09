@@ -71,6 +71,7 @@
         background-color: rgb(153, 240, 192);
     }
 }
+
 @media all and (max-width: 362px) {
     .menu{
         height: 1600px;
