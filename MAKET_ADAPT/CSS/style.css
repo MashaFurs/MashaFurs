@@ -71,11 +71,28 @@
         background-color: rgb(153, 240, 192);
     }
 }
-
+@media all and (max-width: 432px) {
+    .menu{
+        height: 1100px;
+        background-color: rgb(153, 240, 192);
+    }
+    img{
+        width: 150px;
+    }
+}
 @media all and (max-width: 362px) {
     .menu{
         height: 1600px;
         background-color: rgb(117, 110, 115);
+    }
+}
+@media all and (max-width: 341px) {
+    .menu{
+        height: 1600px;
+        background-color: rgb(117, 110, 115);
+    }
+    img{
+        width: 120px;
     }
 }
 @media all and (max-width: 305px) {
