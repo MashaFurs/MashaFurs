@@ -59,30 +59,29 @@
         background-color: rgb(214, 146, 243);
     }
 }
-@media all and (max-width: 578px) {
+@media all and (max-width: 577px) {
     .menu{
         height: 800px;
         background-color: rgb(240, 176, 153);
     }
 }
-@media all and (max-width: 457px) {
+@media all and (max-width: 440px) {
     .menu{
         height: 1100px;
         background-color: rgb(153, 240, 192);
     }
 }
-@media all and (max-width: 379px) {
+@media all and (max-width: 362px) {
     .menu{
         height: 1600px;
         background-color: rgb(117, 110, 115);
     }
 }
-@media all and (max-width: 322px) {
+@media all and (max-width: 305px) {
     .menu{
         height: 2000px;
         background-color: rgb(100, 42, 225);
     }
 }
-
 
    
