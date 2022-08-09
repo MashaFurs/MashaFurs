@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header,.footer{
+    background-color: #add8e6;
+    color: #0000ff;
+    text-align: center;
+    padding: 13px;
+}
+.menu{
+    background-color: #f0e68c;
+    width: 167px;
+    float: left;
+    font-size: 17px;
+    padding-right: 18px;
+    padding-bottom: 25px;
+}
+.menu p{
+    font-weight: bolder;
+    padding-top: 27px ;
+    padding-left: 10px;
+    padding-bottom: 27px;
+}
+.menu ul{
+    list-style-type: disc;
+    margin-left: 30px;
+}
+.content{
+    margin-left: 190px;
+}
+.content h3 {
+    text-align: center;
+    padding: 15px;    
+}
+.content img{
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.content p{
+    padding: 10px;
+    font-size: 18px;
+}
+.clear{
+    clear: both;
+}
+.content-ball{
+    background-image: url(../img/ball.png);
+    background-repeat:repeat-y;
+    background-position: right;
+}
+
+@media all and (max-width: 741px) {
+    .menu{
+        height: 550px;
+        background-color: rgb(214, 146, 243);
+    }
+}
+@media all and (max-width: 578px) {
+    .menu{
+        height: 800px;
+        background-color: rgb(240, 176, 153);
+    }
+}
+@media all and (max-width: 457px) {
+    .menu{
+        height: 1100px;
+        background-color: rgb(153, 240, 192);
+    }
+}
+@media all and (max-width: 379px) {
+    .menu{
+        height: 1600px;
+        background-color: rgb(117, 110, 115);
+    }
+}
+@media all and (max-width: 322px) {
+    .menu{
+        height: 2000px;
+        background-color: rgb(100, 42, 225);
+    }
+}
+
+
+   
