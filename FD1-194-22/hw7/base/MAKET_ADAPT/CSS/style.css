@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header,.footer{
+    background-color: #add8e6;
+    color: #0000ff;
+    text-align: center;
+    padding: 13px;
+}
+.menu{
+    background-color: #f0e68c;
+    width: 167px;
+    float: left;
+    font-size: 17px;
+    padding-right: 18px;
+    padding-bottom: 25px;
+}
+.menu p{
+    font-weight: bolder;
+    padding-top: 27px ;
+    padding-left: 10px;
+    padding-bottom: 27px;
+}
+.menu ul{
+    list-style-type: disc;
+    margin-left: 30px;
+}
+.content{
+    margin-left: 190px;
+}
+.content h3 {
+    text-align: center;
+    padding: 15px;    
+}
+.content img{
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.content p{
+    padding: 10px;
+    font-size: 18px;
+}
+.clear{
+    clear: both;
+}
+.content-ball{
+    background-image: url(../img/ball.png);
+    background-repeat:repeat-y;
+    background-position: right;
+}
+
+@media all and (max-width: 741px) {
+    .menu{
+        height: 450px;
+        background-color: rgb(214, 146, 243);
+    }
+}
+@media all and (max-width: 651px) {
+    .menu{
+        height: 550px;
+        background-color: rgb(146, 243, 198);
+    }
+}
+@media all and (max-width: 582px) {
+    .menu{
+        height: 650px;
+        background-color: rgb(255, 183, 183);
+    }
+}
+@media all and (max-width: 536px) {
+    .menu{
+        height: 750px;
+        background-color: rgb(183, 255, 188);
+    }
+}
+@media all and (max-width: 473px) {
+    .menu{
+        height: 850px;
+        background-color: rgb(176, 175, 179);
+    }
+}
+@media all and (max-width: 437px) {
+    .menu{
+        height: 950px;
+        background-color: rgb(239, 227, 184);
+    }
+    img{
+        width: 150px;
+    }
+}
+@media all and (max-width: 406px) {
+    .menu{
+        height: 1200px;
+        background-color: rgb(51, 48, 224);
+    }
+    img{
+        width: 150px;
+    }
+}
+@media all and (max-width: 361px) {
+    .menu{
+        height: 1500px;
+        background-color: rgb(159, 243, 162);
+    }
+    img{
+        width: 100px;
+    }
+}
+
+
+
+   
