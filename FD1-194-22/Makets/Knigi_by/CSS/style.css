@@ -16,7 +16,7 @@ ul li{
 .container{
     width: 1296px;
     margin: 0 auto;
-    
+
 }
 .clearfix{
     clear: both;
@@ -108,6 +108,10 @@ ul li{
     color: #727272;
 }
 /*content*/
+.wrapper .container{
+    padding-top: 24px;
+    padding-bottom: 46.05px;
+}
 .wrapper .container ul{
     float: left;
     margin-left: 80px;
@@ -125,8 +129,11 @@ ul li{
 }
 .wrapper .container img{
     float: right;
+    padding-top: 405px;
+    padding-right: 14px;
+    width: 82px;
 }
-.wrapper .container div{
+.wrapper .container div.content-image{
     width: 895px;
     height: 485.95px;
     background: url("../img/new-year.jpg") no-repeat 25px 0px;
@@ -138,6 +145,8 @@ ul li{
     font-size: 24px;
     line-height: 34px;
     color: #FFFFFF;
+    padding-top: 284px;
+    padding-left: 88px;
     
 }
 .wrapper .container div button{
@@ -147,12 +156,106 @@ ul li{
     text-align: center;
     color: #FFFFFF;
     background-color: rgba(28,28,28,0);
-    border: #fff;
+    border: 1px solid #fff;
+    border-radius: 3px;
     padding: 14px 30px 14px 30px ;
-    margin-top: 34px;
-    margin-left: 118px;
+    margin-top: 22px;
+    margin-left: 94px;
 }
-.wrapper .container img{
-    padding-top: 443px;
-    padding-right: 30px;
+/*Catalog-books*/
+.catalog-books .container{
+    background-color:#F8F8F8;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 24px;
+}
+.catalog-books .container ul li{
+    float: left;
+}
+.catalog-books .container ul li:first-child{
+    padding-right: 24px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+}
+.catalog-books .container ul li:last-child{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    text-decoration-line: underline;
+    padding-top: 8px;
+}
+/*First-line*/
+.catalog-books .container .first-line > div{
+    background-color:#FFFFFF;
+    width: 272px;
+    height: 368px;
+    margin-top: 36px;
+    float: left;
+    margin-right: 16px;
+}
+.catalog-books .container .first-line div:last-child{
+    margin-right: 0px; 
+}
+.catalog-books .container .first-line div .book-img{
+    width: 272px;
+    height: 216px;
+    margin-top: 14px;
+}
+.information{
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 20px;
+}
+.title{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    padding-bottom: 4px;
+}
+.writer{
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    color: #727272;
+}
+.star{
+    padding-top: 7px;
+}
+.star img{
+    width: 12px;
+    height: 12px;
+}
+.price{ 
+    padding-bottom: 20px;
+    
+}
+.price p{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    color: #000000;
+    float: left;
+    padding-top: 21px;
+}
+.price img{
+    float: right;
+    padding-left: 8px;
+    padding-top: 8px;
+}
+.price p span:first-child{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    color: #F46D69;
+}
+.price p span:last-child{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    text-decoration: line-through;
 }
