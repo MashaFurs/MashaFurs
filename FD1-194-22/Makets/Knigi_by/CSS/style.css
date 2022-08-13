@@ -168,6 +168,7 @@ ul li{
     padding-left: 80px;
     padding-right: 80px;
     padding-top: 24px;
+    padding-bottom: 16px; 
 }
 .catalog-books .container ul li{
     float: left;
@@ -295,5 +296,42 @@ ul li{
     padding-top: 15.53px;
     
 }
+/*Subscribe*/
+.subscribe .container{
+    height: 88px;
+    background-color: #FFFFFF;  
+}
+.subscribe .container::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.subscribe .container p{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: #727272;
+    float: left;
+    margin-left: 172px;
+    margin-top: 30px;
+}
+.subscribe .container button{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #727272;
+    background: #FFFFFF;
+    border: 1px solid #727272;
+    border-radius: 4px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    float: right;
+    margin-right: 172px;
+    margin-top: 22px;
+}
+
 
 
