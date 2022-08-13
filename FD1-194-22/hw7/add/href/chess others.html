@@ -31,12 +31,16 @@
       }
       @media print {
         a[href^="http"]::after{
-          content: " на   " attr(href)"";
+          content: " на   " attr(href)" )";
         }
-      }
-      @media print {
+
         a[href^="http"]::before{
-          content: "ссылка ";
+          content: "( ссылка ";
+        }
+
+        .link {
+          background-image: none;
+          padding-left: 0px;
         }
       }
      
