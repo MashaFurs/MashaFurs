@@ -193,10 +193,12 @@ ul li{
     height: 368px;
     margin-top: 36px;
     float: left;
-    margin-right: 16px;
+    margin-left: 16px;
+    border-radius: 4px;
 }
-.catalog-books .container .first-line div:last-child{
-    margin-right: 0px; 
+.catalog-books .container .first-line div:first-child{
+    margin-left: 0px; 
+    
 }
 .catalog-books .container .first-line div .book-img{
     width: 272px;
@@ -259,3 +261,39 @@ ul li{
     color: #000000;
     text-decoration: line-through;
 }
+.catalog-books .container .first-line div:nth-child(5) {
+    margin-left: 0px;  
+}
+.catalog-books .container .first-line div:nth-child(9) {
+    margin-left: 0px;  
+}
+.catalog-books .container .first-line div:nth-child(7) {
+    background: #F46D69;
+    border-radius: 4px; 
+}
+.catalog-books .container .first-line div .book-img.marketing{
+    width: 272px;
+    height: 194px;
+    margin-top: 0px;
+    background-image: url("../img/books/Foto7.jpg");
+}
+.catalog-books .container .first-line div:nth-child(7) p:last-child{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: #FEFEFE;
+    padding-top: 16px;
+}
+
+.catalog-books .container .first-line div + p{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FEFEFE;
+    padding-top: 15.53px;
+    
+}
+
+
