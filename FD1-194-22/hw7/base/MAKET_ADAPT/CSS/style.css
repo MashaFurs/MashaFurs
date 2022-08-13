@@ -58,11 +58,17 @@
         height: 450px;
         background-color: rgb(214, 146, 243);
     }
+    .container{
+        background-color: rgb(230, 241, 189);
+    }
 }
 @media all and (max-width: 651px) {
     .menu{
         height: 550px;
         background-color: rgb(146, 243, 198);
+    }
+    .container{
+        background-color: rgb(176, 148, 176);
     }
 }
 @media all and (max-width: 582px) {
@@ -70,11 +76,17 @@
         height: 650px;
         background-color: rgb(255, 183, 183);
     }
+    .container{
+        background-color: rgb(216, 220, 163);
+    }
 }
 @media all and (max-width: 536px) {
     .menu{
         height: 750px;
         background-color: rgb(183, 255, 188);
+    }
+    .container{
+        background-color: rgb(235, 146, 220);
     }
 }
 @media all and (max-width: 473px) {
@@ -82,11 +94,20 @@
         height: 850px;
         background-color: rgb(176, 175, 179);
     }
+    .container{
+        background-color: rgb(193, 253, 176);
+    }
+    img{
+        width: 150px;
+    }
 }
 @media all and (max-width: 437px) {
     .menu{
         height: 950px;
         background-color: rgb(239, 227, 184);
+    }
+    .container{
+        background-color: rgb(255, 214, 214);
     }
     img{
         width: 150px;
@@ -94,16 +115,32 @@
 }
 @media all and (max-width: 406px) {
     .menu{
-        height: 1200px;
-        background-color: rgb(51, 48, 224);
+        float: none;
+        width: auto;
+        height: auto;
+        background-color: rgb(178, 177, 247);
+    }
+    .container{
+        background-color: rgb(248, 255, 214);
+    }
+    .content{
+        margin-left: 0;
     }
     img{
         width: 150px;
     }
+    .menu p{
+        text-align: center;
+        padding-left: 0px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    .content-ball{
+        background-image: none;
+    }
 }
 @media all and (max-width: 361px) {
     .menu{
-        height: 1500px;
         background-color: rgb(159, 243, 162);
     }
     img{
