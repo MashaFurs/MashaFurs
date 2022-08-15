@@ -17,16 +17,19 @@ ul li{
     width: 1336px;
     margin: 0 auto;
 }
-.clearfix{
+.clear{
+    clear: both;
+}
+.clearfix:after{
+    content: "";
+    display: block;
     clear: both;
 }
 .top-red-line{
     height: 42px;
     background-color: #FC0D1B;
 }
-.header{
-    height: 154px;
-}
+
 .header h1{
 font-family: 'Roboto', sans-serif;
 font-style: normal;
