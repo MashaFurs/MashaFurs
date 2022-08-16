@@ -1,7 +1,6 @@
 @media all and (max-width: 1380px) {
     div.container, .catalog-books .container, .subscribe .container {
-        width: 1100px ;
-        background-color: aquamarine;   
+        width: 1100px ;   
     }
     .grey-line input{
         width: 165px;
@@ -87,8 +86,7 @@
 
 @media all and (max-width: 1120px) {
     div.container, .catalog-books .container, .subscribe .container {
-        width: 850px ;
-        background-color: rgb(255, 214, 127);   
+        width: 850px ;  
     }
     .header .container img {
         margin-left: 30px;
@@ -201,8 +199,7 @@
 
 @media all and (max-width: 871px) {
     div.container, .catalog-books .container, .subscribe .container {
-        width: 640px ;
-        background-color: rgb(232, 177, 200);   
+        width: 640px ; 
     } 
     .header .container ul li {
         margin-left: 25px;
@@ -337,8 +334,7 @@
 
 @media all and (max-width: 670px) {
 div.container, .catalog-books .container, .subscribe .container {
-    width: 310px ;
-    background-color: rgb(197, 193, 253);   
+    width: 310px ;   
 } 
 .header .container h3 {
     float: none;
