@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maket_FORM</title>
+    <style>
+      .container{
+        padding: 20px;
+      }
+      .wrapper{
+        margin-left: 200px;
+      }
+      .text{ 
+        float: left;
+      }
+      textarea{
+        width:100%;
+      }
+      .wrapper.one input{
+        width:100%;
+      }
+      .adapt{
+        display: inline;
+      }
+
+
+      @media all and (max-width: 1200px) {
+       
+        .text{
+          float: none;
+        }
+        .wrapper{
+        margin-left: 0px;
+        }
+        .text.agree{ 
+        float: left;
+      }
+      .adapt{
+        display: block;
+      }
+      
+
+      }
+      
+    </style>
+
+</head>
+  <body>
+    <div class="container">
+        <p> Для публикации вашей статьи заполните, пожалуйста, следующую форму:</p>
+        <form action="http://fe.it-academy.by/TestForm.php" method="post">
+
+          <div>
+             <div class="text">  Название статьи:</div> 
+             <div class="wrapper one"> <input type="text" name="article-name"></div>
+          </div><br>
+
+         <div>
+          <div class="text"> Рубрика: </div>
+            <div class="wrapper"> 
+              <select name="categoty">
+                <option value="programm">программирование</option>
+                <option value="medicine">медицина</option>
+              </select>
+            </div>
+          </div><br>
+
+          <div> 
+            <div class="text">Публикация: </div>
+              <div class="wrapper">
+                <div class="adapt"> <input type="radio" name="radio" value="site"> на сайте</div>
+                <div class="adapt"><input type="radio" name="radio" value="journal"> в журнале</div>
+                <div class="adapt"><input type="radio" name="radio" value="both"> на сайте и в журнале</div>
+              </div>
+          </div><br>
+              
+              
+          <div> 
+            <div class="text agree">Разрешить комментарии: </div>
+              <div class="wrapper two">
+                <input type="checkbox" name="check" value="agree">
+              </div>
+          </div><br>
+
+
+          Текст статьи:<br>
+          <textarea name="text"></textarea><br>
+          <input type="submit" value="Отправить">
+
+        </form>
+    </div>
+  </body>
+</html>

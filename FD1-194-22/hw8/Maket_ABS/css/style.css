@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+p{
+    text-align: justify;
+}
+p:first-child{
+    margin-bottom: 20px;
+}
+p:last-child{
+    margin-top: 20px;
+}
+.wrap{
+    width: 430px;
+    height: 430px;
+    margin: 0 auto;
+    position: relative;
+}
+.wrap img:first-child{
+    position: absolute;
+    left: 0px;
+    top: 28px;
+}
+.wrap img:nth-child(2){
+    top: 5px;
+    position: absolute;
+    right: 9px;
+}
+.wrap img:nth-child(3){
+    left: 114px;
+    position: absolute;
+    top: 204px;
+}
+.wrap img:last-child{
+    top: 61px;
+    position: absolute;
+    left: 80px;
+}
+img:hover{
+    z-index: 1;
+}
