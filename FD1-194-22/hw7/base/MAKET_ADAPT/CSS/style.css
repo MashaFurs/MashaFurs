@@ -3,6 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    height: 10000px;
+}
+.container{
+    background-image: url(../img/back1.png);
+    background-repeat: no-repeat repeat;
+    background-position: -42px 0;
+  }
 
 .header,.footer{
     background-color: #add8e6;
@@ -11,7 +19,7 @@
     padding: 13px;
 }
 .menu{
-    background-color: #f0e68c;
+    
     width: 167px;
     float: left;
     font-size: 17px;
@@ -53,61 +61,63 @@
     background-position: right;
 }
 
+
 @media all and (max-width: 741px) {
-    .menu{
-        height: 450px;
-        background-color: rgb(214, 146, 243);
-    }
+    
     .container{
+    
         background-color: rgb(230, 241, 189);
+        background-image: url(../img/back2.png);
+        background-repeat: no-repeat repeat;
+        background-position: -42px 0;
     }
 }
 @media all and (max-width: 651px) {
-    .menu{
-        height: 550px;
-        background-color: rgb(146, 243, 198);
-    }
+    
     .container{
         background-color: rgb(176, 148, 176);
+        background-image: url(../img/back4.png);
+        background-repeat: no-repeat repeat;
+        background-position: -42px 0;
     }
 }
 @media all and (max-width: 582px) {
-    .menu{
-        height: 650px;
-        background-color: rgb(255, 183, 183);
-    }
+    
     .container{
         background-color: rgb(216, 220, 163);
+        background-image: url(../img/back5.png);
+        background-repeat: no-repeat repeat;
+        background-position: -42px 0;
     }
 }
 @media all and (max-width: 536px) {
-    .menu{
-        height: 750px;
-        background-color: rgb(183, 255, 188);
-    }
+    
     .container{
         background-color: rgb(235, 146, 220);
+        background-image: url(../img/back6.png);
+        background-repeat: no-repeat repeat;
+        background-position: -42px 0;
     }
 }
 @media all and (max-width: 473px) {
-    .menu{
-        height: 850px;
-        background-color: rgb(176, 175, 179);
-    }
+    
     .container{
         background-color: rgb(193, 253, 176);
+        background-image: url(../img/back7.png);
+        background-repeat: no-repeat repeat;
+        background-position: -42px 0;
     }
     img{
         width: 150px;
     }
 }
 @media all and (max-width: 437px) {
-    .menu{
-        height: 950px;
-        background-color: rgb(239, 227, 184);
-    }
+    
     .container{
         background-color: rgb(255, 214, 214);
+        background-image: url(../img/back8.png);
+        background-repeat: no-repeat repeat;
+        background-position: -42px 0;
     }
     img{
         width: 150px;
