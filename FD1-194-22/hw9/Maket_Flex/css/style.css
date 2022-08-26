@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  .header,.footer {
+      font-weight: bold;
+      text-align: center;
+      background-color: #add8e6;
+      color: #0000ff;
+      padding:13px;
+      font-size: 25px;
+  }
+  .middle{
+    display: flex;
+    flex-direction: row;
+  }
+  .menu {
+      width: 167px;
+      font-size: 18px;
+      background-color: #f0e78d;
+      padding: 30px 20px;
+      line-height: 20px;
+    }
+    .menu>ul{
+        list-style-type: disc;
+    }
+    .menu>ul li{
+        padding-bottom:5px;
+    }
+    .menu>p{
+        font-weight: bolder;
+        font-size: 18px;
+        padding-bottom: 10px;
+    }
+    .content>p{
+        text-align: center;
+        padding: 15px;
+        font-weight: bolder;
+        font-size: 21px;
+    }
+    .content-with-image{
+        display: flex;
+        flex-direction: row;
+    }
+    .image img{ 
+        padding: 20px;
+    }
+    .text{
+        padding-top: 20px;
+    }
+    .text  p {
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+    .content{
+        background-image: url(img/ball.png);
+        background-repeat:repeat-y;
+        background-position: right;
+    }
+
+    @media all and (max-width: 590px) {
+        .middle{
+        flex-direction: column;
+    }
+    .content{
+        order: 1;
+    }   
+    .menu{
+        order: 2;
+        width: 100%;
+        background-color: #fff;
+        }
+    .menu>ul>li{
+        display: inline;
+        margin-right: 10px;
+    }
+    .content{
+        background-image: none;
+    }
+    .content-with-image{
+        flex-direction: column;
+    }
+    img{
+        width: 100%;
+    }
+ }
