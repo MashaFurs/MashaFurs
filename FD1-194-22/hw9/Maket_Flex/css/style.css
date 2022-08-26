@@ -84,4 +84,10 @@
     img{
         width: 100%;
     }
+    .header,.footer{
+        display: none;
+    }
+    .text  p {
+    padding: 0 20px;
+      }
  }
