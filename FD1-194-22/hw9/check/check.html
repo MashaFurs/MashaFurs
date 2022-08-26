@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 26px;
+            margin-bottom: 5px;
+
+        }
+        input{
+            display: none;
+        }
+        input+label{
+            width: 100px;
+            height: 40px;
+            background: rgb(139, 78, 201);
+            display: inline-block;
+            border-radius: 50px;
+            vertical-align: -5px;
+            position: relative;
+            user-select: none;
+        }
+        input+label::before{
+            content: "";
+            width: 26px;
+            height: 26px;
+            position: absolute;
+            top: 6px;
+            left: 2px;
+            background: #fff;
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+        input:checked+label{
+            background:rgb(227, 227, 132);
+        }
+        input:checked+label::before{
+            left: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>text1
+            <input type="checkbox" id="check1">
+            <label for="check1"></label>
+        </div>
+
+        <div>text2
+            <input type="checkbox" id="check2">
+            <label for="check2"></label>
+        </div>
+
+        <div>text3
+            <input type="checkbox" id="check3">
+            <label for="check3"></label>
+        </div>
+
+    </div>
+</body>
+</html>
