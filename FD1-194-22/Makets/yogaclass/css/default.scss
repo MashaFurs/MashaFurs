@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: $Poppins;
+    font-size: $fz_default;
+    background-color: $black;
+    height: 10000px;
+}
+.container{
+    width: $xl;
+    margin: 0 auto;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
