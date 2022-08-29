@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Ramabhadra&display=swap');
+@import "variables.scss";
+@import "mixins.scss";
+@import "default.scss";
+
+//header
+.header{
+    color: $white;
+    padding-top: 19px;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        ul{
+            display: flex;
+
+            li{
+                margin-right: 100px;
+                position: relative;
+
+                &:hover{
+                    color: $green;
+
+                    &::after{
+                        content: '';
+                        width: 100%;
+                        height: 3px;
+                        background: $green;
+                        position: absolute;
+                        border-radius: 0 0 50px 50px;
+                        top: -52px;
+                        left: 0;
+                    }
+                }
+
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .sign-in{
+            display: flex;
+            align-items: center;
+
+            .buy{
+                margin-right: 29px;
+                position: relative;
+                display: flex;
+                width: 26px;
+                height: 25px;
+
+                .count-item{
+                    width: 12px;
+                    height: 12px;
+                    flex-shrink: 0;
+                    background-color: $red;
+                    font-weight: $extrabold;
+                    font-size: $fz10;
+                    line-height: 15px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    top: 0;
+                    right: -7px;
+                    
+                }
+            }
+
+            .line{
+                width: 1.5px;
+                height: 14px;
+                background: $white;
+                margin-right: 25px;
+            }
+
+            .avatar{
+                position: relative;
+
+                &::after{
+                    content: '';
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-top: 10px solid $white;
+                    border-bottom: 10px solid transparent;
+                    position: absolute;
+                    top:20px;
+                    right: -31px;
+
+
+                }
+            }
+        }
+    }
+}
+
+//main
+
+.main{
+    color: $white;
+
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+
+        .titles{
+
+            h1{
+                font-family: $Ramabhadra;
+                font-size: $fz120;
+                line-height: 125%;
+                text-transform: uppercase;
+                color: $black;
+                text-shadow: 1px 1px 0px $white, -1px -1px 0px $white, -1px 1px 0px $white, 1px -1px 0px $white, 1px -1px 0px $white;
+                margin-top: 77px;
+            }
+            h2{
+                font-weight: $extrabold;
+                font-size: $fz120;
+                line-height: 125%;
+                text-transform: uppercase;
+                color: $green;
+            }
+        }
+
+        .circle{
+            width: 224px;
+            height: 224px;
+            background: $green;
+            padding: 8px;
+            border-radius: 50%;
+            position: relative;
+            margin-top: 107px;
+
+            p{
+                border-radius: 50%;
+                border:1px solid $black;  
+                width: 100%;
+                height: 100%;
+                font-weight: $bold;
+                font-size: $fz20;
+                line-height: 30px;
+                text-align: center;
+                text-transform: uppercase;
+                color:$black;
+                display: flex;
+                align-items: center;
+            }
+
+            &::after{
+                content: 'PLUS';
+                width: 68px;
+                height: 68px;
+                position: absolute;
+                top:-1px;
+                right: -4px;
+                border: 1px solid $black;
+                background: $green;
+                color: $white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+        }
+
+        &.other{
+            justify-content: flex-end;
+            font-size: $fz25;
+            line-height: 173.5%;
+        }
+
+        &.bottom{
+            align-items: flex-end;
+            position: relative;
+            justify-content: flex-end;
+
+            .gallery-text{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                h3{
+                    font-weight: $semibold;
+                    font-size: $fz40;
+                    line-height: 173.5%;
+                    color: $green;
+                }
+    
+                p{
+                    font-size: $fz28;
+                    line-height: 173.5%;
+                }
+            }
+    
+            .tablet{
+                width: 1049px;
+                height: 818px;
+                flex-shrink: 0;
+                position: relative;
+                background: 
+                    url('../img/Tablet.png') no-repeat center right,
+                    url('../img/Ellipse.png') no-repeat top left;
+
+                    .people1{
+                        position: absolute;
+                        top: 359px;
+                        left: 95px;
+
+                        &:after{
+                            content: '';
+                            width: 25px;
+                            height: 25px;
+                            background: $green;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 20px;
+                            right: 6px;
+
+                        }
+
+                        p{
+                            padding: 15px;
+                            width: 257px;
+                            position: absolute;
+                            top:42px;
+                            left: 141px;
+                            background: rgba(0, 0, 0, 0.56);
+                            border-radius: 0px 15px 15px 15px;
+                        }
+                    }
+
+                    .peoples{
+                        position: absolute;
+                        bottom: 197px;
+                        right: -120px;
+                    }
+            } 
+        }
+
+    }
+}
+
