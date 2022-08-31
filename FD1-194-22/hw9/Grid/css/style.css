@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header,.footer {
+    font-weight: bold;
+    text-align: center;
+    background-color: #add8e6;
+    color: #0000ff;
+    padding:13px;
+    font-size: 25px;
+}
+.menu {
+    
+    font-size: 18px;
+    background-color: #f0e78d;
+    padding: 30px 20px;
+    line-height: 20px;
+  }
+  .menu>ul{
+      list-style-type: disc;
+  }
+  .menu>ul li{
+      padding-bottom:5px;
+  }
+  .menu>p{
+      font-weight: bolder;
+      font-size: 18px;
+      padding-bottom: 10px;
+  }
+  .content>p{
+      text-align: center;
+      padding: 15px;
+      font-weight: bolder;
+      font-size: 21px;
+  }
+  .content-with-image{
+    
+    
+  }
+  .image img{ 
+      padding: 20px;
+  }
+  .text{
+      padding-top: 20px;
+  }
+  .text  p {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+  .content{
+    background-image: url(../img/ball.png);
+    background-repeat:repeat-y;
+    background-position: right;
+}
+  .wrapper{
+    display: grid;
+    grid-template-rows: 56px 1fr 56px;
+
+  }
+  .middle{
+    display: grid;
+    grid-template-columns: 167px 1fr;
+  }
+
+
+  /*Media*/
+  @media all and (max-width: 670px) {
+    .middle{
+        grid-template-columns: none;
+}
+.content{
+    order: 1;
+}   
+.menu{
+    order: 2;
+    width: 100%;
+    background-color: #fff;
+    }
+.menu>ul>li{
+    display: inline;
+    margin-right: 10px;
+}
+.content{
+    background-image: none;
+}
+.content-with-image{
+    grid-template-rows: 100% auto;
+}
+img{
+    width: 100%;
+}
+.header,.footer{
+    display: none;
+}
+.text  p {
+padding: 0 20px;
+  }
+}
+  
