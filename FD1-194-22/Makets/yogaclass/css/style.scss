@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Ramabhadra&display=swap');
-@import "variables.scss";
+ 
 @import "mixins.scss";
 @import "default.scss";
 
@@ -118,14 +118,18 @@
                 color: $black;
                 text-shadow: 1px 1px 0px $white, -1px -1px 0px $white, -1px 1px 0px $white, 1px -1px 0px $white, 1px -1px 0px $white;
                 margin-top: 77px;
+
+                & span{
+                        font-weight: $extrabold;
+                        font-size: $fz120;
+                        line-height: 125%;
+                        text-transform: uppercase;
+                        color: $green;
+                        border:none;
+                        text-shadow: none;
+                }
             }
-            h2{
-                font-weight: $extrabold;
-                font-size: $fz120;
-                line-height: 125%;
-                text-transform: uppercase;
-                color: $green;
-            }
+            
         }
 
         .circle{
@@ -203,8 +207,8 @@
                 flex-shrink: 0;
                 position: relative;
                 background: 
-                    url('../img/Tablet.png') no-repeat center right,
-                    url('../img/Ellipse.png') no-repeat top left;
+                    url($imagePath+'Tablet.png') no-repeat center right,
+                    url($imagePath+'Ellipse.png') no-repeat top left;
 
                     .people1{
                         position: absolute;
@@ -244,4 +248,151 @@
 
     }
 }
+
+//our_teachers
+
+.our_teachers{
+margin-top: 61px;
+    h2{
+        margin-bottom: 50px;
+
+}
+
+   & > ul{
+        display: flex;
+        justify-content: space-between;
+
+        & > li{
+            height: 647px;
+            flex-basis: 20%;
+            flex-grow: 1;
+            transition: 0.5s;
+            position: relative;
+            @include teachersBg();
+            filter: brightness(20%);
+
+            &:hover{
+                transform: scale(1.1,1.1);
+                z-index: 1;
+                filter: brightness(100%);
+
+                ul{
+                    display: flex;
+                    top: 34px;
+                    right: -50px;
+                }
+            }
+
+            div{
+                height: 105px;
+                background: $green;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                p{
+                    text-align: center;
+                    padding-top: 17px;
+                    &.title{
+                        font-weight: $semibold;
+                        font-size: $fz30;
+                        line-height: 125%;
+                        color: $black;
+
+                    }
+                    &.descr{
+                        font-weight: $light;
+                        font-size: $fz20;
+                        line-height: 125%;
+                        color: $white;
+                    }
+                }
+            }
+
+            ul{
+                position: absolute;
+                width: 50px;
+                height: 232px;
+                background: $green;
+                border-radius: 0px 28px 28px 0px;
+                top: 0;
+                right: -10px;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                
+                li{
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 50%;
+                    background-color: $white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $green;
+                }
+            }
+        }
+    }
+
+}
+
+//why us
+.why_us{
+    padding-top: 292px;
+    background: url('../img/why_us_bg.png') top 100px  right no-repeat;
+    .container{
+        display: flex;
+        justify-content: space-between;
+
+        h2{
+            margin-bottom: 23px;
+            text-align: left;
+        }
+        p{
+            color: $white;
+            font-size: $fz_default;
+            line-height: 173.5%;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        img{
+            border-radius: 8px;
+        }
+        button{
+            width: 167px;
+            height: 55px;
+            border: 1px solid $green;
+            font-family: 'Poppins';
+            font-weight: $semibold;
+            font-size: $fz_default;
+            line-height: 173.5%;
+            color:$white;
+            background: transparent ;
+
+             i{
+                    margin-left: 16px;
+                    transform: rotate(90deg);
+
+             }
+        }
+        div{
+            &:first-child{
+                margin-right: 38px;
+            }
+            &:nth-child(2){
+                margin-right: 47px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            &:last-of-type{
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+
 

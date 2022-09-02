@@ -22,6 +22,14 @@ a {
 li {
   list-style-type: none; }
 
+h2 {
+  font-family: "Ramabhadra", sans-serif;
+  font-size: 100px;
+  line-height: 125%;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 1px 1px 0px #ffffff, -1px -1px 0px #ffffff, -1px 1px 0px #ffffff, 1px -1px 0px #ffffff, 1px -1px 0px #ffffff; }
+
 .header {
   color: #FFFFFF;
   padding-top: 19px; }
@@ -126,12 +134,14 @@ li {
       color: #000000;
       text-shadow: 1px 1px 0px #FFFFFF, -1px -1px 0px #FFFFFF, -1px 1px 0px #FFFFFF, 1px -1px 0px #FFFFFF, 1px -1px 0px #FFFFFF;
       margin-top: 77px; }
-    .main .container .titles h2 {
-      font-weight: 700;
-      font-size: 120px;
-      line-height: 125%;
-      text-transform: uppercase;
-      color: #46B249; }
+      .main .container .titles h1 span {
+        font-weight: 700;
+        font-size: 120px;
+        line-height: 125%;
+        text-transform: uppercase;
+        color: #46B249;
+        border: none;
+        text-shadow: none; }
     .main .container .circle {
       width: 224px;
       height: 224px;
@@ -235,5 +245,162 @@ li {
           position: absolute;
           bottom: 197px;
           right: -120px; }
+
+.our_teachers {
+  margin-top: 61px; }
+  .our_teachers h2 {
+    margin-bottom: 50px; }
+  .our_teachers > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .our_teachers > ul > li {
+      height: 647px;
+      -ms-flex-preferred-size: 20%;
+          flex-basis: 20%;
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      position: relative;
+      -webkit-filter: brightness(20%);
+              filter: brightness(20%); }
+      .our_teachers > ul > li:nth-child(1) {
+        background: url("../img/../img/teachers1.jpg") center no-repeat;
+        background-size: cover; }
+      .our_teachers > ul > li:nth-child(2) {
+        background: url("../img/../img/teachers2.jpg") center no-repeat;
+        background-size: cover; }
+      .our_teachers > ul > li:nth-child(3) {
+        background: url("../img/../img/teachers3.jpg") center no-repeat;
+        background-size: cover; }
+      .our_teachers > ul > li:nth-child(4) {
+        background: url("../img/../img/teachers4.jpg") center no-repeat;
+        background-size: cover; }
+      .our_teachers > ul > li:nth-child(5) {
+        background: url("../img/../img/teachers5.jpg") center no-repeat;
+        background-size: cover; }
+      .our_teachers > ul > li:hover {
+        -webkit-transform: scale(1.1, 1.1);
+                transform: scale(1.1, 1.1);
+        z-index: 1;
+        -webkit-filter: brightness(100%);
+                filter: brightness(100%); }
+        .our_teachers > ul > li:hover ul {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          top: 34px;
+          right: -50px; }
+      .our_teachers > ul > li div {
+        height: 105px;
+        background: #46B249;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%; }
+        .our_teachers > ul > li div p {
+          text-align: center;
+          padding-top: 17px; }
+          .our_teachers > ul > li div p.title {
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 125%;
+            color: #000000; }
+          .our_teachers > ul > li div p.descr {
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 125%;
+            color: #FFFFFF; }
+      .our_teachers > ul > li ul {
+        position: absolute;
+        width: 50px;
+        height: 232px;
+        background: #46B249;
+        border-radius: 0px 28px 28px 0px;
+        top: 0;
+        right: -10px;
+        display: none;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly; }
+        .our_teachers > ul > li ul li {
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          background-color: #FFFFFF;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          color: #46B249; }
+
+.why_us {
+  padding-top: 292px;
+  background: url("../img/why_us_bg.png") top 100px right no-repeat; }
+  .why_us .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .why_us .container h2 {
+      margin-bottom: 23px;
+      text-align: left; }
+    .why_us .container p {
+      color: #FFFFFF;
+      font-size: 19px;
+      line-height: 173.5%;
+      text-align: justify;
+      margin-bottom: 20px; }
+    .why_us .container img {
+      border-radius: 8px; }
+    .why_us .container button {
+      width: 167px;
+      height: 55px;
+      border: 1px solid #46B249;
+      font-family: 'Poppins';
+      font-weight: 500;
+      font-size: 19px;
+      line-height: 173.5%;
+      color: #FFFFFF;
+      background: transparent; }
+      .why_us .container button i {
+        margin-left: 16px;
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg); }
+    .why_us .container div:first-child {
+      margin-right: 38px; }
+    .why_us .container div:nth-child(2) {
+      margin-right: 47px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    .why_us .container div:last-of-type {
+      margin-bottom: 30px; }
 
 /*# sourceMappingURL=style.css.map */

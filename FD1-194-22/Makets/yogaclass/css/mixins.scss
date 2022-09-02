@@ -1,3 +1,11 @@
-@mixin test(){
-    color:blue;
+@import "variables.scss";
+
+@mixin teachersBg(){
+    @for $i from 1 through 5 {
+        &:nth-child(#{$i}){
+            background: url($imagePath+'../img/teachers#{$i}.jpg') center no-repeat;
+            background-size: cover;
+        }
+
+    }
 }

@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 *{
     margin: 0;
     padding: 0;
@@ -19,4 +21,15 @@ a{
 }
 li{
     list-style-type: none;
+}
+
+h2{
+    font-family: $Ramabhadra;
+    font-size: $fz100;
+    line-height: 125%;
+     text-transform: uppercase;
+     text-align: center;
+    text-shadow: 1px 1px 0px #ffffff, -1px -1px 0px #ffffff, -1px 1px 0px #ffffff, 1px -1px 0px #ffffff, 1px -1px 0px #ffffff;
+
+
 }
