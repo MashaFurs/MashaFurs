@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animation_Sprite</title>
+    <style>
+
+       
+     
+
+      @keyframes Frog{
+        from { background: url("5.png") 0 0;}
+        to { background: url("5.png") -1760px 0; }
+      }
+      @keyframes MyAnimation{
+        from { background: url("masha.jpg") 0 0;}
+        to { background: url("masha.jpg") -706px 0; }
+      }
+
+      @keyframes walk{
+        from { background: url("final.png") 0 0;}
+        to { background: url("final.png") -2383px 0; }
+      }
+      @keyframes Step{
+        100%{
+          left: 85%;
+        }
+      }
+
+      .wrap{
+        display: flex;
+        justify-content: space-around;
+      }
+      
+      .image2{
+        width: 171px;
+        height: 369px;
+        animation: Frog 0.4s steps(11) infinite;
+      }
+
+      .image1{
+        
+        width: 200px;
+        height: 223px;
+        animation: MyAnimation 1s steps(4) infinite;
+        position: absolute;
+        left: 0;
+        
+      }
+       
+      .image3{
+        width: 227px;
+        height: 309px;
+        animation: walk 1s steps(12) infinite,
+        Step 9s linear infinite;
+        position: absolute;
+        left: 0;
+      }
+ 
+    </style>
+</head>
+  <body>
+    <div class="wrap">
+      
+    
+      <div class="image2"></div>
+      <div class="image1"></div>
+    </div>
+
+      <div class="image3"></div>
+    
+      
+      
+    
+    
+
+  </body>
+</html>
