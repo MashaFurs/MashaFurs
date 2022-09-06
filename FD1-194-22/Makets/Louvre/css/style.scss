@@ -1,0 +1,1379 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@100;300;400;500;700&display=swap');
+@import 'mixins.scss';
+@import 'default.scss';
+@import 'variables.scss';
+
+body{
+    overflow-x: hidden;
+}
+//header
+.header{
+    background-color: $black;
+    color: $white;
+    padding-top: 61px;
+    padding-bottom: 58px;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+
+        .logo{
+            display: flex;
+            position: relative;
+
+            &>div{
+                border-left: 26px solid transparent;
+                border-right: 26px solid transparent;
+                border-top: 26px solid transparent;
+                border-bottom: 26px solid $white;              
+                position: absolute;
+                top:-28px;
+            }
+            &>p{
+                font-family: $Forum;
+                font-size: $fz22;
+                line-height: 31px;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                margin-left: 75px;
+            }
+        }
+        ul{
+            display: flex;
+
+            li{
+                margin-right: 55px;
+                font-weight: $thin;
+                line-height: 26px;
+                letter-spacing: 2px;
+
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+//main
+.main{
+    background-color: $black;
+
+    .container{
+        height: 810px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background: url('../img/Liza.jpg') no-repeat top 0 right 0;
+        
+        h1{
+            font-family: $Forum;
+            font-size: $fz80;
+            line-height: 90px;
+            letter-spacing: 5px;
+            text-transform: uppercase; 
+            font-weight: $regular; 
+            margin-top: 150px;
+        }
+        &>p{
+            font-weight: $light;
+            font-size: $fz28;
+            line-height: 33px;
+            letter-spacing: 2px;
+            margin-top: 25px;
+            
+        }
+        button{
+            width: 360px;
+            height: 75px;
+            background: $red;
+            border-radius: 10px;
+            font-family: $Roboto;
+            font-weight: $light;
+            line-height: 26px;
+            font-size: $fz22;
+            letter-spacing: 2px;
+            color: $white;
+            text-align: center;
+            margin-top: 75px;
+        }
+        .slider{
+            width: 600px;
+            height: 120px;
+            background: $black;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+
+            p:first-child{
+                line-height: 40px;
+                text-transform: uppercase;
+                margin-right: 55px;
+            }
+
+
+           .number{
+                display: flex;
+                
+                div{
+                    width: 16px;
+                    height: 16px;
+                    background-color: $white;
+                    margin-right: 25px;
+
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                }
+
+           }
+            
+           .arrow{
+                i:first-child{ 
+                    transform: rotate(270deg);
+                    margin-left: 60px;
+                }
+                i:last-child{ 
+                    transform: rotate(90deg);
+                    margin-left: 20px;
+                }
+           }
+    }
+}
+
+}
+
+//tour
+.tour{
+    background-color: $white;
+    padding-top: 75px;
+
+    .virtual-tour{
+
+        h2{
+            font-family: $Forum;
+            font-size: $fz80;
+            line-height: 90px;
+            font-weight: $regular;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: $gold;
+            margin-bottom: 25px;
+            margin-bottom: 10px;
+        }
+        hr{
+            width: 1440px;
+            height: 3px;
+            background: #710707;
+            border: none;
+        }
+    }
+    .place{
+        display: flex;
+        margin-top: 75px;
+        flex-wrap: wrap;
+
+        &>div{
+            width: 440px;
+            height: 424px;
+            
+            margin-right: 60px;
+            flex-shrink: 0;
+            margin-bottom: 75px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            &:nth-child(3){
+                margin-right: 0;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+
+            .place-name{
+                p{
+                    font-family: $Forum;
+                    font-weight: $regular;
+                    font-size: $fz32;
+                    line-height: 35px;
+                    letter-spacing: 5px;
+                    text-transform: uppercase;
+                    color: $black;
+                    margin-top: 25px;
+                }
+                hr{
+                width: 300px;
+                height: 2px;
+                background: #710707;
+                border: none;
+                }
+            }
+            .panorama-text{
+                p:first-child{
+                    font-weight: $thin;
+                    font-size: $fz22;
+                    line-height: 26px;
+                    color: $black;
+                    margin-bottom: 10px;
+                }
+                p:last-child{
+                    font-weight: $thin;
+                    font-size: $fz18;
+                    line-height: 21px;
+                    color: $black;
+                }
+                
+            }
+        }
+    }
+}
+
+//explore
+.explore{
+    background-color: $black;
+    .container{
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 75px;
+
+        .text{
+            padding-top: 75px;
+            margin-right: 60px;
+
+            h2{
+                font-family: $Forum;
+                font-size: $fz80;
+                font-weight: $regular;
+                line-height: 90px;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+            }
+            hr{
+                width: 660px;
+                height: 3px;
+                background: #710707;
+                border: none;
+            }
+            .title{
+                    font-weight: $light;
+                    font-size: $fz22;
+                    line-height: 38px;
+                    
+                    p:first-child{
+                        margin-top: 75px;
+                        margin-bottom: 25px;
+                    }
+                    p:last-child{
+                        margin-top: 25px;
+                    }
+                    span{
+                        color: $gold;
+                    }
+            }
+        }
+        .pict{
+            padding-top: 90px;
+        }
+    }
+}
+
+//video
+.video{
+    background-color: $white;
+    .container{
+        display: flex;
+        flex-direction: column;
+
+        .video-journey{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-top: 75px;
+            padding-bottom: 75px;
+
+            h2{
+                font-family: $Forum;
+                font-size: $fz80;
+                font-weight: $regular;
+                line-height: 90px;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                color: $gold
+            }
+            p{
+                font-weight: $light;
+                font-size: 22px;
+                line-height: 38px;
+                color: $black;
+            }
+        }
+        .main-video{
+            width: 1440px;
+            height: 650px;
+
+            iframe{
+                .ytp-title-link{
+                    display: none;
+                }
+            }
+        }
+        .small-video{
+            margin-top: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+
+            div{
+                
+                width: 452px;
+                height: 254px;
+            }
+        }
+    }
+}
+
+//art-gallery
+.art-gallery{
+    background-color: $black;
+    .container{
+        position: relative;
+        h2{
+            font-family: $Forum;
+            font-weight: $regular;
+            font-size: $fz80;
+            line-height: 90px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+
+        .photo{
+            display: flex;
+
+            div{
+                display: flex;
+                flex-direction: column;
+
+                &:first-child{
+                    justify-content: end;
+                    margin-right: 36px;
+                }
+
+                &:last-child{
+                    justify-content: end;
+                    margin-left: 36px;
+                }
+
+                img{
+                    margin-bottom: 24px;
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .gallery-black-back{
+            width: 1440px;
+            height: 360px;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
+
+//tickets
+.tickets{
+    background-color: $white;
+    .container{
+        padding-top: 75px;
+        padding-bottom: 75px;
+
+        h2{
+            font-family: $Forum;
+            font-weight: $regular;
+            font-size: $fz80;
+            line-height: 90px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: $gold;
+            margin-bottom: 25px;
+        }
+
+        hr{
+            width: 1440px;
+            height: 3px;
+            background: $red;
+            border: none;
+            margin-bottom: 75px;
+        }
+
+        .ticket-type{
+            display: flex;
+            justify-content: space-between;
+
+            .image{
+                width: 720px ;
+                height: 550px ;
+            }
+
+            .type{
+                display: flex;
+                flex-direction: column;
+                margin-left: 60px;
+                p{
+                    font-weight: $bold;
+                    font-size: $fz28;
+                    line-height: 33px;
+                    color: $black;
+                    margin-bottom: 50px;
+                }
+                div{
+                    margin-bottom: 25px;
+
+                    input{
+                        width: 17px;
+                        height: 17px;
+                        background: $black;
+                        border: 2px solid #000000;
+                    }
+
+                    span{
+                        color: $black;
+                        margin-left: 23px; 
+                        font-weight: $light;
+                        font-size: $fz22;
+                        line-height: 26px;  
+                        
+                    }
+                }
+                
+                
+            }
+
+            .amount{
+                display: flex;
+                flex-direction: column;
+                
+                &>p{
+                    font-weight: $bold;
+                    font-size: $fz28;
+                    line-height: 33px;
+                    color: $black;
+                    margin-bottom: 25px; 
+                }
+                .price{
+                    margin-top: 50px;
+                    margin-bottom: 60px;
+                }
+
+                div{
+
+                    p{
+                        font-weight: $light;
+                        font-size: $fz22;
+                        line-height: 26px;
+                        color: $black;
+                        margin-bottom: 15px;
+                    }
+
+                    div{
+                        width: 150px;
+                        height: 50px;
+                        border: 3px solid $black;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        padding-top: 18px;
+
+                        &.one{
+                            margin-bottom: 10px;
+                        }
+                        p{
+                            font-family: $Roboto;
+                            font-weight: $regular;
+                            font-size: $fz32;
+                            line-height: 38px;
+                            text-align: center;
+                            color: $black;
+                        }
+                    }
+                }
+                button{
+                    font-family: $Roboto;
+                    width: 175px;
+                    height: 50px;
+                    background: $black;
+                    border-radius: 2px;
+                    font-size: $fz22;
+                    font-weight: $light;
+                    line-height: 26px;
+                    letter-spacing: 2px;
+                    color: $white;
+                    text-align: center;                   
+                }
+            }
+        }
+    }
+}
+
+//Louvre
+.Louvre{
+    display: flex;
+    justify-content: center;
+}
+
+//contacts
+.contacts{
+    .container{
+        background-color: $white;
+        padding-top: 75px;
+        padding-bottom: 75px;
+
+        h2{
+            font-family: $Forum;
+            font-weight: $regular;
+            font-size: $fz80;
+            line-height: 90px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: $gold;
+        }
+        hr{
+            width: 1440px;
+            height: 3px;
+            background: $red;
+            border: none;
+            margin-top: 25px;
+            margin-bottom: 75px;
+        }
+        .location{
+            display: flex;
+            justify-content: space-between;
+
+            .adress{
+
+                p{
+                    &:first-child{
+                        font-weight: $medium;
+                        font-size: $fz28;
+                        line-height: 33px;
+                        color: $black;
+                        margin-bottom: 50px;
+                    }
+
+                    font-weight: $light;
+                    font-size: $fz22;
+                    line-height: 26px;
+                    color: $black;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
+
+//scribe
+.scribe{
+    background-color: $black;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 84px;
+        padding-bottom: 25px;
+
+        .logo{
+            display: flex;
+            position: relative;
+
+            &>div{
+                border-left: 26px solid transparent;
+                border-right: 26px solid transparent;
+                border-top: 26px solid transparent;
+                border-bottom: 26px solid $white;              
+                position: absolute;
+                top:-28px;
+            }
+            &>p{
+                font-family: $Forum;
+                font-size: $fz22;
+                line-height: 31px;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                margin-left: 75px;
+            }
+        }
+
+        ul{
+            li{
+                font-weight: $thin;
+                font-size: $fz22;
+                line-height: 26px;
+                letter-spacing: 2px;
+                color: $white;
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    .icons{
+        display: flex;
+        flex-direction: row;
+
+        div{
+            width: 48px;
+            height: 48px;
+            margin-right: 25px;
+            border-radius: 50%;
+            border: 1px solid #666666;
+            text-shadow: 0px 0px 0px #666666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:last-child{
+                margin-right: 0
+            }
+        }
+    }
+}
+
+//footer
+.footer{
+    background-color: $black;
+    hr{
+        width: 1920px;
+        height: 3px;
+        background: #666666;
+        border: none;
+        margin: 0 auto;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 50px;
+        padding-bottom: 52px;
+
+        p{
+            font-weight: $thin;
+            font-size: $fz22;
+            line-height: 22px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+
+@media all and (max-width: 1479px){
+    .container{
+        width: 1000px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+//header
+.header{
+    padding-bottom: 44px;
+       .container{    
+        .logo{
+            &>p{
+                font-size: $fz20;
+            }
+        }
+        ul{
+            li{
+                a{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+//main
+.main{
+    .container{
+        height: 585px;
+        background-size: 68%;
+        h1{
+            font-size: $fz50; 
+            margin-top: 50px;
+        }
+        &>p{
+            font-size: $fz24;            
+        }
+        button{
+            height: 60px;
+            margin-top: 50px;
+            font-size: $fz20;
+        }
+        .slider{
+            font-size: $fz20;
+            height: 73px;
+           .number{                
+                div{
+                    width: 12px;
+                    height: 12px;
+                }
+           }   
+           .arrow{
+                i:first-child{ 
+                    margin-left: 45px;
+                }
+           }
+    }
+}
+
+}
+
+//tour
+.tour{
+    padding-top: 60px;
+    .virtual-tour{
+
+        h2{
+            font-size: $fz50;
+            margin-bottom: 25px;
+            margin-bottom: 10px;
+        }
+        hr{
+            width: 984px;
+        }
+    }
+    .place{
+        margin-top: 60px;
+        padding-left: 128px;
+        padding-right: 128px;
+        justify-content: space-between;
+        &>div{
+            width: 330px;
+            height: auto;
+            margin-right: 0;
+            flex-shrink: 0;
+            margin-bottom: 60px;
+
+            .place-name{
+                p{
+                    font-size: $fz28;
+                    margin-bottom: 10px;
+                }
+                hr{
+                    width: 150px;
+                    margin-bottom: 10px;
+                }
+            }
+            .panorama-text{
+                p:first-child{
+                    font-size: $fz20;
+                    margin-bottom: 10px;
+                }
+                p:last-child{
+                    font-size: $fz18;
+                }
+                
+            }
+        }
+    }
+}
+
+//explore
+.explore{
+    .container{
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 60px;
+
+        .text{
+            padding-top: 60px;
+            margin-right: 0;
+
+            h2{
+                font-size: $fz50;
+                margin-bottom: 20px;
+            }
+            hr{
+                width: 984px;
+            }
+            .title{
+                    font-size: $fz20;                    
+                    p:first-child{
+                        margin-top: 60px;
+                        margin-bottom: 6px;
+                    }
+                    p:last-child{
+                        margin-top: 6px;
+                    }
+                    span{
+                        color: $gold;
+                    }
+            }
+        }
+        .pict{
+            padding-top: 60px;
+        }
+    }
+}
+
+//video
+.video{
+
+    .container{
+        display: flex;
+        flex-direction: column;
+
+        .video-journey{
+            padding-top: 60px;
+            padding-bottom: 40px;
+
+            h2{
+                font-size: $fz50;
+            }
+            p{
+                display: none;
+            }
+        }
+        .main-video{
+            width: auto;
+            height: auto;
+
+            iframe{
+                width: 960px;
+                height: 444px; 
+            }
+        }
+        .small-video{
+            margin-top: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+
+            div{
+                
+                width: auto;
+                height: auto;
+                
+                iframe{
+                    width: 300px;
+                    height: 170px;
+                }
+            }
+        }
+    }
+}
+
+//art-gallery
+.art-gallery{
+    .container{
+        h2{
+            font-size: $fz50;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .photo{
+
+            div{
+                img{
+                    width: 295px;
+                }
+
+                &:first-child{
+                    justify-content: end;
+                    margin-right: 36px;
+                }
+
+                &:last-child{
+                    justify-content: end;
+                    margin-left: 36px;
+                }
+
+                img{
+                    margin-bottom: 24px;
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .gallery-black-back{
+            width: 1000px;
+            height: 239px;
+            position: absolute;
+            bottom: 0;
+            img{
+                width: 1000px;
+                height: 239px;
+            }
+        }
+    }
+}
+
+//tickets
+.tickets{
+    background-color: $white;
+    .container{
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        h2{
+            font-size: $fz50;
+            margin-bottom: 20px;
+        }
+
+        hr{
+            width: 984px;
+            margin-bottom: 60px;
+        }
+
+        .ticket-type{
+
+            .image{
+                width: auto ;
+                height: auto ;
+
+                img{
+                    width: 700px;
+                    height: 440px;
+                }
+            }
+
+            .type{
+                display: none;
+    
+            }
+            
+        }
+    }
+}
+
+//Louvre
+.Louvre{
+    img{
+        width: 1000px;
+    }
+}
+
+//contacts
+.contacts{
+    .container{
+        padding-top: 60px;
+        padding-bottom: 50px;
+
+        h2{
+            font-size: $fz50;
+        }
+        hr{
+            width: 984px;
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+        .location{
+            .adress{
+
+                p{
+                    &:first-child{
+                        font-size: $fz24;
+                        margin-bottom: 35px;
+                    }
+
+                    font-size: $fz20;
+                    margin-bottom: 15px;
+                }
+            }
+            .map{
+                iframe{
+                    width: 694px;
+                    height: 454px;
+                }
+            }
+        }
+    }
+}
+
+}
+
+@media all and (max-width: 1039px){
+    .container{
+        width: 768px;
+    }
+
+//header
+.header{
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    .container{  
+        .logo{
+            
+            &>div{
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 20px solid transparent;
+                border-bottom: 20px solid #FFFFFF;
+                top: -19px;
+            }
+            &>p{
+                
+                font-size: $fz18;
+                margin-left: 53px;
+            }
+        }
+        ul{
+            li{
+                margin-right: 28px;
+
+                a{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+//main
+.main{
+    .container{
+        height: 770px;
+        background: url(../img/Liza.jpg) no-repeat center bottom 60px;
+        background-size: 93%;
+        padding-top: 10px;
+                
+                h1{
+                    text-align: center;
+                    font-size: 40px;
+                    margin-top: -7px;
+                    line-height: 61px;
+            
+                }
+                &>p{
+                    font-size: $fz20;
+                    line-height: 33px;
+                    text-align: center;
+                    margin-top: 0px;
+                    
+                    
+                }
+        button{
+           display: none;
+        }
+        .slider{
+            height: 60px;
+            right: 81px;
+    }
+}
+
+}
+
+//tour
+.tour{
+    padding-top: 40px;
+    .virtual-tour{
+
+        h2{
+            font-size: 40px;
+            margin-bottom: 25px;
+            margin-bottom: 10px;
+        }
+        hr{
+            width: 728px;
+        }
+    }
+    .place{
+        margin-top: 40px;
+        padding-left: 76px;
+        padding-right: 76px;
+        justify-content: space-between;
+        &>div{
+            width: 280px;
+            height: auto;
+            margin-right: 0;
+            flex-shrink: 0;
+            margin-bottom: 40px;
+
+            .place-name{
+                p{
+                    font-size: $fz22;
+                    margin-bottom: 10px;
+                }
+                hr{
+                    width: 150px;
+                    margin-bottom: 10px;
+                }
+            }
+            .panorama-text{
+                p:first-child{
+                    font-size: $fz18;
+                    margin-bottom: 10px;
+                }
+                p:last-child{
+                    font-size: 16px;
+                }
+                
+            }
+        }
+    }
+}
+
+//explore
+.explore{
+    .container{
+        padding-bottom: 40px;
+
+        .text{
+            padding-top: 40px;
+
+            h2{
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            hr{
+                width: 728px;
+            }
+            .title{
+                    display: none;
+            }
+        }
+        .pict{
+            padding-top: 40px;
+        }
+    }
+}
+
+//video
+.video{
+
+    .container{
+
+        .video-journey{
+            padding-top: 40px;
+            padding-bottom: 20px;
+
+            h2{
+                font-size: 40px;
+            }
+            
+        }
+        .main-video{
+            width: auto;
+            height: auto;
+
+            iframe{
+                width: 728px;
+                height: 329px; 
+            }
+        }
+        .small-video{
+            margin-top: 21px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+
+            div{
+                
+                iframe{
+                    width: 354px;
+                    height: 199px;
+                }
+                &:last-child{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+//art-gallery
+.art-gallery{
+    .container{
+        h2{
+            font-size: 40px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .photo{
+
+            div{
+                img{
+                    width: 352px;
+                }
+
+                &:first-child{
+                    display: none;
+                }
+
+                &:last-child{
+                    justify-content: end;
+                    margin-left: 28px;
+                }
+
+                img{
+                    margin-bottom: 24px;
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .gallery-black-back{
+            width: 768px;
+            height: 160px;
+            img{
+                width: 768px;
+                height: 160px;
+            }
+        }
+    }
+}
+
+//tickets
+.tickets{
+    
+    .container{
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        h2{
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        hr{
+            width: 728px;
+            margin-bottom: 40px;
+        }
+
+        .ticket-type{
+
+            .image{
+                width: auto ;
+                height: auto ;
+
+                img{
+                    width: 444px;
+                    height: 340px;
+                }
+            }
+
+            
+        }
+    }
+}
+
+
+//Louvre
+.Louvre{
+    img{
+        width: 768px;
+    }
+}
+
+//contacts
+.contacts{
+    .container{
+        padding-top: 40px;
+        padding-bottom: 67px;
+
+        h2{
+            font-size: 40px;
+        }
+        hr{
+            width: 728px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .location{
+        flex-direction: column;
+
+            .adress{
+
+                p{
+                    &:first-child{
+                        font-size: $fz20;
+                        margin-bottom: 40px;
+                    }
+
+                    
+                    font-size: $fz18;
+                    line-height: 5px;
+                    margin-bottom: 25px;
+                }
+            }
+            .map{
+                iframe{
+                    width: 728px;
+                    height: 476px;
+                }
+            }
+        }
+    }
+}
+
+//scribe
+.scribe{
+    background-color: $black;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 38px;
+        padding-bottom: 25px;
+
+        .logo{
+            display: flex;
+            position: relative;
+
+            &>div{
+                border-left: 26px solid transparent;
+                border-right: 26px solid transparent;
+                border-top: 26px solid transparent;
+                border-bottom: 26px solid $white;              
+                position: absolute;
+                top:-28px;
+            }
+            &>p{
+                font-family: $Forum;
+                font-size: $fz22;
+                line-height: 31px;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                margin-left: 75px;
+            }
+        }
+
+        ul{
+            li{
+                font-weight: $thin;
+                font-size: $fz22;
+                line-height: 26px;
+                letter-spacing: 2px;
+                color: $white;
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    .icons{
+        display: block;
+
+        div{
+            margin-bottom: 15px;
+            margin-right: 0;
+    }
+}
+
+
+}
+}

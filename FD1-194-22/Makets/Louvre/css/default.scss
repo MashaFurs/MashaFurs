@@ -1,0 +1,26 @@
+@import 'variables.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: $Roboto;
+    font-size: $fz22;
+    font-weight: $regular;
+    color: $white;
+}
+.container{
+    width: $xl;
+    margin: 0 auto;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+
+
