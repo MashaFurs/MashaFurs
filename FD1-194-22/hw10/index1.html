@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anketa_if</title>
+</head>
+<body>
+    <script>
+
+        var lastname=prompt("Введите Вашу фамилию?");
+        
+        var name=prompt("Введите Ваше имя?");
+        
+        var patronymic=prompt("Введите Ваше отчество?");
+        
+        var age=parseInt(prompt("Введите Ваш возраст в годах"));
+        while (isNaN(age)) {
+          age=parseInt(prompt("Введите Ваш возраст В ГОДАХ!")); //Зациклила, пока не будет введено число
+        }
+        
+        var genderM= confirm("Ваш пол - мужской?");
+        var gender;
+        var retired;
+        if (genderM==true) {   //Вложила условие в условие
+          gender= "мужской";
+              if(age>62) {
+                retired = "да";
+              } else {
+                retired = "нет";
+              }
+        } else{
+          gender= "женский";
+              if(age>57) {
+                retired = "да";
+              } else{
+                retired = "нет";
+              }
+        }
+        
+        alert ("Ваше ФИО: "+lastname +" " + name +" "  + patronymic +
+              "\nВаш возраст в годах: " + age +
+              "\nВаш возраст в днях: " + age*365+
+              "\nЧерез 5 лет Вам будет: " + (age+5)+
+              "\nВаш пол: "+ gender +
+              "\nВы на пенсии: " + retired);
+        
+        </script>  
+</body>
+</html>
