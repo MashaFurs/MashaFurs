@@ -803,9 +803,6 @@ body {
       .tickets .container .ticket-type .type {
         display: none; }
 
-  .Louvre img {
-    width: 1000px; }
-
   .contacts .container {
     padding-top: 60px;
     padding-bottom: 50px; }
@@ -982,9 +979,6 @@ body {
       .tickets .container .ticket-type .image img {
         width: 444px;
         height: 340px; }
-
-  .Louvre img {
-    width: 768px; }
 
   .contacts .container {
     padding-top: 40px;
@@ -1216,8 +1210,8 @@ body {
       margin-top: 25px;
       margin-bottom: 33px; }
 
-  .Louvre img {
-    width: 660px; }
+  .Louvre {
+    height: 300px; }
 
   .contacts .container {
     padding-top: 40px;
@@ -1413,8 +1407,8 @@ body {
           width: 330px;
           height: 180px; }
 
-  .Louvre img {
-    display: none; }
+  .Louvre {
+    height: 300px; }
 
   .contacts .container {
     padding-top: 20px;

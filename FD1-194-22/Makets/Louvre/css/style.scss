@@ -965,13 +965,6 @@ body{
     }
 }
 
-//Louvre
-.Louvre{
-    img{
-        width: 1000px;
-    }
-}
-
 //contacts
 .contacts{
     .container{
@@ -1288,13 +1281,6 @@ body{
     }
 }
 
-
-//Louvre
-.Louvre{
-    img{
-        width: 768px;
-    }
-}
 
 //contacts
 .contacts{
@@ -1681,13 +1667,10 @@ body{
     }
 }
 
-
-//Louvre
-.Louvre{
-    img{
-        width: 660px;
+    //Louvre
+    .Louvre{
+        height: 300px;
     }
-}
 
 //contacts
 .contacts{
@@ -2023,8 +2006,7 @@ body{
 
     //Louvre
 .Louvre{
-    img{
-        display: none;    }
+    height: 300px;
 }
 
 .contacts{
