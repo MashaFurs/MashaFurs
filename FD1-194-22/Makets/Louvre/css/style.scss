@@ -52,6 +52,11 @@ body{
                 &:last-child{
                     margin-right: 0;
                 }
+
+              &:hover{
+                font-weight: $light;
+                transform: scale(1.2);
+              }  
             }
         }
     }

@@ -70,6 +70,10 @@ body {
         letter-spacing: 2px; }
         .header .container ul li:last-child {
           margin-right: 0; }
+        .header .container ul li:hover {
+          font-weight: 300;
+          -webkit-transform: scale(1.2);
+                  transform: scale(1.2); }
 
 .main {
   background-color: #030303; }
