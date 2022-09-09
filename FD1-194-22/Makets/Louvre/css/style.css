@@ -489,7 +489,9 @@ body {
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  height: 400px;
+  background: url("../img/parallax.jpg") no-repeat center; }
 
 .contacts .container {
   background-color: #FFFFFF;
