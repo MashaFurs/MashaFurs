@@ -64,14 +64,14 @@
 
         function getInformation() {
             countryName= prompt('Введи название страны!');
-            getCountryInfo(countryName);
+            alert (getCountryInfo(countryName));
         }
 
         function getCountryInfo(countryName) {
             if ( countryName in countrysH )
-                return alert('страна: ' + countryName + ', столица: ' + countrysH[countryName])  ;
+                return 'страна: ' + countryName + ', столица: ' + countrysH[countryName]  ;
             else
-                return alert ( 'нет информации о стране ' + countryName + '!' ) ;
+                return 'нет информации о стране ' + countryName + '!'  ;
         }
 
     //Перечень всех стран
