@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country</title>
+    <style>
+        body{
+            background-color: #e0f7fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        input{
+            background-color: #fff59d;
+            width: 280px;
+            height: 62px;
+            border-radius: 20px;
+            font-size: 15px;
+            padding: 20px;
+            margin-left: 30px;
+            border: 3px solid #c0ca33;
+
+        }
+        input:hover{
+            transform: scale(1.2);
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <input type="button" value="Ввод информации о стране" onclick='inputInformation()'>
+    <br>
+    <br>
+    <input type="button" value="Получение информации о стране" onclick='getInformation()'>
+    <br>
+    <br>
+    <input type="button" value="Перечень всех стран" onclick='allCountry()'>
+    <br>
+    <br>
+    <input type="button" value="Удаление информации о стране" onclick='inputDeleteCountry()'>
+
+
+    <script>
+        var countrysH={};
+
+    //Ввод информации о стране
+
+        function inputInformation() {
+            countryName= prompt('Введите страну!');
+            capitalName=prompt('Введите столицу этой страны.');
+            addCountry(countryName,capitalName);
+        }
+
+        function addCountry(countryName,capitalName) { 
+           countrysH[countryName]=capitalName;    
+        }
+
+
+    //Получение информации о стране
+
+        function getInformation() {
+            countryName= prompt('Введи название страны!');
+            getCountryInfo(countryName);
+        }
+
+        function getCountryInfo(countryName) {
+            if ( countryName in countrysH )
+                return alert('страна: ' + countryName + ', столица: ' + countrysH[countryName])  ;
+            else
+                return alert ( 'нет информации о стране ' + countryName + '!' ) ;
+        }
+
+    //Перечень всех стран
+
+        function allCountry(countryName,capitalName) {
+            for (var key in countrysH) {
+                console.log( 'страна: ' + key + ', столица: ' + countrysH[key]);
+            }
+        }
+
+    //Удаление информации о стране
+
+        function inputDeleteCountry() {
+            countryName= prompt('Введи страну, которую хотите удалить.');
+            deleteCountry(countryName);
+        }
+
+        function deleteCountry(countryName) {
+            delete countrysH[countryName];
+        }
+           
+
+    </script>
+</body>
+</html>
