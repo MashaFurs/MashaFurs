@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&family=Open+Sans&family=Roboto:wght@900&display=swap');
+@import 'mixins.scss';
+@import 'default.scss';
+@import 'variables.scss';
+
+
+.main-page{
+     
+    .container{
+        height: 833px;
+        background:
+        url('../img/darkcloud-mainpage.png') no-repeat top left,
+        url('../img/cloud-mainpage.png') no-repeat top left,
+        url('../img/main-background.jpg') no-repeat top left;
+        padding-top: 36px;
+        padding-left: 96px;
+          
+
+        .header{
+            display: flex;
+            justify-content: space-between;
+            padding-right: 96px;
+
+            .logo{
+                img{
+                    &:first-child{
+                        margin-right: 16px;
+                    }
+                }
+            }
+
+            ul{
+                display: flex;
+
+                li{
+                    line-height: 19px;
+                    color: $green;
+                    margin-right: 56px;
+
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                    &:hover{
+                        transform: scale(1.2);
+                        color: #1a4240 ;
+                    }
+                }
+            }
+        }
+
+        .dream{
+            h1{
+                padding-top: 90px;
+                padding-bottom: 22px;
+                font-family: $Inter;
+                font-weight: $extrabold;
+                font-size: $fz64;
+                line-height: 64px;
+                color: $white;
+            }
+
+            button{
+                width: 481px;
+                height: 61px;
+                background: linear-gradient(91.82deg, #FB8B62 5.83%, #F47648 89.73%), $orange;
+                border-radius: 16px;
+                border: none;
+                font-family: $Montserrat;
+                font-weight: $bold;
+                font-size: $fz30;
+                line-height: 56px;
+                color: $white;
+
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .main-information{
+            margin-top: 43px;
+            display: flex;
+            justify-content: space-between;
+            .text{
+                p{
+
+                    &:first-child{
+                        padding-bottom: 38px;
+                        font-size: $fz20;
+                        line-height: 28px;
+                        color: $white;
+                    }
+                    
+                    &:nth-child(2){
+                        font-size: $fz18;
+                        line-height: 24px;
+                        color: $white;
+                        display: inline-block;
+                        margin-right: 18px;
+                        
+                    }          
+                }
+
+                button.heartbeat{
+                    display: inline-block;
+                    width: 64px;
+                    height: 64px;
+                    border: 1px solid #FFFFFF;
+                    border-radius: 43.5px;
+                    background-color: rgba(28,28,28,0);
+	                animation: heartbeat 2s ease-in-out infinite both;
+
+                      @keyframes heartbeat {
+                        from {
+                          -webkit-transform: scale(1);
+                                  transform: scale(1);
+                          -webkit-transform-origin: center center;
+                                  transform-origin: center center;
+                          -webkit-animation-timing-function: ease-out;
+                                  animation-timing-function: ease-out;
+                        }
+                        10% {
+                          -webkit-transform: scale(0.91);
+                                  transform: scale(0.91);
+                          -webkit-animation-timing-function: ease-in;
+                                  animation-timing-function: ease-in;
+                        }
+                        17% {
+                          -webkit-transform: scale(0.98);
+                                  transform: scale(0.98);
+                          -webkit-animation-timing-function: ease-out;
+                                  animation-timing-function: ease-out;
+                        }
+                        33% {
+                          -webkit-transform: scale(0.87);
+                                  transform: scale(0.87);
+                          -webkit-animation-timing-function: ease-in;
+                                  animation-timing-function: ease-in;
+                        }
+                        45% {
+                          -webkit-transform: scale(1);
+                                  transform: scale(1);
+                          -webkit-animation-timing-function: ease-out;
+                                  animation-timing-function: ease-out;
+                        }
+                      }                      
+                }
+
+                .subscr{
+                    margin-top: 127px;
+                    ul{ display: flex;
+                        li{
+                            a{
+                                img{
+                                    &:first-child{
+                                        margin-right: 28px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+
+            .slider{
+                min-width: 0;
+                position: relative;
+                margin-top: 85px;
+                .slick-list{
+                    overflow: hidden;
+                    width: 704px;
+                }
+                .slick-track{
+                    display: flex;
+                    position: relative;
+                }
+                .slick-arrow{
+                    position: absolute;
+                    top: 104%;
+                    z-index: 10;
+                    width: 38px;
+                    height: 38px;
+                    border: 1px solid #FFFFFF;
+                    border-radius: 43.5px;
+                    font-size: 0;
+                    background-color: rgba(28, 28, 28, 0);
+                }
+                .slick-arrow.slick-next{
+                    background: url('../img/main-slider-arrow-left.svg') no-repeat center;
+                   }
+                .slick-arrow.slick-prev{
+                 background: url('../img/main-slider-arrow-right.svg') no-repeat center;
+                 right: 594px;
+                }
+                .main-slider-item{
+                    width: 211px;
+                    height: 201px;
+                    overflow: hidden;
+                    position: relative;
+            
+                    img{
+                        width: 100%;
+
+                    }
+                    p{
+                        position: absolute;
+                        bottom:0%; 
+                        font-weight: $bold;
+                        font-size: $fz14;
+                        line-height: 24px;
+                        color: $white;
+                        left: 8%;
+                    }
+                }
+            }
+        }
+    }
+}
