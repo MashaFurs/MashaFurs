@@ -165,6 +165,7 @@
     }
 
     .slider{
+        
         min-width: 0;
         position: absolute;
         bottom: 10%;
@@ -1305,5 +1306,479 @@
 
             }
         
+    }
+}
+
+
+//Adaptiv
+
+@media all and (max-width: 1380px) {
+    .container{
+        width: 1000px;
+        
+    }
+
+    .days{
+
+        .day-one{
+            padding-bottom: 135px;
+            background-size:110%;
+        }
+
+        .day-two{
+            padding-bottom: 100px;
+            .container{
+                .wrap{
+                    p{
+                        width: 360px;
+                    }
+                }
+            }
+
+            .day-two-icons{
+                top: 52%;
+            }
+        }
+
+        .program{
+            .container{
+    
+                .program-variants{
+    
+                    div{
+                        width: 239px; 
+                        
+                        img{
+                            width: 239px;
+                        }
+                        p{    
+                            span{
+                                
+                                font-size: 17px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .day-three{
+            padding-bottom: 250px;
+        }
+
+        .day-four-and-five{    
+            background-size: 115%;
+    
+            .day-five{
+
+                .day-five-icons{
+                    div{
+                        &:last-child{
+                           display: none;
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        .day-six{
+            padding-bottom: 193px;
+            padding-top: 275px;
+        }
+    }
+
+    .order-price{
+        .order{  
+            padding-bottom: 136px
+        }
+    }
+
+    .team{
+        padding-top: 83px;
+        padding-bottom: 135px;
+
+        .container{
+            .photo{
+                .photo-items{
+                    width: 305px;
+
+                    img{
+                        width: 305px;   
+                    }
+                }
+            }
+        }
+    }
+
+    .contacts{
+        .container{
+
+            &>div{
+                padding-right: 37px;
+            }
+
+            .one{
+                img{
+
+                    &:first-child{
+                        margin-bottom: 7px;
+                    }
+                }
+            }
+
+            .three{
+                .video{
+                    img{
+                        width: 72px;
+                    }
+                }
+            }
+
+            .four{
+                padding-left: 16px;
+                width: 37%;
+            }
+        }
+    }
+}
+
+
+@media all and (max-width: 1032px){
+
+    .container{
+        width: 768px;
+    }
+
+    .main-page{
+        padding-bottom: 104px;
+        background-size: cover;
+
+        .container{
+
+            .header{
+                ul{
+                    li{
+                        margin-right: 40px;
+                    }
+                }
+            }
+
+            .dream{
+                h1{
+                    padding-top: 63px;
+                    padding-bottom: 44px;
+                }
+            }
+
+            .main-information{
+                margin-top: 23px;
+                .text{
+
+                    p{
+                        &:first-child{
+                            padding-top: 11px;
+                        }
+                    }
+                    .subscr{
+                        margin-top: 12px;
+                    }
+                }
+            }
+        }
+
+        .slider{
+            bottom: 8%;
+            right: 0%;
+
+            .slick-arrow{
+                top: 106%;
+            }
+        }
+    }
+
+    .travel{
+        padding-top: 80px;
+        padding-bottom: 110px;
+        background-size: 115%;
+
+        .airplane{
+            background: url(../img/airplane.png) no-repeat bottom 19% right;
+            background-size: 44%;
+        }
+    }
+
+    .days{
+
+        .day-one{
+            padding-top: 0px;
+            padding-bottom: 443px;
+            background-size: 141%;
+
+            .container{
+                .wrap{
+                    width: 100%;
+                }
+            }
+
+            .day-one-icons{
+                right: 0;
+                top: 55%;
+                left: 13%;
+            }
+        }
+
+        .day-two{
+            background-size: 90%;
+            padding-bottom: 306px;
+
+            .container{
+                .wrap{
+                    h2{
+                        font-size: 38px;
+                        width: 100%;
+                        &+p{
+                            width: 433px;
+                            padding-bottom: 12px;
+                        }
+                    }
+
+                    .text{
+                        justify-content: flex-start;
+                    }
+
+                    p{
+                        width: 100%;
+                        margin-top: 26px;
+                    }
+                }
+            }
+
+            .day-two-icons{
+                top: 69%;
+                left: 13%;
+                div{
+                    margin-right: 30px;
+                    margin-left: 0;
+                }
+            }
+
+           
+        }
+
+        .program{
+            .container{
+                .program-variants{
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+
+                    div{
+                        margin-bottom: 20px;
+                        width: 315px;
+                        flex-shrink: 0;
+
+                        img{
+                            width: 315px;
+                        }
+
+                        p{
+                            span{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .day-three{
+            padding-bottom: 316px;
+
+            .container{
+                .wrap{
+                    h2{
+                        width: 100%;
+                        margin-bottom: 13px;
+                    }
+
+                    p{
+                        width: 100%;
+                    }
+                }
+            }
+
+            .day-three-icons{
+                left: 13%;
+                top: 63%;
+
+                div{
+                    margin-left: 0;
+                    margin-right: 30px;
+                }
+            }
+        }
+
+        .day-four-and-five{
+            background-size: 139%;
+
+            .day-four{
+                padding-bottom: 278px;
+                .container{
+                    h2{
+                        width: 100%;
+                    }
+
+                    p{
+                        width: 100%;
+                    }
+                }
+
+                .day-four-icons{
+                    top: 62%;
+                    left: 13%;
+                }
+            }
+
+            .day-five{
+                .container{
+                    justify-content: flex-start;
+
+                    h2{
+                        width: 100%;
+                        font-size: 38px;
+
+                        &+p{
+                            width: 100%;
+                        }
+                    }
+
+                    .add{
+                        width: 100%;
+                    }
+                }
+
+                .day-five-icons{
+                    display: none;
+                }
+            }
+        }
+
+        .day-six{
+            padding-bottom: 90px;
+            padding-top: 166px;
+            background-size: 133%;
+        }
+    }
+
+    .order-price{
+
+        background-size: 128%;
+        .order{
+            .container{
+                display: block;
+
+                .online-order{
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+
+            }
+        }
+
+        .book{
+
+            .container{
+                img{
+                    height: 214px;
+                    width: 191px;
+                    margin-top: 13px;
+                }
+
+                .text{
+                    margin-left: 8px;
+                    margin-top: 16px;
+
+                    h4{
+                        font-size: 31px;
+                    }
+
+                    p{
+                        font-size: 18px;
+                    }
+
+                    form{
+
+                        display: flex;
+                        input[type='email']{
+                            width: 100%;
+                            margin-right: 0;
+                        } 
+
+                        input[type='submit']{
+                            margin-top: 10px;
+                            margin-left: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .team{
+
+        .container{
+
+            h2{
+                font-size: 45px;
+                margin-bottom: 16px;
+                width: 100%;
+            }
+
+            p{
+                width: 100%;
+                margin-bottom: 46px;
+            }
+
+            .photo{
+                flex-direction: column;
+                align-items: center;
+
+                .photo-items{
+                    width: 450px;
+
+                    img{
+                        width: 450px;
+                    }
+
+                    p{
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .contacts{
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .two{
+                width: 52%;
+                margin-bottom: 35px;
+            }
+
+            .three{
+                width: 35%;
+            }
+
+            .four{
+                width: 52%;
+                padding-left: 0;
+            }
+        }
     }
 }

@@ -1021,4 +1021,247 @@ li {
       line-height: 24px;
       color: #FFFFFF; }
 
+@media all and (max-width: 1380px) {
+  .container {
+    width: 1000px; }
+
+  .days .day-one {
+    padding-bottom: 135px;
+    background-size: 110%; }
+  .days .day-two {
+    padding-bottom: 100px; }
+    .days .day-two .container .wrap p {
+      width: 360px; }
+    .days .day-two .day-two-icons {
+      top: 52%; }
+  .days .program .container .program-variants div {
+    width: 239px; }
+    .days .program .container .program-variants div img {
+      width: 239px; }
+    .days .program .container .program-variants div p span {
+      font-size: 17px; }
+  .days .day-three {
+    padding-bottom: 250px; }
+  .days .day-four-and-five {
+    background-size: 115%; }
+    .days .day-four-and-five .day-five .day-five-icons div:last-child {
+      display: none; }
+  .days .day-six {
+    padding-bottom: 193px;
+    padding-top: 275px; }
+
+  .order-price .order {
+    padding-bottom: 136px; }
+
+  .team {
+    padding-top: 83px;
+    padding-bottom: 135px; }
+    .team .container .photo .photo-items {
+      width: 305px; }
+      .team .container .photo .photo-items img {
+        width: 305px; }
+
+  .contacts .container > div {
+    padding-right: 37px; }
+  .contacts .container .one img:first-child {
+    margin-bottom: 7px; }
+  .contacts .container .three .video img {
+    width: 72px; }
+  .contacts .container .four {
+    padding-left: 16px;
+    width: 37%; } }
+@media all and (max-width: 1032px) {
+  .container {
+    width: 768px; }
+
+  .main-page {
+    padding-bottom: 104px;
+    background-size: cover; }
+    .main-page .container .header ul li {
+      margin-right: 40px; }
+    .main-page .container .dream h1 {
+      padding-top: 63px;
+      padding-bottom: 44px; }
+    .main-page .container .main-information {
+      margin-top: 23px; }
+      .main-page .container .main-information .text p:first-child {
+        padding-top: 11px; }
+      .main-page .container .main-information .text .subscr {
+        margin-top: 12px; }
+    .main-page .slider {
+      bottom: 8%;
+      right: 0%; }
+      .main-page .slider .slick-arrow {
+        top: 106%; }
+
+  .travel {
+    padding-top: 80px;
+    padding-bottom: 110px;
+    background-size: 115%; }
+    .travel .airplane {
+      background: url(../img/airplane.png) no-repeat bottom 19% right;
+      background-size: 44%; }
+
+  .days .day-one {
+    padding-top: 0px;
+    padding-bottom: 443px;
+    background-size: 141%; }
+    .days .day-one .container .wrap {
+      width: 100%; }
+    .days .day-one .day-one-icons {
+      right: 0;
+      top: 55%;
+      left: 13%; }
+  .days .day-two {
+    background-size: 90%;
+    padding-bottom: 306px; }
+    .days .day-two .container .wrap h2 {
+      font-size: 38px;
+      width: 100%; }
+      .days .day-two .container .wrap h2 + p {
+        width: 433px;
+        padding-bottom: 12px; }
+    .days .day-two .container .wrap .text {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; }
+    .days .day-two .container .wrap p {
+      width: 100%;
+      margin-top: 26px; }
+    .days .day-two .day-two-icons {
+      top: 69%;
+      left: 13%; }
+      .days .day-two .day-two-icons div {
+        margin-right: 30px;
+        margin-left: 0; }
+  .days .program .container .program-variants {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+    .days .program .container .program-variants div {
+      margin-bottom: 20px;
+      width: 315px;
+      -ms-flex-negative: 0;
+          flex-shrink: 0; }
+      .days .program .container .program-variants div img {
+        width: 315px; }
+      .days .program .container .program-variants div p span {
+        font-size: 20px; }
+  .days .day-three {
+    padding-bottom: 316px; }
+    .days .day-three .container .wrap h2 {
+      width: 100%;
+      margin-bottom: 13px; }
+    .days .day-three .container .wrap p {
+      width: 100%; }
+    .days .day-three .day-three-icons {
+      left: 13%;
+      top: 63%; }
+      .days .day-three .day-three-icons div {
+        margin-left: 0;
+        margin-right: 30px; }
+  .days .day-four-and-five {
+    background-size: 139%; }
+    .days .day-four-and-five .day-four {
+      padding-bottom: 278px; }
+      .days .day-four-and-five .day-four .container h2 {
+        width: 100%; }
+      .days .day-four-and-five .day-four .container p {
+        width: 100%; }
+      .days .day-four-and-five .day-four .day-four-icons {
+        top: 62%;
+        left: 13%; }
+    .days .day-four-and-five .day-five .container {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; }
+      .days .day-four-and-five .day-five .container h2 {
+        width: 100%;
+        font-size: 38px; }
+        .days .day-four-and-five .day-five .container h2 + p {
+          width: 100%; }
+      .days .day-four-and-five .day-five .container .add {
+        width: 100%; }
+    .days .day-four-and-five .day-five .day-five-icons {
+      display: none; }
+  .days .day-six {
+    padding-bottom: 90px;
+    padding-top: 166px;
+    background-size: 133%; }
+
+  .order-price {
+    background-size: 128%; }
+    .order-price .order .container {
+      display: block; }
+      .order-price .order .container .online-order {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+    .order-price .book .container img {
+      height: 214px;
+      width: 191px;
+      margin-top: 13px; }
+    .order-price .book .container .text {
+      margin-left: 8px;
+      margin-top: 16px; }
+      .order-price .book .container .text h4 {
+        font-size: 31px; }
+      .order-price .book .container .text p {
+        font-size: 18px; }
+      .order-price .book .container .text form {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        .order-price .book .container .text form input[type='email'] {
+          width: 100%;
+          margin-right: 0; }
+        .order-price .book .container .text form input[type='submit'] {
+          margin-top: 10px;
+          margin-left: 25px; }
+
+  .team .container h2 {
+    font-size: 45px;
+    margin-bottom: 16px;
+    width: 100%; }
+  .team .container p {
+    width: 100%;
+    margin-bottom: 46px; }
+  .team .container .photo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .team .container .photo .photo-items {
+      width: 450px; }
+      .team .container .photo .photo-items img {
+        width: 450px; }
+      .team .container .photo .photo-items p {
+        margin-top: 20px;
+        margin-bottom: 20px; }
+
+  .contacts .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .contacts .container .two {
+      width: 52%;
+      margin-bottom: 35px; }
+    .contacts .container .three {
+      width: 35%; }
+    .contacts .container .four {
+      width: 52%;
+      padding-left: 0; } }
+
 /*# sourceMappingURL=style.css.map */
