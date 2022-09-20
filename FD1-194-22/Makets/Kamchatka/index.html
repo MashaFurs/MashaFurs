@@ -17,10 +17,10 @@
                     <img src="img/logo-text.png" alt="logo" title="logo">
                 </div>
                 <ul>
-                    <li><a href="#">Расписание тура</a></li>
-                    <li><a href="#">Как записаться</a></li>
-                    <li><a href="#">Команда</a></li>
-                    <li><a href="#">Забронировать</a></li>
+                    <li><a href="#timing" title="timing">Расписание тура</a></li>
+                    <li><a href="#registration" title="registration">Как записаться</a></li>
+                    <li><a href="#team" title="team">Команда</a></li>
+                    <li><a href="#order" title="order">Забронировать</a></li>
                 </ul>
             </div>
 
@@ -33,11 +33,11 @@
                 <div class="text">
                     <p>Тур перевернет ваш мир с ног на голову <br> и оставит впечатления на всю жизнь. </p>
                     <p>Расписание тура</p>
-                    <button class="heartbeat"><a href="#"><img src="img/arrow-main-page.svg" alt="timing" title="timing"></a></button>
+                    <button class="heartbeat"><a href="#timing" title="timing"><img src="img/arrow-main-page.svg" alt="timing" title="timing"></a></button>
                     <div class="subscr">
                         <ul>
-                            <li><a href="#"><img src="img/facebook-main.svg" alt="facebook" title="facebook"></a></li>
-                            <li><a href="#"><img src="img/instagram-main.svg" alt="instagram" title="instagram"></a></li>
+                            <li><a href="https://www.facebook.com/dreamkamtour" title="facebook" target="_blank"><img src="img/facebook-main.svg" alt="facebook" title="facebook"></a></li>
+                            <li><a href="https://www.instagram.com/dreamkamtour/" title="instagram" target="_blank"><img src="img/instagram-main.svg" alt="instagram" title="instagram"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
         <div class="airplane">
             <div class="container">
                 <div class="text-up">
-                    <h2>Путешествие на край света<br> начинается</h2>
+                    <h2><a name="registration">Путешествие на край света<br> начинается</a></h2>
                     <p>Ваша мечта осуществилась, вы приняли решение,<br> и вам предстоит путешествие на край света.</p>
                     <p>Этот маршрут лучший вариант для тех, кто хочет ощутить, как живёт самая<br> молодая земля нашей планеты, многое увидеть, испытать на себе и полюбить,<br> увезти целый рюкзак незабываемых чувств и впечатлений. Каждый день вы<br> будете выезжать на радиальные маршруты, а проживать в комфортабельных<br> двухместных номерах. </p>
                 </div>
@@ -113,7 +113,7 @@
         <div class="day-one">
             <div class="container">
                 <div class="wrap">
-                <h2><span>День 1.</span> Прибытие. Встреча в аэропорту и размещение</h2>
+                <h2><span><a name="timing">День 1.</a></span> Прибытие. Встреча в аэропорту и размещение</h2>
                 <p>С высоты птичьего полета вы увидите знаменитые «домашние»  вулканы – Корякский, Авачинский и Козельский. У выхода в аэропорту<span>вас встретят с табличкой «ДРИМ ТУР».</span>
                     <br><br>
                     <span>По пути в гостиницу сбор средств</span> с членов группы, инструктаж по программе этого дня (бассейн с термальной водой, шашлык, знакомство с группой, алкоголь, фейерверк не раньше 20:00). 
@@ -306,12 +306,167 @@
             </div>
         </div>
 
-        
-
-
-
     </div>
-    
+
+
+    <div class="order-price">
+        <div class="order">
+            <div class="container">
+                <div class="online-order">
+                    
+                        <h3><a name="order">Онлайн-заявка</a></h3>
+                        <ul class="icons">
+                            <li><a href="https://www.instagram.com/dreamkamtour/" title="instagram" target="_blank"><img src="img/order-icon-inst.svg" alt="instagram" title="instagram"></a></li>
+                            <li><a href="https://www.facebook.com/dreamkamtour" title="facebook" target="_blank"><img src="img/order-icon-facebook.svg" alt="facebook" title="facebook"></a></li>
+                            <li><a href="https://vk.com/dreamkamtour" title="vk" target="_blank"><img src="img/order-icon-vk.svg" alt="vk" title="vk"></a></li>
+                        </ul>
+                    
+                </div>
+
+                <div class="order-forms">
+                    <form action="http://fe.it-academy.by/TestForm.php" method="post">
+                        
+                        <div class="input-text">
+                            <div>
+                                <p>Имя участника</p>
+                                <input type="text" name="name" placeholder="Имя">
+                            </div>
+                            <div>
+                                <p>Количество человек</p>
+                                <input type="text" name="number" placeholder="1">
+                            </div>
+                        </div>
+                        
+                        <div class="input-radio">
+                            <p>Тариф</p>
+                            <div class="price">
+                                <div class="price-base">
+                                    <label><input type="radio" name="radio" value="base"> <span>Базовый (для камчадал)</span></label>
+                                    <p>79 000 руб</p>
+                                </div>
+                                <div class="price-base">
+                                    <label><input type="radio" name="radio" value="base-with-live"> <span>Базовый + проживание</span></label>
+                                    <p>99 000 руб</p>
+                                </div>
+                                <div class="price-base">
+                                    <label><input type="radio" name="radio" value="base-with-live-dolina"> <span>Базовый + проживание + долина гейзеров</span></label>
+                                    <p>179 000 руб</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-date">
+                            <p>Даты тура</p>
+                            <input type="date" name="trip-start" value="23.06-04.07" min="2022-09-01" max="2023-09-01" placeholder="23.06-04.07">
+                        </div>
+
+                        <div class="input-text-comment">
+                            <p>Комментарий</p>
+                            <input type="text" name="name" placeholder="Напишите ваш комментарий здесь">
+                        </div>
+
+                        <div class="submit">
+                            <input type="submit" value="Отправить заявку">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="book">
+            <div class="container">
+            <img src="img/book.png" alt="book" title="book">
+            <div class="text">
+                <h4>Что нужно знать отправляясь на Камчатку?</h4>
+                <p>Получите памятку туриста просто оставив свой e-mail.</p>
+                <form action="http://fe.it-academy.by/TestForm.php" method="post">
+                    <input type="email" name="login" placeholder="Ваш e-mail">
+                    <input type="submit" value="Отправить заявку">
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="team">
+        <div class="container">
+            <h2><a name="team">Про нашу супер крутую команду Dreamkam Tour</a></h2>
+            <p>Наша команда - это люди влюбленные в свою работу. Каждый из них обладает проффесиональными знаниями, хорошей физической подготовкой. Следят за вашей безпасностью в туре, и тем чтобы каждый из вас получил максимальное колличество эмоций.</p>
+            <div class="photo">
+                <div class="photo-items">
+                    <img src="img/team1.jpg" alt="team" title="team">
+                    <p><span>Алина Гончарова, </span>@alin_och</p>
+                </div>
+                <div class="photo-items">
+                    <img src="img/team2.jpg" alt="team" title="team">
+                    <p><span>Евгений Барсуков, </span>@eugen_eugen</p>
+                </div>
+                <div class="photo-items">
+                    <img src="img/team3.jpg" alt="team" title="team">
+                    <p><span>Дмитрий Осипов, </span>@dim_os</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contacts">
+        <div class="container">
+
+            <div class="one">
+                <img src="img/contacts-logo.svg" alt="logo" title="logo">
+                <img src="img/contacts-logo-text.svg" alt="logo" title="logo">
+                <ul>
+                    <li><a href="#timing" title="timing">Расписание тура</a></li>
+                    <li><a href="#order" title="price">Стоимость</a></li>
+                    <li><a href="#registration" title="registration">Как записаться</a></li>
+                    <li><a href="#team" title="team">Команда</a></li>
+                </ul>
+            </div>
+
+            <div class="two">
+                <a href="#">@dreamkamtour</a>
+                <button><a href="https://www.instagram.com/dreamkamtour/" title="subscribe" target="_blank">Подписаться</a></button>
+                <div class="insta-photo">
+                    <img src="img/inst1.jpg" alt="our instagram" title="our instagram">
+                    <img src="img/inst2.jpg" alt="our instagram" title="our instagram">
+                    <img src="img/inst4.jpg" alt="our instagram" title="our instagram">
+                    <img src="img/inst4.jpg" alt="our instagram" title="our instagram">
+                    <img src="img/inst1.jpg" alt="our instagram" title="our instagram">
+                    <img src="img/inst2.jpg" alt="our instagram" title="our instagram">
+                </div>
+            </div>
+
+            <div class="three">
+                <div class="video">
+                    <img src="img/inst-video.png" alt="our instagram" title="our instagram">
+                    <p>Смотрите видео отзывы наших клиентов<br>
+                    <span><a href="https://www.instagram.com/dreamkamtour/" title="instagram" target="_blank"> Перейти в Instagram </a></span></p>
+                </div>
+
+                <div class="social">
+                    <p>Социальные сети</p>
+                    <ul>
+                        <li><a href="https://www.instagram.com/dreamkamtour/" title="instagram" target="_blank"><img src="img/order-icon1.svg" alt="instagram" title="instagram"></a></li>
+                        <li><a href="https://www.facebook.com/dreamkamtour" title="facebook" target="_blank"><img src="img/order-icon2.svg" alt="facebook" title="facebook"></a></li>
+                        <li><a href="https://vk.com/dreamkamtour" title="vk" target="_blank"><img src="img/order-icon3.svg" alt="vk" title="vk"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="four">
+                <p>+ 7 (760) 354-23-23</p>
+                <p>Работаем с 9:00 до 18:00</p>
+                <p> info@dreamkamtour.ru</p>
+                <p> ул. Рубиннштерна, 41</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>2021 © Dreamkam Tour</p>
+        </div>
+    </div>
     
 
 

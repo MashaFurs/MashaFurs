@@ -21,9 +21,6 @@ a {
 li {
   list-style-type: none; }
 
-body {
-  height: 10000px; }
-
 .main-page {
   background: url("../img/darkcloud-mainpage.png") no-repeat top left, url("../img/cloud-mainpage.png") no-repeat top left, url("../img/main-background.jpg") no-repeat top left;
   background-size: 100%;
@@ -686,5 +683,342 @@ body {
       line-height: 24px;
       color: #FFFFFF;
       width: 501px; }
+
+.order-price {
+  background: url("../img/order-back.jpg") no-repeat bottom;
+  background-size: contain;
+  padding-bottom: 72px; }
+  .order-price .order {
+    padding-top: 96px;
+    padding-bottom: 270px; }
+    .order-price .order .container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .order-price .order .container .online-order h3 {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 48px;
+        color: #212121;
+        margin-bottom: 33px; }
+      .order-price .order .container .online-order ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        .order-price .order .container .online-order ul li {
+          margin-right: 30px; }
+          .order-price .order .container .online-order ul li:last-child {
+            margin-right: 0; }
+      .order-price .order .container .order-forms form .input-text {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+        .order-price .order .container .order-forms form .input-text div {
+          margin-right: 44px;
+          margin-bottom: 48px; }
+          .order-price .order .container .order-forms form .input-text div p {
+            font-size: 14px;
+            line-height: 24px;
+            color: #212121;
+            margin-bottom: 16px; }
+          .order-price .order .container .order-forms form .input-text div input {
+            width: 260px;
+            border: none;
+            border-bottom: 1px solid #212121;
+            padding-bottom: 13px;
+            padding-top: 13px;
+            font-size: 20px;
+            color: #999999;
+            background-color: #21212100; }
+          .order-price .order .container .order-forms form .input-text div:last-child {
+            margin-right: 0; }
+      .order-price .order .container .order-forms form .input-radio p {
+        font-size: 14px;
+        line-height: 24px;
+        color: #212121;
+        margin-bottom: 23px; }
+      .order-price .order .container .order-forms form .input-radio .price .price-base {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+        .order-price .order .container .order-forms form .input-radio .price .price-base label input {
+          width: 16px;
+          height: 16px;
+          background-color: #21212100; }
+        .order-price .order .container .order-forms form .input-radio .price .price-base label input[type='radio']:after {
+          width: 16px;
+          height: 16px;
+          border-radius: 15px;
+          top: -2px;
+          left: -1px;
+          position: relative;
+          background-color: #FFFFFF;
+          content: '';
+          display: inline-block;
+          visibility: visible;
+          border: 1px solid #275553; }
+        .order-price .order .container .order-forms form .input-radio .price .price-base label input[type='radio']:checked:after {
+          width: 16px;
+          height: 16px;
+          border-radius: 15px;
+          top: -2px;
+          left: -1px;
+          position: relative;
+          background-color: #275553;
+          content: '';
+          display: inline-block;
+          visibility: visible;
+          border: 1px solid #275553; }
+        .order-price .order .container .order-forms form .input-radio .price .price-base label input[type='radio']:checked {
+          -webkit-transform: scale(0.7);
+                  transform: scale(0.7);
+          border: 1px solid #275553; }
+        .order-price .order .container .order-forms form .input-radio .price .price-base label span {
+          font-size: 18px;
+          line-height: 24px;
+          color: #000000;
+          margin-left: 10px; }
+        .order-price .order .container .order-forms form .input-radio .price .price-base p {
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 24px;
+          color: #000000; }
+      .order-price .order .container .order-forms form .input-date {
+        margin-bottom: 37px; }
+        .order-price .order .container .order-forms form .input-date p {
+          font-size: 14px;
+          line-height: 24px;
+          color: #212121;
+          margin-bottom: 16px; }
+        .order-price .order .container .order-forms form .input-date input {
+          width: 260px;
+          border: none;
+          border-bottom: 1px solid #212121;
+          padding-bottom: 10px;
+          background-color: #21212100; }
+      .order-price .order .container .order-forms form .input-text-comment p {
+        font-size: 14px;
+        line-height: 24px;
+        color: #212121;
+        margin-bottom: 16px; }
+      .order-price .order .container .order-forms form .input-text-comment input {
+        width: 564px;
+        border: none;
+        border-bottom: 1px solid #212121;
+        padding-bottom: 13px;
+        padding-top: 13px;
+        font-size: 20px;
+        color: #999999;
+        margin-bottom: 57px;
+        background-color: #21212100; }
+      .order-price .order .container .order-forms form .submit {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end; }
+        .order-price .order .container .order-forms form .submit input {
+          width: 179px;
+          height: 40px;
+          background: #F47648;
+          border-radius: 5px;
+          border: none;
+          font-size: 14px;
+          color: #FFFFFF; }
+  .order-price .book .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .order-price .book .container .text {
+      margin-left: 95px;
+      margin-top: 140px; }
+      .order-price .book .container .text h4 {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 48px;
+        color: #FFFFFF;
+        margin-bottom: 8px; }
+      .order-price .book .container .text p {
+        font-size: 20px;
+        line-height: 32px;
+        color: #FFFFFF;
+        margin-bottom: 20px; }
+      .order-price .book .container .text form input[type='email'] {
+        width: 563px;
+        border: none;
+        border-bottom: 1px solid #FFFFFF;
+        font-size: 20px;
+        color: #999999;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        margin-right: 24px;
+        background-color: #21212100; }
+      .order-price .book .container .text form input[type='submit'] {
+        width: 134px;
+        height: 40px;
+        background: #F47648;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #FFFFFF;
+        border: none; }
+
+.team {
+  padding-top: 120px;
+  padding-bottom: 200px; }
+  .team .container h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 72px;
+    color: #121212;
+    width: 960px;
+    margin-bottom: 59px; }
+  .team .container > p {
+    color: #313131;
+    opacity: 0.8;
+    width: 511px;
+    margin-bottom: 79px; }
+  .team .container .photo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .team .container .photo .photo-items {
+      width: 352px; }
+      .team .container .photo .photo-items p {
+        margin-top: 24px;
+        color: #F47648;
+        font-size: 18px;
+        line-height: 24px; }
+        .team .container .photo .photo-items p span {
+          color: #000000; }
+      .team .container .photo .photo-items:hover {
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2); }
+
+.contacts {
+  background-color: #212121;
+  padding-top: 63px;
+  padding-bottom: 48px; }
+  .contacts .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .contacts .container > div {
+      padding-right: 40px; }
+    .contacts .container .one {
+      width: 29%; }
+      .contacts .container .one img:first-child {
+        margin-right: 16px; }
+      .contacts .container .one ul {
+        margin-top: 39px; }
+        .contacts .container .one ul li {
+          margin-bottom: 16px;
+          color: #BABABA; }
+          .contacts .container .one ul li:last-child {
+            margin-bottom: 0; }
+    .contacts .container .two a {
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 28px;
+      color: #BABABA; }
+    .contacts .container .two button {
+      width: 157.5px;
+      height: 42.57px;
+      border: 1px solid #FFFFFF;
+      border-radius: 5px;
+      background-color: #21212100;
+      font-size: 14px;
+      color: #FFFFFF;
+      margin-left: 25px; }
+    .contacts .container .two .insta-photo {
+      margin-top: 16px; }
+      .contacts .container .two .insta-photo img {
+        margin-right: 8px;
+        margin-bottom: 8px; }
+    .contacts .container .three .video {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .contacts .container .three .video p {
+        margin-left: 18px;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 24px;
+        color: #FFFFFF; }
+        .contacts .container .three .video p span {
+          color: #BABABA;
+          font-weight: 400; }
+    .contacts .container .three .social p {
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 24px;
+      color: #FFFFFF;
+      margin-top: 46px;
+      margin-bottom: 13px; }
+    .contacts .container .three .social ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .contacts .container .three .social ul li {
+        margin-right: 20px; }
+        .contacts .container .three .social ul li:last-child {
+          margin-right: 0; }
+    .contacts .container .four {
+      padding-right: 0;
+      padding-left: 40px;
+      width: 26%; }
+      .contacts .container .four p:first-child {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 32px;
+        color: #FFFFFF; }
+      .contacts .container .four p:nth-child(2) {
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        line-height: 32px;
+        color: #BABABA;
+        margin-bottom: 34px; }
+      .contacts .container .four p:nth-child(3) {
+        color: #FFFFFF;
+        margin-bottom: 12px; }
+        .contacts .container .four p:nth-child(3)::before {
+          content: url("../img/contacts-email.svg"); }
+      .contacts .container .four p:last-child {
+        color: #FFFFFF; }
+        .contacts .container .four p:last-child::before {
+          content: url("../img/contacts-map.svg"); }
+
+.footer {
+  background-color: #212121;
+  padding-bottom: 22px; }
+  .footer .container {
+    border-top: 2px solid #BABABA;
+    padding-top: 22px; }
+    .footer .container p {
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      line-height: 24px;
+      color: #FFFFFF; }
 
 /*# sourceMappingURL=style.css.map */
