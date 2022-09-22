@@ -1134,6 +1134,8 @@ li {
       .days .day-two .day-two-icons div {
         margin-right: 30px;
         margin-left: 0; }
+        .days .day-two .day-two-icons div:last-child {
+          margin-right: 0; }
   .days .program .container .program-variants {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -1263,5 +1265,557 @@ li {
     .contacts .container .four {
       width: 52%;
       padding-left: 0; } }
+@media all and (max-width: 1005px) {
+  .days .day-four-and-five {
+    background-size: 144%; } }
+@media all and (max-width: 974px) {
+  .days .day-one {
+    background-size: 150%; } }
+@media all and (max-width: 943px) {
+  .days .day-four-and-five {
+    background-size: 152%; } }
+@media all and (max-width: 917px) {
+  .days .day-one {
+    background-size: 156%; } }
+@media all and (max-width: 900px) {
+  .days .day-four-and-five {
+    background-size: 160%; } }
+@media all and (max-width: 878px) {
+  .days .day-one {
+    background-size: 163%; } }
+@media all and (max-width: 889px) {
+  .days .day-four-and-five {
+    background-size: 162%; } }
+@media all and (max-width: 860px) {
+  .container {
+    width: 690px; }
+
+  .main-page .container .header ul li {
+    margin-right: 22px; }
+    .main-page .container .header ul li a {
+      font-size: 15px; }
+  .main-page .container .header .logo img:first-child {
+    margin-right: 10px; }
+  .main-page .container .dream h1 {
+    font-size: 57px;
+    padding-bottom: 24px; }
+  .main-page .container .dream button {
+    width: 455px;
+    font-size: 25px; }
+  .main-page .container .main-information .text p:first-child {
+    padding-top: 3px;
+    padding-bottom: 7px;
+    font-size: 18px; }
+  .main-page .slider {
+    bottom: 10%; }
+
+  .travel {
+    background-size: 139%;
+    padding-bottom: 109px; }
+    .travel .airplane {
+      background-size: 40%; }
+      .travel .airplane .container .text-down {
+        padding-top: 319px; }
+
+  .days .day-one .container .wrap h2 {
+    font-size: 34px;
+    margin-bottom: 27px; }
+  .days .day-one .day-one-icons {
+    left: 10%; }
+    .days .day-one .day-one-icons div {
+      width: 200px;
+      height: 200px;
+      margin-right: 20px; }
+      .days .day-one .day-one-icons div:last-child {
+        margin-right: 0; }
+      .days .day-one .day-one-icons div p {
+        font-size: 10px; }
+        .days .day-one .day-one-icons div p span {
+          font-size: 12px; }
+  .days .day-two {
+    background-size: 77%; }
+    .days .day-two .container .wrap h2 {
+      font-size: 34px;
+      margin-bottom: 18px; }
+      .days .day-two .container .wrap h2 + p {
+        width: 409px; }
+    .days .day-two .day-two-icons {
+      left: 10%; }
+      .days .day-two .day-two-icons div {
+        width: 200px;
+        height: 200px;
+        margin-right: 20px; }
+        .days .day-two .day-two-icons div:last-child {
+          margin-right: 0; }
+        .days .day-two .day-two-icons div p {
+          font-size: 10px; }
+          .days .day-two .day-two-icons div p span {
+            font-size: 12px; }
+  .days .program .container h2 {
+    font-size: 34px;
+    padding-top: 42px; }
+  .days .program .container .program-variants div {
+    width: 250px;
+    margin-bottom: 35px; }
+    .days .program .container .program-variants div img {
+      width: 250px; }
+    .days .program .container .program-variants div p {
+      line-height: 22px; }
+      .days .program .container .program-variants div p span {
+        font-size: 17px; }
+  .days .day-three {
+    padding-bottom: 314px; }
+    .days .day-three .container .wrap h2 {
+      font-size: 32px; }
+    .days .day-three .day-three-icons {
+      left: 10%;
+      top: 63%; }
+      .days .day-three .day-three-icons div {
+        width: 200px;
+        height: 200px;
+        margin-right: 20px; }
+        .days .day-three .day-three-icons div:last-child {
+          margin-right: 0; }
+        .days .day-three .day-three-icons div p {
+          font-size: 10px; }
+          .days .day-three .day-three-icons div p span {
+            font-size: 12px; }
+  .days .day-four-and-five {
+    background-size: 173%; }
+    .days .day-four-and-five .day-four .container h2 {
+      font-size: 34px; }
+    .days .day-four-and-five .day-four .day-four-icons {
+      top: 66%;
+      left: 10%; }
+      .days .day-four-and-five .day-four .day-four-icons div {
+        width: 200px;
+        height: 200px;
+        margin-right: 20px; }
+        .days .day-four-and-five .day-four .day-four-icons div:last-child {
+          margin-right: 0; }
+        .days .day-four-and-five .day-four .day-four-icons div p {
+          font-size: 10px; }
+          .days .day-four-and-five .day-four .day-four-icons div p span {
+            font-size: 12px; }
+    .days .day-four-and-five .day-five .container h2 {
+      font-size: 34px;
+      margin-bottom: 22px; }
+  .days .day-six {
+    background-size: 158%; }
+    .days .day-six .container .wrap h2 {
+      margin-bottom: 14px; }
+
+  .order-price {
+    background-size: 140%;
+    padding-bottom: 25px; }
+    .order-price .book .container .text h4 {
+      font-size: 27px;
+      margin-bottom: 8px;
+      line-height: 32px; }
+
+  .team {
+    padding-bottom: 76px; }
+    .team .container h2 {
+      line-height: 58px;
+      font-size: 36px; }
+    .team .container .photo .photo-items img {
+      width: 400px; }
+
+  .contacts .container .two .insta-photo img {
+    width: 90px; } }
+@media all and (max-width: 715px) {
+  .container {
+    width: 320px; }
+
+  .main-page {
+    background: url("../img/back-mobile.jpg") no-repeat;
+    background-size: cover; }
+    .main-page .container .header {
+      position: relative; }
+      .main-page .container .header ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        -webkit-transform-origin: right center;
+                transform-origin: right center;
+        -webkit-transform: scaleX(0) translateX(20%);
+                transform: scaleX(0) translateX(20%);
+        opacity: 0;
+        position: absolute;
+        background-color: #E5E5E5;
+        width: 320px;
+        height: 150px;
+        border-radius: 14px;
+        top: -23%; }
+        .main-page .container .header ul li {
+          margin-right: 0;
+          line-height: 29px; }
+          .main-page .container .header ul li a {
+            font-size: 21px; }
+      .main-page .container .header .menu-nav_active {
+        -webkit-transform: scaleX(1) translateX(0%);
+                transform: scaleX(1) translateX(0%);
+        opacity: 1; }
+      .main-page .container .header .logo {
+        width: 100px;
+        margin-right: 43px; }
+      .main-page .container .header .section .menu-btn {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: #F1F1F100;
+        border-radius: 50%;
+        position: relative; }
+        .main-page .container .header .section .menu-btn span {
+          position: absolute;
+          top: 50%;
+          margin-top: -1px;
+          left: 50%;
+          margin-left: -10px;
+          width: 20px;
+          height: 2px;
+          background-color: #275553; }
+          .main-page .container .header .section .menu-btn span::before, .main-page .container .header .section .menu-btn span::after {
+            position: absolute;
+            top: 50%;
+            margin-top: -1px;
+            left: 50%;
+            margin-left: -10px;
+            width: 20px;
+            height: 2px;
+            background-color: #275553;
+            content: '';
+            display: block;
+            -webkit-transition: 0.5s;
+            transition: 0.5s; }
+          .main-page .container .header .section .menu-btn span::before {
+            -webkit-transform: translateY(-5px);
+                    transform: translateY(-5px); }
+          .main-page .container .header .section .menu-btn span::after {
+            -webkit-transform: translateY(5px);
+                    transform: translateY(5px); }
+      .main-page .container .header .section .menu-btn_active span {
+        height: 0; }
+        .main-page .container .header .section .menu-btn_active span::before {
+          -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg); }
+        .main-page .container .header .section .menu-btn_active span::after {
+          -webkit-transform: rotate(-45deg);
+                  transform: rotate(-45deg); }
+    .main-page .container .dream h1 {
+      line-height: 50px;
+      font-size: 48px;
+      padding-top: 47px;
+      font-weight: 600; }
+    .main-page .container .dream button {
+      width: 276px;
+      height: 56px;
+      font-size: 18px;
+      line-height: 24px; }
+    .main-page .container .main-information .text p:first-child {
+      display: none; }
+    .main-page .container .main-information .text .subscr {
+      margin-top: 0px; }
+    .main-page .slider {
+      width: 232px;
+      height: 250px;
+      overflow: hidden;
+      bottom: 9%;
+      left: 0%;
+      margin: 0 auto; }
+      .main-page .slider .slick-arrow {
+        top: 85%; }
+      .main-page .slider .slick-arrow.slick-prev {
+        right: 126px; }
+      .main-page .slider .slick-arrow.slick-next {
+        right: 77%; }
+      .main-page .slider .main-slider-item img {
+        width: 232px; }
+
+  .travel {
+    background: url("../img/back-mobile-travel.jpg") no-repeat bottom;
+    background-size: 176%;
+    padding-bottom: 96px; }
+    .travel .airplane {
+      background: url(../img/airplane.png) no-repeat bottom 25% right;
+      background-size: 53%; }
+      .travel .airplane .container .text-up h2 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px; }
+        .travel .airplane .container .text-up h2 + p {
+          font-weight: 400;
+          font-size: 26px;
+          line-height: 32px; }
+      .travel .airplane .container .text-up p {
+        font-size: 17px; }
+      .travel .airplane .container .icons {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+        .travel .airplane .container .icons div {
+          margin-right: 2px;
+          width: 149px; }
+      .travel .airplane .container .text-down {
+        padding-top: 133px; }
+        .travel .airplane .container .text-down p:first-child {
+          font-size: 19px; }
+
+  .days .day-one {
+    background-size: 230%;
+    padding-bottom: 159px; }
+    .days .day-one .container .wrap h2 {
+      font-size: 24px;
+      line-height: 32px; }
+    .days .day-one .day-one-icons {
+      top: 64%; }
+      .days .day-one .day-one-icons div {
+        display: none; }
+  .days .day-two {
+    padding-bottom: 215px;
+    background: url(../img/day2-mounteen.png) no-repeat bottom right;
+    background-size: 73%; }
+    .days .day-two .container .wrap h2 {
+      font-size: 24px;
+      margin-bottom: 5px;
+      line-height: 32px; }
+      .days .day-two .container .wrap h2 + p {
+        width: 100%; }
+    .days .day-two .day-two-icons {
+      display: none; }
+  .days .program {
+    padding-bottom: 12px; }
+    .days .program .container h2 {
+      font-size: 32px;
+      padding-top: 34px;
+      padding-bottom: 21px; }
+    .days .program .container .program-variants div {
+      width: 288px; }
+      .days .program .container .program-variants div img {
+        width: 288px; }
+  .days .day-three {
+    padding-top: 31px;
+    padding-bottom: 146px; }
+    .days .day-three .container .wrap h2 {
+      font-size: 24px;
+      line-height: 32px; }
+    .days .day-three .container .wrap p {
+      font-size: 16px;
+      line-height: 24px; }
+    .days .day-three .day-three-icons {
+      display: none; }
+  .days .day-four-and-five {
+    background-size: 196%;
+    padding-top: 52px; }
+    .days .day-four-and-five .day-four {
+      padding-bottom: 40px; }
+      .days .day-four-and-five .day-four .container h2 {
+        line-height: 32px;
+        font-size: 24px; }
+      .days .day-four-and-five .day-four .day-four-icons {
+        display: none; }
+    .days .day-four-and-five .day-five {
+      padding-bottom: 125px; }
+      .days .day-four-and-five .day-five .container h2 {
+        font-size: 24px;
+        line-height: 32px; }
+      .days .day-four-and-five .day-five .container .add-service {
+        margin-bottom: 5px; }
+      .days .day-four-and-five .day-five .container .add {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; }
+        .days .day-four-and-five .day-five .container .add p:first-child {
+          margin-bottom: 8px; }
+  .days .day-six {
+    padding-bottom: 54px;
+    padding-top: 70px;
+    background-size: cover; }
+    .days .day-six .container .wrap {
+      width: 100%; }
+      .days .day-six .container .wrap h2 {
+        font-size: 24px;
+        line-height: 32px;
+        width: 100%; }
+      .days .day-six .container .wrap p {
+        width: 100%; }
+
+  .order-price {
+    background-size: 197%; }
+    .order-price .order {
+      padding-top: 55px;
+      padding-bottom: 54px; }
+      .order-price .order .container .online-order ul {
+        display: none; }
+      .order-price .order .container .online-order h3 {
+        font-size: 32px;
+        line-height: 40px;
+        width: 100%;
+        margin-bottom: 11px; }
+      .order-price .order .container .order-forms form .input-text {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; }
+        .order-price .order .container .order-forms form .input-text div {
+          margin-bottom: 24px;
+          margin-right: 0; }
+          .order-price .order .container .order-forms form .input-text div p {
+            margin-bottom: 6px;
+            font-size: 14px; }
+          .order-price .order .container .order-forms form .input-text div input {
+            font-size: 20px;
+            padding-bottom: 7px;
+            padding-top: 7px;
+            width: 100%; }
+      .order-price .order .container .order-forms form .input-radio .price .price-base {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; }
+        .order-price .order .container .order-forms form .input-radio .price .price-base p {
+          margin-left: 31px; }
+      .order-price .order .container .order-forms form .input-date {
+        margin-bottom: 20px; }
+        .order-price .order .container .order-forms form .input-date input {
+          width: 100%; }
+        .order-price .order .container .order-forms form .input-date p {
+          margin-bottom: 4px; }
+      .order-price .order .container .order-forms form .input-text-comment input {
+        width: 100%;
+        font-size: 18px;
+        margin-bottom: 10px; }
+      .order-price .order .container .order-forms form .submit {
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+        .order-price .order .container .order-forms form .submit input {
+          width: 287px;
+          height: 40px; }
+    .order-price .book .container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .order-price .book .container .text {
+        margin-left: 0; }
+        .order-price .book .container .text h4 {
+          font-size: 32px;
+          margin-bottom: 8px;
+          line-height: 40px; }
+        .order-price .book .container .text p {
+          font-size: 16px;
+          line-height: 24px; }
+        .order-price .book .container .text form {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column; }
+          .order-price .book .container .text form input[type='submit'] {
+            width: 288px;
+            height: 40px;
+            margin-left: 0; }
+
+  .team {
+    padding-top: 42px;
+    padding-bottom: 50px; }
+    .team .container h2 {
+      line-height: 31px;
+      font-size: 26px; }
+      .team .container h2 + p {
+        display: none; }
+    .team .container .photo .photo-items {
+      width: 220px; }
+      .team .container .photo .photo-items img {
+        width: 220px; }
+      .team .container .photo .photo-items p {
+        margin-bottom: 0;
+        margin-top: 0;
+        font-size: 14px; }
+
+  .contacts {
+    padding-bottom: 30px; }
+    .contacts .container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .contacts .container .one {
+        width: 100%; }
+      .contacts .container .two {
+        padding-top: 35px;
+        width: 100%;
+        padding-right: 0; }
+        .contacts .container .two button {
+          width: 134px;
+          height: 42px; }
+      .contacts .container .three {
+        width: 100%; }
+        .contacts .container .three .social p {
+          margin-top: 18px; }
+      .contacts .container .four {
+        width: 100%; } }
+@media all and (max-width: 689px) {
+  .days .day-four-and-five {
+    background-size: 216%; } }
+@media all and (max-width: 628px) {
+  .days .day-four-and-five {
+    background-size: 235%; }
+
+  .order-price {
+    background-size: 283%; } }
+@media all and (max-width: 583px) {
+  .days .day-four-and-five {
+    background-size: 245%; } }
+@media all and (max-width: 557px) {
+  .days .day-four-and-five {
+    background-size: 279%; } }
+@media all and (max-width: 537px) {
+  .days .day-one {
+    background-size: 308%; } }
+@media all and (max-width: 511px) {
+  .days .day-two {
+    background-size: 84%; } }
+@media all and (max-width: 490px) {
+  .days .day-four-and-five {
+    background-size: 314%; }
+
+  .order-price {
+    background-size: 353%; } }
+@media all and (max-width: 450px) {
+  .travel {
+    background-size: 227%; } }
+@media all and (max-width: 432px) {
+  .days .day-four-and-five {
+    background-size: 344%; } }
+@media all and (max-width: 404px) {
+  .days .day-one {
+    background-size: 327%; }
+  .days .day-two {
+    background-size: 100%; } }
+@media all and (max-width: 394px) {
+  .days .day-four-and-five {
+    background-size: 376%; } }
+@media all and (max-width: 388px) {
+  .days .day-one {
+    background-size: 374%; } }
+@media all and (max-width: 362px) {
+  .days .day-four-and-five {
+    background-size: 390%; } }
 
 /*# sourceMappingURL=style.css.map */
