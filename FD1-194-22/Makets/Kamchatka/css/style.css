@@ -1021,6 +1021,11 @@ li {
       line-height: 24px;
       color: #FFFFFF; }
 
+@media all and (max-width: 1484px) {
+  .days .day-one {
+    background-size: 122%; }
+  .days .day-four-and-five {
+    background-size: 110%; } }
 @media all and (max-width: 1380px) {
   .container {
     width: 1000px; }
