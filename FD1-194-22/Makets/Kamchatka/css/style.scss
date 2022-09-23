@@ -2159,8 +2159,32 @@
         }
     }
 }
+//Cloud
+@media all and (max-width: 846px){
+    .days{
+        .day-one{
+            background-size: 200%;
+        }
+    }
+}
+@media all and (max-width: 838px){
+    .days{
+        .day-four-and-five{
+            background-size: 193%;
+        }
+    }
+}
+@media all and (max-width: 750px){
+    .days{
+        .day-four-and-five{
+            background-size: 210%;
+        }
+    }
+}
 
 
+
+//Adaptiv
 @media all and (max-width: 715px){
     .container{
         width: 320px;      
@@ -2716,7 +2740,6 @@
         }
     }
 }
-
 //Cloud
 @media all and (max-width: 689px){
     .days{
