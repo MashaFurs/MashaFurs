@@ -1070,6 +1070,66 @@ li {
   .contacts .container .four {
     padding-left: 16px;
     width: 37%; } }
+@media all and (max-width: 1346px) {
+  .days .day-one {
+    background-size: 115%; } }
+@media all and (max-width: 1341px) {
+  .main-page {
+    background-size: 132%; } }
+@media all and (max-width: 1290px) {
+  .days .day-one {
+    background-size: 121%; }
+    .days .day-one .day-one-icons div {
+      width: 285px;
+      height: 285px; }
+      .days .day-one .day-one-icons div:first-child {
+        -webkit-transform: scale(0);
+                transform: scale(0); }
+  .days .day-two .day-two-icons div {
+    width: 285px;
+    height: 285px; }
+    .days .day-two .day-two-icons div:last-child {
+      -webkit-transform: scale(0);
+              transform: scale(0); } }
+@media all and (max-width: 1273px) {
+  .days .day-four-and-five {
+    background-size: 130%; } }
+@media all and (max-width: 1229px) {
+  .travel {
+    background-size: 122%; } }
+@media all and (max-width: 1224px) {
+  .days .day-one {
+    background-size: 128%; } }
+@media all and (max-width: 1168px) {
+  .days .day-two {
+    background-size: 80%; } }
+@media all and (max-width: 1157px) {
+  .days .day-one {
+    background-size: 133%; } }
+@media all and (max-width: 1135px) {
+  .days .day-four-and-five {
+    background-size: 140%; }
+    .days .day-four-and-five .day-five .day-five-icons div {
+      width: 215px;
+      height: 215px; }
+      .days .day-four-and-five .day-five .day-five-icons div:hover {
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2); } }
+@media all and (max-width: 1119px) {
+  .days .day-one {
+    background-size: 138%; }
+  .days .day-three .day-three-icons div {
+    width: 212px;
+    height: 212px; }
+    .days .day-three .day-three-icons div:hover {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2); } }
+@media all and (max-width: 1071px) {
+  .days .day-one {
+    background-size: 142%; } }
+@media all and (max-width: 1058px) {
+  .days .day-four-and-five {
+    background-size: 160%; } }
 @media all and (max-width: 1032px) {
   .container {
     width: 768px; }
@@ -1112,6 +1172,15 @@ li {
       right: 0;
       top: 55%;
       left: 13%; }
+      .days .day-one .day-one-icons div {
+        width: 230px;
+        height: 230px; }
+        .days .day-one .day-one-icons div:first-child {
+          -webkit-transform: scale(1);
+                  transform: scale(1); }
+        .days .day-one .day-one-icons div:first-child:hover {
+          -webkit-transform: scale(1.2);
+                  transform: scale(1.2); }
   .days .day-two {
     background-size: 90%;
     padding-bottom: 306px; }
@@ -1132,10 +1201,17 @@ li {
       top: 69%;
       left: 13%; }
       .days .day-two .day-two-icons div {
+        width: 230px;
+        height: 230px;
         margin-right: 30px;
         margin-left: 0; }
         .days .day-two .day-two-icons div:last-child {
-          margin-right: 0; }
+          margin-right: 0;
+          -webkit-transform: scale(1);
+                  transform: scale(1); }
+        .days .day-two .day-two-icons div:last-child:hover {
+          -webkit-transform: scale(1.2);
+                  transform: scale(1.2); }
   .days .program .container .program-variants {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -1267,13 +1343,13 @@ li {
       padding-left: 0; } }
 @media all and (max-width: 1005px) {
   .days .day-four-and-five {
-    background-size: 144%; } }
+    background-size: 154%; } }
 @media all and (max-width: 974px) {
   .days .day-one {
     background-size: 150%; } }
 @media all and (max-width: 943px) {
   .days .day-four-and-five {
-    background-size: 152%; } }
+    background-size: 160%; } }
 @media all and (max-width: 917px) {
   .days .day-one {
     background-size: 156%; } }
