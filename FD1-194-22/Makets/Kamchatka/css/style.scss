@@ -3,7 +3,9 @@
 @import 'default.scss';
 @import 'variables.scss';
 
-
+html{
+    scroll-behavior: smooth;
+}
 .main-page{
     background:
     url('../img/darkcloud-mainpage.png') no-repeat top left,
@@ -1511,6 +1513,13 @@
         }
     }
 }
+@media all and (max-width: 1247px){
+    .days{
+        .day-one{
+            background-size: 126%;
+        }
+    }
+}
 @media all and (max-width: 1229px){
     .travel{
         background-size: 122%;
@@ -1520,6 +1529,13 @@
     .days{
         .day-one{
             background-size: 128%;
+        }
+    }
+}
+@media all and (max-width: 1180px){
+    .days{
+        .day-one{
+            background-size: 132%;
         }
     }
 }
@@ -1539,6 +1555,9 @@
 }
 @media all and (max-width: 1135px){
     .days{
+        .day-one{
+            background-size: 138%;
+        }
         .day-four-and-five{
             background-size: 140%;
 
@@ -1577,10 +1596,17 @@
         }
     }
 }
-@media all and (max-width: 1071px){
+@media all and (max-width: 1096px){
     .days{
         .day-one{
-            background-size: 142%;
+            background-size: 140%;
+        }
+    }
+}
+@media all and (max-width: 1079px){
+    .days{
+        .day-one{
+            background-size: 147%;
         }
     }
 }
@@ -1970,6 +1996,14 @@
     }
 }
 
+@media all and (max-width: 999px){
+.days{
+    .day-one{
+        background-size: 157%;
+    }
+}
+}
+
 @media all and (max-width: 974px){
     .days{
         .day-one{
@@ -1985,6 +2019,13 @@
         }
     }
 }
+@media all and (max-width: 939px){
+.days{
+    .day-one{
+        background-size: 155%;
+    }
+}
+}
 
 @media all and (max-width: 917px){
     .days{
@@ -1996,16 +2037,12 @@
 
 @media all and (max-width: 900px){
     .days{
+        .day-one{
+            background-size: 167%;
+        }
+
         .day-four-and-five{
             background-size: 160%;
-        }
-    }
-}
-
-@media all and (max-width: 878px){
-    .days{
-        .day-one{
-            background-size: 163%;
         }
     }
 }
@@ -2946,6 +2983,9 @@
 }
 @media all and (max-width: 557px){
     .days{
+        .day-one{
+            background-size: 249%;
+        }
         .day-four-and-five{
             background-size: 279%;
         }
@@ -2983,6 +3023,9 @@
 }
 @media all and (max-width: 432px){
     .days{
+        .day-one{
+            background-size: 317%;
+        }
         .day-four-and-five{
             background-size: 344%;
         }
@@ -3000,6 +3043,9 @@
 }
 @media all and (max-width: 394px){
     .days{
+        .day-one{
+            background-size: 340%;
+        }
         .day-four-and-five{
             background-size: 376%;
         }

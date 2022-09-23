@@ -21,6 +21,9 @@ a {
 li {
   list-style-type: none; }
 
+html {
+  scroll-behavior: smooth; }
+
 .main-page {
   background: url("../img/darkcloud-mainpage.png") no-repeat top left, url("../img/cloud-mainpage.png") no-repeat top left, url("../img/main-background.jpg") no-repeat top left;
   background-size: 100%;
@@ -1099,12 +1102,18 @@ li {
 @media all and (max-width: 1273px) {
   .days .day-four-and-five {
     background-size: 130%; } }
+@media all and (max-width: 1247px) {
+  .days .day-one {
+    background-size: 126%; } }
 @media all and (max-width: 1229px) {
   .travel {
     background-size: 122%; } }
 @media all and (max-width: 1224px) {
   .days .day-one {
     background-size: 128%; } }
+@media all and (max-width: 1180px) {
+  .days .day-one {
+    background-size: 132%; } }
 @media all and (max-width: 1168px) {
   .days .day-two {
     background-size: 80%; } }
@@ -1112,6 +1121,8 @@ li {
   .days .day-one {
     background-size: 133%; } }
 @media all and (max-width: 1135px) {
+  .days .day-one {
+    background-size: 138%; }
   .days .day-four-and-five {
     background-size: 140%; }
     .days .day-four-and-five .day-five .day-five-icons div {
@@ -1129,9 +1140,12 @@ li {
     .days .day-three .day-three-icons div:hover {
       -webkit-transform: scale(1.2);
               transform: scale(1.2); } }
-@media all and (max-width: 1071px) {
+@media all and (max-width: 1096px) {
   .days .day-one {
-    background-size: 142%; } }
+    background-size: 140%; } }
+@media all and (max-width: 1079px) {
+  .days .day-one {
+    background-size: 147%; } }
 @media all and (max-width: 1058px) {
   .days .day-four-and-five {
     background-size: 160%; } }
@@ -1349,21 +1363,26 @@ li {
 @media all and (max-width: 1005px) {
   .days .day-four-and-five {
     background-size: 154%; } }
+@media all and (max-width: 999px) {
+  .days .day-one {
+    background-size: 157%; } }
 @media all and (max-width: 974px) {
   .days .day-one {
     background-size: 150%; } }
 @media all and (max-width: 943px) {
   .days .day-four-and-five {
     background-size: 160%; } }
+@media all and (max-width: 939px) {
+  .days .day-one {
+    background-size: 155%; } }
 @media all and (max-width: 917px) {
   .days .day-one {
     background-size: 156%; } }
 @media all and (max-width: 900px) {
+  .days .day-one {
+    background-size: 167%; }
   .days .day-four-and-five {
     background-size: 160%; } }
-@media all and (max-width: 878px) {
-  .days .day-one {
-    background-size: 163%; } }
 @media all and (max-width: 889px) {
   .days .day-four-and-five {
     background-size: 162%; } }
@@ -1873,6 +1892,8 @@ li {
   .days .day-four-and-five {
     background-size: 245%; } }
 @media all and (max-width: 557px) {
+  .days .day-one {
+    background-size: 249%; }
   .days .day-four-and-five {
     background-size: 279%; } }
 @media all and (max-width: 537px) {
@@ -1891,6 +1912,8 @@ li {
   .travel {
     background-size: 227%; } }
 @media all and (max-width: 432px) {
+  .days .day-one {
+    background-size: 317%; }
   .days .day-four-and-five {
     background-size: 344%; } }
 @media all and (max-width: 404px) {
@@ -1899,6 +1922,8 @@ li {
   .days .day-two {
     background-size: 100%; } }
 @media all and (max-width: 394px) {
+  .days .day-one {
+    background-size: 340%; }
   .days .day-four-and-five {
     background-size: 376%; } }
 @media all and (max-width: 388px) {
