@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    height: 100vh;
+    background-color: blanchedalmond;
+    justify-content: space-around;
+    align-items: center;
+}
+.card{
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+.card-item{
+    width: 352px;
+    height: 466px;
+    background-color: azure;
+    transition: transform 0.2s;
+}
+img{
+    
+}

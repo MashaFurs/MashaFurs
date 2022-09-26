@@ -1121,23 +1121,28 @@ html{
         .photo{
             display: flex;
             justify-content: space-between;
+
+            .card{
+                perspective: 1000px;
+                transform-style: preserve-3d;
             
-            .photo-items{
-                width: 352px;
+                .photo-items{
+                    width: 352px;
+                    transition: transform 0.2s;
 
-                p{
-                    margin-top: 24px;
-                    color: #F47648;
-                    font-size: 18px;
-                    line-height: 24px;
-                    span{                        
-                        color: #000000;
+                    p{
+                        margin-top: 24px;
+                        color: #F47648;
+                        font-size: 18px;
+                        line-height: 24px;
+                        span{                        
+                            color: #000000;
+                        }
                     }
+
+                
                 }
 
-                &:hover{
-                    transform: scale(1.2);
-                }
             }
         }
     }
@@ -1421,11 +1426,14 @@ html{
 
         .container{
             .photo{
-                .photo-items{
+
+                .card{
+                    .photo-items{
                     width: 305px;
 
                     img{
                         width: 305px;   
+                    }
                     }
                 }
             }
@@ -1949,18 +1957,22 @@ html{
                 flex-direction: column;
                 align-items: center;
 
-                .photo-items{
-                    width: 450px;
-
-                    img{
+                .card{
+                    .photo-items{
                         width: 450px;
-                    }
-
-                    p{
-                        margin-top: 20px;
-                        margin-bottom: 20px;
+    
+                        img{
+                            width: 450px;
+                        }
+    
+                        p{
+                            margin-top: 20px;
+                            margin-bottom: 20px;
+                        }
                     }
                 }
+
+                
             }
         }
     }
@@ -2350,11 +2362,15 @@ html{
             }
 
             .photo{
-                .photo-items{
-                    img{
+                .card{
+                    .photo-items{
                         width: 400px;
+                        img{
+                            width: 400px;
+                        }
                     }
                 }
+                
             }
         }
     }
@@ -2904,18 +2920,22 @@ html{
             }
 
             .photo{
-                .photo-items{
-                    width: 220px;
-                    img{
-                        width: 220px;
-                    }
 
-                    p{
-                        margin-bottom: 0;
-                        margin-top: 0;
-                        font-size: 14px;
+                .card{
+                    .photo-items{
+                        width: 220px;
+                        img{
+                            width: 220px;
+                        }
+    
+                        p{
+                            margin-bottom: 0;
+                            margin-top: 0;
+                            font-size: 14px;
+                        }
                     }
                 }
+                
             }
         }
     }

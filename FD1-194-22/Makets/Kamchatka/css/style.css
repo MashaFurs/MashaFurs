@@ -2,8 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -32,17 +31,11 @@ html {
     height: 788px;
     padding-top: 36px; }
     .main-page .container .header {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between; }
+      justify-content: space-between; }
       .main-page .container .header .logo img:first-child {
         margin-right: 16px; }
       .main-page .container .header ul {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex; }
         .main-page .container .header ul li {
           line-height: 19px;
@@ -51,8 +44,7 @@ html {
           .main-page .container .header ul li:last-child {
             margin-right: 0; }
           .main-page .container .header ul li:hover {
-            -webkit-transform: scale(1.2);
-                    transform: scale(1.2);
+            transform: scale(1.2);
             color: #1a4240; }
     .main-page .container .dream h1 {
       padding-top: 90px;
@@ -74,16 +66,11 @@ html {
       line-height: 56px;
       color: #FFFFFF; }
       .main-page .container .dream button:hover {
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1); }
+        transform: scale(1.1); }
     .main-page .container .main-information {
       margin-top: 43px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between; }
+      justify-content: space-between; }
       .main-page .container .main-information .text p:first-child {
         padding-bottom: 38px;
         font-size: 20px;
@@ -102,36 +89,7 @@ html {
         border: 1px solid #FFFFFF;
         border-radius: 43.5px;
         background-color: rgba(28, 28, 28, 0);
-        -webkit-animation: heartbeat 2s ease-in-out infinite both;
-                animation: heartbeat 2s ease-in-out infinite both; }
-@-webkit-keyframes heartbeat {
-  from {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transform-origin: center center;
-    transform-origin: center center;
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out; }
-  10% {
-    -webkit-transform: scale(0.91);
-    transform: scale(0.91);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in; }
-  17% {
-    -webkit-transform: scale(0.98);
-    transform: scale(0.98);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out; }
-  33% {
-    -webkit-transform: scale(0.87);
-    transform: scale(0.87);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in; }
-  45% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out; } }
+        animation: heartbeat 2s ease-in-out infinite both; }
 @keyframes heartbeat {
   from {
     -webkit-transform: scale(1);
@@ -163,8 +121,6 @@ html {
       .main-page .container .main-information .text .subscr {
         margin-top: 127px; }
         .main-page .container .main-information .text .subscr ul {
-          display: -webkit-box;
-          display: -ms-flexbox;
           display: flex; }
           .main-page .container .main-information .text .subscr ul li a img:first-child {
             margin-right: 28px; }
@@ -177,8 +133,6 @@ html {
       overflow: hidden;
       width: 704px; }
     .main-page .slider .slick-track {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
       position: relative; }
     .main-page .slider .slick-arrow {
@@ -238,8 +192,6 @@ html {
       opacity: 0.8;
       margin-bottom: 64px; }
     .travel .airplane .container .icons {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex; }
       .travel .airplane .container .icons div {
         margin-right: 64px; }
@@ -302,8 +254,6 @@ html {
       .days .day-one .container .wrap p span {
         color: #FFFFFF; }
   .days .day-one .day-one-icons {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     position: absolute;
     right: 0;
@@ -312,12 +262,8 @@ html {
       width: 230px;
       height: 230px;
       margin-right: 30px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: end;
-          -ms-flex-align: end;
-              align-items: flex-end;
+      align-items: flex-end;
       padding: 10px; }
       .days .day-one .day-one-icons div:first-child {
         background: url("../img/day1-icon1.jpg") no-repeat top;
@@ -329,8 +275,7 @@ html {
         background: url("../img/day1-icon3.jpg") no-repeat top;
         background-size: 100%; }
       .days .day-one .day-one-icons div:hover {
-        -webkit-transform: scale(1.2);
-                transform: scale(1.2); }
+        transform: scale(1.2); }
       .days .day-one .day-one-icons div p {
         font-size: 12px;
         line-height: 16px;
@@ -363,15 +308,9 @@ html {
     color: #313131;
     width: 478px; }
   .days .day-two .container .wrap .text {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end; }
+    justify-content: flex-end; }
   .days .day-two .day-two-icons {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     position: absolute;
     left: 0;
@@ -380,12 +319,8 @@ html {
       width: 230px;
       height: 230px;
       margin-left: 30px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: end;
-          -ms-flex-align: end;
-              align-items: flex-end;
+      align-items: flex-end;
       padding: 10px; }
       .days .day-two .day-two-icons div:first-child {
         background: url("../img/day1-icon1.jpg") no-repeat top;
@@ -397,8 +332,7 @@ html {
         background: url("../img/day1-icon3.jpg") no-repeat top;
         background-size: 100%; }
       .days .day-two .day-two-icons div:hover {
-        -webkit-transform: scale(1.2);
-                transform: scale(1.2); }
+        transform: scale(1.2); }
       .days .day-two .day-two-icons div p {
         font-size: 12px;
         line-height: 16px;
@@ -420,17 +354,12 @@ html {
     line-height: 28px;
     color: #000000; }
   .days .program .container .program-variants {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
+    justify-content: space-between; }
     .days .program .container .program-variants div {
       width: 288px;
       background-color: #FFFFFF;
-      -webkit-box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1);
-              box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1);
       border-radius: 5px; }
       .days .program .container .program-variants div p {
         padding: 32px 24px 32px 24px;
@@ -445,8 +374,7 @@ html {
           color: #212121;
           margin-bottom: 8px; }
       .days .program .container .program-variants div:hover {
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1); }
+        transform: scale(1.1); }
 .days .day-three {
   padding-top: 80px;
   padding-bottom: 284px;
@@ -454,12 +382,8 @@ html {
   background-size: 100%;
   position: relative; }
   .days .day-three .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end; }
+    justify-content: flex-end; }
     .days .day-three .container .wrap h2 {
       font-family: "Inter", sans-serif;
       font-weight: 700;
@@ -474,8 +398,6 @@ html {
       color: #212121;
       width: 501px; }
   .days .day-three .day-three-icons {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     position: absolute;
     left: 0;
@@ -484,12 +406,8 @@ html {
       width: 230px;
       height: 230px;
       margin-left: 30px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: end;
-          -ms-flex-align: end;
-              align-items: flex-end;
+      align-items: flex-end;
       padding: 10px; }
       .days .day-three .day-three-icons div:first-child {
         background: url("../img/day1-icon1.jpg") no-repeat top;
@@ -498,8 +416,7 @@ html {
         background: url("../img/day1-icon2.jpg") no-repeat top;
         background-size: 100%; }
       .days .day-three .day-three-icons div:hover {
-        -webkit-transform: scale(1.2);
-                transform: scale(1.2); }
+        transform: scale(1.2); }
       .days .day-three .day-three-icons div p {
         font-size: 12px;
         line-height: 16px;
@@ -531,8 +448,6 @@ html {
       color: #ACACAC;
       width: 461px; }
     .days .day-four-and-five .day-four .day-four-icons {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
       position: absolute;
       right: 0;
@@ -541,12 +456,8 @@ html {
         width: 230px;
         height: 230px;
         margin-right: 30px;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: end;
-            -ms-flex-align: end;
-                align-items: flex-end;
+        align-items: flex-end;
         padding: 10px; }
         .days .day-four-and-five .day-four .day-four-icons div:first-child {
           background: url("../img/day1-icon1.jpg") no-repeat top;
@@ -555,8 +466,7 @@ html {
           background: url("../img/day1-icon2.jpg") no-repeat top;
           background-size: 100%; }
         .days .day-four-and-five .day-four .day-four-icons div:hover {
-          -webkit-transform: scale(1.2);
-                  transform: scale(1.2); }
+          transform: scale(1.2); }
         .days .day-four-and-five .day-four .day-four-icons div p {
           font-size: 12px;
           line-height: 16px;
@@ -570,12 +480,8 @@ html {
     padding-bottom: 217px;
     position: relative; }
     .days .day-four-and-five .day-five .container {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: end;
-          -ms-flex-pack: end;
-              justify-content: flex-end; }
+      justify-content: flex-end; }
       .days .day-four-and-five .day-five .container h2 {
         font-family: "Inter", sans-serif;
         font-weight: 700;
@@ -599,12 +505,8 @@ html {
         color: #FFFFFF;
         margin-bottom: 39px; }
       .days .day-four-and-five .day-five .container .add {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+        justify-content: space-between;
         width: 481px;
         border-bottom: 1px solid #BABABA;
         padding-bottom: 16px;
@@ -621,8 +523,6 @@ html {
           opacity: 0.7;
           width: 226px; }
     .days .day-four-and-five .day-five .day-five-icons {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
       position: absolute;
       left: 0;
@@ -631,12 +531,8 @@ html {
         width: 230px;
         height: 230px;
         margin-left: 30px;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: end;
-            -ms-flex-align: end;
-                align-items: flex-end;
+        align-items: flex-end;
         padding: 10px; }
         .days .day-four-and-five .day-five .day-five-icons div:first-child {
           background: url("../img/day1-icon1.jpg") no-repeat top;
@@ -648,8 +544,7 @@ html {
           background: url("../img/day1-icon3.jpg") no-repeat top;
           background-size: 100%; }
         .days .day-four-and-five .day-five .day-five-icons div:hover {
-          -webkit-transform: scale(1.2);
-                  transform: scale(1.2); }
+          transform: scale(1.2); }
         .days .day-four-and-five .day-five .day-five-icons div p {
           font-size: 12px;
           line-height: 16px;
@@ -665,12 +560,8 @@ html {
   background: url("../img/day6.jpg") no-repeat top;
   background-size: cover; }
   .days .day-six .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
+    justify-content: center; }
     .days .day-six .container .wrap h2 {
       font-family: "Inter", sans-serif;
       font-style: normal;
@@ -695,12 +586,8 @@ html {
     padding-top: 96px;
     padding-bottom: 270px; }
     .order-price .order .container {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between; }
+      justify-content: space-between; }
       .order-price .order .container .online-order h3 {
         font-family: "Inter", sans-serif;
         font-weight: 700;
@@ -709,20 +596,14 @@ html {
         color: #212121;
         margin-bottom: 33px; }
       .order-price .order .container .online-order ul {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex; }
         .order-price .order .container .online-order ul li {
           margin-right: 30px; }
           .order-price .order .container .online-order ul li:last-child {
             margin-right: 0; }
       .order-price .order .container .order-forms form .input-text {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between; }
+        justify-content: space-between; }
         .order-price .order .container .order-forms form .input-text div {
           margin-right: 44px;
           margin-bottom: 48px; }
@@ -748,12 +629,8 @@ html {
         color: #212121;
         margin-bottom: 23px; }
       .order-price .order .container .order-forms form .input-radio .price .price-base {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between; }
+        justify-content: space-between; }
         .order-price .order .container .order-forms form .input-radio .price .price-base label input {
           width: 16px;
           height: 16px;
@@ -783,8 +660,7 @@ html {
           visibility: visible;
           border: 1px solid #275553; }
         .order-price .order .container .order-forms form .input-radio .price .price-base label input[type='radio']:checked {
-          -webkit-transform: scale(0.7);
-                  transform: scale(0.7);
+          transform: scale(0.7);
           border: 1px solid #275553; }
         .order-price .order .container .order-forms form .input-radio .price .price-base label span {
           font-size: 18px;
@@ -825,12 +701,8 @@ html {
         margin-bottom: 57px;
         background-color: #21212100; }
       .order-price .order .container .order-forms form .submit {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: end;
-            -ms-flex-pack: end;
-                justify-content: flex-end; }
+        justify-content: flex-end; }
         .order-price .order .container .order-forms form .submit input {
           width: 179px;
           height: 40px;
@@ -840,8 +712,6 @@ html {
           font-size: 14px;
           color: #FFFFFF; }
   .order-price .book .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
     .order-price .book .container .text {
       margin-left: 95px;
@@ -895,32 +765,27 @@ html {
     width: 511px;
     margin-bottom: 79px; }
   .team .container .photo {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
-    .team .container .photo .photo-items {
-      width: 352px; }
-      .team .container .photo .photo-items p {
-        margin-top: 24px;
-        color: #F47648;
-        font-size: 18px;
-        line-height: 24px; }
-        .team .container .photo .photo-items p span {
-          color: #000000; }
-      .team .container .photo .photo-items:hover {
-        -webkit-transform: scale(1.2);
-                transform: scale(1.2); }
+    justify-content: space-between; }
+    .team .container .photo .card {
+      perspective: 1000px;
+      transform-style: preserve-3d; }
+      .team .container .photo .card .photo-items {
+        width: 352px;
+        transition: transform 0.2s; }
+        .team .container .photo .card .photo-items p {
+          margin-top: 24px;
+          color: #F47648;
+          font-size: 18px;
+          line-height: 24px; }
+          .team .container .photo .card .photo-items p span {
+            color: #000000; }
 
 .contacts {
   background-color: #212121;
   padding-top: 63px;
   padding-bottom: 48px; }
   .contacts .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
     .contacts .container > div {
       padding-right: 40px; }
@@ -956,8 +821,6 @@ html {
         margin-right: 8px;
         margin-bottom: 8px; }
     .contacts .container .three .video {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex; }
       .contacts .container .three .video p {
         margin-left: 18px;
@@ -979,8 +842,6 @@ html {
       margin-top: 46px;
       margin-bottom: 13px; }
     .contacts .container .three .social ul {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex; }
       .contacts .container .three .social ul li {
         margin-right: 20px; }
@@ -1064,9 +925,9 @@ html {
   .team {
     padding-top: 83px;
     padding-bottom: 135px; }
-    .team .container .photo .photo-items {
+    .team .container .photo .card .photo-items {
       width: 305px; }
-      .team .container .photo .photo-items img {
+      .team .container .photo .card .photo-items img {
         width: 305px; }
 
   .contacts .container > div {
@@ -1091,14 +952,12 @@ html {
       width: 285px;
       height: 285px; }
       .days .day-one .day-one-icons div:first-child {
-        -webkit-transform: scale(0);
-                transform: scale(0); }
+        transform: scale(0); }
   .days .day-two .day-two-icons div {
     width: 285px;
     height: 285px; }
     .days .day-two .day-two-icons div:last-child {
-      -webkit-transform: scale(0);
-              transform: scale(0); } }
+      transform: scale(0); } }
 @media all and (max-width: 1273px) {
   .days .day-four-and-five {
     background-size: 130%; } }
@@ -1129,8 +988,7 @@ html {
       width: 215px;
       height: 215px; }
       .days .day-four-and-five .day-five .day-five-icons div:hover {
-        -webkit-transform: scale(1.2);
-                transform: scale(1.2); } }
+        transform: scale(1.2); } }
 @media all and (max-width: 1119px) {
   .days .day-one {
     background-size: 138%; }
@@ -1138,8 +996,7 @@ html {
     width: 212px;
     height: 212px; }
     .days .day-three .day-three-icons div:hover {
-      -webkit-transform: scale(1.2);
-              transform: scale(1.2); } }
+      transform: scale(1.2); } }
 @media all and (max-width: 1096px) {
   .days .day-one {
     background-size: 140%; } }
@@ -1195,11 +1052,9 @@ html {
         width: 230px;
         height: 230px; }
         .days .day-one .day-one-icons div:first-child {
-          -webkit-transform: scale(1);
-                  transform: scale(1); }
+          transform: scale(1); }
         .days .day-one .day-one-icons div:first-child:hover {
-          -webkit-transform: scale(1.2);
-                  transform: scale(1.2); }
+          transform: scale(1.2); }
   .days .day-two {
     background-size: 90%;
     padding-bottom: 306px; }
@@ -1210,9 +1065,7 @@ html {
         width: 433px;
         padding-bottom: 12px; }
     .days .day-two .container .wrap .text {
-      -webkit-box-pack: start;
-          -ms-flex-pack: start;
-              justify-content: flex-start; }
+      justify-content: flex-start; }
     .days .day-two .container .wrap p {
       width: 100%;
       margin-top: 26px; }
@@ -1226,21 +1079,16 @@ html {
         margin-left: 0; }
         .days .day-two .day-two-icons div:last-child {
           margin-right: 0;
-          -webkit-transform: scale(1);
-                  transform: scale(1); }
+          transform: scale(1); }
         .days .day-two .day-two-icons div:last-child:hover {
-          -webkit-transform: scale(1.2);
-                  transform: scale(1.2); }
+          transform: scale(1.2); }
   .days .program .container .program-variants {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
+    flex-wrap: wrap;
+    justify-content: space-around; }
     .days .program .container .program-variants div {
       margin-bottom: 20px;
       width: 315px;
-      -ms-flex-negative: 0;
-          flex-shrink: 0; }
+      flex-shrink: 0; }
       .days .program .container .program-variants div img {
         width: 315px; }
       .days .program .container .program-variants div p span {
@@ -1270,9 +1118,7 @@ html {
         top: 62%;
         left: 13%; }
     .days .day-four-and-five .day-five .container {
-      -webkit-box-pack: start;
-          -ms-flex-pack: start;
-              justify-content: flex-start; }
+      justify-content: flex-start; }
       .days .day-four-and-five .day-five .container h2 {
         width: 100%;
         font-size: 38px; }
@@ -1292,12 +1138,8 @@ html {
     .order-price .order .container {
       display: block; }
       .order-price .order .container .online-order {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between; }
+        justify-content: space-between; }
     .order-price .book .container img {
       height: 214px;
       width: 191px;
@@ -1310,8 +1152,6 @@ html {
       .order-price .book .container .text p {
         font-size: 18px; }
       .order-price .book .container .text form {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex; }
         .order-price .book .container .text form input[type='email'] {
           width: 100%;
@@ -1328,30 +1168,20 @@ html {
     width: 100%;
     margin-bottom: 46px; }
   .team .container .photo {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
-    .team .container .photo .photo-items {
+    flex-direction: column;
+    align-items: center; }
+    .team .container .photo .card .photo-items {
       width: 450px; }
-      .team .container .photo .photo-items img {
+      .team .container .photo .card .photo-items img {
         width: 450px; }
-      .team .container .photo .photo-items p {
+      .team .container .photo .card .photo-items p {
         margin-top: 20px;
         margin-bottom: 20px; }
 
   .contacts .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
+    flex-wrap: wrap;
+    justify-content: space-between; }
     .contacts .container .two {
       width: 52%;
       margin-bottom: 35px; }
@@ -1518,8 +1348,10 @@ html {
     .team .container h2 {
       line-height: 58px;
       font-size: 36px; }
-    .team .container .photo .photo-items img {
+    .team .container .photo .card .photo-items {
       width: 400px; }
+      .team .container .photo .card .photo-items img {
+        width: 400px; }
 
   .contacts .container .two .insta-photo img {
     width: 90px; } }
@@ -1542,25 +1374,13 @@ html {
     .main-page .container .header {
       position: relative; }
       .main-page .container .header ul {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-transition: 0.5s;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         transition: 0.5s;
-        -webkit-transform-origin: right center;
-                transform-origin: right center;
-        -webkit-transform: scaleX(0) translateX(20%);
-                transform: scaleX(0) translateX(20%);
+        transform-origin: right center;
+        transform: scaleX(0) translateX(20%);
         opacity: 0;
         position: absolute;
         background-color: #E5E5E5;
@@ -1574,8 +1394,7 @@ html {
           .main-page .container .header ul li a {
             font-size: 21px; }
       .main-page .container .header .menu-nav_active {
-        -webkit-transform: scaleX(1) translateX(0%);
-                transform: scaleX(1) translateX(0%);
+        transform: scaleX(1) translateX(0%);
         opacity: 1; }
       .main-page .container .header .logo {
         width: 100px;
@@ -1607,22 +1426,17 @@ html {
             background-color: #275553;
             content: '';
             display: block;
-            -webkit-transition: 0.5s;
             transition: 0.5s; }
           .main-page .container .header .section .menu-btn span::before {
-            -webkit-transform: translateY(-5px);
-                    transform: translateY(-5px); }
+            transform: translateY(-5px); }
           .main-page .container .header .section .menu-btn span::after {
-            -webkit-transform: translateY(5px);
-                    transform: translateY(5px); }
+            transform: translateY(5px); }
       .main-page .container .header .section .menu-btn_active span {
         height: 0; }
         .main-page .container .header .section .menu-btn_active span::before {
-          -webkit-transform: rotate(45deg);
-                  transform: rotate(45deg); }
+          transform: rotate(45deg); }
         .main-page .container .header .section .menu-btn_active span::after {
-          -webkit-transform: rotate(-45deg);
-                  transform: rotate(-45deg); }
+          transform: rotate(-45deg); }
     .main-page .container .dream h1 {
       line-height: 50px;
       font-size: 48px;
@@ -1671,11 +1485,8 @@ html {
       .travel .airplane .container .text-up p {
         font-size: 17px; }
       .travel .airplane .container .icons {
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between; }
+        flex-wrap: wrap;
+        justify-content: space-between; }
         .travel .airplane .container .icons div {
           margin-right: 2px;
           width: 149px; }
@@ -1745,10 +1556,7 @@ html {
       .days .day-four-and-five .day-five .container .add-service {
         margin-bottom: 5px; }
       .days .day-four-and-five .day-five .container .add {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column; }
+        flex-direction: column; }
         .days .day-four-and-five .day-five .container .add p:first-child {
           margin-bottom: 8px; }
   .days .day-six {
@@ -1777,10 +1585,7 @@ html {
         width: 100%;
         margin-bottom: 11px; }
       .order-price .order .container .order-forms form .input-text {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column; }
+        flex-direction: column; }
         .order-price .order .container .order-forms form .input-text div {
           margin-bottom: 24px;
           margin-right: 0; }
@@ -1793,10 +1598,7 @@ html {
             padding-top: 7px;
             width: 100%; }
       .order-price .order .container .order-forms form .input-radio .price .price-base {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column; }
+        flex-direction: column; }
         .order-price .order .container .order-forms form .input-radio .price .price-base p {
           margin-left: 31px; }
       .order-price .order .container .order-forms form .input-date {
@@ -1810,17 +1612,12 @@ html {
         font-size: 18px;
         margin-bottom: 10px; }
       .order-price .order .container .order-forms form .submit {
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center; }
+        justify-content: center; }
         .order-price .order .container .order-forms form .submit input {
           width: 287px;
           height: 40px; }
     .order-price .book .container {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column; }
+      flex-direction: column; }
       .order-price .book .container .text {
         margin-left: 0; }
         .order-price .book .container .text h4 {
@@ -1831,10 +1628,7 @@ html {
           font-size: 16px;
           line-height: 24px; }
         .order-price .book .container .text form {
-          -webkit-box-orient: vertical;
-          -webkit-box-direction: normal;
-              -ms-flex-direction: column;
-                  flex-direction: column; }
+          flex-direction: column; }
           .order-price .book .container .text form input[type='submit'] {
             width: 288px;
             height: 40px;
@@ -1848,11 +1642,11 @@ html {
       font-size: 26px; }
       .team .container h2 + p {
         display: none; }
-    .team .container .photo .photo-items {
+    .team .container .photo .card .photo-items {
       width: 220px; }
-      .team .container .photo .photo-items img {
+      .team .container .photo .card .photo-items img {
         width: 220px; }
-      .team .container .photo .photo-items p {
+      .team .container .photo .card .photo-items p {
         margin-bottom: 0;
         margin-top: 0;
         font-size: 14px; }
@@ -1860,10 +1654,7 @@ html {
   .contacts {
     padding-bottom: 30px; }
     .contacts .container {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column; }
+      flex-direction: column; }
       .contacts .container .one {
         width: 100%; }
       .contacts .container .two {
