@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKETA</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        let surname= prompt("Введите Вашу фамилию");
+            while (surname==""|| surname==" ") {
+                surname= prompt("Введите Вашу фамилию правильно"); //Зациклила, пока не будет введена фамилия.Если будет ввод пустой строки или пробела.
+            }
+
+        let name= prompt("Введите Ваше имя");
+            while (name==""|| name==" ") {
+                    name= prompt("Введите Ваше имя правильно"); //Зациклила, пока не будет введенo имя.
+                }
+
+        let patronymic= prompt("Введите Ваше отчество");
+            while (patronymic==""|| patronymic==" ") {
+                patronymic= prompt("Введите Ваше отчество правильно"); //Зациклила, пока не будет введенo отчество.
+                }
+
+        let age=parseInt(prompt("Введите Ваш возраст в годах"));
+            while (isNaN(age)) {
+            age=parseInt(prompt("Введите Ваш возраст В ГОДАХ (цифра)!")); //Зациклила, пока не будет введено число
+            }
+
+        let gender= confirm("Ваш пол-мужской?");
+        let retired;
+            if( gender==true){   //Вложила условие в условие
+                gender= "мужской";
+                    if(age>62){
+                        retired="да";
+                    } else{
+                        retired="нет";
+                    }
+            } else{
+                gender= "женский";
+                if(age>57){
+                        retired="да";
+                    } else{
+                        retired="нет";
+                    }
+            }
+        alert(`ваше ФИО: ${surname} ${name} ${patronymic}
+ваш возраст в годах: ${age}
+ваш возраст в днях: ${age*365}
+через 5 лет вам будет: ${age+5}
+ваш пол: ${gender}
+вы на пенсии: ${retired}`);
+
+
+    </script>
+</body>
+</html>

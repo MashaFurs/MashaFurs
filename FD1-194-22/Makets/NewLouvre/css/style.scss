@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@100;300;400;500;700&display=swap');
+@import 'variables.scss';
+@import 'default.scss';
+
+
+
+    
+.header{
+    background-color: $black;
+    padding-top: 61px;
+    padding-bottom: 58px;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+
+        .logo{
+            display: flex;
+
+            img{
+                width: 49px;
+                height: 26px;
+                margin-right: 25px;
+            }
+
+            p{
+                font-family: $Forum;
+                font-weight: $regular;
+                font-size: $fz28;
+                line-height: 31px;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+            }
+        }
+
+        .menu{
+            display: flex;
+            
+            li{
+                margin-right: 55px;
+                font-weight: $thin;
+                font-size: 22px;
+                line-height: 26px;
+                letter-spacing: 2px;
+                
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.main{
+    background-color: $black;
+    padding-bottom: 60px;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        h1{
+            font-family: $Forum;
+            font-weight: $regular;
+            font-size: $fz80;
+            line-height: 90px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            position: absolute;
+            z-index: 2;
+            top: 150px;
+        }
+
+        .text{
+            padding-top: 355px;
+            
+
+            p{
+                font-size: 27px;
+                line-height: 33px;
+                letter-spacing: 2px;
+                margin-bottom: 75px;
+                
+                
+                
+            }
+
+            button{
+                width: 360px;
+                height: 75px;
+                background: $red;
+                border-radius: 10px;
+                font-family: 'Roboto';
+                line-height: 26px;
+                font-size: $fz22;
+                font-weight: $light;
+                text-align: center;
+                letter-spacing: 2px;
+                color: $white;
+                margin-right: 80px;
+            }
+        }
+
+        .slider{
+            min-width: 0;
+            
+           
+        }
+         .slick-track{
+            display: flex;
+         }
+         .slick-list{
+            overflow: hidden;
+         }
+
+         .black-area{
+            width: 600px;
+            height: 120px;
+            background-color: $black;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+         }
+         
+        
+       
+        
+    }
+}
