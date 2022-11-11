@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        
+        let string=prompt("Введите слово");
+        string = string.toLowerCase().replace(/[^a-zа-яё]/gi, ''); // перевожу все в нижний регистр и удаляю все( пробелы, знаки препинания) кроме букв.
+        
+
+        let newString=""; // создаю новую пустую переменную, сюда будет приходить перевернутое значение переменной string.
+        function reverseString(string) { 
+            
+            for( var i = string.length - 1; i>=0; i --){  //Создала цикл, который начинается с последнего символа строки и постепенно уменьшается после каждой  итерации.
+              newString+= string[i]; //Переменная, которая была изначально пустая, постепенно заполняется.
+            }
+            return newString;     //возвращаю перевернутую строку.     
+        }
+        reverseString(string);
+        console.log(newString);
+        if(string==newString){  //сравниваю оригинал с перевернутой строкой. 
+            alert("Это палиндром");
+        } else{
+            alert("Это не палиндром");
+        }
+        
+        
+        
+    </script>
+</body>
+</html>
