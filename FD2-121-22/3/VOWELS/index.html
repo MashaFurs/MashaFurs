@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOWELS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="box">
+        <h1 id="result"></h1>
+            <div>
+                <div class="wrapper">
+                    <input type="text" id="text">  
+                </div>
+          
+                <a href="#" onclick='getText()'>
+                    <span class="one"></span>
+                    <span class="two"></span>
+                    <span class="three"></span>
+                    <span class="four"></span>
+                    Узнать сколько гласных
+                </a>
+            </div>  
+    </div>
+
+    <script>
+        function getText(){
+
+            function vowels(){
+                let count=0;
+                let str =document.getElementById("text").value.toLowerCase().split("");
+                let letters= ["а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
+                    for(i=0;i<str.length;i++){
+                        for( j=0;j<letters.length;j++){
+                            if(str[i]==letters[j]){
+                            count++;
+                            }
+                        }
+                    }
+                    return count;
+            }
+        document.getElementById('result').innerText=`гласных: ${vowels()}`;
+        console.log(`гласных: ${vowels()}`);
+        }    
+        
+    </script>
+</body>
+</html>
