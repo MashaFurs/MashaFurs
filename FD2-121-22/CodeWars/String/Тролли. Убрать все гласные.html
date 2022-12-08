@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+</head>
+<body>
+    
+    
+
+    <script>
+ 
+ function disemvowel(str) {
+        let vowels=["a","e","i","o","u","I","O","U","A","E"];
+        let strArr=  str.split("");
+        let newString="";
+        for(i=0;i<strArr.length;i++){
+            if(!vowels.includes(strArr[i])){
+              newString+=strArr[i];
+            }
+        }
+  
+  return newString;
+}
+    </script>
+</body>
+</html>

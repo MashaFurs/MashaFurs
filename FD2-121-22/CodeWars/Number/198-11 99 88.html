@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+</head>
+<body>
+    
+    
+
+    <script>
+ 
+ function checkConcatenatedSum(x, n) {
+        x=Math.abs(x);  //возвратила модуль
+        let arr=x.toString().split("");  //преобразую в строку и делаю из строки  массив
+        
+        for(i=0;i<arr.length;i++){  // с помощью цикла  повторяю  каждое значение массива  n раз
+            arr[i]=Number(arr[i].repeat(n));
+        }
+        let result=arr.map(function(item,index,arr){  //перевожу из строчного типа в числовой
+            let number=parseInt(item);
+            return number;
+        })
+
+        let sum=0;   //нахожу сумму всех элементов массива
+        for(i=0;i<result.length;i++) {
+            sum=sum+result[i];
+        }
+
+
+       
+       return x==sum;
+       
+       
+       }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+</head>
+<body>
+    
+    
+
+    <script>
+ 
+ function filterString (value) {
+	let str=value.split("");
+    let numb=["0","1","2","3","4","5","6","7","8","9"];
+    let result="";
+    for( let i=0; i<str.length;i++){
+        for(let j=0; j<numb.length;j++){
+            if( str[i]===numb[j]){
+                result+=str[i];
+            }
+        }
+    }
+    result=parseInt(result);
+    console.log(typeof result);
+    return result;
+}
+filterString("Н44ас5т6я789");
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+</head>
+<body>
+    
+    
+
+    <script>
+ 
+ function isIsogram(str){
+    if(str==""){
+        return true
+    }
+    
+  let strArr=str.toLowerCase().split("");
+  let newString=[];
+
+  for(let i=0;i<strArr.length;i++){
+
+    if(!newString.includes(strArr[i])){
+        newString+=strArr[i];
+        
+    }   else{
+        return false;
+    } 
+
+   
+    if(newString==str.toLowerCase()){
+        return true
+    }     
+  }    
+}
+console.log( isIsogram("") );
+ 
+  
+
+
+        
+    </script>
+</body>
+</html>

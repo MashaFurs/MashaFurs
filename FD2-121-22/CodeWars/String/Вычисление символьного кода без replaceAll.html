@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+</head>
+<body>
+    
+    
+
+    <script>
+     
+     function calc(x){
+        string=""; 
+         
+        for(let i=0;i<x.length;i++){  
+            string+=x.charCodeAt(i);
+        }
+        string1=string; 
+        
+
+        let stringArr=string.split("").map(Number); 
+        let string1Arr=string1.split("").map(Number);
+
+        for(let m=0;m<string1Arr.length;m++){
+            if(string1Arr[m]==7){
+              
+                string1Arr[m]=1;
+            }
+        }
+        
+        
+       
+        let sum1=0; 
+        for(let j=0; j<stringArr.length;j++){  
+            sum1+=stringArr[j];
+        }
+        let sum2=0;
+        for(let k=0; k<string1Arr.length;k++){
+            sum2+=string1Arr[k];
+        }
+        let result=sum1-sum2;
+        console.log(result)
+        return result;
+        
+    }
+calc("aaaaaddddr'");
+        
+    </script>
+</body>
+</html>

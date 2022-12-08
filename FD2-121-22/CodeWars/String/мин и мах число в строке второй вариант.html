@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+</head>
+<body>
+    
+    
+
+    <script>
+ 
+ function highAndLow(numb){
+  let numbArr=numb.split(" ").map(Number); //тут перевожу строку в массив, а потом элементы массива перевожу из строчного типа в числовой.
+  
+  let max=numbArr[0];
+  let min=numbArr[0];
+  
+  for(let i=0;i<numbArr.length;i++){ //перебираю весь массив и сравниваю ЧИСЛА массива
+    
+    if(numbArr[i]>max){
+        max=numbArr[i];
+    }
+    if(numbArr[i]<min){
+        min=numbArr[i];
+    }
+    
+  }
+  
+  let result=`${max} ${min}`;
+  
+  console.log(result);
+  return result;
+ 
+  
+  
+}
+highAndLow("2 7 8 9 1000 -10");
+        
+    </script>
+</body>
+</html>
