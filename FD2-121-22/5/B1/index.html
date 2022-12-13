@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2</title>
+    <title>B1+</title>
 </head>
 <body>
     
@@ -12,10 +12,19 @@
 
     <script>
 
-      const str=prompt("Введите строку");
-      const flipString = string => string.split("").reverse().join(""); //Переворот строки задом наперед
-      alert (flipString(str)); 
+      let century = parseInt(prompt( "Введите год"));
+
+      function checkCentury (vek) {    //Функция определения века( по условию задачи функция не должна использовать if либо условную операцию).
+        vek= Math.abs(vek);       //Возвратила модуль значения
+        return vek= Math.ceil(vek/100);   //Нашла век
+      }
       
+   century >=0 ? alert(`${checkCentury(century)} век`) : alert(`${checkCentury(century)} век до нашей эры`); //т.к нельзя использовать в функии if либо условную операцию я по значению переменной century решаю будет век нашей эры либо до нашей эры. 
+
+       
+
+     
+
     </script>
 </body>
 </html>
