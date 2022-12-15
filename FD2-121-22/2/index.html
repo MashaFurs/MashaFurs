@@ -11,20 +11,61 @@
 
 
     <script>
+         const cars=[
+            {
+            brandTitle: "Land Rover",
+            modelTitle: "Discovery V",
+            imgUrl: "https://dvizhok.su/i/files2/auto/2020/11/Land_Rover_Discovery_2021_R-Dynamic_s.jpg",
+            price: 120000,
+            },
+            {
+            brandTitle: " BMW",
+            modelTitle: "X7",
+            imgUrl: "https://rg.ru/uploads/images/230/03/42/2023-BMW-X7-2.jpeg",
+            price: 150000,
+            },
+            {
+            brandTitle: "Jeep",
+            modelTitle: "Grand Cherokee WK2",
+            imgUrl: "https://a.d-cd.net/d25ee2as-960.jpg",
+            price: 200000,
+            },
+            {
+            brandTitle: "Audi",
+            modelTitle: "A7",
+            imgUrl: "https://hips.hearstapps.com/hmg-prod/images/medium-5058-2019audia7-1653580372.jpg",
+            price: 1100000,
+            },
+            {
+            brandTitle: "Toyota",
+            modelTitle: "RAV4",
+            imgUrl: "https://rolfoil.ru/netcat_files/153/152/toyota_rav4.jpg",
+            price: 70000,
+            },
+            {
+            brandTitle: "Porsche",
+            modelTitle: "Cayenne 3",
+            imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg/458px-Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg",
+            price: 2000000,
+            },
+            
+        ]
 
-      let century = parseInt(prompt( "Введите год"));
+        // let cars=[2,7,4,92,56,72]
+            let key = "price";
+            
+            function sortCars(car1,car2) {
+                if(car1[key]>car2[key]) {
+                    return 1;
+                } else if (car2[key]>car1[key]) {
+                    return -1;
+                } else{
+                    return 0;
+                }
+            }
 
-      function checkCentury (vek) {    //Функция определения века( по условию задачи функция не должна использовать if либо условную операцию).
-        vek= Math.abs(vek);       //Возвратила модуль значения
-        return vek= Math.ceil(vek/100);   //Нашла век
-      }
-      
-   century >=0 ? alert(`${checkCentury(century)} век`) : alert(`${checkCentury(century)} век до нашей эры`); //т.к нельзя использовать в функии if либо условную операцию я по значению переменной century решаю будет век нашей эры либо до нашей эры. 
-
-       
-
-     
-
+            
+        console.log(  cars.sort(sortCars));
     </script>
 </body>
 </html>
