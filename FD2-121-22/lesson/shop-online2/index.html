@@ -133,22 +133,31 @@
            //Добавление новых позиций
 
            function send(){
-            let brandTitle=document.querySelector("[name='brandTitle']").value;
-            let modelTitle= document.querySelector("[name='modelTitle']").value;
-            let imgUrl= document.querySelector("[name='imgUrl']").value;
-            let price= parseInt(document.querySelector("[name='price']").value); 
+
+              let brandTitle=document.querySelector("[name='brandTitle']").value;
+              let modelTitle= document.querySelector("[name='modelTitle']").value;
+              let imgUrl= document.querySelector("[name='imgUrl']").value;
+              let price= parseInt(document.querySelector("[name='price']").value); 
+
+              
+
+                if(brandTitle==""||modelTitle==""||imgUrl==""||isNaN(price)==true){
+                    alert("Введите все поля!");
+                } else{
+                      cars.push({
+                                brandTitle, modelTitle, imgUrl, price
+                              });
+
+                      rendom();
+
+                      document.querySelector("[name='brandTitle']").value= "";
+                      document.querySelector("[name='modelTitle']").value= "";
+                      document.querySelector("[name='imgUrl']").value= "";
+                      document.querySelector("[name='price']").value= "";
+            }
             
             
-            cars.push({
-               brandTitle, modelTitle, imgUrl, price
-             });
-
-             rendom();
-
-             document.querySelector("[name='brandTitle']").value= "";
-             document.querySelector("[name='modelTitle']").value= "";
-             document.querySelector("[name='imgUrl']").value= "";
-             document.querySelector("[name='price']").value= "";
+            
             
            }
            
