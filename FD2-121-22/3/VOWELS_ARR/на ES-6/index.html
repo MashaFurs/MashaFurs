@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOWELS_ARR</title>
+    
+</head>
+<body>
+    
+
+    <script>
+        let str= prompt("Введите строку").toLowerCase().split("");
+        let letters="аяуюоёыиэе";
+
+
+        //forEach//
+        let countForEach= str => {
+            let sum=0;
+            str.forEach( item => {
+                if(letters.includes(item)){
+                    sum+=1;     
+                }   
+            })  
+            return sum;
+        }
+
+        //filter//
+        let countFilter= str => {
+            return str.filter(  item => {
+                return letters.includes(item);
+            }).length;
+        } 
+
+        //reduce//
+        let countReduce= str => {
+            return str.reduce( (prev,item) => {
+                if(letters.includes(item)) {
+                    prev++;
+                }
+                return prev;   
+            },0);
+        }
+      
+
+        alert(`метод forEach: ${countForEach(str)},
+ метод filter: ${countFilter(str)},
+ метод reduce: ${countReduce(str)}.`)
+        
+        
+    </script>
+</body>
+</html>
