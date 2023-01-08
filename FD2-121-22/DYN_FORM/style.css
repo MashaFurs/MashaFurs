@@ -1,0 +1,26 @@
+hr{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+textarea{
+    width:100%;
+}
+
+label{
+    display: inline-block;
+    width: 170px;
+    margin-bottom: 10px;
+}
+
+input[ type="radio"] + label{  /*Если за input type="radio" идет label*/
+    display: inline;
+}
+
+input[ type="number"] {
+    width:50px;
+}
+
+input[ type="text"] {
+    width: calc(100% - 178px)
+}

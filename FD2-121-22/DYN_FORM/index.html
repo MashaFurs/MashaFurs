@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYN_FORM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action=" https://fe.it-academy.by/TestForm.php" method="post" name="form1"></form>
+  <form action=" https://fe.it-academy.by/TestForm.php" method="post" name="form2"></form>
+
+
+
+  <script>
+    var formDef1=[
+                  { 
+                    label:'Название сайта:',
+                    kind:'longtext',
+                    name:'sitename'
+                  },
+                  { 
+                    label:'URL сайта:',
+                    kind:'longtext',
+                    name:'siteurl'
+                  },
+                  { 
+                    label:'Посетителей в сутки:',
+                    kind:'number',
+                    name:'visitors'
+                  },
+                  { 
+                    label:'E-mail для связи:',
+                    kind:'shorttext',
+                    name:'email'
+                  },
+                  { 
+                    label:'Рубрика каталога:',
+                    kind:'combo',
+                    name:'division',
+                    variants:[
+                              { 
+                                text:'здоровье',
+                                value:1
+                              },
+                              { 
+                                text:'домашний уют',
+                                value:2
+                              },
+                              { 
+                                text:'бытовая техника',
+                                value:3
+                              }
+                             ]
+                  },
+                  { 
+                    label:'Размещение:',
+                    kind:'radio',
+                    name:'payment',
+                    variants:[
+                              { 
+                                text:'бесплатное',
+                                value:1
+                              },
+                              { 
+                                text:'платное',
+                                value:2
+                              },
+                              { text:'VIP',
+                                value:3
+                              }
+                             ]
+                  },
+                  { 
+                    label:'Разрешить отзывы:',
+                    kind:'check',
+                    name:'votes'
+                  },
+                  { 
+                    label:'Описание сайта:',
+                    kind:'memo',
+                    name:'description'
+                  },
+                  { 
+                    caption:'Опубликовать',
+                    kind:'submit'
+                  },
+    ];
+
+    var formDef2=[
+                  { 
+                    label:'Фамилия:',
+                    kind:'longtext',
+                    name:'lastname'
+                  },
+                  { 
+                    label:'Имя:',
+                    kind:'longtext',
+                    name:'firstname'
+                  },
+                    
+                  { 
+                    label:'Отчество:',
+                    kind:'longtext',
+                    name:'secondname'
+                  },
+                  { 
+                    label:'Возраст:',
+                    kind:'number',
+                    name:'age'
+                  },
+                  { 
+                    caption:'Зарегистрироваться',
+                    kind:'submit'
+                  },
+    ];
+
+    let form1= document.forms.form1;
+    let form2= document.forms.form2;
+   
+
+    function createElememts(teg,arr) {
+        let hr=document.createElement("hr"); //Создала линию,которая разделяет формы
+        teg.appendChild(hr);
+
+        arr.forEach(element => {
+            if(element.label){
+                let lab= document.createElement("label"); //Создала тег label
+                lab.textContent=element.label; //Добавила в тег содержимое
+                lab.setAttribute("for", element.name); //Установила атрибут for,чтоб связать label с input
+                teg.appendChild(lab); //Добавила новый элемент в тег form
+            }
+
+            if(element.kind=="longtext") {
+                let inp =document.createElement ("input"); //Создала тег input
+                inp.type ="text"; //Установила атрибут type и значение на тег
+                inp.name =element.name; //Установила атрибут name
+                inp.id=element.name; //Установила атрибут id. Теперь при клике по label сфокусируется input
+                teg.appendChild(inp); //Добавила новый элемент в тег form
+                teg.appendChild(document.createElement("br"));
+                
+            }
+
+            if(element.kind=="number") {
+                let inp =document.createElement ("input");
+                inp.type ="number"; 
+                inp.name =element.name;
+                inp.id=element.name;
+                teg.appendChild(inp);
+                teg.appendChild(document.createElement("br"));
+
+            }
+
+            if(element.kind=="shorttext") {
+                let inp =document.createElement ("input");
+                inp.type ="email"; 
+                inp.name =element.name;
+                inp.id=element.name;
+                teg.appendChild(inp);
+                teg.appendChild(document.createElement("br"));
+            }
+
+            if(element.kind=="combo") {
+                let sel =document.createElement ("select"); //Создала тег select
+                sel.name=element.name; 
+                teg.appendChild(sel); //Добавила select в тег form
+                    
+                element.variants.forEach(el => {  //Перебираю массив объектов и создаю option
+                    let opt= document.createElement("option");
+                    opt.value=el.value;
+                    opt.textContent=el.text;
+                    sel.appendChild(opt); //Добавила option в select
+                });
+            teg.appendChild(document.createElement("br"));
+            }
+
+            if(element.kind=="radio") {
+                element.variants.forEach( el => {
+                    
+                    let inp =document.createElement ("input"); //Перебираю массив объектов и создаю input type ="radio"
+                    inp.type ="radio"; 
+                    inp.name =element.name;
+                    inp.value=el.value;
+                    inp.id=el.value; //Добавила id,чтоб потом связать через for с label
+                    teg.appendChild(inp);  
+                    
+                    let lab=document.createElement ("label"); //Создаю label
+                    lab.textContent= el.text;
+                    lab.setAttribute("for", el.value); //Добавляю for и теперь при  клике на текст элемента label будет фокусироваться radio
+                    teg.appendChild(lab);
+                                        
+
+                })
+                teg.appendChild(document.createElement("br"));
+            }
+
+            if(element.kind=="check") {
+                let inp =document.createElement ("input");
+                inp.type ="checkbox"; 
+                inp.name =element.name;
+                teg.appendChild(inp);
+                teg.appendChild(document.createElement("br"));
+            }
+
+            if(element.kind=="memo") {
+                teg.appendChild(document.createElement("br"));
+                let textA=document.createElement ("textarea");
+                textA.name=element.name;
+                textA.id=element.name;
+                teg.appendChild(textA);
+                teg.appendChild(document.createElement("br"));
+            }
+
+            if(element.kind=="submit") {
+                let subm= document.createElement ("input");
+                subm.type="submit";
+                subm.value=element.caption;
+                teg.appendChild(subm);
+            }
+        });
+    }
+
+
+    createElememts(form1, formDef1);
+    createElememts(form2, formDef2);
+  </script>
+</body>
+</html>
