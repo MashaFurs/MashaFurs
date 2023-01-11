@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALID_FORM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>Для внесения вашего сайта в каталог, заполните форму:</p>
+    <form action="https://fe.it-academy.by/TestForm.php" method="post" name="form">
+        <div>
+            <label for="dev">Разработчики:</label>
+            <input type="text" name="developer" id="dev" class="elem">
+        </div>
+
+        <div>
+            <label for="tit">Название сайта:</label>
+            <input type="text" name="title"  id="tit" class="elem">
+        </div>
+
+        <div>
+            <label for="sit">URL сайта:</label>
+            <input type="url" name="site"  id="sit" class="elem">
+        </div>
+
+        <div>
+            <label for="dat">Дата запуска сайта:</label>
+            <input type="date" name="date"  id="dat" class="elem">
+        </div>
+
+        <div>
+            <label for="visit">Посетителей в сутки:</label>
+            <input type="number" name="visitors"  id="visit" class="elem">
+        </div>
+
+        <div>
+            <label for="mail">E-mail для связи:</label>
+            <input type="email" name="email"  id="mail" class="elem">
+        </div>
+
+        <div>
+            <label for="catal">Рубрика каталога:</label>
+            <select name="catalog"  id="catal" class="elem">
+                <option value="technic">бытовая техника</option>
+                <option value="health">здоровье</option>
+                <option value="comfort">домашний уют</option>
+            </select>
+        </div>
+
+        <div class="radio">
+            <label>Размещение:</label>
+                <label class="rad"><input type="radio" name="location" value="free" >бесплатное</label>
+                <label class="rad"><input type="radio" name="location" value="paid">платное</label>
+                <label class="rad"><input type="radio" name="location" value="VIP">VIP</label>
+        </div>
+        
+        <div>
+            <label for="agr">Разрешить отзывы:</label>
+            <input type="checkbox" name="agree"  id="agr">
+        </div>
+        
+        <div>
+            <label for="descr">Описание сайта:</label><br>
+            <textarea name="description"  id="descr" class="elem"></textarea>
+        </div>
+        
+        <input type="submit" value="Опубликовать">    
+    </form>
+
+
+    <script >
+        let form=document.forms.form; //Положила форму в переменную
+        let elements= document.querySelectorAll(".elem") //Положила все элементы формы( кроме радиокнопок и чекбокса) в переменную.
+        let radio= document.querySelectorAll('input[ type="radio"]');
+        let checkbox= document.querySelector('#agr');
+        let str=0;//Для подсчета радиокнопки
+         
+
+
+        for (let r=0;r<elements.length;r++) {
+
+            elements[r].onfocus= function() {      //Чтоб не наслаивались ошибки,если они есть, при каждом фокусе инпута. Удаляю их
+                if (elements[r].nextElementSibling.className== 'error') {
+                    console.log(elements[r].nextElementSibling) 
+                    elements[r].nextElementSibling.remove();
+                } 
+             }
+
+            elements[r].onblur= function () { //Чтоб выводилась ошибка,если она есть, при уходе с текстового поля формы
+
+                if(!(elements[r].value).trim()) {
+                    let error=document.createElement("span");
+                    error.className="error";
+                    error.innerHTML="Не введено поле";
+                    elements[r].parentElement.appendChild(error);   
+                }  
+            }    
+        }
+        
+
+        form.addEventListener("submit", function(event) {
+             let arr=[];    //Создала пустой массив для того, чтоб складывать сюда инпуты, которые буду фокусировать    
+        
+            let errors=form.querySelectorAll(".error"); //Создала переменную, в которую буду складывать все error
+            for( let m=0; m<errors.length;m++) { //Создала цикл,чтоб ошибки не накапливались при каждом клике кнопки "Опубликовать"
+                errors[m].remove();              
+            }
+
+            for(let i=0; i<elements.length;i++) { 
+                if(!(elements[i].value).trim()) { //Прохожусь по элементам формы и проверяю есть ли среди них пустые. Дополнительно поставила проверку trim,если введут только пробел
+                    arr.push(elements[i]);
+                    let error=document.createElement("span");
+                    error.className="error";
+                    error.innerHTML="Не введено поле";
+                    elements[i].parentElement.appendChild(error);
+                    event.preventDefault();//Если есть пустые элементы, то отменяется действие по умолчанию
+                    
+                }
+            }          
+
+            if(!checkbox.checked) { //Проверяю нажат ли checkbox
+                    let error=document.createElement("span");
+                    error.className="error";
+                    error.innerHTML="Разрешите оставить отзывы";
+                    checkbox.parentElement.appendChild(error);
+                    event.preventDefault();//Если чекбокс не нажат, то отменяется действие по умолчанию
+                }
+            
+            for( let k=0; k<radio.length;k++) { //Проверяю циклом есть ли нажатые радиокнопки, если есть, то увеличиваю значение переменной str
+                if(radio[k].checked) {
+                    str++;
+                }
+            }
+            if(str==0) {                                //Если значение переменной не изменилось, после цикла. Тогда вывожу ошибку
+                let error=document.createElement("span");
+                error.className="error";
+                error.innerHTML="Выберете тип размещения";
+                document.querySelector(".radio").appendChild(error);
+                event.preventDefault(); //Если радиокнопка не нажата, то отменяется действие по умолчанию
+
+                } 
+
+            for(let d=0;d<arr.length;d++) { //перебираю незаполненные инпуты и фокусирую к первому ошибочно заполненному полю
+                   arr[0].focus();
+                   
+                }
+        })
+
+        
+    </script>
+</body>
+</html>
