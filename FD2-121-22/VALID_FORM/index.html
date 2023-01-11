@@ -75,30 +75,43 @@
         let elements= document.querySelectorAll(".elem") //Положила все элементы формы( кроме радиокнопок и чекбокса) в переменную.
         let radio= document.querySelectorAll('input[ type="radio"]');
         let checkbox= document.querySelector('#agr');
+        let mail=document.getElementById("mail");
         let str=0;//Для подсчета радиокнопки
-         
-
-
-        for (let r=0;r<elements.length;r++) {
-
-            elements[r].onfocus= function() {      //Чтоб не наслаивались ошибки,если они есть, при каждом фокусе инпута. Удаляю их
-                if (elements[r].nextElementSibling.className== 'error') {
-                    console.log(elements[r].nextElementSibling) 
-                    elements[r].nextElementSibling.remove();
-                } 
-             }
-
-            elements[r].onblur= function () { //Чтоб выводилась ошибка,если она есть, при уходе с текстового поля формы
-
-                if(!(elements[r].value).trim()) {
-                    let error=document.createElement("span");
-                    error.className="error";
-                    error.innerHTML="Не введено поле";
-                    elements[r].parentElement.appendChild(error);   
-                }  
-            }    
-        }
         
+
+        function addError(a,b) {  //Вынесла в отдельную функцию вывод ошибки
+            let error=document.createElement("span");
+                    error.className="error";
+                    error.innerHTML=b;
+                    a.parentElement.appendChild(error);
+        }
+
+
+        for (let r=0;r<elements.length;r++) { //Проверяю циклом каждый инпут
+            let div= elements[r].parentNode;
+
+
+            elements[r].addEventListener ("blur",function () {  
+                if(!(elements[r].value).trim()) {  //Если при покидании инпута ничего не ввели, либо ввели только пробел(ы), то добавляю ошибку
+                     addError(elements[r],"Не введено поле");  
+                } 
+
+                if (mail.value.includes("ru")&&(!mail.parentNode.querySelector('.error'))) { 
+                addError(mail, "Регистрация недоступна в вашей стране")
+                }
+                  
+            })
+
+            
+            elements[r].onfocus=function () {   //Удаление ошибки,если они есть,чтоб не наслаивались у инпута,который в фокусе
+                let child = div.querySelector('.error');
+                    if(child) {
+                        child.remove();
+                    }
+            }
+        };
+
+
 
         form.addEventListener("submit", function(event) {
              let arr=[];    //Создала пустой массив для того, чтоб складывать сюда инпуты, которые буду фокусировать    
@@ -146,7 +159,14 @@
                    arr[0].focus();
                    
                 }
+
+
+            if (mail.value.includes("ru")) { 
+                addError(mail, "Регистрация недоступна в вашей стране")
+            }
         })
+
+        
 
         
     </script>
