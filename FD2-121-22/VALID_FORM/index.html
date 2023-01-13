@@ -96,7 +96,7 @@
                      addError(elements[r],"Не введено поле");  
                 } 
 
-                if (mail.value.includes("ru")&&(!mail.parentNode.querySelector('.error'))) {  //Если пользователь вводит русский сайт, то он не пройдет
+                if (mail.value.includes(".ru")&&(!mail.parentNode.querySelector('.error'))) {  //Если пользователь вводит русский сайт, то он не пройдет
                 addError(mail, "Регистрация недоступна в вашей стране")
                 }
                   
@@ -161,7 +161,7 @@
                 }
 
 
-            if (mail.value.includes("ru")) { 
+            if (mail.value.includes(".ru")) { 
                 addError(mail, "Регистрация недоступна в вашей стране")
             }
         })
