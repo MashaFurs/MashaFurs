@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE_TAGS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <div class="input">
+            <input type="text" placeholder="Введите текст, который хотите поместить в тег">
+        </div>
+
+        <div class="frame">
+            <div class="cards">
+                  <div class="card" onclick=createTags();>
+                      <span class="text">h1</span>
+                  </div>
+    
+                  <div class="card" onclick=createTags();>
+                      <span class="text">h2</span>
+                  </div>
+    
+                  <div class="card" onclick=createTags();>
+                      <span class="text">h3</span>
+                  </div>
+    
+                  <div class="card" onclick=createTags();>
+                      <span class="text">h4</span>
+                  </div>
+    
+                  <div class="card" onclick=createTags();>
+                    <span class="text">h5</span>
+                </div>
+    
+                <div class="card" onclick=createTags();>
+                    <span class="text">h6</span>
+                </div>
+    
+                <div class="card" onclick=createTags();>
+                    <span class="text">p</span>
+                </div>
+    
+                <div class="card" onclick=createTags();>
+                    <span class="text">ul</span>
+                </div>
+
+                <div class="card" onclick=createTags();>
+                    <span class="text">li</span>
+                </div>
+                  
+            </div>
+        </div>
+
+        <div class="display"></div>
+        
+    </div>
+   
+
+
+
+
+    <script>
+        
+        function createTags() {
+
+            let input=(document.querySelector('input[type="text"]')).value; //Положила значение инпута в переменную
+            
+            let display=document.querySelector(".display"); //Положила в отдельную переменную див, где будет высвечиваться текст
+
+            let btnSense=((event.target)).textContent; //Взяла кнопку,на которую кликнула и достала оттуда через textContent ее содержимое, которое потом положила в переменную
+            let teg= document.createElement(btnSense); //Создала тег на основании значения, которое получила выше
+                
+                if (btnSense=="li") { //Если вдруг кликнут по "li", то этот "li" пойдет в последний ul. Благодаря этому мы можем создавать сколько угодно блоков с ul li
+                    document.querySelector("ul:last-child") .appendChild(teg);
+                } else {
+                    display.appendChild(teg); // Добавила тег в див display, где в дальнейшем будут отображаться все теги 
+                }
+            
+
+            teg.textContent=input; //Положила в созданный тег значение введенного инпута
+ 
+        }
+
+    </script>
+</body>
+</html>
