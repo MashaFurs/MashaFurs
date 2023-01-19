@@ -10,8 +10,8 @@ body{
 }
 
 .card{
+  width: 18rem;
   margin-bottom: 40px;
-  margin-right: 100px;
   box-shadow: 10px 5px 5px #cbcbcb;
   filter: opacity(90%);
 }
@@ -93,6 +93,8 @@ transform: translate3d(0, 0, -1em);
   margin-bottom: 50px;
   margin-left: 15px;
   float: left;  
+  position: sticky;
+  top: 5px;
 }
 
 .addCar-label {  
@@ -151,6 +153,86 @@ transform: translate3d(0, 0, -1em);
 .addBtn:active::before {
   transform: translate3d(0, 0, -1em); 
 }
+
+/* .btn-primary{  // Если нужна будет вторая синяя кнопка
+  width: 45%;
+  font-size: 11px;
+  margin-right: 10px;
+} */
+
+
+.wrap{
+  position: relative;
+}
+
+.basket{
+  float: right;
+  margin-right:15px;
+  margin-left: 0px;
+  max-width: none;
+  width: 423px;
+  text-align: center;
+  padding: 10px;
+  position: sticky;
+  top: 5px;
+
+  
+}
+
+.basket span{
+  color: #868b98;
+  text-align: center;
+  font-size: 18px;
+}
+
+.basket img{
+  width: 40px;
+}
+
+.basket div {
+  text-align: left;
+}
+
+.basket .allPrice {
+  color: #868b98;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 10px;
+  
+}
+
+.title{
+  font-size: 17px;
+  font-weight: 500;
+}
+
+/* .choice{
+  max-height: 150px;
+  overflow: auto;
+} */
+
+.btnDelete{
+  margin-right: 0px;
+  width: 28px;
+  
+}
+.btnMinus{
+  margin-right: 0px;
+  width: 28px;
+}
+
+.btnDelete img{
+  width: 20px;
+  vertical-align: baseline;
+}
+
+.btnMinus img{
+  width: 20px;
+  vertical-align: baseline;
+}
+
+
 
 
 
