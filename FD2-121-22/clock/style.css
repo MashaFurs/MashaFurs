@@ -145,3 +145,8 @@ input[type="text"] {
 input[type="text"]::placeholder{
    color: white;
 }
+
+input[type="text"]:focus{
+   border-color: #fff176;
+   outline: none;
+}
