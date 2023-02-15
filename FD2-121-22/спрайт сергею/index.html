@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    @keyframes BirdFly{
+        from { background: url("sprite_bird.png") 0 0;}
+        to { background: url("sprite_bird.png") -2652px 0; }
+    }
+
+    .bird{
+        width: 180px;
+        height: 195px;
+        animation: BirdFly 1s steps(14) infinite; 
+        background-image: url("sprite_bird.png");
+    }
+</style>
+<body>
+    
+
+    <div class="bird"></div>
+</body>
+</html>

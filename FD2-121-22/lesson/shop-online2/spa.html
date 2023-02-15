@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA</title>
+</head>
+<body>
+    
+    <h2>ОДНОСТРАНИЧНОЕ ПРИЛОЖЕНИЕ</h2>
+
+    <div id='IPage'></div>
+    <br>
+    <input type=button value='Главная' onclick='switchToMainPage()'>
+    <input type=button value='О нас' onclick='switchToAboutPage()'>
+    
+    <script>
+        "use strict";
+    
+        window.onhashchange = switchToStateFromURLHash;
+    
+        var SPAState = {};
+      
+    
+        function switchToStateFromURLHash() {
+            var URLHash = window.location.hash;
+    
+            var stateStr = URLHash.substr(1);
+    
+    
+            var pageHTML = "";
+            switch (stateStr) {
+                case 'Main':
+                    pageHTML += renderMain();
+                    break;
+                case 'About':
+                    pageHTML += "<h3>О нас</h3>";
+                    pageHTML += "<p>Мы круты!</p>";
+                    break;
+                case 'test':
+                    pageHTML += "<h3>TEST</h3>";
+                    pageHTML += "<p>Мы круты!</p>";
+                    break;
+            }
+            document.getElementById('IPage').innerHTML = pageHTML;
+        }
+    
+    
+        function switchToState(newState) {
+            var stateStr = newState.pagename;
+            location.hash = stateStr;
+        }
+    
+        function switchToMainPage() {
+            switchToState({ pagename: 'Main' });
+        }
+    
+        function switchToAboutPage() {
+            switchToState({ pagename: 'About' });
+        }
+    
+        switchToStateFromURLHash();
+    
+    
+        function renderMain(){
+            return (
+                `<h3>Главная страница</h3>
+                <p>Щёлкайте по кнопкам!</p>`
+            )
+            
+        }
+    </script>
+    
+</body>
+</html>

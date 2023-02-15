@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA</title>
+</head>
+<body>
+    
+    <div class="box">
+        <button class="big-button" onclick='rendom()'>Показать все модели</button>
+        <button class="big-button" onclick='compareRise()'>Сортировка по возрасанию цены</button>
+        <button class="big-button" onclick='compareDecrease()'>Сортировка по убыванию цены</button>
+      </div>
+
+      
+      <div class="wrap">
+        
+        <div class="addCar">
+            <label class="addCar-label" for="brandTitle">Введите марку машины</label>
+            <input class="addCar-input" id="brandTitle" type="text" name="brandTitle">
+    
+            <label class="addCar-label" for="modelTitle">Введите модель машины</label>
+            <input class="addCar-input" id="modelTitle" type="text" name="modelTitle">
+    
+            <label class="addCar-label" for="imgUrl">Загрузите URL изображения</label>
+            <input class="addCar-input" id="imgUrl" type="text" name="imgUrl">
+    
+            <label class="addCar-label" for="price">Введите цену в $</label>
+            <input class="addCar-input" id="price" type="text" name="price">
+      
+            <button class="addBtn" onclick="send()">Добавить</button>
+        </div>
+
+        <div class="addCar basket">
+          <a href="basket.html" target="_blank" class="title">Корзина <img src="basket.png" alt="basket" title="basket"></a>
+          <div class="round_basket"></div>
+          
+        </div>
+           
+      <div id="app"></div>
+
+
+  </div>
+    
+    <script>
+        "use strict";
+    
+        window.onhashchange = switchToStateFromURLHash;
+    
+        var SPAState = {};
+      
+    
+        function switchToStateFromURLHash() {
+            var URLHash = window.location.hash;
+    
+            var stateStr = URLHash.substr(1);
+    
+    
+            var pageHTML = "";
+            switch (stateStr) {
+                case 'Main':
+                    pageHTML += renderMain();
+                    break;
+                case 'About':
+                    pageHTML += "<h3>О нас</h3>";
+                    pageHTML += "<p>Мы круты!</p>";
+                    break;
+                case 'test':
+                    pageHTML += "<h3>TEST</h3>";
+                    pageHTML += "<p>Мы круты!</p>";
+                    break;
+            }
+            document.getElementById('IPage').innerHTML = pageHTML;
+        }
+    
+    
+        function switchToState(newState) {
+            var stateStr = newState.pagename;
+            location.hash = stateStr;
+        }
+    
+        function switchToMainPage() {
+            switchToState({ pagename: 'Main' });
+        }
+    
+        function switchToAboutPage() {
+            switchToState({ pagename: 'About' });
+        }
+    
+        switchToStateFromURLHash();
+    
+    
+        function renderMain(){
+            return (
+                `<h3>Главная страница</h3>
+                <p>Щёлкайте по кнопкам!</p>`
+            )
+            
+        }
+    </script>
+    
+</body>
+</html>

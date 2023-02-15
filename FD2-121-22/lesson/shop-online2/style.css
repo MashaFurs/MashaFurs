@@ -14,6 +14,7 @@ body{
   margin-bottom: 40px;
   box-shadow: 10px 5px 5px #cbcbcb;
   filter: opacity(90%);
+  margin-right: 43px;
 }
 .card:hover{
   transform: scale(1.13);
@@ -154,52 +155,34 @@ transform: translate3d(0, 0, -1em);
   transform: translate3d(0, 0, -1em); 
 }
 
-/* .btn-primary{  // Если нужна будет вторая синяя кнопка
-  width: 45%;
-  font-size: 11px;
-  margin-right: 10px;
-} */
-
-
 .wrap{
   position: relative;
 }
 
 .basket{
   float: right;
-  margin-right:15px;
+  margin-right:50px;
   margin-left: 0px;
   max-width: none;
-  width: 423px;
+  width: 150px;
   text-align: center;
-  padding: 10px;
+  padding: 0px;
   position: sticky;
   top: 5px;
-
   
 }
 
-.basket span{
+.basket a{
   color: #868b98;
   text-align: center;
   font-size: 18px;
+  text-decoration: none;
+  padding: 15px;
+  display: inline-block;
 }
 
-.basket img{
+.basket a img{
   width: 40px;
-}
-
-.basket div {
-  text-align: left;
-}
-
-.basket .allPrice {
-  color: #868b98;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 700;
-  margin-top: 10px;
-  
 }
 
 .title{
@@ -207,34 +190,20 @@ transform: translate3d(0, 0, -1em);
   font-weight: 500;
 }
 
-/* .choice{
-  max-height: 150px;
-  overflow: auto;
-} */
-
-.btnDelete{
-  margin-right: 0px;
-  width: 28px;
-  
+.round_basket{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 2%;
+  left: 69%;
+  color: #0d6efd;
+  font-weight: 600;
+  border-radius: 50%;
+  ;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
 }
-.btnMinus{
-  margin-right: 0px;
-  width: 28px;
-}
-
-.btnDelete img{
-  width: 20px;
-  vertical-align: baseline;
-}
-
-.btnMinus img{
-  width: 20px;
-  vertical-align: baseline;
-}
-
-
-
-
 
 
 

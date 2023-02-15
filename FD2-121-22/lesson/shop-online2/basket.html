@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASKET</title>
+
+    <style>
+        .wrap{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .basket{
+            text-align: center;
+        }
+        .basket span{
+            color: #000000;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .basket img{
+            width: 45px;
+            border: 3px solid black;
+            border-radius: 50%;
+        }
+
+        .allPrice{
+            text-align: center;
+            font-size: 45px;
+            font-size: 31px;
+            font-weight: 500;
+            color: black;
+            margin-top: 40px;
+        }
+
+        .divBasket{
+            display: flex;
+            justify-content: space-between;
+            font-size: 23px;
+            border-bottom: 1px solid gray;
+            border-top: 1px solid gray;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            align-items: center;
+        }
+
+        .divBasket1{
+            width: 40%;
+        }
+
+        .divBasket1 img{
+            width: 80px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .divBasket3{
+            display: flex;
+            justify-content: end;
+            width: 25%;
+        }
+
+        .divBasket2{
+            display: flex;
+            width: 35%;
+        }
+
+        .divBasket2 span{    
+            display: inline-block;
+            border: 2px solid black;
+            padding: 5px;
+            height: 35px;
+        }
+        
+        .btnMinus, .btnPlus, .deleteCar{
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .btnMinus img, .btnPlus img, .deleteCar img{
+            width: 30px;
+            vertical-align: baseline;
+        } 
+
+        .deleteCar{
+            display: block;
+            color: red;
+        }
+        
+       
+
+    </style>
+
+
+</head>
+<body>
+    <div class="basket">
+        <span class="title">Корзина</span>
+        <img src="basket.png" alt="basket" title="basket">
+    </div>
+    <div class="wrap"></div>
+    <div class="allPrice"></div>
+
+
+    <script>
+
+        let wrap=document.querySelector(".wrap");
+        // let shop=JSON.parse(localStorage.getItem("arrBasket"));
+        // rendomBasket();
+
+        window.addEventListener('storage', () => {
+            shop=JSON.parse(localStorage.getItem("arrBasket"));
+            rendomBasket();
+        })
+
+
+        let shop=JSON.parse(localStorage.getItem("arrBasket"));
+        rendomBasket();
+            
+
+            //1. Построение корзины
+            function rendomBasket() { //Построение корзины
+
+                let price=0;  //Считает итоговую сумму в корзине
+                let sum=0; //Считает сколько машин в корзине
+
+                if(shop.length==0) {//Чтоб при обнулении корзины появилась запись "корзина пуста"
+                    price=0;
+                    document.querySelector(".allPrice").textContent=`Корзина пуста`; 
+                    localStorage.clear();  
+                }
+
+                let divBasketDelete = document.querySelectorAll('.divBasket'); //Сложила в переменную все предыдущие карточки, если они есть, для того чтоб удалить
+                for( let r=0; r<divBasketDelete.length;r++) { //Создала цикл,чтоб карточки не накапливались
+                    divBasketDelete[r].remove();              
+                }
+
+                for(i=0;i<shop.length;i++) { 
+                    sum++;
+
+                    let divBasket=document.createElement("div");
+                    divBasket.className="divBasket";
+                    wrap.appendChild(divBasket);
+
+                    let divBasket1=document.createElement("div");
+                    divBasket1.className="divBasket1";
+                    divBasket.appendChild(divBasket1);
+
+                    let img=document.createElement("img");
+                    img.className="img-basket";
+                    img.setAttribute("src", shop[i].imgUrl);
+                    divBasket1.appendChild(img);
+
+                    let brandTitleBasket=document.createElement("span");
+                    divBasket1.appendChild(brandTitleBasket);
+                    brandTitleBasket.textContent=shop[i].brandTitle;
+
+                    let modelTitleBasket=document.createElement("span");
+                    divBasket1.appendChild(modelTitleBasket);
+                    modelTitleBasket.textContent=" "+shop[i].modelTitle;
+
+                    let btnDeleteCar=document.createElement("button"); //Добавила крестик, чтоб одним нажатием удалить сразу целую позицию
+                    btnDeleteCar.className="deleteCar";
+                    divBasket1.appendChild(btnDeleteCar);
+                    let imgdeleteCar=document.createElement("img");
+                    btnDeleteCar.appendChild(imgdeleteCar);
+                    imgdeleteCar.setAttribute("src", "delete.png");
+                    btnDeleteCar.setAttribute('data-id', shop[i].id);
+                    btnDeleteCar.textContent="удалить";
+                    btnDeleteCar.onclick= deleteCar;
+
+                    let divBasket2=document.createElement("div");
+                    divBasket2.className="divBasket2";
+                    divBasket.appendChild(divBasket2);
+
+                    let btnPlus=document.createElement("button"); //Добавила кнопку"+", чтоб увеличивать количество товара в корзине
+                    btnPlus.className="btnPlus";
+                    divBasket2.appendChild(btnPlus);
+                    let imgPlus=document.createElement("img");
+                    btnPlus.appendChild(imgPlus);
+                    imgPlus.setAttribute("src", "plus.png");
+                    imgPlus.setAttribute('data-id', shop[i].id);
+                    btnPlus.onclick= plusCar;
+
+                    let repeat=document.createElement("span");
+                    repeat.className="repeat";
+                    divBasket2.appendChild(repeat);
+                    repeat.textContent=`${shop[i].rep} шт.`;
+
+                    let btnMinus=document.createElement("button"); //Добавила кнопку"-", чтоб уменьшать количество товара в корзине
+                    btnMinus.className="btnMinus";
+                    divBasket2.appendChild(btnMinus);
+                    let imgMinus=document.createElement("img");
+                    btnMinus.appendChild(imgMinus);
+                    imgMinus.setAttribute("src", "minus.png");
+                    imgMinus.setAttribute('data-id', shop[i].id);
+                    btnMinus.onclick= minusCar;
+
+                    let divBasket3=document.createElement("div");
+                    divBasket3.className="divBasket3";
+                    divBasket.appendChild(divBasket3);
+
+                    let priceBasket=document.createElement("span");
+                    divBasket3.appendChild(priceBasket);
+                    priceBasket.textContent="Стоимость:"+(shop[i].price*shop[i].rep)+"$";
+
+                    price+=shop[i].price*shop[i].rep; //Итоговая стоимость
+                    let allPrice=document.querySelector(".allPrice");
+                    allPrice.textContent=`Итого: ${price} $`;
+
+                    function minusCar(e) { //Уменьшает кол-во товаров в корзине при клике на "-"
+                        for(let m=0;m<shop.length;m++) {
+                            if(shop[m].id==e.target.dataset.id) { 
+                                if(shop[m].rep-1==0) {  ////Если кол-во =0, то удаляется из массива вообще
+                                    function fff (v) {
+                                        return v.id!=e.target.dataset.id;
+                                    }
+                                shop= shop.filter( fff); 
+                                rendomBasket(); //Отрисовываю измененную страницу заново
+                            } else{
+                                    shop[m].rep--; //Уменьшает на 1
+                                    rendomBasket();
+                                }                            
+                            }
+                        }                    
+                    const loc=JSON.stringify(shop);
+                    localStorage.setItem('arrBasket', loc);
+                    }
+                } 
+
+            } 
+            
+             //2.Функция,которая срабатывает, когда нажимаешь "+" (добавление по одной позиции)
+            function plusCar(e) {
+                for(let t=0;t<shop.length;t++) {
+                    if(shop[t].id==e.target.dataset.id) {
+                        shop[t].rep++; //Увеличивает на 1
+                        const loc=JSON.stringify(shop);
+                        localStorage.setItem('arrBasket', loc);  
+                        rendomBasket(); s
+                    }
+                } 
+            }
+            
+             //3. Функция, которая срабатывает когда нажимаешь на крестик(удалить одним махом все)
+            function deleteCar(e){
+                function ff (v) {
+                    return v.id!=e.target.dataset.id;
+                }
+            shop= shop.filter( ff);
+            const loc=JSON.stringify(shop);
+            localStorage.setItem('arrBasket', loc); 
+            rendomBasket();
+            }     
+        
+    </script>
+</body>
+</html>

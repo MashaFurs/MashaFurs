@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /*Стилизация фона*/
+    .bg{
+        position: relative;
+        background: #00fdff url("finish11.jpg");
+        height: 100vh;
+        background-size: cover;
+        background-position: 0 0;
+        background-repeat: repeat-x;
+        animation: animate 40s linear infinite;
+        position: relative;
+    }
+
+    @keyframes animate {
+        from {
+            background-position: 0 0;
+        }
+        to{
+            background-position: -7389px 0;
+        }
+    }
+    /*Стилизация вора*/
+    @keyframes RobberStep{
+        from { background: url("robberwithout3.png") 0 0;}
+        to { background: url("robberwithout3.png") -1800px 0; }
+    }
+    .robber{ 
+        width: 356px;
+        height: 390px;
+        animation: RobberStep 1s steps(5) infinite; 
+        position: absolute;
+        bottom: 0%;
+        transform: scale(0.9);
+
+    }
+    /*Стилизация полицейского*/
+    @keyframes MyAnimation{
+        from { background: url("police.png") 0 0;}
+        to { background: url("police.png") -2132px 0; }
+    }
+    .police{
+        width: 215px;
+        height: 375px;
+        animation: MyAnimation 3s steps(10) infinite;
+        position: absolute;
+        bottom: 0%;
+        right: 10%;  
+        transform: scale(0.9); 
+    }
+    /*Стилизация монеты*/
+    .coin{
+        width: 120px;
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+    }
+
+</style>
+<body>
+    
+<div class="bg">
+
+        <div class="robber"></div>
+        <img class="coin" src="coin.gif">
+        <div class="police"></div>
+    
+
+</div>
+
+
+</body>
+</html>

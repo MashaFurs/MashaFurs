@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARS</title>
+    <style>
+        body{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-image: url("grass2.jpg");
+        overflow: hidden;
+        }
+
+        .road{
+            background-image: url("road.jpg");
+            background-position: center;
+            width: 400px;
+            height: 100vh;
+            background-color: blue;
+            position: relative;
+        }
+
+        .car{
+            width: 87px;
+            position: absolute;
+            bottom: 6%;        
+            left: 12%;
+        }
+
+        .tree{
+            position: absolute;
+        }
+
+        .tree1{
+            width: 200px;
+            transform: translateX(-160px);
+        }
+        .tree2{
+            width: 250px;
+            transform: translate(361px,52vh);
+            
+        }
+        .tree3{
+            width: 250px;
+            position: absolute;
+            transform: translate(-202px,55vh);
+        }
+
+        .znak{
+            width: 76px;
+            position: absolute;
+            transform: translate(-82px,37vh);
+        }
+        .ukaz{
+            width: 100px;
+            position: absolute;
+            transform: translate(389px,5vh);
+        }
+
+        .tree4{
+            width: 250px;
+            transform: translate(366px,23vh);
+        }
+
+        .mussor{
+            width: 120px;
+            position: absolute;
+            transform: translate(407px,89vh);
+        }
+        
+    </style>
+</head>
+<body>
+    
+<div class="road">
+    <img class="car" src="car.png">
+
+    <img class="tree tree1" src="tree1.png">
+    <img class="tree tree4" src="tree4.png">
+    <img class="tree tree2" src="tree2.png">
+    <img class="znak" src="znaki1.png">
+    <img class="tree tree3" src="tree3.png">   
+    <img class="ukaz" src="ukaz.png">
+    <img class="mussor" src="mussor.png">
+</div>
+
+
+</body>
+</html>
