@@ -1,0 +1,23 @@
+body{
+    background-color: #e0e0e0;;
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+.products{
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    width: 288px;
+    padding: 20px;
+    box-shadow: 10px 5px 5px #cbcbcb;
+    background-color: white;
+    font-size: 20px;
+    font-weight: 400;
+}
+.imgUrl{
+    width: 100%;
+    height: 165px;
+}
