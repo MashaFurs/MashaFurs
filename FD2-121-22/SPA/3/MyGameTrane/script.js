@@ -140,7 +140,7 @@ const REQUEST_TYPE={
                 break;
 
             case 'Rules':
-                pageHTML += "<div class='wrapper'><div class='box'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam id earum provident vero aspernatur corrupti dolor error voluptates nam ut delectus veritatis voluptatem officiis, voluptate esse accusamus eos doloribus ab!</p></div><div class='box'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam id earum provident vero aspernatur corrupti dolor error voluptates nam ut delectus veritatis voluptatem officiis, voluptate esse accusamus eos doloribus ab!</p></div><div class='box'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam id earum provident vero aspernatur corrupti dolor error voluptates nam ut delectus veritatis voluptatem officiis, voluptate esse accusamus eos doloribus ab!</p></div></div>";
+                pageHTML += "<div class='wrapper'><div class='box'><p>Собирай монеты! Каждые 20 монет увеличивают скорость. Клавиша &#8593; прыжок вверх, &#8594; идешь направо, &#8592; налево.</p></div><div class='box'><p>Ускользай от полиции. Клавиша Ctrl-переход в состояние бомбы (убивает копов).Бомбой можно управлять. </p></div><div class='box'><p>У тебя 4 жизни. Если потратишь все-сядешь в тюрьму.</p></div></div>";
                 pageHTML+="<a class='btn' id='main2' onclick='switchToMainPage()'>Главная</a>";
                 startGame.style.cssText=" display: none";
                 rulesGame.style.cssText=" display: none";

@@ -227,12 +227,13 @@ a {
 }
 .wrapper .box p{
     color: black;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 30px;
+    margin-right: 31px;
+    margin-left: 48px;
+    margin-top: 188px;
     font-family: 'Fira Code', monospace;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 15px;
 }
 
 /*Стилизация рекорда*/
@@ -597,6 +598,10 @@ span {
 
     .wrapper .box p{
         font-size: 10px;
+        margin-right: 14px;
+        margin-left: 26px;
+        margin-top: 113px;
+        line-height: 11px;
     }
 
     #main2{
