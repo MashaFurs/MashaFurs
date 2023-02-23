@@ -574,7 +574,7 @@ span {
   }
 
 /*Медиазапросы*/
-@media all and (max-width: 845px) {
+@media all and (max-width: 860px) {
     #canvas1{
         max-width: 100%;
         max-height: 100%;
