@@ -492,9 +492,9 @@ function gameArea () {
             }
 
             //Управление кнопками
-            if (input.keys.indexOf("ArrowRight") > -1 || input.keys.indexOf("swipe right") > -1) {
+            if (input.keys.indexOf("ArrowRight") > -1 || input.keys.indexOf("swipe left") > -1) {
                 this.speed = 10;
-            } else if(input.keys.indexOf("ArrowLeft") > -1 || input.keys.indexOf("swipe left") > -1) {
+            } else if(input.keys.indexOf("ArrowLeft") > -1 || input.keys.indexOf("swipe right") > -1) {
                 this.speed = -6;
             } else if((input.keys.indexOf("ArrowUp") > -1 || input.keys.indexOf("swipe up") > -1) && this.onGround ()) { //Если нажата стрелка вверх и персонаж находится на земле
                 this.vy-=24;
