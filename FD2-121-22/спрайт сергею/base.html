@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASE</title>
+</head>
+<body>
+    
+
+
+    <input type="text" name="firstname"><br>
+    <input type="submit" value="Зарегистрироваться"><br>
+    <hr>
+    <ul id="user"></ul>
+    <button id="btn">getData
+
+
+    <script>
+    //AJAX
+
+    const firstname=document.querySelector('[name="firstname"]');
+    const sendBtn=document.querySelector('[value="Зарегистрироваться"]');
+    const btn=document.getElementById('btn');
+    const userView=document.getElementById('user');
+    let score;
+
+    const URL='https://fe.it-academy.by/AjaxStringStorage2.php';
+    const NAME='FURS_06041995';
+
+    const REQUEST_TYPE={
+        READ:'READ',
+        LOCKGET:'LOCKGET',
+        UPDATE:'UPDATE',
+        INSERT:'INSERT',
+    };
+
+    //read
+    btn.addEventListener('click', async () => {
+        const users = await request (REQUEST_TYPE.READ,NAME);
+        render (users);
+    });
+
+    //update
+    sendBtn.addEventListener('click', async () =>{
+        const { value: firstName} = firstname;
+
+        const user = {
+            firstName,
+            score
+        };
+
+        const updatePassword=Math.random ();
+        const requestUsers=await request ( REQUEST_TYPE.READ, NAME);
+
+        if(!requestUsers) {
+            const res = [{...user}];
+
+            await request (REQUEST_TYPE.LOCKGET, NAME, updatePassword);
+            await request (REQUEST_TYPE.UPDATE, NAME, updatePassword, JSON.stringify(res));
+        }
+        else {
+            requestUsers.push(user);
+            await request ( REQUEST_TYPE.LOCKGET, NAME,updatePassword);
+            await request(REQUEST_TYPE.UPDATE,NAME,updatePassword, JSON.stringify(requestUsers));
+        }
+    });
+
+    async function request (func,name,pass,val) {
+        let sp=new URLSearchParams();
+        sp.append('f', func);
+        sp.append('n', name);
+        pass && sp.append('p', pass);
+        val && sp.append('v', val);
+
+        try {
+            const response= await fetch ( URL, { method:'POST', body: sp });
+            const data = await response.json();
+
+            if (data.result === 'OK') {
+                alert('Success');
+
+                return;
+            }
+            return JSON.parse(data.result);
+        } catch (err) {
+            alert (err);
+        }
+    }
+
+    function render (users) {
+        let strLI='';
+
+        users.forEach (user => {
+            strLI+= `
+            <li>Имя: ${user.firstName} <br> Очки: ${user.score}</li>`
+        });
+        userView.innerHTML=strLI;
+    }
+
+
+    </script>
+    </button>
+</body>
+</html>

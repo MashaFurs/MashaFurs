@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA</title>
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        /* #start{
+            display: inline-block;
+        } */
+    </style>
+</head>
+<body>
+    
+
+    
+    <div id="IPage"></div>
+
+    <script>
+        "use strict";
+        window.onhashchange = switchToStateFromURLHash;
+
+        var SPAState = {};
+
+        function switchToStateFromURLHash() {
+            var URLHash = window.location.hash;
+
+            var stateStr = URLHash.substr(1);
+
+            var pageHTML = "";
+
+            let startGame=document.getElementById("start");
+            let rulesGame=document.getElementById("rules");
+            let recordGame=document.getElementById("record");
+
+
+            switch (stateStr) {
+                case 'Main':
+                    startGame.style.cssText=" display: inline-block";
+                    rulesGame.style.cssText=" inline-block";
+                    recordGame.style.cssText=" inline-block";
+                    break;
+                case 'Start':
+                    pageHTML += "<h3>О нас</h3>";
+                    pageHTML += "<p>Мы круты!</p>";
+                    pageHTML+="<input type=button  value='Главная' onclick='switchToMainPage()'>";
+                    startGame.style.cssText=" display: none";
+                    rulesGame.style.cssText=" display: none";
+                    recordGame.style.cssText=" display: none";
+
+                    break;
+                case 'Rules':
+                    pageHTML += "<h3>TEST</h3>";
+                    pageHTML += "<p>Мы круты!</p>";
+                    pageHTML+="<input type=button value='Главная' onclick='switchToMainPage()'>";
+                    startGame.style.cssText=" display: none";
+                    rulesGame.style.cssText=" display: none";
+                    recordGame.style.cssText=" display: none";
+                    break;
+                case 'Record':
+                pageHTML += "<h3>Рекорд</h3>";
+                pageHTML += "<p>Ты лучший!</p>";
+                pageHTML+="<input type=button value='Главная' onclick='switchToMainPage()'>";
+                startGame.style.cssText=" display: none";
+                rulesGame.style.cssText=" display: none";
+                recordGame.style.cssText=" display: none";
+                break;
+            }
+        document.getElementById('IPage').innerHTML = pageHTML;
+        }
+
+        function switchToState(newState) {
+            var stateStr = newState.pagename;
+            location.hash = stateStr;
+        }
+
+        function switchToMainPage() {
+            switchToState({ pagename: 'Main' });
+        }
+        function switchToStartPage() {
+            switchToState({ pagename: 'Start' });
+        }
+        function switchToRulesPage() {
+            switchToState({ pagename: 'Rules' });
+        }
+        function switchToRecordPage() {
+            switchToState({ pagename: 'Record' });
+        }
+
+        switchToStateFromURLHash();
+
+        
+    </script>
+
+    <input type=button id="start" value='Начать игру' onclick='switchToStartPage()'>
+    <input type=button id="rules" value='Правила' onclick='switchToRulesPage()'>
+    <input type=button id="record" value='Рекорд' onclick='switchToRecordPage()'>
+</body>
+</html>

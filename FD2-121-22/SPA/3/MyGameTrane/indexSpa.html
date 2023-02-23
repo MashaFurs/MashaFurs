@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Comforter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+    </style>
+</head>
+<body>
+    
+    <canvas id="canvas1"></canvas>
+
+    <div class="btnWrap">
+        <a class="btn" id="start" onclick='switchToStartPage()'>Начать игру</a>
+        <a class="btn" id="rules" onclick='switchToRulesPage()'>Правила</a>
+        <a class="btn" id="record" onclick='switchToRecordPage()'>Рекорд</a>
+
+    </div>
+
+    <div id="IPage"></div>
+   
+
+    <img id="playerImage" src="img/Sprites/robberwithout3.png">
+    <img id="round" src="img/Sprites/bomb.png">
+    <img id="enemyImage" src="img/Sprites/police3.png">
+    <img id="coin" src="img/Sprites/coin.png">
+    <img id="iconLevel" src="img/iconLevel1.png">
+ 
+
+    <script src="script.js"></script>
+</body>
+</html>

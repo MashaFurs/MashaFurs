@@ -6,19 +6,27 @@ window.addEventListener("load", function () {
     let enemies= [];
     let score=0;
     let gameOver=false;
+    let debug = true;
+    let masha=false;
+    
+
+    
 
 
     class Inputhandler { // Класс обработчика нажатых клавиш
         constructor() {
             this.keys=[]; //Массив, который будет содержать информацию о том, какие клавиши нажаты в данный момент
             window.addEventListener('keydown', e => {
-                if( (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key === "Enter")  && this.keys.indexOf(e.key) === -1) { // При нажатии на клавишу, если она "стрелка вниз" или "вверх", или "влево", или "вправо" и ее нет в массиве keys, то тогда добавляем ее туда
+                
+                if( (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight")  && this.keys.indexOf(e.key) === -1) { // При нажатии на клавишу, если она "стрелка вниз" или "вверх", или "влево", или "вправо" и ее нет в массиве keys, то тогда добавляем ее туда
                     this.keys.push(e.key);
-                }
+                } 
+                else if (e.key ==="d") { console.log(debug=!debug)}
+                // if( e.key === 'Enter' ) {console.log('enter was pressed')};
             });
 
             window.addEventListener('keyup', e => {
-                if(e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key === "Enter") {  // При отпускании клавиши, если она "стрелка вниз" или "вверх", или "влево", или "вправо", находим ее индекс в массиве и удаляем  ее одну
+                if(e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight") {  // При отпускании клавиши, если она "стрелка вниз" или "вверх", или "влево", или "вправо", находим ее индекс в массиве и удаляем  ее одну
                     this.keys.splice(this.keys.indexOf(e.key), 1);
                 }
             });
@@ -26,6 +34,64 @@ window.addEventListener("load", function () {
     }
 
 
+    let particlesArray=[];
+
+    class Particle {
+        constructor(x,y,size, player) {
+            this.x=x;
+            this.y=y;
+            this.size=size;
+            this.weight= Math.random() *1.5+1.5;
+            this.directionX= Math.random() *2;
+        }
+
+        update() {
+            this.y =player.y-this.weight;
+            this.x =player.x+ this.directionX;
+            if (this.size >=0.3) { this.size -=0.2};
+            console.log("координата x:"+player.x)
+            console.log("координата y:"+player.y)
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI *2);
+            ctx.fillStyle="#000000ad";
+            ctx.fill();
+            // ctx.globalCompositeOperation='xor';
+        }
+    }
+
+    function handleParticles () {
+        for(let i=0; i<particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
+            if(particlesArray[i].size <=1) {
+                particlesArray.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    function createParticle() {
+        let size= Math.random() * 40+10;
+        let x= Math.random() * player.x;
+        let y= 170+40;
+        particlesArray.push(new Particle(player.x,player.y,size));
+    }
+
+    // function animate2() {
+    //     const deltaTime= timeStamp- lastTime;
+    //     lastTime= timeStamp;
+    //     ctx.clearRect (0, 0, canvas.width, canvas.height);
+    //     background.draw(ctx); //Сначала нарисовала фон
+    //     player.draw(ctx);
+    //     createParticle();
+    //     handleParticles();
+    //     if (masha) requestAnimationFrame(animate2);
+    // }
+    
+    
     class Player {
         constructor (gameWidth, gameHeight) {
             this.gameWidth= gameWidth;
@@ -44,22 +110,60 @@ window.addEventListener("load", function () {
             this.speed=0;
             this.vy=0;
             this.weight=1; // Сила гравитации
+            // this.states=[];
+            // this.currentState=this.states[0];
+            // let particles= [];
+
+            window.addEventListener('keydown', e => {
+                if (e.key === "Control") { 
+                    this.image= document.getElementById("round");
+                    this.width=200;
+                    this.height=170;
+                    this.maxFrame=6;
+                    this.fps=20;
+                    this.weight=0.95;
+                    masha=true;
+                    // animate2();
+                    // console.log("даа")
+                    
+                    
+                }     
+            });
+
+            window.addEventListener('keyup', e => {
+                if (e.key === "Control") {
+                     this.image= document.getElementById("playerImage")
+                     this.width=200;
+                     this.height=200;
+                     this.maxFrame=8;
+                     this.fps=20;
+                     this.weight=1;
+                     masha=false;
+
+                     
+                     
+                }     
+            });
+            
         }
+        
+
         draw(context) {
-             
+            if (debug) { context.strokeRect (this.x, this.y, this.width, this.height);} 
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
         }
 
         update(input, deltaTime, enemies) {
-            //Обнаружение столкновений
-            enemies.forEach( enemy => {
-                const dx= (enemy.x+ enemy.width/2) - (this.x +this.width/2);
-                const dy= (enemy.y+ enemy.height/2) - (this.y + this.height/2);
-                const distance = Math.sqrt (dx*dx+dy*dy);
-                if (distance < enemy.width/2 + this.width/2) {
-                    gameOver = true;
-                }
-            })
+            this.checkCollision();
+            // //Обнаружение столкновений
+            // enemies.forEach( enemy => {
+            //     const dx= (enemy.x+ enemy.width/2) - (this.x +this.width/2);
+            //     const dy= (enemy.y+ enemy.height/2) - (this.y + this.height/2);
+            //     const distance = Math.sqrt (dx*dx+dy*dy);
+            //     if (distance < enemy.width/2 + this.width/2) {
+            //         gameOver = true;
+            //     }
+            // })
 
             //Анимация спрайта
             if (this.frameTimer > this.frameInterval) {
@@ -74,7 +178,7 @@ window.addEventListener("load", function () {
             }
             //Управление кнопками
             if (input.keys.indexOf("ArrowRight") > -1) {
-                this.speed = 5;
+                this.speed = 5; 
             } else if(input.keys.indexOf("ArrowLeft") > -1) {
                 this.speed = -5;
             } else if(input.keys.indexOf("ArrowUp") > -1 && this.onGround ()) { //Если нажата стрелка вверх и персонаж находится на земле
@@ -84,19 +188,17 @@ window.addEventListener("load", function () {
             }
             //Горизонтальное движение
             this.x += this.speed;
+            console.log("-----x"+this.x);
             if(this.x<0) { this.x=0;}
             else if( this.x> this.gameWidth-this.width) { this.x= this.gameWidth - this.width; }
 
             //Вертикальное движение
             this.y += this.vy;
+            console.log("-----y"+this.y);
             if (! this.onGround()) { //Если персонаж не на земле, а в воздухе
                 this.vy +=this.weight;
-                this.maxFrame=5;
-                this.frameY =1; //Меняется картинка на прыжок
             } else {
                 this.vy=0;
-                this.maxFrame=8;
-                this.frameY =0;
             }
             if (this.y > this.gameHeight - this.height) { // Чтоб персонаж никогда не проваливался ниже отметки игры
                 this.y=this.gameHeight-this.height;
@@ -107,7 +209,26 @@ window.addEventListener("load", function () {
         onGround() { //Метод для проверки находится ли персонаж в воздухе или на земле. Если true, то на земле. False-в воздухе.
             return this.y >= this.gameHeight - this.height;
         }
+
+        checkCollision(){
+            enemies.forEach( enemy => {
+                if (
+                    enemy.x < this.x + this.width &&
+                    enemy.x + enemy.width > this.x &&
+                    enemy.y < this.y + this.height &&
+                    enemy.y +enemy.height > this.y
+                ) {
+                    enemy.markedForDeletion = true;
+                    score++;
+                }
+            })
+        }
     }
+
+
+    
+
+   
 
 
     class Background {
@@ -153,7 +274,7 @@ window.addEventListener("load", function () {
         }
 
         draw(context) {
-
+            if (debug) { context.strokeRect (this.x, this.y, this.width, this.height);}
             context.drawImage(this.image, this.frameX * this.width, 0 , this.width, this.height, this.x, this.y,this.width, this.height);
         }
 
@@ -173,6 +294,8 @@ window.addEventListener("load", function () {
            
         }
     }
+
+    
 
     
     function handleEnemies(deltaTime) {
@@ -206,6 +329,7 @@ window.addEventListener("load", function () {
     const input= new Inputhandler();
     const player = new Player (canvas.width, canvas.height);
     const background = new Background ( canvas.width, canvas.height);
+    let enem= new Enemy( canvas.width, canvas.height);
 
     let lastTime=0;
     let enemyTimer =0;
@@ -217,13 +341,36 @@ window.addEventListener("load", function () {
         lastTime= timeStamp;
         ctx.clearRect (0, 0, canvas.width, canvas.height);
         background.draw(ctx); //Сначала нарисовала фон
+        if (masha) {
+            // requestAnimationFrame(animate)
+            createParticle();
+            handleParticles();
+            
+        };
         player.draw(ctx);
         // background.update();
         player.update(input, deltaTime, enemies);
         handleEnemies(deltaTime);
         displayStatustext(ctx);
         if (!gameOver) requestAnimationFrame(animate);
+        // if (masha) {
+        //     // requestAnimationFrame(animate)
+        //     createParticle();
+        //     handleParticles();
+            
+        // };
     }
     animate(0);
+
+    // function animate2(timeStamp) {
+    //     const deltaTime= timeStamp- lastTime;
+    //     lastTime= timeStamp;
+    //     ctx.clearRect (0, 0, canvas.width, canvas.height);
+    //     background.draw(ctx); //Сначала нарисовала фон
+    //     player.draw(ctx);
+    //     createParticle();
+    //     handleParticles();
+    //     if (masha) requestAnimationFrame(animate2);
+    // }
 
 })
