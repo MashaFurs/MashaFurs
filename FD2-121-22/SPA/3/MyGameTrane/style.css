@@ -586,6 +586,21 @@ span {
 
     a {
         font-size: 0.5rem;
+        padding: 1rem 2rem;
+    }
+
+    .wrapper .box {
+        width: 177px;
+        height: 254px;
+        margin: 12px;
+    }
+
+    .wrapper .box p{
+        font-size: 10px;
+    }
+
+    #main2{
+        bottom: 0%;
     }
 
 }
