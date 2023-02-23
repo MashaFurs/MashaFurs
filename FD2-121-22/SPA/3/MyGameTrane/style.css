@@ -580,6 +580,10 @@ span {
         height: 100vh;
     } 
 
+    .btn {
+        font-size: 0.5rem;
+    }
+
 }
 
 
