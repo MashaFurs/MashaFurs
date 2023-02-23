@@ -8,6 +8,8 @@ let gameSpeed=3;
 let score;
 let gameOver;
 
+const mediaQuery = window.matchMedia('(max-width: 860px)');
+
 
 const backgroundLayer1=new Image();
 backgroundLayer1.src= "img/MainMenu/MainMenu1.png";
@@ -317,15 +319,28 @@ function gameArea () {
             this.vy=0;
             this.weight=1; // Сила гравитации
 
+            if(mediaQuery.matches) {
+                this.width=178;
+                this.height=195; 
+                this.image= document.getElementById("playerImageMedia"); 
+                this.weight=1.8;
+            }
+
             window.addEventListener('keydown', e => {
                 if (e.key === "Control") { 
-                    this.image= document.getElementById("round");
-                    this.width=200;
-                    this.height=170;
+                    if(mediaQuery.matches) {
+                        this.image= document.getElementById("roundMedia"); 
+                        this.width=98;
+                        this.height=85; 
+                        this.weight=1;  
+                    } else {
+                        this.image= document.getElementById("round");
+                        this.width=200;
+                        this.height=170; 
+                        this.weight=0.5;   
+                    }
                     this.maxFrame=6;
                     this.fps=20;
-                    this.weight=0.5;  
-                    // gameSpeed=gameSpeed+5;
                     masha=true;
                     audioBomb.play();
                     audioBomb.loop=true;
@@ -334,12 +349,20 @@ function gameArea () {
 
             window.addEventListener('keyup', e => {
                 if (e.key === "Control") {
-                     this.image= document.getElementById("playerImage")
+                    if(mediaQuery.matches) {
+                    this.width=178;
+                    this.height=195; 
+                    this.image= document.getElementById("playerImageMedia"); 
+                    this.weight=1.8;
+                    } else{
+                    this.image= document.getElementById("playerImage")
                      this.width=356;
                      this.height=390;
+                     this.weight=1;
+                    }
+
                      this.maxFrame=6;
                      this.fps=10;
-                     this.weight=1;
                     //  gameSpeed=gameSpeed-5;
                      masha=false;
                      audioBomb.currentTime=0;
@@ -364,13 +387,13 @@ function gameArea () {
                     const distance = Math.sqrt (dx*dx+dy*dy);
                     if (distance < enemies[n].width/2.5 + this.width/2.5) {
                         // alert("убили полицейского");
-                        if(livesArray.length==0) {
-                            gameOver = true;
-                            police.play();
-                            gameEnd();
+                        // if(livesArray.length==0) {
+                        //     gameOver = true;
+                        //     police.play();
+                        //     gameEnd();
 
                             
-                        }
+                        // }
                         if(!enemies[n].counted&&livesArray.length!=0) {
                             enemies[n].counted = true;
                             livesArray.pop();
@@ -579,6 +602,13 @@ function gameArea () {
             this.speed=2;
             this.markedForDeletion= false;
             this.counted = false;
+
+            if(mediaQuery.matches) {
+                this.width=108;
+                this.height=188; 
+                this.image= document.getElementById("enemyImageMedia"); 
+                this.y=gameHeight-188;
+            }
         }
 
         draw(context) {
@@ -633,6 +663,13 @@ function gameArea () {
             this.frameInterval= 1000/this.fps;
             this.speed=2;
             this.counted = false;
+
+            if(mediaQuery.matches) {
+                this.width=42;
+                this.height=42; 
+                this.image= document.getElementById("coinMedia"); 
+                this.y=this.gameHeight - randomDiap (50,400);
+            }
         }
 
         draw(context) {
@@ -721,6 +758,18 @@ function gameArea () {
     let coinTimer=0; 
     let coinInterval=1000;
     let randomCoinInterval= Math.random() *1000 +300;
+
+
+
+    //Медиаусловия
+
+    // if(mediaQuery.matches) {
+    //     player.width=178;
+    //     player.height=195; 
+    //     player.image= document.getElementById("playerImageMedia"); 
+
+    // }
+
     
 
     function animate(timeStamp) {
