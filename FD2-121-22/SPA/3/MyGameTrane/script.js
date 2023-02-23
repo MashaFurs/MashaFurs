@@ -287,6 +287,7 @@ function gameArea () {
         constructor() {
             this.keys=[]; //Массив, который будет содержать информацию о том, какие клавиши нажаты в данный момент
             this.touchY='';
+            this.touchX='';
             this.touchTreshold =30; //Чтоб начальная точка и конечная находились на расстоянии не менее 30px друг от друга
             window.addEventListener('keydown', e => {
                 if( (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowRight")  && this.keys.indexOf(e.key) === -1) { // При нажатии на клавишу, если она "стрелка вниз" или "вверх", или "влево", или "вправо" и ее нет в массиве keys, то тогда добавляем ее туда
@@ -301,17 +302,25 @@ function gameArea () {
             });
 
             window.addEventListener('touchstart', e => {
-                this.touchY= e.changedTouches[0].pageY; 
+                this.touchY= e.changedTouches[0].pageY;
+                this.touchX= e.changedTouches[0].pageX; 
             });
             window.addEventListener('touchmove', e => {
                 const swipeDistance=e.changedTouches[0].pageY -this.touchY;
                 if( swipeDistance < -this.touchTreshold && this.keys.indexOf('swipe up') ===-1) { this.keys.push('swipe up')}
                 else if(swipeDistance > this.touchTreshold && this.keys.indexOf('swipe down') ===-1) { this.keys.push('swipe down')} 
+
+                const swipeDistanceX=e.changedTouches[0].pageX -this.touchX;
+                if( swipeDistanceX < -this.touchTreshold && this.keys.indexOf('swipe right') ===-1) { this.keys.push('swipe right')}
+                else if(swipeDistanceX > this.touchTreshold && this.keys.indexOf('swipe left') ===-1) { this.keys.push('swipe left')}
             });
             window.addEventListener('touchend', e => {
                 // console.log(this.keys);
                 this.keys.splice(this.keys.indexOf('swipe up') ,1);
                 this.keys.splice(this.keys.indexOf('swipe down') ,1);
+
+                this.keys.splice(this.keys.indexOf('swipe right') ,1);
+                this.keys.splice(this.keys.indexOf('swipe left') ,1);
             });
         }
     }
@@ -483,9 +492,9 @@ function gameArea () {
             }
 
             //Управление кнопками
-            if (input.keys.indexOf("ArrowRight") > -1) {
+            if (input.keys.indexOf("ArrowRight") > -1 || input.keys.indexOf("swipe right") > -1) {
                 this.speed = 10;
-            } else if(input.keys.indexOf("ArrowLeft") > -1) {
+            } else if(input.keys.indexOf("ArrowLeft") > -1 || input.keys.indexOf("swipe left") > -1) {
                 this.speed = -6;
             } else if((input.keys.indexOf("ArrowUp") > -1 || input.keys.indexOf("swipe up") > -1) && this.onGround ()) { //Если нажата стрелка вверх и персонаж находится на земле
                 this.vy-=24;
