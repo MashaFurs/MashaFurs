@@ -586,7 +586,7 @@ span {
 
     a {
         font-size: 0.5rem;
-        padding: 1rem 2rem;
+        padding: 10px;
     }
 
     .wrapper .box {
@@ -600,7 +600,7 @@ span {
     }
 
     #main2{
-        bottom: -3%;
+        bottom: 4%;
     }
 
 }
