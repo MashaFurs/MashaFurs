@@ -492,11 +492,35 @@ function gameArea () {
             }
 
             //Управление кнопками
-            if (input.keys.indexOf("ArrowRight") > -1 || input.keys.indexOf("swipe left") > -1) {
+            if (input.keys.indexOf("ArrowRight") > -1) {
                 this.speed = 10;
-            } else if(input.keys.indexOf("ArrowLeft") > -1 || input.keys.indexOf("swipe right") > -1) {
+            } else if(input.keys.indexOf("ArrowLeft") > -1) {
                 this.speed = -6;
-            } else if((input.keys.indexOf("ArrowUp") > -1 || input.keys.indexOf("swipe up") > -1) && this.onGround ()) { //Если нажата стрелка вверх и персонаж находится на земле
+            } else if(input.keys.indexOf("swipe left") > -1){
+
+                player.image= document.getElementById("roundMedia"); 
+                player.width=98;
+                player.height=85; 
+                player.weight=1;
+                player.maxFrame=6;
+                player.fps=20;
+                masha=true;
+                audioBomb.play();
+                audioBomb.loop=true;
+
+            }else if(input.keys.indexOf("swipe right") > -1){
+
+                player.image= document.getElementById("playerImageMedia"); 
+                player.width=178;
+                player.height=195; 
+                player.weight=1.8;
+                player.maxFrame=6;
+                player.fps=10;
+                masha=false;
+                audioBomb.currentTime=0;
+                audioBomb.pause();
+
+            }else if((input.keys.indexOf("ArrowUp") > -1 || input.keys.indexOf("swipe up") > -1) && this.onGround ()) { //Если нажата стрелка вверх и персонаж находится на земле
                 this.vy-=24;
             } else {
                 this.speed=0;
