@@ -627,6 +627,43 @@ span {
         line-height: 19px;
     }
 
+/**Стилизация проигрыша*/
+
+    .divEnd {
+        background-size: contain;
+
+    }
+
+    .divEnd2{
+        left: 44%;
+        width: 113px;
+        height: 56px;
+    }
+
+    .divEnd2 p{
+        font-size: 19px;
+    }
+
+    .divEnd .bt a{
+        font-size: 20px;
+    }
+
+    #twoB{
+        top: -1%;
+        left: 58%;
+        width: 140px;
+        height: 42px;
+    }
+
+    .divEnd .bt:first-child{
+        top: 10%;
+        left: 24%;
+        width: 140px;
+        height: 42px;
+    }
+
+
+
 }
 
 

@@ -412,13 +412,12 @@ function gameArea () {
                     const distance = Math.sqrt (dx*dx+dy*dy);
                     if (distance < enemies[n].width/2.5 + this.width/2.5) {
                         // alert("убили полицейского");
-                        // if(livesArray.length==0) {
-                        //     gameOver = true;
-                        //     police.play();
-                        //     gameEnd();
-
+                        if(livesArray.length==0) {
+                            gameOver = true;
+                            police.play();
+                            gameEnd();
                             
-                        // }
+                        }
                         if(!enemies[n].counted&&livesArray.length!=0) {
                             enemies[n].counted = true;
                             livesArray.pop();
