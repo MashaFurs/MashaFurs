@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishop</title>
+</head>
+
+<body> 
+
+    <div id="container"></div> 
+        
+    <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
+        
+    <script src="Shop.js"></script>
+    <link rel="stylesheet" type="text/css" href="Shop.css" />
+    <script src="Product.js"></script>
+    <link rel="stylesheet" type="text/css" href="Product.css" />
+  
+    <script>
+  
+    var storeName= "av.by";
+    var products= [
+        {
+            brandTitle: "Land Rover",
+            modelTitle: "Discovery V",
+            imgUrl: "https://dvizhok.su/i/files2/auto/2020/11/Land_Rover_Discovery_2021_R-Dynamic_s.jpg",
+            price: 150000,
+            key:1,
+            code:1,
+            storage:6,
+        },
+        {
+            brandTitle: " BMW",
+            modelTitle: "X7",
+            imgUrl: "https://rg.ru/uploads/images/230/03/42/2023-BMW-X7-2.jpeg",
+            price: 120000,
+            key:2,
+            code:2,
+            storage:3,
+        },
+        {
+            brandTitle: "Audi",
+            modelTitle: "A7",
+            imgUrl: "https://hips.hearstapps.com/hmg-prod/images/medium-5058-2019audia7-1653580372.jpg",
+            price: 1100000,
+            key:3,
+            code:3,
+            storage:5,
+        },
+        {
+            brandTitle: "Porsche",
+            modelTitle: "Cayenne 3",
+            imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg/458px-Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg",
+            price: 2000000,
+            key:4,
+            code:4,
+            storage:1,
+        },    
+    ]
+  
+    ReactDOM.render(
+        React.createElement(Shop,{name: storeName,defaultProducts:products}), 
+        document.getElementById('container') 
+    ); 
+
+    </script> 
+  </body> 
+</html>
