@@ -1,0 +1,23 @@
+body{
+    background-color: #e0e0e0;;
+}
+.Shop h1{
+    text-align: center;
+    font-size: 50px;
+}
+
+.addNew{
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+}
+
+.btnAddNew{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: #686ec8;
+    color: white;
+    border: none;
+    font-size: 18px;
+}
