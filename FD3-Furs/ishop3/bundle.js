@@ -673,7 +673,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var storeName = "av.by";
 var products = __webpack_require__(29);
 
-_reactDom2.default.render(_react2.default.createElement(_Shop2.default, { name: storeName, defaultProducts: products }), document.getElementById('container'));
+_reactDom2.default.render(_react2.default.createElement(_Shop2.default, {
+  name: storeName,
+  defaultProducts: products
+}), document.getElementById('container'));
 
 /***/ }),
 /* 10 */

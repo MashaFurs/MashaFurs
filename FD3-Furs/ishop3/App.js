@@ -8,9 +8,10 @@ let products=require('./products.json');
 
 
 ReactDOM.render(
-  React.createElement(Shop,{name: storeName,defaultProducts:products}), 
-  document.getElementById('container') 
-
-  
+  <Shop 
+    name={storeName}
+    defaultProducts={products}
+  />
+  , document.getElementById('container') 
 );
 
