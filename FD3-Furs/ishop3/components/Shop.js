@@ -9,17 +9,17 @@ import Product from './Product';
 class Shop extends React.Component {
 
   static propTypes = {
-    name: PropTypes.string.isRequired,
-    defaultProducts:PropTypes.arrayOf(
-      PropTypes.shape({
-        brandTitle: PropTypes.string.isRequired,
-        modelTitle: PropTypes.string.isRequired,
-        imgUrl: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-        key: PropTypes.number.isRequired,
-        storage: PropTypes.number.isRequired,
-      })
-    ),
+    // name: PropTypes.string.isRequired,
+    // defaultProducts:PropTypes.arrayOf(
+    //   PropTypes.shape({
+    //     brandTitle: PropTypes.string.isRequired,
+    //     modelTitle: PropTypes.string.isRequired,
+    //     imgUrl: PropTypes.string.isRequired,
+    //     price: PropTypes.number.isRequired,
+    //     key: PropTypes.number.isRequired,
+    //     storage: PropTypes.number.isRequired,
+    //   })
+    // ),
   };
 
   state = {
