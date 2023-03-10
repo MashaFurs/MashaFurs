@@ -31,6 +31,7 @@ body{
     font-size: 20px;
     font-weight: 400;
     position: relative;
+    border-radius: 10px;
 }
 .products .card.one{
     background-color: #fff59d;
@@ -55,5 +56,30 @@ body{
     border: none;
 
 }
+.cardWrap{
+    display: flex;
+    justify-content: center;
+}
 
+.cardView{
+    width: 1000px;
+    height: 100px;
+    background-color: white;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 10px 5px 5px #cbcbcb;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 24px;
+}
+.cardView p:first-child{
+    margin: 8px;
+}
+
+.cardView p:nth-child(2){
+    margin: 0;
+}
 /*# sourceMappingURL=bundle.css.map*/

@@ -39,10 +39,10 @@ class Product extends React.Component {
           <img className='imgUrl' src={this.props.img}/>
           <p className='brandTitle'>Марка: {this.props.brand}</p>
           <p className='modelTitle'>Модель: {this.props.model}</p>
-          <p className='price'>Цена: {this.props.price}</p>
+          <p className='price'>Цена: {this.props.price} $</p>
           <p className='storage'>Осталось на складе: {this.props.storage} шт.</p>
           <div className='del'>
-            <button className='btn' onClick= {this.delete}>добавить</button>
+            <button className='btn' onClick= {this.delete}>изменить</button>
             <button className='btn' onClick= {this.delete}>удалить</button>
           </div>
         </div>

@@ -5,6 +5,7 @@ import DOM from 'react-dom-factories';
 import './Shop.css';
 
 import Product from './Product';
+import CardView from './CardView';
 
 class Shop extends React.Component {
 
@@ -25,6 +26,7 @@ class Shop extends React.Component {
   state = {
     selecteItemCode: null,
     products: this.props.defaultProducts,
+    cardMode: 0// 0-нет, 1-просмотр, 2-редактирование, 3-добавление
   };
 
   cbProductSelected = (code) => {
@@ -40,11 +42,22 @@ class Shop extends React.Component {
   render() {
 
     const productsCode=this.state.products.map( p =>
-      <Product key={p.key} code={p.key} brand={p.brandTitle} model={p.modelTitle} img={p.imgUrl} price={p.price} storage={p.storage} selecteItemCode={this.state.selecteItemCode} cbSelected={this.cbProductSelected} cbDelete={this.cbProductDelete}/>);
+      <Product key={p.key} code={p.key} brand={p.brandTitle} 
+               model={p.modelTitle} img={p.imgUrl} price={p.price} 
+               storage={p.storage} selecteItemCode={this.state.selecteItemCode} 
+               cbSelected={this.cbProductSelected} cbDelete={this.cbProductDelete}/>);
+
+      let itemInfo = this.state.products.find( item => {
+                if (item.code === this.state.selecteItemCode) return item
+      });
+
 
     return  (
       <div className='Shop'>
         <h1 className='name'>{this.props.name}</h1>
+
+        { (this.state.selecteItemCode) && <CardView itemInfo={itemInfo} />}
+
         <div className='products'>{productsCode}</div>
         <div className='addNew'>
           <button className='btnAddNew'>добавить продукт</button>

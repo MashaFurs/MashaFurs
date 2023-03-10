@@ -369,6 +369,32 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var ReactIs = __webpack_require__(7);
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(23)(ReactIs.isElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(25)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -385,70 +411,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(14);
-} else {
-  module.exports = __webpack_require__(15);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
 /* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var ReactIs = __webpack_require__(6);
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(23)(ReactIs.isElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(25)();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(21);
-} else {
-  module.exports = __webpack_require__(22);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
-
-
-/***/ }),
-/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -650,6 +613,43 @@ module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
 
 
 /***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(14);
+} else {
+  module.exports = __webpack_require__(15);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(21);
+} else {
+  module.exports = __webpack_require__(22);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+
+
+/***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -671,7 +671,7 @@ var _Shop2 = _interopRequireDefault(_Shop);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var storeName = "av.by";
-var products = __webpack_require__(29);
+var products = __webpack_require__(31);
 
 _reactDom2.default.render(_react2.default.createElement(_Shop2.default, {
   name: storeName,
@@ -3111,7 +3111,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1),m=__webpack_require__(2),r=__webpack_require__(4);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
+var aa=__webpack_require__(1),m=__webpack_require__(2),r=__webpack_require__(6);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
 function ea(a,b){ca[a]=b;for(a=0;a<b.length;a++)ba.add(b[a])}
 var fa=!("undefined"===typeof window||"undefined"===typeof window.document||"undefined"===typeof window.document.createElement),ha=/^[:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\-.0-9\u00B7\u0300-\u036F\u203F-\u2040]*$/,ia=Object.prototype.hasOwnProperty,
 ja={},ka={};function la(a){if(ia.call(ka,a))return!0;if(ia.call(ja,a))return!1;if(ha.test(a))return ka[a]=!0;ja[a]=!0;return!1}function ma(a,b,c,d){if(null!==c&&0===c.type)return!1;switch(typeof b){case "function":case "symbol":return!0;case "boolean":if(d)return!1;if(null!==c)return!c.acceptsBooleans;a=a.toLowerCase().slice(0,5);return"data-"!==a&&"aria-"!==a;default:return!1}}
@@ -4102,7 +4102,7 @@ if (process.env.NODE_ENV !== "production") {
 
 var React = __webpack_require__(1);
 var _assign = __webpack_require__(2);
-var Scheduler = __webpack_require__(4);
+var Scheduler = __webpack_require__(6);
 var tracing = __webpack_require__(17);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
@@ -30753,11 +30753,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(5);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactDomFactories = __webpack_require__(8);
+var _reactDomFactories = __webpack_require__(5);
 
 var _reactDomFactories2 = _interopRequireDefault(_reactDomFactories);
 
@@ -30766,6 +30766,10 @@ __webpack_require__(26);
 var _Product = __webpack_require__(27);
 
 var _Product2 = _interopRequireDefault(_Product);
+
+var _CardView = __webpack_require__(29);
+
+var _CardView2 = _interopRequireDefault(_CardView);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30791,7 +30795,8 @@ var Shop = function (_React$Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Shop.__proto__ || Object.getPrototypeOf(Shop)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       selecteItemCode: null,
-      products: _this.props.defaultProducts
+      products: _this.props.defaultProducts,
+      cardMode: 0 // 0-нет, 1-просмотр, 2-редактирование, 3-добавление
     }, _this.cbProductSelected = function (code) {
       console.log('выбран ответ с кодом' + code);
       _this.setState({ selecteItemCode: code });
@@ -30808,7 +30813,14 @@ var Shop = function (_React$Component) {
       var _this2 = this;
 
       var productsCode = this.state.products.map(function (p) {
-        return _react2.default.createElement(_Product2.default, { key: p.key, code: p.key, brand: p.brandTitle, model: p.modelTitle, img: p.imgUrl, price: p.price, storage: p.storage, selecteItemCode: _this2.state.selecteItemCode, cbSelected: _this2.cbProductSelected, cbDelete: _this2.cbProductDelete });
+        return _react2.default.createElement(_Product2.default, { key: p.key, code: p.key, brand: p.brandTitle,
+          model: p.modelTitle, img: p.imgUrl, price: p.price,
+          storage: p.storage, selecteItemCode: _this2.state.selecteItemCode,
+          cbSelected: _this2.cbProductSelected, cbDelete: _this2.cbProductDelete });
+      });
+
+      var itemInfo = this.state.products.find(function (item) {
+        if (item.code === _this2.state.selecteItemCode) return item;
       });
 
       return _react2.default.createElement(
@@ -30819,6 +30831,7 @@ var Shop = function (_React$Component) {
           { className: 'name' },
           this.props.name
         ),
+        this.state.selecteItemCode && _react2.default.createElement(_CardView2.default, { itemInfo: itemInfo }),
         _react2.default.createElement(
           'div',
           { className: 'products' },
@@ -31080,11 +31093,11 @@ exports.typeOf = typeOf;
 
 
 
-var ReactIs = __webpack_require__(6);
+var ReactIs = __webpack_require__(7);
 var assign = __webpack_require__(2);
 
-var ReactPropTypesSecret = __webpack_require__(3);
-var has = __webpack_require__(7);
+var ReactPropTypesSecret = __webpack_require__(4);
+var has = __webpack_require__(8);
 var checkPropTypes = __webpack_require__(24);
 
 var printWarning = function() {};
@@ -31701,9 +31714,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(3);
+  var ReactPropTypesSecret = __webpack_require__(4);
   var loggedTypeFailures = {};
-  var has = __webpack_require__(7);
+  var has = __webpack_require__(8);
 
   printWarning = function(text) {
     var message = 'Warning: ' + text;
@@ -31809,7 +31822,7 @@ module.exports = checkPropTypes;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(3);
+var ReactPropTypesSecret = __webpack_require__(4);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -31890,11 +31903,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(5);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactDomFactories = __webpack_require__(8);
+var _reactDomFactories = __webpack_require__(5);
 
 var _reactDomFactories2 = _interopRequireDefault(_reactDomFactories);
 
@@ -31955,7 +31968,8 @@ var Product = function (_React$Component) {
           'p',
           { className: 'price' },
           '\u0426\u0435\u043D\u0430: ',
-          this.props.price
+          this.props.price,
+          ' $'
         ),
         _react2.default.createElement(
           'p',
@@ -31970,7 +31984,7 @@ var Product = function (_React$Component) {
           _react2.default.createElement(
             'button',
             { className: 'btn', onClick: this.delete },
-            '\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C'
+            '\u0438\u0437\u043C\u0435\u043D\u0438\u0442\u044C'
           ),
           _react2.default.createElement(
             'button',
@@ -32010,6 +32024,104 @@ exports.default = Product;
 
 /***/ }),
 /* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactDomFactories = __webpack_require__(5);
+
+var _reactDomFactories2 = _interopRequireDefault(_reactDomFactories);
+
+__webpack_require__(30);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CardView = function (_React$Component) {
+  _inherits(CardView, _React$Component);
+
+  function CardView() {
+    _classCallCheck(this, CardView);
+
+    return _possibleConstructorReturn(this, (CardView.__proto__ || Object.getPrototypeOf(CardView)).apply(this, arguments));
+  }
+
+  _createClass(CardView, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'cardWrap' },
+        _react2.default.createElement(
+          'div',
+          { className: 'cardView' },
+          _react2.default.createElement(
+            'p',
+            null,
+            this.props.itemInfo.brandTitle
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            '\u0426\u0435\u043D\u0430: ',
+            this.props.itemInfo.price,
+            ' $. \u041D\u0430 \u0441\u043A\u043B\u0430\u0434\u0435 \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C: ',
+            this.props.itemInfo.storage,
+            ' \u0448\u0442.'
+          )
+        )
+      );
+    }
+  }]);
+
+  return CardView;
+}(_react2.default.Component);
+
+CardView.propTypes = {
+  // defaultProducts:PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     brandTitle: PropTypes.string.isRequired,
+  //     modelTitle: PropTypes.string.isRequired,
+  //     imgUrl: PropTypes.string.isRequired,
+  //     price: PropTypes.number.isRequired,
+  //     key: PropTypes.number.isRequired,
+  //     code: PropTypes.number.isRequired,
+  //     storage: PropTypes.number.isRequired,
+  //     cbSelected: PropTypes.func.isRequired,
+  //     cbDelete: PropTypes.func.isRequired,
+  //   })
+  // ),
+};
+exports.default = CardView;
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = [{"brandTitle":"Land Rover","modelTitle":"Discovery V","imgUrl":"https://dvizhok.su/i/files2/auto/2020/11/Land_Rover_Discovery_2021_R-Dynamic_s.jpg","price":150000,"key":1,"code":1,"storage":6},{"brandTitle":" BMW","modelTitle":"X7","imgUrl":"https://rg.ru/uploads/images/230/03/42/2023-BMW-X7-2.jpeg","price":120000,"key":2,"code":2,"storage":3},{"brandTitle":"Audi","modelTitle":"A7","imgUrl":"https://hips.hearstapps.com/hmg-prod/images/medium-5058-2019audia7-1653580372.jpg","price":1100000,"key":3,"code":3,"storage":5},{"brandTitle":"Porsche","modelTitle":"Cayenne 3","imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg/458px-Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg","price":2000000,"key":4,"code":4,"storage":1}]
