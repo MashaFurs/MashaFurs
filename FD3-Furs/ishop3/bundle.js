@@ -30800,6 +30800,7 @@ var Shop = function (_React$Component) {
     }, _this.cbProductSelected = function (code) {
       console.log('выбран ответ с кодом' + code);
       _this.setState({ selecteItemCode: code });
+      _this.setState({ cardMode: 1 });
     }, _this.cbProductDelete = function (code) {
 
       _this.setState({ products: _this.state.products.filter(function (s) {
@@ -30832,7 +30833,7 @@ var Shop = function (_React$Component) {
           { className: 'name' },
           this.props.name
         ),
-        this.state.selecteItemCode && _react2.default.createElement(_CardView2.default, { itemInfo: itemInfo }),
+        this.state.cardMode === 1 && this.state.selecteItemCode && _react2.default.createElement(_CardView2.default, { itemInfo: itemInfo }),
         _react2.default.createElement(
           'div',
           { className: 'products' },

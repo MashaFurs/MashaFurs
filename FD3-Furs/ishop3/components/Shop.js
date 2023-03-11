@@ -32,6 +32,7 @@ class Shop extends React.Component {
   cbProductSelected = (code) => {
     console.log('выбран ответ с кодом' + code);
     this.setState ( {selecteItemCode: code});
+    this.setState ( {cardMode: 1});
   };
 
   cbProductDelete = (code) => {
@@ -57,7 +58,7 @@ class Shop extends React.Component {
       <div className='Shop'>
         <h1 className='name'>{this.props.name}</h1>
 
-        { (this.state.selecteItemCode) && <CardView itemInfo={itemInfo} />}
+        { this.state.cardMode===1 && this.state.selecteItemCode && <CardView itemInfo={itemInfo} />}
 
         <div className='products'>{productsCode}</div>
         <div className='addNew'>
