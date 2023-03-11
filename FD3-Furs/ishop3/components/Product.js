@@ -29,7 +29,7 @@ class Product extends React.Component {
   delete = (eo) => { 
     eo.stopPropagation ();
     this.props.cbDelete(this.props.code);
-    console.log(this.props.code)
+
   };
 
   render() {

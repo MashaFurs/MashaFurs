@@ -23,12 +23,17 @@ class CardView extends React.Component {
   };
 
   render() {
+    console.log(this.props.itemInfo);
       return (
         <div className='cardWrap'>
+          {
+            (this.props.itemInfo) && 
             <div className='cardView'>
                 <p>{this.props.itemInfo.brandTitle}</p>
                 <p>Цена: {this.props.itemInfo.price} $. На складе осталось: {this.props.itemInfo.storage} шт.</p>
             </div>
+          }
+            
         </div>
       )
     }

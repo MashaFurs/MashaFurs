@@ -30801,6 +30801,7 @@ var Shop = function (_React$Component) {
       console.log('выбран ответ с кодом' + code);
       _this.setState({ selecteItemCode: code });
     }, _this.cbProductDelete = function (code) {
+
       _this.setState({ products: _this.state.products.filter(function (s) {
           return s.code !== code;
         }) });
@@ -31940,7 +31941,6 @@ var Product = function (_React$Component) {
     }, _this.delete = function (eo) {
       eo.stopPropagation();
       _this.props.cbDelete(_this.props.code);
-      console.log(_this.props.code);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -32069,10 +32069,11 @@ var CardView = function (_React$Component) {
   _createClass(CardView, [{
     key: 'render',
     value: function render() {
+      console.log(this.props.itemInfo);
       return _react2.default.createElement(
         'div',
         { className: 'cardWrap' },
-        _react2.default.createElement(
+        this.props.itemInfo && _react2.default.createElement(
           'div',
           { className: 'cardView' },
           _react2.default.createElement(

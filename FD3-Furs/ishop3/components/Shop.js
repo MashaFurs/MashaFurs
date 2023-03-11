@@ -35,6 +35,7 @@ class Shop extends React.Component {
   };
 
   cbProductDelete = (code) => {
+  
     this.setState({ products:this.state.products.filter(  s=> s.code!==code)});
   };
 
