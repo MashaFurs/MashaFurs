@@ -18,6 +18,7 @@ class Product extends React.Component {
     //     storage: PropTypes.number.isRequired,
     //     cbSelected: PropTypes.func.isRequired,
     //     cbDelete: PropTypes.func.isRequired,
+          //  cbRedact: PropTypes.func.isRequired,
     //   })
     // ),
   };
@@ -32,6 +33,11 @@ class Product extends React.Component {
 
   };
 
+  redact= (eo) => {
+    eo.stopPropagation ();
+    this.props.cbRedact(this.props.code);
+  }
+
   render() {
 
       return (
@@ -42,8 +48,8 @@ class Product extends React.Component {
           <p className='price'>Цена: {this.props.price} $</p>
           <p className='storage'>Осталось на складе: {this.props.storage} шт.</p>
           <div className='del'>
-            <button className='btn' onClick= {this.delete}>изменить</button>
-            <button className='btn' onClick= {this.delete}>удалить</button>
+            <button className='btn' disabled={this.props.btnDisabled} onClick= {this.redact}>изменить</button>
+            <button className='btn' disabled={this.props.btnDisabled} onClick= {this.delete}>удалить</button>
           </div>
         </div>
       )

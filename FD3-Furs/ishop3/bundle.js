@@ -396,25 +396,6 @@ if (process.env.NODE_ENV !== 'production') {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-module.exports = ReactPropTypesSecret;
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 
 
 /**
@@ -613,6 +594,25 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -671,7 +671,7 @@ var _Shop2 = _interopRequireDefault(_Shop);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var storeName = "av.by";
-var products = __webpack_require__(31);
+var products = __webpack_require__(33);
 
 _reactDom2.default.render(_react2.default.createElement(_Shop2.default, {
   name: storeName,
@@ -30757,7 +30757,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactDomFactories = __webpack_require__(5);
+var _reactDomFactories = __webpack_require__(4);
 
 var _reactDomFactories2 = _interopRequireDefault(_reactDomFactories);
 
@@ -30770,6 +30770,10 @@ var _Product2 = _interopRequireDefault(_Product);
 var _CardView = __webpack_require__(29);
 
 var _CardView2 = _interopRequireDefault(_CardView);
+
+var _CardEdit = __webpack_require__(31);
+
+var _CardEdit2 = _interopRequireDefault(_CardEdit);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30796,16 +30800,45 @@ var Shop = function (_React$Component) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Shop.__proto__ || Object.getPrototypeOf(Shop)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       selecteItemCode: null,
       products: _this.props.defaultProducts,
-      cardMode: 0 // 0-нет, 1-просмотр, 2-редактирование, 3-добавление
+      cardMode: 0, // 0-нет, 1-просмотр, 2-редактирование, 3-добавление
+
+      btnDisabled: false
     }, _this.cbProductSelected = function (code) {
-      console.log('выбран ответ с кодом' + code);
+
       _this.setState({ selecteItemCode: code });
       _this.setState({ cardMode: 1 });
+      _this.setState({ btnDisabled: false });
     }, _this.cbProductDelete = function (code) {
 
       _this.setState({ products: _this.state.products.filter(function (s) {
           return s.code !== code;
         }) });
+    }, _this.cbProductRedact = function (code) {
+      _this.setState({ selecteItemCode: code });
+      _this.setState({ cardMode: 2 });
+      _this.setState({ btnDisabled: true });
+    }, _this.cbSave = function (code, changeItem) {
+      _this.setState({ products: _this.state.products.map(function (item) {
+          if (item.code === code) {
+
+            item.brandTitle = changeItem.brandTitle;
+            item.modelTitle = changeItem.modelTitle;
+            item.imgUrl = changeItem.imgUrl;
+            item.price = changeItem.price;
+            item.storage = changeItem.storage;
+            item.code = code;
+            item.key = code;
+
+            return item;
+          } else {
+            return item;
+          }
+        }) });
+    }, _this.cbCancel = function () {
+      _this.setState({ cardMode: 1 });
+      _this.setState({ btnDisabled: false });
+    }, _this.addNewCar = function () {
+      console.log("ураа");
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -30818,7 +30851,8 @@ var Shop = function (_React$Component) {
         return _react2.default.createElement(_Product2.default, { key: p.key, code: p.key, brand: p.brandTitle,
           model: p.modelTitle, img: p.imgUrl, price: p.price,
           storage: p.storage, selecteItemCode: _this2.state.selecteItemCode,
-          cbSelected: _this2.cbProductSelected, cbDelete: _this2.cbProductDelete });
+          cbSelected: _this2.cbProductSelected, cbDelete: _this2.cbProductDelete,
+          cbRedact: _this2.cbProductRedact, btnDisabled: _this2.state.btnDisabled });
       });
 
       var itemInfo = this.state.products.find(function (item) {
@@ -30834,6 +30868,11 @@ var Shop = function (_React$Component) {
           this.props.name
         ),
         this.state.cardMode === 1 && this.state.selecteItemCode && _react2.default.createElement(_CardView2.default, { itemInfo: itemInfo }),
+        this.state.cardMode === 2 && this.state.selecteItemCode && _react2.default.createElement(_CardEdit2.default, { key: this.state.selecteItemCode,
+          itemInfo: itemInfo,
+          cbSave: this.cbSave,
+          cbCancel: this.cbCancel
+        }),
         _react2.default.createElement(
           'div',
           { className: 'products' },
@@ -30844,8 +30883,8 @@ var Shop = function (_React$Component) {
           { className: 'addNew' },
           _react2.default.createElement(
             'button',
-            { className: 'btnAddNew' },
-            '\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043F\u0440\u043E\u0434\u0443\u043A\u0442'
+            { className: 'btnAddNew', disabled: this.state.btnDisabled, onClick: this.addNewCar },
+            '\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0430\u0432\u0442\u043E'
           )
         )
       );
@@ -31098,7 +31137,7 @@ exports.typeOf = typeOf;
 var ReactIs = __webpack_require__(7);
 var assign = __webpack_require__(2);
 
-var ReactPropTypesSecret = __webpack_require__(4);
+var ReactPropTypesSecret = __webpack_require__(5);
 var has = __webpack_require__(8);
 var checkPropTypes = __webpack_require__(24);
 
@@ -31716,7 +31755,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(4);
+  var ReactPropTypesSecret = __webpack_require__(5);
   var loggedTypeFailures = {};
   var has = __webpack_require__(8);
 
@@ -31824,7 +31863,7 @@ module.exports = checkPropTypes;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(4);
+var ReactPropTypesSecret = __webpack_require__(5);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -31909,7 +31948,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactDomFactories = __webpack_require__(5);
+var _reactDomFactories = __webpack_require__(4);
 
 var _reactDomFactories2 = _interopRequireDefault(_reactDomFactories);
 
@@ -31942,6 +31981,9 @@ var Product = function (_React$Component) {
     }, _this.delete = function (eo) {
       eo.stopPropagation();
       _this.props.cbDelete(_this.props.code);
+    }, _this.redact = function (eo) {
+      eo.stopPropagation();
+      _this.props.cbRedact(_this.props.code);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -31984,12 +32026,12 @@ var Product = function (_React$Component) {
           { className: 'del' },
           _react2.default.createElement(
             'button',
-            { className: 'btn', onClick: this.delete },
+            { className: 'btn', disabled: this.props.btnDisabled, onClick: this.redact },
             '\u0438\u0437\u043C\u0435\u043D\u0438\u0442\u044C'
           ),
           _react2.default.createElement(
             'button',
-            { className: 'btn', onClick: this.delete },
+            { className: 'btn', disabled: this.props.btnDisabled, onClick: this.delete },
             '\u0443\u0434\u0430\u043B\u0438\u0442\u044C'
           )
         )
@@ -32012,6 +32054,7 @@ Product.propTypes = {
   //     storage: PropTypes.number.isRequired,
   //     cbSelected: PropTypes.func.isRequired,
   //     cbDelete: PropTypes.func.isRequired,
+  //  cbRedact: PropTypes.func.isRequired,
   //   })
   // ),
 };
@@ -32044,7 +32087,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactDomFactories = __webpack_require__(5);
+var _reactDomFactories = __webpack_require__(4);
 
 var _reactDomFactories2 = _interopRequireDefault(_reactDomFactories);
 
@@ -32070,7 +32113,7 @@ var CardView = function (_React$Component) {
   _createClass(CardView, [{
     key: 'render',
     value: function render() {
-      console.log(this.props.itemInfo);
+
       return _react2.default.createElement(
         'div',
         { className: 'cardWrap' },
@@ -32124,9 +32167,275 @@ exports.default = CardView;
 
 /***/ }),
 /* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactDomFactories = __webpack_require__(4);
+
+var _reactDomFactories2 = _interopRequireDefault(_reactDomFactories);
+
+__webpack_require__(32);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CardEdit = function (_React$Component) {
+  _inherits(CardEdit, _React$Component);
+
+  function CardEdit() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, CardEdit);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardEdit.__proto__ || Object.getPrototypeOf(CardEdit)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      currURL: _this.props.itemInfo.imgUrl,
+      currBrand: _this.props.itemInfo.brandTitle,
+      currModel: _this.props.itemInfo.modelTitle,
+      currPrice: _this.props.itemInfo.price,
+      currStorage: _this.props.itemInfo.storage,
+      currkey: _this.props.itemInfo.key,
+      URLError: "", BrandtError: "", ModelError: "", priceError: "", storageError: "",
+      valid: true
+    }, _this.validation = function () {
+      var URLError = "",
+          BrandtError = "",
+          ModelError = "",
+          priceError = "",
+          storageError = "",
+          valid = void 0;
+
+      if (_this.state.currURL.length === 0) {
+        URLError = "введите URL";
+      };
+      if (_this.state.currBrand.length === 0) {
+        BrandtError = "введите марку авто";
+      };
+      if (_this.state.currModel.length === 0) {
+        ModelError = "введите модель авто";
+      };
+      if (isNaN(_this.state.currPrice)) {
+        priceError = "введите цену";
+      };
+      if (isNaN(_this.state.currStorage)) {
+        storageError = "введите остаток";
+      };
+
+      valid = !URLError && !BrandtError && !ModelError && !priceError && !storageError;
+
+      _this.setState({ URLError: URLError, BrandtError: BrandtError, ModelError: ModelError, priceError: priceError, storageError: storageError, valid: valid });
+    }, _this.changeUrl = function (eo) {
+      _this.setState({ currURL: eo.target.value }, _this.validation);
+    }, _this.changeBrand = function (eo) {
+      _this.setState({ currBrand: eo.target.value }, _this.validation);
+    }, _this.changeModel = function (eo) {
+      _this.setState({ currModel: eo.target.value }, _this.validation);
+    }, _this.changePrice = function (eo) {
+      _this.setState({ currPrice: parseInt(eo.target.value) }, _this.validation);
+    }, _this.changeStorage = function (eo) {
+      _this.setState({ currStorage: parseInt(eo.target.value) }, _this.validation);
+    }, _this.save = function (eo) {
+      var changeItem = { imgUrl: _this.state.currURL,
+        brandTitle: _this.state.currBrand,
+        modelTitle: _this.state.currModel,
+        price: _this.state.currPrice,
+        storage: _this.state.currStorage,
+        key: _this.state.currkey };
+
+      _this.props.cbSave(_this.props.itemInfo.code, changeItem);
+    }, _this.cancel = function (eo) {
+      _this.props.cbCancel();
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(CardEdit, [{
+    key: 'render',
+    value: function render() {
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'cardWrapEdit' },
+        this.props.itemInfo && _react2.default.createElement(
+          'div',
+          { className: 'cardEdit' },
+          _react2.default.createElement(
+            'p',
+            null,
+            '\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0442\u043E\u0432\u0430\u0440\u0430'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'container' },
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'span',
+                null,
+                'ID'
+              ),
+              _react2.default.createElement('input', { type: 'text', value: '3', disabled: true }),
+              _react2.default.createElement(
+                'span',
+                null,
+                'URL:'
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement('input', { type: 'text', value: this.state.currURL, onChange: this.changeUrl }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  this.state.URLError
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'span',
+                null,
+                '\u041C\u0430\u0440\u043A\u0430:'
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement('input', { type: 'text', value: this.state.currBrand, onChange: this.changeBrand }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  this.state.BrandtError
+                )
+              ),
+              _react2.default.createElement(
+                'span',
+                null,
+                '\u041C\u043E\u0434\u0435\u043B\u044C:'
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement('input', { type: 'text', value: this.state.currModel, onChange: this.changeModel }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  this.state.ModelError
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'span',
+                null,
+                '\u0426\u0435\u043D\u0430:'
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement('input', { type: 'number', value: this.state.currPrice, onChange: this.changePrice }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  this.state.priceError
+                )
+              ),
+              _react2.default.createElement(
+                'span',
+                null,
+                '\u041D\u0430 \u0441\u043A\u043B\u0430\u0434\u0435:'
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement('input', { type: 'number', value: this.state.currStorage, onChange: this.changeStorage }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  this.state.storageError
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'btnEdit' },
+            _react2.default.createElement(
+              'button',
+              { className: 'btn', disabled: !this.state.valid, onClick: this.save },
+              '\u0441\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C'
+            ),
+            _react2.default.createElement(
+              'button',
+              { className: 'btn', onClick: this.cancel },
+              '\u043E\u0442\u043C\u0435\u043D\u0430'
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return CardEdit;
+}(_react2.default.Component);
+
+CardEdit.propTypes = {
+  // defaultProducts:PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     brandTitle: PropTypes.string.isRequired,
+  //     modelTitle: PropTypes.string.isRequired,
+  //     imgUrl: PropTypes.string.isRequired,
+  //     price: PropTypes.number.isRequired,
+  //     key: PropTypes.number.isRequired,
+  //     code: PropTypes.number.isRequired,
+  //     storage: PropTypes.number.isRequired,
+  //     cbSelected: PropTypes.func.isRequired,
+  //     cbDelete: PropTypes.func.isRequired,
+  //   })
+  // ),
+};
+exports.default = CardEdit;
+
+/***/ }),
+/* 32 */
 /***/ (function(module, exports) {
 
-module.exports = [{"brandTitle":"Land Rover","modelTitle":"Discovery V","imgUrl":"https://dvizhok.su/i/files2/auto/2020/11/Land_Rover_Discovery_2021_R-Dynamic_s.jpg","price":150000,"key":1,"code":1,"storage":6},{"brandTitle":" BMW","modelTitle":"X7","imgUrl":"https://rg.ru/uploads/images/230/03/42/2023-BMW-X7-2.jpeg","price":120000,"key":2,"code":2,"storage":3},{"brandTitle":"Audi","modelTitle":"A7","imgUrl":"https://hips.hearstapps.com/hmg-prod/images/medium-5058-2019audia7-1653580372.jpg","price":1100000,"key":3,"code":3,"storage":5},{"brandTitle":"Porsche","modelTitle":"Cayenne 3","imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg/458px-Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg","price":2000000,"key":4,"code":4,"storage":1}]
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports) {
+
+module.exports = [{"brandTitle":"Land Rover","modelTitle":"Discovery V","imgUrl":"https://dvizhok.su/i/files2/auto/2020/11/Land_Rover_Discovery_2021_R-Dynamic_s.jpg","price":150000,"key":1,"code":1,"storage":6},{"brandTitle":"BMW","modelTitle":"X7","imgUrl":"https://rg.ru/uploads/images/230/03/42/2023-BMW-X7-2.jpeg","price":120000,"key":2,"code":2,"storage":3},{"brandTitle":"Audi","modelTitle":"A7","imgUrl":"https://hips.hearstapps.com/hmg-prod/images/medium-5058-2019audia7-1653580372.jpg","price":1100000,"key":3,"code":3,"storage":5},{"brandTitle":"Porsche","modelTitle":"Cayenne 3","imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg/458px-Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg","price":2000000,"key":4,"code":4,"storage":1}]
 
 /***/ })
 /******/ ]);

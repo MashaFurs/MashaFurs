@@ -1,0 +1,61 @@
+.cardWrapEdit{
+    display: flex;
+    justify-content: center;
+}
+
+.cardEdit{
+        width: 1000px;
+        height: 205px;
+        background-color: white;
+        margin-bottom: 30px;
+        box-shadow: 10px 5px 5px #cbcbcb;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 24px;
+}
+.cardEdit p{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 18px;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.container div{
+    display: flex;
+    flex-direction: column;
+}
+.container div span{
+    font-size: 22px;
+}
+
+.container div div{
+    display: flex;
+    flex-direction: row;
+}
+
+.container div div span{
+    color: red;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.btnEdit{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.btnEdit .btn{
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    background: #686ec8;
+    color: white;
+    border: none;
+}
+
+.btnEdit .btn:first-child{
+    margin-right: 20px;
+}
