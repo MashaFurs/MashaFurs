@@ -29,7 +29,6 @@ class CardAddNew extends React.Component {
     currModel: this.props.currModel,
     currPrice: this.props.currPrice,
     currStorage: this.props.currStorage,
-    // currkey: this.props.itemInfo.key,
     URLError: this.props.URLError,
     BrandtError: this.props.BrandtError,
     ModelError: this.props.ModelError,
@@ -38,20 +37,28 @@ class CardAddNew extends React.Component {
     
   };
 
-  render() {
+  cancel =(eo)=> {
+    this.props.cbCancel();
+  };
 
-    let arrCode= (this.props.itemList).reduce ( (prev, item) => { //Создаю массив из кодов продуктов
-        prev.push (item.code);
-        return prev;
-    }, []); 
-    let maxCode=arrCode.reduce ((prev,item) =>{ //Нашла максимальное число в массиве (максимальное значение кода)
-        if(item > prev) {
-            prev=item
-        }
-        return prev;
-    });
-    maxCode+=1; //Увеличила максимальное значение кода в массиве на 1 для новой карточки
+  addNewCar= (eo) =>{
     
+    let changeItemArr= {
+        imgUrl:this.props.currURL,
+        brandTitle:this.props.currBrand,
+        modelTitle: this.props.currModel, 
+        price:this.props.currPrice,
+        storage: this.props.currStorage,
+        key: this.props.code,
+        code: this.props.code
+    };
+    this.props.cbSaveNewCar( changeItemArr);
+  };
+
+
+ 
+
+  render() {
 
     return (
         <div className='cardWrapAdd'>
@@ -59,22 +66,21 @@ class CardAddNew extends React.Component {
             <div className='cardAdd'>
                 <p>Добавление товара</p>
                 <div className='container'>
-                    <div>
-                        <span>ID</span><input type="text" defaultValue={maxCode} disabled/>
+                    <div> 
                         <span>URL:</span><div><input type="text" defaultValue={this.state.currURL} onChange={this.props.changeUrl} /><span>{this.props.URLError}</span></div>
-                    </div>
-                    <div>
                         <span>Марка:</span><div><input type="text" defaultValue={this.state.currBrand} onChange={this.props.changeBrand}/><span>{this.props.BrandtError}</span></div>
-                        <span>Модель:</span><div><input type="text" defaultValue={this.state.currModel} onChange={this.props.changeModel} /><span>{this.props.ModelError}</span></div>
                     </div>
                     <div>
+                        <span>Модель:</span><div><input type="text" defaultValue={this.state.currModel} onChange={this.props.changeModel} /><span>{this.props.ModelError}</span></div>
                         <span>Цена:</span><div><input type="number" defaultValue={this.state.currPrice} onChange={this.props.changePrice} /><span>{this.props.priceError}</span></div>
+                    </div>
+                    <div>
                         <span>На складе:</span><div><input type="number" defaultValue={this.state.currStorage} onChange={this.props.changeStorage} /><span>{this.props.storageError}</span></div>   
                     </div>
                 </div>
                 <div className='btnEdit'>
-                <button className='btn' >добавить</button>
-                <button className='btn' >отмена</button>
+                <button className='btn' disabled={!this.props.valid} onClick={this.addNewCar}>добавить</button>
+                <button className='btn' onClick= {this.cancel}>отмена</button>
                 </div>
             </div>
             

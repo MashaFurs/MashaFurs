@@ -31,6 +31,8 @@ class Shop extends React.Component {
     cardMode: 0,// 0-нет, 1-просмотр, 2-редактирование, 3-добавление
 
     btnDisabled:false,
+    cardColor:false,
+    cardColorEdit:false,
 
     currURL: null,
     currBrand: null,
@@ -39,7 +41,9 @@ class Shop extends React.Component {
     currStorage: null,
     
     URLError: "", BrandtError: "", ModelError: "", priceError: "", storageError: "",
-    valid: true
+    valid: true,
+
+    code:null,
   };
 
   cbProductSelected = (code) => {
@@ -58,6 +62,8 @@ class Shop extends React.Component {
     this.setState ( {selecteItemCode: code});
     this.setState ( {cardMode: 2});
     this.setState( {btnDisabled: true});
+    this.setState( {cardColorEdit: true});
+    
   };
 
   cbSave =(code, changeItem) => {
@@ -78,16 +84,23 @@ class Shop extends React.Component {
       return item
     }
    })})
+  
   };
 
   cbCancel= ()=>{
-    this.setState ( {cardMode: 1});
+    this.setState ( {cardMode: 0});
     this.setState( {btnDisabled: false});
+    this.setState( {cardColor: false});
+    this.setState( {cardColorEdit: false});
   };
 
   addNewCar=()=>{
+    
     this.setState ( {cardMode: 3});
     this.validation ();
+    this.maxCodeFunc ();
+    this.setState( {btnDisabled: true});
+    this.setState( {cardColor: true});
   };
 
 
@@ -124,15 +137,39 @@ class Shop extends React.Component {
     this.setState( {currStorage: parseInt(eo.target.value)},this.validation)
   };
 
+
+  maxCodeFunc =(eo) => {
+    let arrCode= (this.state.products).reduce ( (prev, item) => { //Создаю массив из кодов продуктов
+        prev.push (item.code);
+        return prev;
+    }, []); 
+    let maxCode=arrCode.reduce ((prev,item) =>{ //Нашла максимальное число в массиве (максимальное значение кода)
+        if(item > prev) {
+            prev=item
+        }
+        return prev;
+    });
+    maxCode+=1; //Увеличила максимальное значение кода в массиве на 1 для новой карточки
+    return this.state.code = maxCode;
+  };
+
+  cbSaveNewCar =(changeItemArr) =>{
+    this.setState({products: [...this.state.products, changeItemArr]});
+    this.setState ( {cardMode: 0});
+    this.setState( {btnDisabled: false});
+    this.setState( {cardColor: false});
+
+  };
+
   
   render() {
-
     const productsCode=this.state.products.map( p =>
       <Product key={p.key} code={p.key} brand={p.brandTitle} 
                model={p.modelTitle} img={p.imgUrl} price={p.price} 
                storage={p.storage} selecteItemCode={this.state.selecteItemCode} 
                cbSelected={this.cbProductSelected} cbDelete={this.cbProductDelete}
-               cbRedact={this.cbProductRedact} btnDisabled={this.state.btnDisabled}/>);
+               cbRedact={this.cbProductRedact} btnDisabled={this.state.btnDisabled}
+               cardColor={this.state.cardColor} cardColorEdit={this.state.cardColorEdit}/>);
                
 
       let itemInfo = this.state.products.find( item => {
@@ -169,7 +206,9 @@ class Shop extends React.Component {
                                                  changeModel={this.changeModel}
                                                  changePrice={this.changePrice}
                                                  changeStorage={this.changeStorage}
-
+                                                 cbCancel={this.cbCancel}
+                                                 code={this.state.code}
+                                                 cbSaveNewCar={this.cbSaveNewCar}
                                                   />}
 
         <div className='products'>{productsCode}</div>

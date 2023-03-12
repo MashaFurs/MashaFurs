@@ -1,6 +1,7 @@
 .products{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .products .card{
     width: 288px;
@@ -10,6 +11,7 @@
     font-weight: 400;
     position: relative;
     border-radius: 10px;
+    margin-top: 20px;
 }
 .products .card.one{
     background-color: #fff59d;

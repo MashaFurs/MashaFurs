@@ -91,15 +91,17 @@ class CardEdit extends React.Component {
                 <p>Редактирование товара</p>
                 <div className='container'>
                     <div>
-                        <span>ID</span><input type="text" value="3" disabled/>
+
                         <span>URL:</span><div><input type="text" value={this.state.currURL} onChange={this.changeUrl}/><span>{this.state.URLError}</span></div>
-                    </div>
-                    <div>
                         <span>Марка:</span><div><input type="text" value={this.state.currBrand} onChange={this.changeBrand}/><span>{this.state.BrandtError}</span></div>
-                        <span>Модель:</span><div><input type="text" value={this.state.currModel} onChange={this.changeModel}/><span>{this.state.ModelError}</span></div>
                     </div>
                     <div>
+
+                        <span>Модель:</span><div><input type="text" value={this.state.currModel} onChange={this.changeModel}/><span>{this.state.ModelError}</span></div>
                         <span>Цена:</span><div><input type="number" value={this.state.currPrice} onChange={this.changePrice}/><span>{this.state.priceError}</span></div>
+                    </div>
+                    <div>
+                      
                         <span>На складе:</span><div><input type="number" value={this.state.currStorage} onChange={this.changeStorage}/><span>{this.state.storageError}</span></div>   
                     </div>
                 </div>

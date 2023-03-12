@@ -24,7 +24,7 @@ class Product extends React.Component {
   };
 
   productClicked = (eo) => {
-    this.props.cbSelected(this.props.code);
+    if(!this.props.cardColor && !this.props.cardColorEdit) {this.props.cbSelected(this.props.code)};
   };
 
   delete = (eo) => { 
@@ -41,7 +41,7 @@ class Product extends React.Component {
   render() {
 
       return (
-        <div className={(this.props.selecteItemCode === this.props.code)?"card one":"card two"} onClick={this.productClicked}>
+        <div className={(this.props.selecteItemCode === this.props.code&&(!this.props.cardColor))?"card one":"card two"} onClick={this.productClicked}>
           <img className='imgUrl' src={this.props.img}/>
           <p className='brandTitle'>Марка: {this.props.brand}</p>
           <p className='modelTitle'>Модель: {this.props.model}</p>

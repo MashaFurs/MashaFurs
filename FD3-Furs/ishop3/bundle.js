@@ -30781,6 +30781,8 @@ var _CardAddNew2 = _interopRequireDefault(_CardAddNew);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -30807,6 +30809,8 @@ var Shop = function (_React$Component) {
       cardMode: 0, // 0-нет, 1-просмотр, 2-редактирование, 3-добавление
 
       btnDisabled: false,
+      cardColor: false,
+      cardColorEdit: false,
 
       currURL: null,
       currBrand: null,
@@ -30815,7 +30819,9 @@ var Shop = function (_React$Component) {
       currStorage: null,
 
       URLError: "", BrandtError: "", ModelError: "", priceError: "", storageError: "",
-      valid: true
+      valid: true,
+
+      code: null
     }, _this.cbProductSelected = function (code) {
 
       _this.setState({ selecteItemCode: code });
@@ -30830,6 +30836,7 @@ var Shop = function (_React$Component) {
       _this.setState({ selecteItemCode: code });
       _this.setState({ cardMode: 2 });
       _this.setState({ btnDisabled: true });
+      _this.setState({ cardColorEdit: true });
     }, _this.cbSave = function (code, changeItem) {
       _this.setState({ products: _this.state.products.map(function (item) {
           if (item.code === code) {
@@ -30848,11 +30855,17 @@ var Shop = function (_React$Component) {
           }
         }) });
     }, _this.cbCancel = function () {
-      _this.setState({ cardMode: 1 });
+      _this.setState({ cardMode: 0 });
       _this.setState({ btnDisabled: false });
+      _this.setState({ cardColor: false });
+      _this.setState({ cardColorEdit: false });
     }, _this.addNewCar = function () {
+
       _this.setState({ cardMode: 3 });
       _this.validation();
+      _this.maxCodeFunc();
+      _this.setState({ btnDisabled: true });
+      _this.setState({ cardColor: true });
     }, _this.validation = function () {
 
       var URLError = "",
@@ -30891,6 +30904,26 @@ var Shop = function (_React$Component) {
       _this.setState({ currPrice: parseInt(eo.target.value) }, _this.validation);
     }, _this.changeStorage = function (eo) {
       _this.setState({ currStorage: parseInt(eo.target.value) }, _this.validation);
+    }, _this.maxCodeFunc = function (eo) {
+      var arrCode = _this.state.products.reduce(function (prev, item) {
+        //Создаю массив из кодов продуктов
+        prev.push(item.code);
+        return prev;
+      }, []);
+      var maxCode = arrCode.reduce(function (prev, item) {
+        //Нашла максимальное число в массиве (максимальное значение кода)
+        if (item > prev) {
+          prev = item;
+        }
+        return prev;
+      });
+      maxCode += 1; //Увеличила максимальное значение кода в массиве на 1 для новой карточки
+      return _this.state.code = maxCode;
+    }, _this.cbSaveNewCar = function (changeItemArr) {
+      _this.setState({ products: [].concat(_toConsumableArray(_this.state.products), [changeItemArr]) });
+      _this.setState({ cardMode: 0 });
+      _this.setState({ btnDisabled: false });
+      _this.setState({ cardColor: false });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -30904,7 +30937,8 @@ var Shop = function (_React$Component) {
           model: p.modelTitle, img: p.imgUrl, price: p.price,
           storage: p.storage, selecteItemCode: _this2.state.selecteItemCode,
           cbSelected: _this2.cbProductSelected, cbDelete: _this2.cbProductDelete,
-          cbRedact: _this2.cbProductRedact, btnDisabled: _this2.state.btnDisabled });
+          cbRedact: _this2.cbProductRedact, btnDisabled: _this2.state.btnDisabled,
+          cardColor: _this2.state.cardColor, cardColorEdit: _this2.state.cardColorEdit });
       });
 
       var itemInfo = this.state.products.find(function (item) {
@@ -30941,8 +30975,10 @@ var Shop = function (_React$Component) {
           changeBrand: this.changeBrand,
           changeModel: this.changeModel,
           changePrice: this.changePrice,
-          changeStorage: this.changeStorage
-
+          changeStorage: this.changeStorage,
+          cbCancel: this.cbCancel,
+          code: this.state.code,
+          cbSaveNewCar: this.cbSaveNewCar
         }),
         _react2.default.createElement(
           'div',
@@ -32048,7 +32084,9 @@ var Product = function (_React$Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Product.__proto__ || Object.getPrototypeOf(Product)).call.apply(_ref, [this].concat(args))), _this), _this.productClicked = function (eo) {
-      _this.props.cbSelected(_this.props.code);
+      if (!_this.props.cardColor && !_this.props.cardColorEdit) {
+        _this.props.cbSelected(_this.props.code);
+      };
     }, _this.delete = function (eo) {
       eo.stopPropagation();
       _this.props.cbDelete(_this.props.code);
@@ -32064,7 +32102,7 @@ var Product = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: this.props.selecteItemCode === this.props.code ? "card one" : "card two", onClick: this.productClicked },
+        { className: this.props.selecteItemCode === this.props.code && !this.props.cardColor ? "card one" : "card two", onClick: this.productClicked },
         _react2.default.createElement('img', { className: 'imgUrl', src: this.props.img }),
         _react2.default.createElement(
           'p',
@@ -32369,12 +32407,6 @@ var CardEdit = function (_React$Component) {
               _react2.default.createElement(
                 'span',
                 null,
-                'ID'
-              ),
-              _react2.default.createElement('input', { type: 'text', value: '3', disabled: true }),
-              _react2.default.createElement(
-                'span',
-                null,
                 'URL:'
               ),
               _react2.default.createElement(
@@ -32386,11 +32418,7 @@ var CardEdit = function (_React$Component) {
                   null,
                   this.state.URLError
                 )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              null,
+              ),
               _react2.default.createElement(
                 'span',
                 null,
@@ -32405,7 +32433,11 @@ var CardEdit = function (_React$Component) {
                   null,
                   this.state.BrandtError
                 )
-              ),
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
               _react2.default.createElement(
                 'span',
                 null,
@@ -32420,11 +32452,7 @@ var CardEdit = function (_React$Component) {
                   null,
                   this.state.ModelError
                 )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              null,
+              ),
               _react2.default.createElement(
                 'span',
                 null,
@@ -32439,7 +32467,11 @@ var CardEdit = function (_React$Component) {
                   null,
                   this.state.priceError
                 )
-              ),
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
               _react2.default.createElement(
                 'span',
                 null,
@@ -32510,7 +32542,7 @@ exports.default = CardEdit;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -32538,199 +32570,191 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var CardAddNew = function (_React$Component) {
-    _inherits(CardAddNew, _React$Component);
+  _inherits(CardAddNew, _React$Component);
 
-    function CardAddNew() {
-        var _ref;
+  function CardAddNew() {
+    var _ref;
 
-        var _temp, _this, _ret;
+    var _temp, _this, _ret;
 
-        _classCallCheck(this, CardAddNew);
+    _classCallCheck(this, CardAddNew);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardAddNew.__proto__ || Object.getPrototypeOf(CardAddNew)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            currURL: _this.props.currURL,
-            currBrand: _this.props.currBrand,
-            currModel: _this.props.currModel,
-            currPrice: _this.props.currPrice,
-            currStorage: _this.props.currStorage,
-            // currkey: this.props.itemInfo.key,
-            URLError: _this.props.URLError,
-            BrandtError: _this.props.BrandtError,
-            ModelError: _this.props.ModelError,
-            priceError: _this.props.priceError,
-            storageError: _this.props.storageError
-
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
     }
 
-    _createClass(CardAddNew, [{
-        key: 'render',
-        value: function render() {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardAddNew.__proto__ || Object.getPrototypeOf(CardAddNew)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      currURL: _this.props.currURL,
+      currBrand: _this.props.currBrand,
+      currModel: _this.props.currModel,
+      currPrice: _this.props.currPrice,
+      currStorage: _this.props.currStorage,
+      URLError: _this.props.URLError,
+      BrandtError: _this.props.BrandtError,
+      ModelError: _this.props.ModelError,
+      priceError: _this.props.priceError,
+      storageError: _this.props.storageError
 
-            var arrCode = this.props.itemList.reduce(function (prev, item) {
-                //Создаю массив из кодов продуктов
-                prev.push(item.code);
-                return prev;
-            }, []);
-            var maxCode = arrCode.reduce(function (prev, item) {
-                //Нашла максимальное число в массиве (максимальное значение кода)
-                if (item > prev) {
-                    prev = item;
-                }
-                return prev;
-            });
-            maxCode += 1; //Увеличила максимальное значение кода в массиве на 1 для новой карточки
+    }, _this.cancel = function (eo) {
+      _this.props.cbCancel();
+    }, _this.addNewCar = function (eo) {
 
+      var changeItemArr = {
+        imgUrl: _this.props.currURL,
+        brandTitle: _this.props.currBrand,
+        modelTitle: _this.props.currModel,
+        price: _this.props.currPrice,
+        storage: _this.props.currStorage,
+        key: _this.props.code,
+        code: _this.props.code
+      };
+      _this.props.cbSaveNewCar(changeItemArr);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
 
-            return _react2.default.createElement(
+  _createClass(CardAddNew, [{
+    key: 'render',
+    value: function render() {
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'cardWrapAdd' },
+        _react2.default.createElement(
+          'div',
+          { className: 'cardAdd' },
+          _react2.default.createElement(
+            'p',
+            null,
+            '\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0442\u043E\u0432\u0430\u0440\u0430'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'container' },
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'span',
+                null,
+                'URL:'
+              ),
+              _react2.default.createElement(
                 'div',
-                { className: 'cardWrapAdd' },
+                null,
+                _react2.default.createElement('input', { type: 'text', defaultValue: this.state.currURL, onChange: this.props.changeUrl }),
                 _react2.default.createElement(
-                    'div',
-                    { className: 'cardAdd' },
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        '\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0442\u043E\u0432\u0430\u0440\u0430'
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'container' },
-                        _react2.default.createElement(
-                            'div',
-                            null,
-                            _react2.default.createElement(
-                                'span',
-                                null,
-                                'ID'
-                            ),
-                            _react2.default.createElement('input', { type: 'text', defaultValue: maxCode, disabled: true }),
-                            _react2.default.createElement(
-                                'span',
-                                null,
-                                'URL:'
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                null,
-                                _react2.default.createElement('input', { type: 'text', defaultValue: this.state.currURL, onChange: this.props.changeUrl }),
-                                _react2.default.createElement(
-                                    'span',
-                                    null,
-                                    this.props.URLError
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            null,
-                            _react2.default.createElement(
-                                'span',
-                                null,
-                                '\u041C\u0430\u0440\u043A\u0430:'
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                null,
-                                _react2.default.createElement('input', { type: 'text', defaultValue: this.state.currBrand, onChange: this.props.changeBrand }),
-                                _react2.default.createElement(
-                                    'span',
-                                    null,
-                                    this.props.BrandtError
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'span',
-                                null,
-                                '\u041C\u043E\u0434\u0435\u043B\u044C:'
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                null,
-                                _react2.default.createElement('input', { type: 'text', defaultValue: this.state.currModel, onChange: this.props.changeModel }),
-                                _react2.default.createElement(
-                                    'span',
-                                    null,
-                                    this.props.ModelError
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            null,
-                            _react2.default.createElement(
-                                'span',
-                                null,
-                                '\u0426\u0435\u043D\u0430:'
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                null,
-                                _react2.default.createElement('input', { type: 'number', defaultValue: this.state.currPrice, onChange: this.props.changePrice }),
-                                _react2.default.createElement(
-                                    'span',
-                                    null,
-                                    this.props.priceError
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'span',
-                                null,
-                                '\u041D\u0430 \u0441\u043A\u043B\u0430\u0434\u0435:'
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                null,
-                                _react2.default.createElement('input', { type: 'number', defaultValue: this.state.currStorage, onChange: this.props.changeStorage }),
-                                _react2.default.createElement(
-                                    'span',
-                                    null,
-                                    this.props.storageError
-                                )
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'btnEdit' },
-                        _react2.default.createElement(
-                            'button',
-                            { className: 'btn' },
-                            '\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C'
-                        ),
-                        _react2.default.createElement(
-                            'button',
-                            { className: 'btn' },
-                            '\u043E\u0442\u043C\u0435\u043D\u0430'
-                        )
-                    )
+                  'span',
+                  null,
+                  this.props.URLError
                 )
-            );
-        }
-    }]);
+              ),
+              _react2.default.createElement(
+                'span',
+                null,
+                '\u041C\u0430\u0440\u043A\u0430:'
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement('input', { type: 'text', defaultValue: this.state.currBrand, onChange: this.props.changeBrand }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  this.props.BrandtError
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'span',
+                null,
+                '\u041C\u043E\u0434\u0435\u043B\u044C:'
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement('input', { type: 'text', defaultValue: this.state.currModel, onChange: this.props.changeModel }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  this.props.ModelError
+                )
+              ),
+              _react2.default.createElement(
+                'span',
+                null,
+                '\u0426\u0435\u043D\u0430:'
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement('input', { type: 'number', defaultValue: this.state.currPrice, onChange: this.props.changePrice }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  this.props.priceError
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'span',
+                null,
+                '\u041D\u0430 \u0441\u043A\u043B\u0430\u0434\u0435:'
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement('input', { type: 'number', defaultValue: this.state.currStorage, onChange: this.props.changeStorage }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  this.props.storageError
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'btnEdit' },
+            _react2.default.createElement(
+              'button',
+              { className: 'btn', disabled: !this.props.valid, onClick: this.addNewCar },
+              '\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C'
+            ),
+            _react2.default.createElement(
+              'button',
+              { className: 'btn', onClick: this.cancel },
+              '\u043E\u0442\u043C\u0435\u043D\u0430'
+            )
+          )
+        )
+      );
+    }
+  }]);
 
-    return CardAddNew;
+  return CardAddNew;
 }(_react2.default.Component);
 
 CardAddNew.propTypes = {
-    // defaultProducts:PropTypes.arrayOf(
-    //   PropTypes.shape({
-    //     brandTitle: PropTypes.string.isRequired,
-    //     modelTitle: PropTypes.string.isRequired,
-    //     imgUrl: PropTypes.string.isRequired,
-    //     price: PropTypes.number.isRequired,
-    //     key: PropTypes.number.isRequired,
-    //     code: PropTypes.number.isRequired,
-    //     storage: PropTypes.number.isRequired,
-    //     cbSelected: PropTypes.func.isRequired,
-    //     cbDelete: PropTypes.func.isRequired,
-    //  cbRedact: PropTypes.func.isRequired,
-    //   })
-    // ),
+  // defaultProducts:PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     brandTitle: PropTypes.string.isRequired,
+  //     modelTitle: PropTypes.string.isRequired,
+  //     imgUrl: PropTypes.string.isRequired,
+  //     price: PropTypes.number.isRequired,
+  //     key: PropTypes.number.isRequired,
+  //     code: PropTypes.number.isRequired,
+  //     storage: PropTypes.number.isRequired,
+  //     cbSelected: PropTypes.func.isRequired,
+  //     cbDelete: PropTypes.func.isRequired,
+  //  cbRedact: PropTypes.func.isRequired,
+  //   })
+  // ),
 };
 exports.default = CardAddNew;
 
