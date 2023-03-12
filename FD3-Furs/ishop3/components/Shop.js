@@ -7,6 +7,7 @@ import './Shop.css';
 import Product from './Product';
 import CardView from './CardView';
 import CardEdit from './CardEdit';
+import CardAddNew from './CardAddNew';
 
 class Shop extends React.Component {
 
@@ -29,7 +30,16 @@ class Shop extends React.Component {
     products: this.props.defaultProducts,
     cardMode: 0,// 0-нет, 1-просмотр, 2-редактирование, 3-добавление
 
-    btnDisabled:false
+    btnDisabled:false,
+
+    currURL: null,
+    currBrand: null,
+    currModel: null,
+    currPrice: null,
+    currStorage: null,
+    
+    URLError: "", BrandtError: "", ModelError: "", priceError: "", storageError: "",
+    valid: true
   };
 
   cbProductSelected = (code) => {
@@ -76,7 +86,42 @@ class Shop extends React.Component {
   };
 
   addNewCar=()=>{
-    console.log("ураа")
+    this.setState ( {cardMode: 3});
+    this.validation ();
+  };
+
+
+  validation =()=> {
+    
+    let URLError="", BrandtError="", ModelError="", priceError="", storageError="", valid;
+
+    if(this.state.currURL===null || this.state.currURL==="") {URLError="введите URL"};
+    if(this.state.currBrand===null || this.state.currBrand==="") {BrandtError="введите марку авто"};
+    if(this.state.currModel===null || this.state.currModel==="") {ModelError="введите модель авто"};
+    if( isNaN(this.state.currPrice) || this.state.currPrice===null ) {priceError="введите цену"};
+    if( isNaN(this.state.currStorage) || this.state.currStorage===null) {storageError="введите остаток"};
+
+    valid= (!URLError)&&(!BrandtError)&&(!ModelError)&&(!priceError)&&(!storageError);
+
+    this.setState({ URLError, BrandtError, ModelError, priceError, storageError, valid})
+    
+  };
+
+
+  changeUrl =(eo)=> {
+    this.setState( {currURL: eo.target.value},this.validation)
+  };
+  changeBrand =(eo)=> {
+    this.setState( {currBrand: eo.target.value},this.validation)
+  };
+  changeModel =(eo)=> {
+    this.setState( {currModel: eo.target.value},this.validation)
+  };
+  changePrice =(eo)=> {
+    this.setState( {currPrice: parseInt(eo.target.value)},this.validation)
+  };
+  changeStorage =(eo)=> {
+    this.setState( {currStorage: parseInt(eo.target.value)},this.validation)
   };
 
   
@@ -106,6 +151,26 @@ class Shop extends React.Component {
                                                                              cbSave={this.cbSave} 
                                                                              cbCancel={this.cbCancel} 
                                                                              />}
+
+        { this.state.cardMode===3 && <CardAddNew itemList={this.state.products}
+                                                 currURL={this.state.currURL}
+                                                 currBrand={this.state.currBrand}
+                                                 currModel={this.state.currModel}
+                                                 currPrice={this.state.currPrice}
+                                                 currStorage={this.state.currStorage}
+                                                 valid={this.state.valid}
+                                                 URLError={this.state.URLError}
+                                                 BrandtError={this.state.BrandtError}
+                                                 ModelError={this.state.ModelError}
+                                                 priceError={this.state.priceError}
+                                                 storageError={this.state.storageError}
+                                                 changeUrl={this.changeUrl}
+                                                 changeBrand={this.changeBrand}
+                                                 changeModel={this.changeModel}
+                                                 changePrice={this.changePrice}
+                                                 changeStorage={this.changeStorage}
+
+                                                  />}
 
         <div className='products'>{productsCode}</div>
         <div className='addNew'>

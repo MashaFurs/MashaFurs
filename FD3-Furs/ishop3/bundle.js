@@ -671,7 +671,7 @@ var _Shop2 = _interopRequireDefault(_Shop);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var storeName = "av.by";
-var products = __webpack_require__(33);
+var products = __webpack_require__(35);
 
 _reactDom2.default.render(_react2.default.createElement(_Shop2.default, {
   name: storeName,
@@ -30775,6 +30775,10 @@ var _CardEdit = __webpack_require__(31);
 
 var _CardEdit2 = _interopRequireDefault(_CardEdit);
 
+var _CardAddNew = __webpack_require__(33);
+
+var _CardAddNew2 = _interopRequireDefault(_CardAddNew);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30802,7 +30806,16 @@ var Shop = function (_React$Component) {
       products: _this.props.defaultProducts,
       cardMode: 0, // 0-нет, 1-просмотр, 2-редактирование, 3-добавление
 
-      btnDisabled: false
+      btnDisabled: false,
+
+      currURL: null,
+      currBrand: null,
+      currModel: null,
+      currPrice: null,
+      currStorage: null,
+
+      URLError: "", BrandtError: "", ModelError: "", priceError: "", storageError: "",
+      valid: true
     }, _this.cbProductSelected = function (code) {
 
       _this.setState({ selecteItemCode: code });
@@ -30838,7 +30851,46 @@ var Shop = function (_React$Component) {
       _this.setState({ cardMode: 1 });
       _this.setState({ btnDisabled: false });
     }, _this.addNewCar = function () {
-      console.log("ураа");
+      _this.setState({ cardMode: 3 });
+      _this.validation();
+    }, _this.validation = function () {
+
+      var URLError = "",
+          BrandtError = "",
+          ModelError = "",
+          priceError = "",
+          storageError = "",
+          valid = void 0;
+
+      if (_this.state.currURL === null || _this.state.currURL === "") {
+        URLError = "введите URL";
+      };
+      if (_this.state.currBrand === null || _this.state.currBrand === "") {
+        BrandtError = "введите марку авто";
+      };
+      if (_this.state.currModel === null || _this.state.currModel === "") {
+        ModelError = "введите модель авто";
+      };
+      if (isNaN(_this.state.currPrice) || _this.state.currPrice === null) {
+        priceError = "введите цену";
+      };
+      if (isNaN(_this.state.currStorage) || _this.state.currStorage === null) {
+        storageError = "введите остаток";
+      };
+
+      valid = !URLError && !BrandtError && !ModelError && !priceError && !storageError;
+
+      _this.setState({ URLError: URLError, BrandtError: BrandtError, ModelError: ModelError, priceError: priceError, storageError: storageError, valid: valid });
+    }, _this.changeUrl = function (eo) {
+      _this.setState({ currURL: eo.target.value }, _this.validation);
+    }, _this.changeBrand = function (eo) {
+      _this.setState({ currBrand: eo.target.value }, _this.validation);
+    }, _this.changeModel = function (eo) {
+      _this.setState({ currModel: eo.target.value }, _this.validation);
+    }, _this.changePrice = function (eo) {
+      _this.setState({ currPrice: parseInt(eo.target.value) }, _this.validation);
+    }, _this.changeStorage = function (eo) {
+      _this.setState({ currStorage: parseInt(eo.target.value) }, _this.validation);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -30872,6 +30924,25 @@ var Shop = function (_React$Component) {
           itemInfo: itemInfo,
           cbSave: this.cbSave,
           cbCancel: this.cbCancel
+        }),
+        this.state.cardMode === 3 && _react2.default.createElement(_CardAddNew2.default, { itemList: this.state.products,
+          currURL: this.state.currURL,
+          currBrand: this.state.currBrand,
+          currModel: this.state.currModel,
+          currPrice: this.state.currPrice,
+          currStorage: this.state.currStorage,
+          valid: this.state.valid,
+          URLError: this.state.URLError,
+          BrandtError: this.state.BrandtError,
+          ModelError: this.state.ModelError,
+          priceError: this.state.priceError,
+          storageError: this.state.storageError,
+          changeUrl: this.changeUrl,
+          changeBrand: this.changeBrand,
+          changeModel: this.changeModel,
+          changePrice: this.changePrice,
+          changeStorage: this.changeStorage
+
         }),
         _react2.default.createElement(
           'div',
@@ -32277,7 +32348,7 @@ var CardEdit = function (_React$Component) {
   _createClass(CardEdit, [{
     key: 'render',
     value: function render() {
-
+      this.validation;
       return _react2.default.createElement(
         'div',
         { className: 'cardWrapEdit' },
@@ -32433,6 +32504,244 @@ exports.default = CardEdit;
 
 /***/ }),
 /* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactDomFactories = __webpack_require__(4);
+
+var _reactDomFactories2 = _interopRequireDefault(_reactDomFactories);
+
+__webpack_require__(34);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CardAddNew = function (_React$Component) {
+    _inherits(CardAddNew, _React$Component);
+
+    function CardAddNew() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, CardAddNew);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardAddNew.__proto__ || Object.getPrototypeOf(CardAddNew)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            currURL: _this.props.currURL,
+            currBrand: _this.props.currBrand,
+            currModel: _this.props.currModel,
+            currPrice: _this.props.currPrice,
+            currStorage: _this.props.currStorage,
+            // currkey: this.props.itemInfo.key,
+            URLError: _this.props.URLError,
+            BrandtError: _this.props.BrandtError,
+            ModelError: _this.props.ModelError,
+            priceError: _this.props.priceError,
+            storageError: _this.props.storageError
+
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(CardAddNew, [{
+        key: 'render',
+        value: function render() {
+
+            var arrCode = this.props.itemList.reduce(function (prev, item) {
+                //Создаю массив из кодов продуктов
+                prev.push(item.code);
+                return prev;
+            }, []);
+            var maxCode = arrCode.reduce(function (prev, item) {
+                //Нашла максимальное число в массиве (максимальное значение кода)
+                if (item > prev) {
+                    prev = item;
+                }
+                return prev;
+            });
+            maxCode += 1; //Увеличила максимальное значение кода в массиве на 1 для новой карточки
+
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'cardWrapAdd' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'cardAdd' },
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        '\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0442\u043E\u0432\u0430\u0440\u0430'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'container' },
+                        _react2.default.createElement(
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                'ID'
+                            ),
+                            _react2.default.createElement('input', { type: 'text', defaultValue: maxCode, disabled: true }),
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                'URL:'
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement('input', { type: 'text', defaultValue: this.state.currURL, onChange: this.props.changeUrl }),
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    this.props.URLError
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                '\u041C\u0430\u0440\u043A\u0430:'
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement('input', { type: 'text', defaultValue: this.state.currBrand, onChange: this.props.changeBrand }),
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    this.props.BrandtError
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                '\u041C\u043E\u0434\u0435\u043B\u044C:'
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement('input', { type: 'text', defaultValue: this.state.currModel, onChange: this.props.changeModel }),
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    this.props.ModelError
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                '\u0426\u0435\u043D\u0430:'
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement('input', { type: 'number', defaultValue: this.state.currPrice, onChange: this.props.changePrice }),
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    this.props.priceError
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                '\u041D\u0430 \u0441\u043A\u043B\u0430\u0434\u0435:'
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement('input', { type: 'number', defaultValue: this.state.currStorage, onChange: this.props.changeStorage }),
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    this.props.storageError
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'btnEdit' },
+                        _react2.default.createElement(
+                            'button',
+                            { className: 'btn' },
+                            '\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C'
+                        ),
+                        _react2.default.createElement(
+                            'button',
+                            { className: 'btn' },
+                            '\u043E\u0442\u043C\u0435\u043D\u0430'
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return CardAddNew;
+}(_react2.default.Component);
+
+CardAddNew.propTypes = {
+    // defaultProducts:PropTypes.arrayOf(
+    //   PropTypes.shape({
+    //     brandTitle: PropTypes.string.isRequired,
+    //     modelTitle: PropTypes.string.isRequired,
+    //     imgUrl: PropTypes.string.isRequired,
+    //     price: PropTypes.number.isRequired,
+    //     key: PropTypes.number.isRequired,
+    //     code: PropTypes.number.isRequired,
+    //     storage: PropTypes.number.isRequired,
+    //     cbSelected: PropTypes.func.isRequired,
+    //     cbDelete: PropTypes.func.isRequired,
+    //  cbRedact: PropTypes.func.isRequired,
+    //   })
+    // ),
+};
+exports.default = CardAddNew;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 35 */
 /***/ (function(module, exports) {
 
 module.exports = [{"brandTitle":"Land Rover","modelTitle":"Discovery V","imgUrl":"https://dvizhok.su/i/files2/auto/2020/11/Land_Rover_Discovery_2021_R-Dynamic_s.jpg","price":150000,"key":1,"code":1,"storage":6},{"brandTitle":"BMW","modelTitle":"X7","imgUrl":"https://rg.ru/uploads/images/230/03/42/2023-BMW-X7-2.jpeg","price":120000,"key":2,"code":2,"storage":3},{"brandTitle":"Audi","modelTitle":"A7","imgUrl":"https://hips.hearstapps.com/hmg-prod/images/medium-5058-2019audia7-1653580372.jpg","price":1100000,"key":3,"code":3,"storage":5},{"brandTitle":"Porsche","modelTitle":"Cayenne 3","imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg/458px-Porsche_Cayenne_S_%2892A%29_%E2%80%93_Frontansicht%2C_10._Oktober_2011%2C_W%C3%BClfrath.jpg","price":2000000,"key":4,"code":4,"storage":1}]

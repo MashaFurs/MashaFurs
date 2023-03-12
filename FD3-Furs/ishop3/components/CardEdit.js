@@ -80,8 +80,9 @@ class CardEdit extends React.Component {
     this.props.cbCancel();
   }
 
+  
   render() {
-    
+    this.validation;
       return (
         <div className='cardWrapEdit'>
           {
