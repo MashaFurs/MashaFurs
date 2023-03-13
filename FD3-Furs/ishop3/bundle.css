@@ -141,6 +141,9 @@ body{
     color: white;
     border: none;
 }
+.btnEdit .btn[disabled] {
+    background: #6f6e6e;  
+}
 
 .btnEdit .btn:first-child{
     margin-right: 20px;
@@ -202,6 +205,10 @@ body{
     background: #686ec8;
     color: white;
     border: none;
+}
+
+.btnEdit .btn[disabled] {
+    background: #6f6e6e;  
 }
 
 .btnEdit .btn:first-child{

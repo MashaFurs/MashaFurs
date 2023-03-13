@@ -57,6 +57,10 @@
     border: none;
 }
 
+.btnEdit .btn[disabled] {
+    background: #6f6e6e;  
+}
+
 .btnEdit .btn:first-child{
     margin-right: 20px;
 }
