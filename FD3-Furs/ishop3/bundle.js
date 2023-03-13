@@ -30828,10 +30828,12 @@ var Shop = function (_React$Component) {
       _this.setState({ cardMode: 1 });
       _this.setState({ btnDisabled: false });
     }, _this.cbProductDelete = function (code) {
-
-      _this.setState({ products: _this.state.products.filter(function (s) {
-          return s.code !== code;
-        }) });
+      var question = confirm("Вы точно хотите удалить товар?");
+      if (question) {
+        _this.setState({ products: _this.state.products.filter(function (s) {
+            return s.code !== code;
+          }) });
+      }
     }, _this.cbProductRedact = function (code) {
       _this.setState({ selecteItemCode: code });
       _this.setState({ cardMode: 2 });
@@ -30854,7 +30856,7 @@ var Shop = function (_React$Component) {
             return item;
           }
         }) });
-      ///////
+
       _this.setState({ cardMode: 0 });
       _this.setState({ btnDisabled: false });
       _this.setState({ cardColor: false });

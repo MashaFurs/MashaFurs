@@ -54,8 +54,10 @@ class Shop extends React.Component {
   };
 
   cbProductDelete = (code) => {
-  
-    this.setState({ products:this.state.products.filter(  s=> s.code!==code)});
+    let question = confirm("Вы точно хотите удалить товар?");
+    if(question) {
+      this.setState({ products:this.state.products.filter(  s=> s.code!==code)});
+    }
   };
 
   cbProductRedact =(code) => {
