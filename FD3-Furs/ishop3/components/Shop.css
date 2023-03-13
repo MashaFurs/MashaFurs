@@ -22,3 +22,7 @@ body{
     border: none;
     font-size: 18px;
 }
+
+.btnAddNew[disabled] {
+    background: #6f6e6e;  
+}

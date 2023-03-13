@@ -36,3 +36,7 @@
     border: none;
 
 }
+
+.products .card .del .btn[disabled] {
+    background: #6f6e6e;  
+}

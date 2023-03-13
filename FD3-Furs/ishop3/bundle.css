@@ -21,6 +21,10 @@ body{
     color: white;
     border: none;
     font-size: 18px;
+}
+
+.btnAddNew[disabled] {
+    background: #6f6e6e;  
 }.products{
     display: flex;
     justify-content: space-around;
@@ -58,6 +62,10 @@ body{
     color: white;
     border: none;
 
+}
+
+.products .card .del .btn[disabled] {
+    background: #6f6e6e;  
 }
 .cardWrap{
     display: flex;
