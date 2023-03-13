@@ -84,7 +84,11 @@ class Shop extends React.Component {
       return item
     }
    })})
-  
+
+    this.setState ( {cardMode: 0});
+    this.setState( {btnDisabled: false});
+    this.setState( {cardColor: false});
+    this.setState( {cardColorEdit: false});
   };
 
   cbCancel= ()=>{
@@ -92,6 +96,12 @@ class Shop extends React.Component {
     this.setState( {btnDisabled: false});
     this.setState( {cardColor: false});
     this.setState( {cardColorEdit: false});
+
+    this.setState( {currURL: null});
+    this.setState( {currBrand: null});
+    this.setState( {currModel: null});
+    this.setState( {currPrice: null});
+    this.setState( {currStorage: null});
   };
 
   addNewCar=()=>{
@@ -158,6 +168,12 @@ class Shop extends React.Component {
     this.setState ( {cardMode: 0});
     this.setState( {btnDisabled: false});
     this.setState( {cardColor: false});
+
+    this.setState( {currURL: null});
+    this.setState( {currBrand: null});
+    this.setState( {currModel: null});
+    this.setState( {currPrice: null});
+    this.setState( {currStorage: null});
 
   };
 

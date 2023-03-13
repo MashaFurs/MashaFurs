@@ -30854,11 +30854,22 @@ var Shop = function (_React$Component) {
             return item;
           }
         }) });
+      ///////
+      _this.setState({ cardMode: 0 });
+      _this.setState({ btnDisabled: false });
+      _this.setState({ cardColor: false });
+      _this.setState({ cardColorEdit: false });
     }, _this.cbCancel = function () {
       _this.setState({ cardMode: 0 });
       _this.setState({ btnDisabled: false });
       _this.setState({ cardColor: false });
       _this.setState({ cardColorEdit: false });
+
+      _this.setState({ currURL: null });
+      _this.setState({ currBrand: null });
+      _this.setState({ currModel: null });
+      _this.setState({ currPrice: null });
+      _this.setState({ currStorage: null });
     }, _this.addNewCar = function () {
 
       _this.setState({ cardMode: 3 });
@@ -30924,6 +30935,12 @@ var Shop = function (_React$Component) {
       _this.setState({ cardMode: 0 });
       _this.setState({ btnDisabled: false });
       _this.setState({ cardColor: false });
+
+      _this.setState({ currURL: null });
+      _this.setState({ currBrand: null });
+      _this.setState({ currModel: null });
+      _this.setState({ currPrice: null });
+      _this.setState({ currStorage: null });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
