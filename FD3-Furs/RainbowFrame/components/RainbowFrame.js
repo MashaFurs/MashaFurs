@@ -1,4 +1,4 @@
-﻿import React from 'react';
+﻿import React, { Fragment } from 'react';
 
 import './RainbowFrame.css';
 
@@ -10,7 +10,7 @@ class RainbowFrame extends React.Component {
     for( let color of this.props.colors) {
       code=<div className={color} style={ { border:`solid 10px ${color}`}}>{code}</div>
     }
-    return code;
+    return <Fragment>{code}</Fragment>;
     
   }
 
