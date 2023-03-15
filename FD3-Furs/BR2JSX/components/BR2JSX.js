@@ -9,9 +9,10 @@ class BR2JSX extends React.Component {
     let words=this.props.text.split(/<br\s?\/?>/);
     let result=[];
     for( let i=0; i<words.length; i++) {
-      if (i>0)  {result.push (<br/>);}
+      if (i>0)  { result.push (<br/>); }
       result.push(words[i]);
     }
+    console.log(result);
     return <Fragment>{result}</Fragment>;
     
   }
