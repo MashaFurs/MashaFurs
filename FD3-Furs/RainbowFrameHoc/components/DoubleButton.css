@@ -1,0 +1,15 @@
+.first{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#container span {
+    font-size: 29px;
+    font-weight: 400;
+}
+
+input{
+    font-size: 21px;
+    font-weight: 400;
+}
