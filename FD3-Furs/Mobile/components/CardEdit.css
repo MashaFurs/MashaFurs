@@ -1,0 +1,25 @@
+.cardEdit{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #d8d8d8;
+}
+
+.btn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn button{
+    margin-right: 10px;
+}
+
+.input{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.input span{
+    margin-right: 5px;
+    font-weight: 600;
+}

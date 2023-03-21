@@ -1,8 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+
 
 import ButtonTopFilter from './ButtonTopFilter';
 import MobileClient from './MobileClient';
+import CardEdit from './CardEdit';
 
 import {voteEvents} from './events';
 
@@ -14,6 +15,9 @@ class MobileCompany extends React.PureComponent {
   state = {
     clients: this.props.clients,
     clientMode: 0,// 0-видны все, 1-активные, 2-заблокированные
+    isRedact:0, //0-карточка редактирования отключена,1-включена
+    editClient: "",
+
   };
 
   componentDidMount = () => {
@@ -23,6 +27,10 @@ class MobileCompany extends React.PureComponent {
     voteEvents.addListener('clientsActive',this.clientsActive);
     voteEvents.addListener('clientsBlocked',this.clientsBlocked);
 
+    voteEvents.addListener('clientEdit',this.clientEdit);
+    voteEvents.addListener('SaveClient',this.SaveClient);
+    voteEvents.addListener('CancelClient',this.CancelClient);
+
   }; 
 
   componentWillUnmount = () => {
@@ -31,6 +39,10 @@ class MobileCompany extends React.PureComponent {
     voteEvents.addListener('clientsAll',this.clientsAll);
     voteEvents.addListener('clientsActive',this.clientsActive);
     voteEvents.addListener('clientsBlocked',this.clientsBlocked);
+
+    voteEvents.addListener('clientEdit',this.clientEdit);
+    voteEvents.addListener('SaveClient',this.SaveClient);
+    voteEvents.addListener('CancelClient',this.CancelClient);
   }
 
   clientDelete = (id) => {
@@ -47,6 +59,34 @@ class MobileCompany extends React.PureComponent {
   clientsBlocked= () =>{
     this.setState ( {clientMode: 2});
   }
+
+  clientEdit=(info) =>{
+    this.setState ( {isRedact: 1,
+                     editClient:info});
+  }
+
+  SaveClient=(client) =>{
+    this.setState({ isRedact: 0 });
+
+    let newClientss=[...this.state.clients]; // копия массива клиентов
+
+    newClientss.forEach ( (c,i) => {
+      if( c.id==client.id) {
+        let newClient= {...c};
+        newClient.fam=client.fam;
+        newClient.im=client.im;
+        newClient.otch=client.otch;
+        newClient.balance=client.balance;
+
+        newClientss[i]=newClient;
+      } 
+    });
+    this.setState ( {clients:newClientss});
+    }
+
+    CancelClient=()=> {
+      this.setState({ isRedact: 0 });
+    }
 
   
   render() {
@@ -69,6 +109,7 @@ class MobileCompany extends React.PureComponent {
     return (
       <div className='MobileCompany'>
         <ButtonTopFilter/>
+
         <table>
             <thead>
                 <tr className='filterTR'>
@@ -85,6 +126,9 @@ class MobileCompany extends React.PureComponent {
                 {clientsCode}
             </tbody>
         </table>
+
+        { this.state.isRedact===1 &&<CardEdit itemInfo={this.state.editClient}
+                                              isRedact={this.state.isRedact} />}
       </div>
     )
     ;
