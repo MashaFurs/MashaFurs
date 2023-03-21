@@ -4,3 +4,7 @@ table{
 thead{
     font-weight: 600;
 }
+
+.addClient{
+    margin-top: 10px;
+}

@@ -9,6 +9,7 @@ import {voteEvents} from './events';
 
 import './MobileCompany.css';
 
+
 class MobileCompany extends React.PureComponent {
 
 
@@ -68,26 +69,52 @@ class MobileCompany extends React.PureComponent {
   SaveClient=(client) =>{
     this.setState({ isRedact: 0 });
 
-    let newClientss=[...this.state.clients]; // копия массива клиентов
-
-    newClientss.forEach ( (c,i) => {
-      if( c.id==client.id) {
-        let newClient= {...c};
-        newClient.fam=client.fam;
-        newClient.im=client.im;
-        newClient.otch=client.otch;
-        newClient.balance=client.balance;
-
-        newClientss[i]=newClient;
-      } 
+    const checkId = this.state.clients.some((el) => el.id === client.id);//Проверяю есть ли id пользователя в списке клиентов
+    
+    if(!checkId) {
+      let arrCode= (this.state.clients).reduce ( (prev, item) => { //Создаю массив из ID клиентов
+        prev.push (item.id);
+        return prev;
+    }, []); 
+    let maxCode=arrCode.reduce ((prev,item) =>{ //Нашла максимальное id в массиве
+        if(item > prev) {
+            prev=item
+        }
+        return prev;
     });
-    this.setState ( {clients:newClientss});
+    maxCode+=1; //Увеличила максимальное id в массиве на 1 для нового пользователя
+    client.id=maxCode; //Присвоила новому пользователю id
+    console.log(client)
+    this.setState({clients: [...this.state.clients, client]});
+    console.log(this.state.clients)
+    }
+
+
+    if(checkId) {
+      let newClientss=[...this.state.clients]; // копия массива клиентов
+      newClientss.forEach ( (c,i) => {
+        if( c.id==client.id) {
+          let newClient= {...c};
+          newClient.fam=client.fam;
+          newClient.im=client.im;
+          newClient.otch=client.otch;
+          newClient.balance=client.balance;
+          newClientss[i]=newClient;
+        } 
+      });
+    this.setState ( {clients:newClientss,
+                     editClient:""});
+    } 
     }
 
     CancelClient=()=> {
-      this.setState({ isRedact: 0 });
+      this.setState({ isRedact: 0,
+                      editClient:""});
     }
 
+    createClient=() =>{
+      this.setState({ isRedact: 1 });
+    }
   
   render() {
 
@@ -126,6 +153,7 @@ class MobileCompany extends React.PureComponent {
                 {clientsCode}
             </tbody>
         </table>
+        <button className='addClient' onClick={this.createClient}>Добавить клиента</button>
 
         { this.state.isRedact===1 &&<CardEdit itemInfo={this.state.editClient}
                                               isRedact={this.state.isRedact} />}

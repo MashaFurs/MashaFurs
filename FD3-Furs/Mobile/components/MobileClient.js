@@ -17,7 +17,8 @@ class MobileClient extends React.PureComponent {
     if ( this.props.info.fam!==this.state.info.fam ||
          this.props.info.im!==this.state.info.im ||
          this.props.info.otch!==this.state.info.otch ||
-         this.props.info.balance!==this.state.info.balance)
+         this.props.info.balance!==this.state.info.balance||
+         this.props.info.id!==this.state.info.id)
       this.setState({info:this.props.info});
   };
 
