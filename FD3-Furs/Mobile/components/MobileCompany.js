@@ -84,7 +84,6 @@ class MobileCompany extends React.PureComponent {
     });
     maxCode+=1; //Увеличила максимальное id в массиве на 1 для нового пользователя
     client.id=maxCode; //Присвоила новому пользователю id
-    console.log(client)
     this.setState({clients: [...this.state.clients, client]});
     console.log(this.state.clients)
     }
