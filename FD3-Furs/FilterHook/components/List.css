@@ -1,0 +1,7 @@
+.words{
+    height: 90px;
+    width: 123px;
+    border: 1px solid black;
+    margin-top: 10px;
+    overflow: auto;
+}
