@@ -8,10 +8,14 @@ import Skeleton from '../components/Skeleton'
  const Home = () => {
     const [items, setItems] = React.useState([]);
     const [isLoading, setIsLoading]=React.useState(true);
+    const [categoryId,setCategoryId]= React.useState(0);
+    const [sortType, setSortType]= React.useState( {name: "популярности", sort: "rating"});
 
     React.useEffect ( () => {
-
-        fetch('https://643290b3d0127730d2d4f0bd.mockapi.io/items')
+        setIsLoading(true);
+        fetch(`https://643290b3d0127730d2d4f0bd.mockapi.io/items?${ 
+          categoryId > 0 ? `category=${categoryId}` : ''
+        }&sortBy=${sortType.sort}&order=${sortType.dest}`)
         .then ( (res) => {
         return res.json();
         })
@@ -20,12 +24,13 @@ import Skeleton from '../components/Skeleton'
         setIsLoading(false);
         });
         window.scrollTo(0,0);
-    }, [])
+    }, [categoryId, sortType])
+    
     return(
         <>
         <div className="content__top">
-            <Categories/>
-            <Sort/>
+            <Categories categoryId={categoryId} onClickCategory={ (id) => setCategoryId (id) }/>
+            <Sort sortType={sortType} onChangeSort={ (id) => setSortType (id) }/>
         </div>
         <h2 className="content__title">Все пиццы</h2>
         <div className="content__items">
