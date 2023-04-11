@@ -1,0 +1,44 @@
+@import '../variables';
+
+.search_wrap {
+    position: relative;
+
+    .icon_search{
+        width: 25px;
+        height: 25px;
+        opacity: 0.5;
+        position: absolute;
+        left: 3%;
+        top: 18%;
+    }
+
+    .search{
+        border: 1px solid #7b7b7b ;
+        border-radius: 11px;
+        padding: 10px;
+        width: 350px;
+        padding-left: 12%;
+        font-size: 15px;
+
+        &:focus{
+        border: 1px solid $pink ;
+        }
+        
+    }
+
+    .icon_close{
+        width: 25px;
+        height: 25px;
+        opacity: 0.5;
+        position: absolute;
+        right: 3%;
+        top: 18%;
+        cursor: pointer;
+
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+}
+
+

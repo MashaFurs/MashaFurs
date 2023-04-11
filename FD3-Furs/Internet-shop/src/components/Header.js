@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 
-function Header () {
+import Search from './Search';
+
+function Header (props) {
     return (<div className="header">
     <div className="container">
     <NavLink to="/">
@@ -12,6 +14,7 @@ function Header () {
       </div>
     </div>
     </NavLink>
+    <Search searchValue={props.searchValue} setSearchValue={props.setSearchValue}/>
       <div className="header__cart">
         <NavLink to="/cart" className="button button--cart">
           <span>520 ₽</span>

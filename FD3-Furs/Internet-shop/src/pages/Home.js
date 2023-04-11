@@ -5,7 +5,7 @@ import Sort from '../components/Sort'
 import PizzaBlock from '../components/PizzaBlock'
 import Skeleton from '../components/Skeleton'
 
- const Home = () => {
+ const Home = (props) => {
     const [items, setItems] = React.useState([]);
     const [isLoading, setIsLoading]=React.useState(true);
     const [categoryId,setCategoryId]= React.useState(0);
@@ -13,9 +13,11 @@ import Skeleton from '../components/Skeleton'
 
     React.useEffect ( () => {
         setIsLoading(true);
+        const search= props.searchValue ? `&search=${props.searchValue}`:"";
+
         fetch(`https://643290b3d0127730d2d4f0bd.mockapi.io/items?${ 
           categoryId > 0 ? `category=${categoryId}` : ''
-        }&sortBy=${sortType.sort}&order=${sortType.dest}`)
+        }&sortBy=${sortType.sort}&order=${sortType.dest}${search}`)
         .then ( (res) => {
         return res.json();
         })
@@ -24,7 +26,7 @@ import Skeleton from '../components/Skeleton'
         setIsLoading(false);
         });
         window.scrollTo(0,0);
-    }, [categoryId, sortType])
+    }, [categoryId, sortType, props.searchValue])
     
     return(
         <>
