@@ -23,7 +23,6 @@ import { AppContext } from '../App';
     
 
     const onClickCategory = (id) => {
-      console.log(id);
       dispatch( setCategoryId (id) );
     };
 
