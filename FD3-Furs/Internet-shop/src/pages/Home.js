@@ -17,9 +17,9 @@ import Pagination from '../components/Pagination'
         setIsLoading(true);
         const search= props.searchValue ? `&title=${props.searchValue}`:"";
 
-        fetch(`https://643290b3d0127730d2d4f0bd.mockapi.io/items?page=${page}&limit=4&${ 
+        fetch(`https://643290b3d0127730d2d4f0bd.mockapi.io/items?${search}&page=${page}&limit=4&${ 
           categoryId > 0 ? `category=${categoryId}` : ''
-        }&sortBy=${sortType.sort}&order=${sortType.dest}${search}`)
+        }&sortBy=${sortType.sort}&order=${sortType.dest}`)
         .then ( (res) => {
         return res.json();
         })
