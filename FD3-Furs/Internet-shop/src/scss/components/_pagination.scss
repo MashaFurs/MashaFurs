@@ -1,0 +1,43 @@
+@import '../variables';
+
+.paginate{
+
+    display: flex;
+    justify-content: center;
+   
+    li{     display: inline-block;
+            border-radius: 15px;
+            margin-right: 10px;
+            line-height: 9px;
+
+        a{  display: inline-block;
+            border: 1px solid $pink;
+            border-radius: 15px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font-size: 13px;
+            cursor: pointer;
+            padding: 10px;
+
+            &:hover{
+                background-color: $pink;
+                color: white;
+            }
+        }
+    }
+
+  
+    
+}
+
+
+    .selected {
+        background-color: $pink;
+        
+        a{
+            color: white;
+        }
+    }
+
+

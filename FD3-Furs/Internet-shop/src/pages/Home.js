@@ -4,18 +4,20 @@ import Categories from '../components/Categories'
 import Sort from '../components/Sort'
 import PizzaBlock from '../components/PizzaBlock'
 import Skeleton from '../components/Skeleton'
+import Pagination from '../components/Pagination'
 
  const Home = (props) => {
     const [items, setItems] = React.useState([]);
     const [isLoading, setIsLoading]=React.useState(true);
     const [categoryId,setCategoryId]= React.useState(0);
+    const [page,setPage]= React.useState(1);
     const [sortType, setSortType]= React.useState( {name: "популярности", sort: "rating"});
 
     React.useEffect ( () => {
         setIsLoading(true);
-        const search= props.searchValue ? `&search=${props.searchValue}`:"";
+        const search= props.searchValue ? `&title=${props.searchValue}`:"";
 
-        fetch(`https://643290b3d0127730d2d4f0bd.mockapi.io/items?${ 
+        fetch(`https://643290b3d0127730d2d4f0bd.mockapi.io/items?page=${page}&limit=4&${ 
           categoryId > 0 ? `category=${categoryId}` : ''
         }&sortBy=${sortType.sort}&order=${sortType.dest}${search}`)
         .then ( (res) => {
@@ -26,7 +28,7 @@ import Skeleton from '../components/Skeleton'
         setIsLoading(false);
         });
         window.scrollTo(0,0);
-    }, [categoryId, sortType, props.searchValue])
+    }, [categoryId, sortType, props.searchValue, page])
     
     return(
         <>
@@ -47,6 +49,7 @@ import Skeleton from '../components/Skeleton'
           />)
         }
       </div>
+      <Pagination onChangePage ={ (number) => setPage(number)}/>
         </>
        
     )
