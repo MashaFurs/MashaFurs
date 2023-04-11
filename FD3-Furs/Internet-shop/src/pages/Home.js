@@ -5,8 +5,12 @@ import Sort from '../components/Sort'
 import PizzaBlock from '../components/PizzaBlock'
 import Skeleton from '../components/Skeleton'
 import Pagination from '../components/Pagination'
+import { AppContext } from '../App';
 
- const Home = (props) => {
+ const Home = () => {
+
+    const {searchValue}= React.useContext(AppContext);
+
     const [items, setItems] = React.useState([]);
     const [isLoading, setIsLoading]=React.useState(true);
     const [categoryId,setCategoryId]= React.useState(0);
@@ -15,7 +19,7 @@ import Pagination from '../components/Pagination'
 
     React.useEffect ( () => {
         setIsLoading(true);
-        const search= props.searchValue ? `&title=${props.searchValue}`:"";
+        const search= searchValue ? `&title=${searchValue}`:"";
 
         fetch(`https://643290b3d0127730d2d4f0bd.mockapi.io/items?${search}&page=${page}&limit=4&${ 
           categoryId > 0 ? `category=${categoryId}` : ''
@@ -28,7 +32,7 @@ import Pagination from '../components/Pagination'
         setIsLoading(false);
         });
         window.scrollTo(0,0);
-    }, [categoryId, sortType, props.searchValue, page])
+    }, [categoryId, sortType, searchValue, page])
     
     return(
         <>
