@@ -42,7 +42,7 @@ import { AppContext } from '../App';
 
         window.scrollTo(0,0);
     }, [categoryId, sortType, searchValue, page])
-    
+
     return(
         <>
         <div className="content__top">
@@ -63,7 +63,7 @@ import { AppContext } from '../App';
         }
       </div>
       <Pagination onChangePage ={ (number) => setPage(number)}/>
-        </>
+        </> 
        
     )
 }
