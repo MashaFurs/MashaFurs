@@ -1,7 +1,7 @@
 
 function Categories (props) {
  
-  const categories = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
+  const categories = ['Все', 'iPhone', 'iPad', 'Mac', 'Watch', 'AirPods']
 
     return (
       <div className="categories">

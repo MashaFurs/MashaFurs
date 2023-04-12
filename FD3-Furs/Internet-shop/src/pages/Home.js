@@ -30,7 +30,7 @@ import { AppContext } from '../App';
         setIsLoading(true);
         const search= searchValue ? `&title=${searchValue}`:"";
 
-        fetch(`https://643290b3d0127730d2d4f0bd.mockapi.io/items?${search}&page=${page}&limit=4&${ 
+        fetch(`https://643290b3d0127730d2d4f0bd.mockapi.io/items?${search}&page=${page}&limit=8&${ 
           categoryId > 0 ? `category=${categoryId}` : ''
         }&sortBy=${sortType.sort}&order=${sortType.dest}`)
         .then ( (res) => {
@@ -49,7 +49,7 @@ import { AppContext } from '../App';
             <Categories categoryId={categoryId} onClickCategory={ onClickCategory }/>
             <Sort/>
         </div>
-        <h2 className="content__title">Все пиццы</h2>
+        <h2 className="content__title">В наличии:</h2>
         <div className="content__items">
         { isLoading
           ? [...new Array(6)].map( (_, index) => <Skeleton key={index}/>)
