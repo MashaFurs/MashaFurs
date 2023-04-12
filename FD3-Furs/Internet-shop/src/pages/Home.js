@@ -10,13 +10,14 @@ import PizzaBlock from '../components/PizzaBlock'
 import Skeleton from '../components/Skeleton'
 import Pagination from '../components/Pagination'
 import { AppContext } from '../App';
+import NotFound from './NotFound';
+
 
  const Home = () => {
     const dispatch= useDispatch ();
     const categoryId= useSelector ( state => state.filterSlice.categoryId);
     const sortType= useSelector ( state => state.filterSlice.sort);
-    
-    
+   
     const {searchValue}= React.useContext(AppContext);
 
     const [items, setItems] = React.useState([]);
@@ -26,6 +27,7 @@ import { AppContext } from '../App';
 
     const onClickCategory = (id) => {
       dispatch( setCategoryId (id) );
+
     };
 
     React.useEffect ( () => {
@@ -49,7 +51,6 @@ import { AppContext } from '../App';
             <Categories categoryId={categoryId} onClickCategory={ onClickCategory }/>
             <Sort/>
         </div>
-        <h2 className="content__title">В наличии:</h2>
         <div className="content__items">
         { isLoading
           ? [...new Array(6)].map( (_, index) => <Skeleton key={index}/>)
@@ -62,7 +63,8 @@ import { AppContext } from '../App';
           />)
         }
       </div>
-      <Pagination onChangePage ={ (number) => setPage(number)}/>
+      {items.length===0&& <NotFound/>}
+      {items.length>0 && <Pagination onChangePage ={ (number) => setPage(number)}/>}
         </> 
        
     )

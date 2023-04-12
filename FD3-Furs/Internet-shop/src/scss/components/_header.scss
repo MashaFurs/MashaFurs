@@ -31,6 +31,16 @@
   }
 }
 //Медиазапросы
+
+@media (max-width:1050px) {
+  .search{
+    display: none;
+  }
+  .icon_search{
+    display: none;
+  }
+};
+
 @media (max-width:600px) {
   .header {
     &__logo{
