@@ -7,8 +7,8 @@ const list=[ { name: "популярности", sort: "rating", dest: "desc"},
                { name: "цене ↓", sort: "price", dest: "desc"}
              ];
 
-function Sort () {
-
+  const Sort = () => {
+ 
   const dispatch= useDispatch ();
   const sort= useSelector (  state => state.filterSlice.sort);
 

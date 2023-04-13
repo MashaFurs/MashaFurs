@@ -1,18 +1,21 @@
+import React from 'react';
+const categories = ['Все', 'iPhone', 'iPad', 'Mac', 'Watch', 'AirPods'];
 
-function Categories (props) {
+const Categories = React.memo(
+  (props) => {
  
-  const categories = ['Все', 'iPhone', 'iPad', 'Mac', 'Watch', 'AirPods']
-
-    return (
-      <div className="categories">
-                  <ul>
-                    {
-                      categories.map( (categoryName, index) => (
-                        <li onClick={ () => props.onClickCategory (index) } className={props.categoryId===index?"active":""} key={index}>{categoryName}</li>
-                      ))}
-                  </ul>
-                </div>
-    )
-  }
+    // console.log("категории рендерятся")
+      return (
+        <div className="categories">
+                    <ul>
+                      {
+                        categories.map( (categoryName, index) => (
+                          <li onClick={ () => props.onClickCategory (index) } className={props.categoryId===index?"active":""} key={index}>{categoryName}</li>
+                        ))}
+                    </ul>
+                  </div>
+      )
+    }
+) 
 
   export default Categories;

@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 import Search from './Search';
 
@@ -8,6 +9,8 @@ function Header () {
   const { items, totalPrice} = useSelector ( (state) => state.cart);
   
   const totalCount = items.reduce ( (sum,item) => sum + item.count,0);
+
+  const location= useLocation();
 
     return (<div className="header">
     <div className="container">
@@ -20,9 +23,9 @@ function Header () {
       </div>
     </div>
     </NavLink>
-    <Search/>
+    {location.pathname !== '/cart' &&<Search/>}
       <div className="header__cart">
-        <NavLink to="/cart" className="button button--cart">
+          {location.pathname !== '/cart' && <NavLink to="/cart" className="button button--cart">
           <span>{totalPrice} BYN</span>
           <div className="button__delimiter"></div>
           <svg
@@ -55,7 +58,7 @@ function Header () {
             />
           </svg>
           <span>{totalCount}</span>
-        </NavLink>
+        </NavLink>}
       </div>
     </div>
   </div>)

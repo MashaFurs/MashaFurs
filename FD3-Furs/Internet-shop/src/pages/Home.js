@@ -25,10 +25,9 @@ import NotFound from './NotFound';
     const [page,setPage]= React.useState(1);
     
 
-    const onClickCategory = (id) => {
+    const onClickCategory =React.useCallback((id) => {
       dispatch( setCategoryId (id) );
-
-    };
+    },[]);
 
     React.useEffect ( () => {
         setIsLoading(true);
