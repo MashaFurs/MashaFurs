@@ -60,6 +60,7 @@ import NotFound from './NotFound';
                                           sizes= {obj.sizes}
                                           types= {obj.types}
                                           key={obj.id}
+                                          id={obj.id}
           />)
         }
       </div>
