@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Создано с помощью Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Это приложение создано с помощью Create React App - инструмента для быстрого создания новых React-проектов с минимальными настройками.
 
-## Available Scripts
+## Установка 
 
-In the project directory, you can run:
+1. Склонируйте репозиторий
+2. Перейдите в папку проекта
+3. Установите необходимые зависимости запустив команду `npm install`
+
+## Запуск 
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Команда, которая запускает приложение в режиме разработки.
+Откройте браузер и перейдите по адресу [http://localhost:3000](http://localhost:3000) , чтоб увидеть  приложение.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Команда, которая запускает приложение в режиме "production". После этого вы можете разместить собранную версию приложения на своем сервере или хостинге.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Критерии оценки выпускного проекта:
 
-### `npm run eject`
+### 1. Динамичность веб-страниц:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ Веб-страницы подстраиваются под действия пользователя. При переходе в корзину скрываются значки корзины и поиска. Выбрав метод сортировки, остальные методы автоматически скрываются. Кнопка "-" отключена при остатке товара в корзине одного. При добавлении товара в корзину автоматически обновляются счетчик на кнопке добавления и цена на значке магазина, показывая количество выбранных товаров и общую сумму покупки. Все это делает приложение удобным и функциональным для пользователей.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Производительность отрисовки:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ Для максимальной оптимизации производительности приложения я применила технику Debounce. Она позволила избежать частых запросов на сервер при поиске товаров, вызванных каждой введенной буквой пользователем. С помощью Debounce я установила задержку выполнения поискового запроса на 500 миллисекунд после того, как пользователь завершит ввод. Благодаря этому моё приложение работает быстро и эффективно, не теряя в производительности.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ Используется анимация при удалении товара из корзины:
+ 
+Для того, чтобы реализовать эту анимацию, на значок "x" была навешена функция onClickRemove, которая обращается к textRef.current (ссылка на div который я хочу потом удалить) и добавляет класс "move", благодаря которому срабатывает css-анимация. также в этой функции устанавливается обработчик события "animationed". Событие "animationed" используется здесь для того, чтобы определить, когда завершается анимация элемента. Когда анимация заканчивается, срабатывает обработчик этого события и выполняется функция deleteElement (удаление).
 
-## Learn More
+### 3. Навигация в приложении:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Кнопки браузера "вперёд", "назад", "освежить" работают полностью корректно. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Пагинация работает корректно, если просматривать весь список товаров. Возникает проблема, когда выбираешь категорию "iPad" или другую категорию, то количество страниц не меняется, как было 6 так и осталось, даже если товаров всего на одну страницу. Читала документацию, такая есть проблема у mocAPI. Реализовать правильную пагинацию у меня получилось, но для этого приходилось отправлять 2 раза запрос на сервер, мне показалось это плохой идеей и поэтому оставила как есть. В планах на будущее перейти на другой сервер.
 
-### Code Splitting
+### 4. Кроссбраузерность:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Приложения кроссбраузерно на любом планшете и мобильном телефоне.
 
-### Analyzing the Bundle Size
+### 5. Коммуникации:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Вся информация содержится в mocAPI.
 
-### Making a Progressive Web App
+### 6. Модель данных:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Для хранения фильтрации и содержимого корзины используется Redux.
 
-### Advanced Configuration
+### 7. Сборка проекта:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Работает как "живая" dev-сборка, так и prod-сборка.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
