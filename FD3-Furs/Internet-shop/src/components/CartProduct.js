@@ -40,7 +40,7 @@ const CartProduct = ({ id,title, price, count, imageUrl, size}) => {
           />
         </div>
         <div className="cart__item-info">
-          <h3>{title}</h3>
+          <p className='modelPhone'>{title}</p>
           <p> {size}.</p>
         </div>
         <div className="cart__item-count">
