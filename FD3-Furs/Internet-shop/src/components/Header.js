@@ -16,7 +16,7 @@ function Header () {
     <div className="container">
     <NavLink to="/">
     <div className="header__logo">
-      <img width="38" src="img/appleLogo.PNG" alt="Pizza logo" />
+      <img width="38" src="img/appleLogo.PNG" alt="Apple logo" />
       <div>
           <h1>Apple Shop</h1>
           <p>самые низкие цены в стране</p>

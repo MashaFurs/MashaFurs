@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setCategoryId } from '../Redux/slices/filterSlice'
 import Categories from '../components/Categories'
 import Sort from '../components/Sort'
-import PizzaBlock from '../components/PizzaBlock'
+import GadgetBlock from '../components/GadgetBlock'
 import Skeleton from '../components/Skeleton'
 import Pagination from '../components/Pagination'
 import { AppContext } from '../App';
@@ -53,7 +53,7 @@ import NotFound from './NotFound';
         <div className="content__items">
         { isLoading
           ? [...new Array(6)].map( (_, index) => <Skeleton key={index}/>)
-          : items.map (obj => <PizzaBlock title={obj.title} 
+          : items.map (obj => <GadgetBlock title={obj.title} 
                                           price={obj.price} 
                                           imageUrl={obj.imageUrl}
                                           sizes= {obj.sizes}

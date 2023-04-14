@@ -24,9 +24,9 @@ const CartProduct = ({ id,title, price, count, imageUrl, size}) => {
         <div className="cart__item">
         <div className="cart__item-img">
           <img
-            className="pizza-block__image"
+            className="gadget-block__image"
             src={imageUrl}
-            alt="Pizza"
+            alt="Gadget"
           />
         </div>
         <div className="cart__item-info">

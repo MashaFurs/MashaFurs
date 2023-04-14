@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {addItem} from '../Redux/slices/cartSlice'
 
 
-function PizzaBlock ({id,title,price, imageUrl, sizes, types, rating}) {
+function GadgetBlock ({id,title,price, imageUrl, sizes, types, rating}) {
   const dispatch = useDispatch();
   const cartItem = useSelector ( state => state.cart.items.find ( (obj) => obj.id ===id));
 
@@ -24,15 +24,15 @@ function PizzaBlock ({id,title,price, imageUrl, sizes, types, rating}) {
   }
 
     return (
-    <div className="pizza-block-wrapper">
-    <div className="pizza-block">
+    <div className="gadget-block-wrapper">
+    <div className="gadget-block">
     <img
-      className="pizza-block__image"
+      className="gadget-block__image"
       src={imageUrl}
-      alt="Pizza"
+      alt="gadget"
     />
-    <h4 className="pizza-block__title">{title}</h4>
-    <div className="pizza-block__selector">
+    <h4 className="gadget-block__title">{title}</h4>
+    <div className="gadget-block__selector">
       
       <ul>
         {
@@ -40,8 +40,8 @@ function PizzaBlock ({id,title,price, imageUrl, sizes, types, rating}) {
         }
       </ul>
     </div>
-    <div className="pizza-block__bottom">
-      <div className="pizza-block__price">от {price} BYN</div>
+    <div className="gadget-block__bottom">
+      <div className="gadget-block__price">от {price} BYN</div>
       <button onClick={onClickAdd} className="button button--outline button--add">
         <svg
           width="12"
@@ -63,4 +63,4 @@ function PizzaBlock ({id,title,price, imageUrl, sizes, types, rating}) {
   </div>
     )
 }
-export default PizzaBlock;
+export default GadgetBlock;

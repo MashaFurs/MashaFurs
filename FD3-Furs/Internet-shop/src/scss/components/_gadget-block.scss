@@ -1,6 +1,6 @@
 @import '../variables';
 
-.pizza-block {
+.gadget-block {
   width: 280px;
   text-align: center;
   margin-bottom: 65px;
@@ -73,7 +73,7 @@
 //Медиазапросы
 
 @media (max-width:444px) {
-  .pizza-block {
+  .gadget-block {
     width: 231px;
     margin-bottom: 34px;
 
