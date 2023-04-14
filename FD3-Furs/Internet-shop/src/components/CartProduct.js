@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import {addItem, removeItem, minus, } from '../Redux/slices/cartSlice';
 
 const CartProduct = ({ id,title, price, count, imageUrl, size}) => {
+
+  const textRef= useRef (null);
 
   const dispatch = useDispatch();
 
@@ -16,11 +18,19 @@ const CartProduct = ({ id,title, price, count, imageUrl, size}) => {
     dispatch( minus(id));
   };
 
-  const onClickRemove = () => {
+  const deleteElement = () => {
     dispatch( removeItem(id));
+  };
+
+  const onClickRemove = () => {
+    // dispatch( removeItem(id));
+    textRef.current.addEventListener('animationend', deleteElement, false);
+    textRef.current.className="move";
+
   };
     return (
       <>
+        <div ref={textRef}>
         <div className="cart__item">
         <div className="cart__item-img">
           <img
@@ -63,6 +73,7 @@ const CartProduct = ({ id,title, price, count, imageUrl, size}) => {
           </div>
         </div>
                     </div> 
+                    </div>
                     </> 
     )
     

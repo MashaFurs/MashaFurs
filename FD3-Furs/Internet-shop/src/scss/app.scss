@@ -467,3 +467,10 @@ body {
     }
   } 
 };
+
+
+//Добавляю анимацию
+
+@keyframes tracking-out-contract{0%{opacity:1}50%{opacity:1}100%{letter-spacing:-.5em;opacity:0}};
+
+.move{ animation:tracking-out-contract 1s cubic-bezier(.55,.085,.68,.53) both };
