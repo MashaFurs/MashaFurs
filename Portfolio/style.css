@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Jost:wght@400;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --color-green: #29a587;
+    --color-longText: #262626;
+    --colorBg: #f0ebe3;
+}
+
+body{
+    overflow: hidden;
+}
+
+.container{
+    background-color: transparent;
+    background-image: linear-gradient(0deg,#fff 0%,#f0ebe3 100%);
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    width: 1450px;
+}
+
+.main{
+    border-left: 2px solid black;
+    padding-bottom: 55px;
+    position: relative;
+}
+
+.circle{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 5px 5px rgba(0,0,0,.2);
+}
+
+.circle.one{
+    top: -2%;
+    left: -1%;
+}
+
+.circle.two{
+    top: 97%;
+    left: -1%;
+}
+
+.header{
+    margin: 30px;
+}
+
+.header img{
+    width: 121px;
+}
+
+/*Контент на главной*/
+.content{
+    display: flex;
+    padding: 10px;
+    padding-left: 100px;
+}
+.content-text{
+    padding-top: 40px;
+}
+
+.hello{
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.hello span{
+    color: var(--color-green);
+}
+
+.content-text h1{
+    color: #FFFFFF;
+    margin-top: 15px;
+    font-family: 'Jost', sans-serif;
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgba(0,0,0,.2);
+}
+
+.content-text h1 span{
+    color: var(--color-green);
+}
+
+.content-text h1+div{
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.content-text h1+div span{
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-left: 10px;
+}
+
+.description{
+    padding: 40px 0px;
+    width: 69%;
+}
+
+.description p{
+    color: #262626;
+    font-family: "Jost",sans-serif;
+    font-size: 18px;
+    opacity: 0.8;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+.social{
+    margin-top: 30px;
+}
+
+.social svg{
+    margin-right: 15px;
+}
+
+.social svg:hover{
+   stroke: #29a587;
+   transform: scale(1.1);
+   cursor: pointer;
+}
+
+.btnCV a{
+    text-decoration: none;
+    padding: 0 40px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    height: 56px;
+    line-height: 52px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 1s cubic-bezier(.3,0,.3,1);
+    border: 2px solid #000;
+    background: 0 0;
+    box-shadow: 5px 5px rgba(0,0,0,.2);
+    border-radius: 56px;
+    -webkit-border-radius: 56px;
+}
+
+.btnCV a span{
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    line-height: 52px;
+    text-align: center;
+}
+
+.btnCV a:hover{
+    color: #FFFFFF;
+    background-color: var(--color-green);
+}
+
+.transparent{
+    font-size: calc(1em + 16vw);;
+    font-family: "Caveat";
+    color: rgba(0,0,0,.03);
+    font-weight: 700;
+    line-height: 1px;
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: .04em;
+}
