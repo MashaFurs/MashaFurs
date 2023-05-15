@@ -56,6 +56,43 @@ body{
 
 .header{
     margin: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.points{
+    display: flex;
+    list-style-type: none;
+}
+
+.points li {
+    color: #262626;
+    font-family: "Jost",sans-serif;
+    font-size: 20px;
+    opacity: 0.8;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    margin-right: 30px;
+    position: relative;
+}
+
+.points li:hover{
+    color: var(--color-green);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.points li:hover::after{
+    content: '';
+            width: 100%;
+            height: 3px;
+            background: var(--color-green);
+            position: absolute;
+            border-radius: 0 0 50px 50px;
+            top: -25px;
+            left: 0; 
 }
 
 .header img{
@@ -67,6 +104,7 @@ body{
     display: flex;
     padding: 10px;
     padding-left: 100px;
+    margin-top: 80px;
 }
 .content-text{
     padding-top: 40px;
@@ -188,7 +226,7 @@ body{
 }
 
 .transparent{
-    font-size: calc(1em + 16vw);;
+    font-size: calc(1em + 10vw);;
     font-family: "Caveat";
     color: rgba(0,0,0,.03);
     font-weight: 700;
@@ -197,4 +235,48 @@ body{
     white-space: nowrap;
     pointer-events: none;
     letter-spacing: .04em;
+    
 }
+/*Стилизация зеленого круга и главного фото*/
+
+.green-circle{
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background-color: var(--color-green);
+    position: relative;
+}
+
+.mainPhoto{
+    width: 639px;
+    border-radius: 375px;
+    position: absolute;
+    top: -14%;
+    left: 1%;
+}
+
+.circlesOne{
+    width: 141px;
+    height: 141px;
+    position: absolute;
+    top: 74%;
+    left: 50%;
+}
+
+.circlesTwo{
+    width: 141px;
+    height: 141px;
+    position: absolute;
+    top: 75%;
+    left: 91%;
+}
+
+.circlesBig{
+    width: 226px;
+    height: 226px;
+    position: absolute;
+    top: 20%;
+    left: 87%;
+}
+
+
