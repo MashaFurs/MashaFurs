@@ -13,9 +13,10 @@
     --colorBg: #f0ebe3;
 }
 
-body{
+/* body{
     overflow: hidden;
-}
+    height: 10000px;
+} */
 
 .container{
     background-color: transparent;
@@ -281,10 +282,6 @@ body{
 
 /*SKILLS*/
 
-.skills{
-    width: 1000px;
-    height: 1000px;
-    background-color: aqua;
-}
+
 
 
