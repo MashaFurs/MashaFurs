@@ -77,6 +77,7 @@
     -webkit-text-size-adjust: 100%;
     margin-right: 30px;
     position: relative;
+    cursor: pointer;
 }
 
 .points li:hover{
