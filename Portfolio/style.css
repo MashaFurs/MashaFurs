@@ -270,7 +270,7 @@
     height: 141px;
     position: absolute;
     top: 76%;
-    left: 89%;
+    left: 88%;
 }
 
 .circlesBig{
@@ -317,6 +317,97 @@
     font-weight: 700;
     letter-spacing: 0;
     text-transform: none;
+}
+/*Стилизация блоков скиллов*/
+
+.variants{
+    display: flex;
+    justify-content: space-between;
+}
+
+.column{
+    width: 33.3%;
+    padding: 20px;
+}
+
+.variantType{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px 20px;
+}
+
+.variant{
+    margin-bottom: 70px;
+}
+
+.variantType h6{
+    font-family: 'Jost', sans-serif;
+    font-size: 21px;
+    line-height: 20px;
+    color: #000;
+    font-weight: 700; 
+}
+
+.variantType p{
+    font-family: "Jost",sans-serif;
+    font-weight: 700;
+    color: #000;
+    height: 20px;
+    line-height: 20px;
+}
+
+.variantType p span{
+    color: var(--color-green);
+}
+
+.line{
+    height: 2px;
+    background: rgba(0,0,0,.1);
+}
+
+.lineBlack{
+    height: 2px;
+    background: #000;
+    position: relative;
+}
+.lineBlack span{
+    position: absolute;
+    right: 0;
+    top: -12px;
+}
+
+.lineBlack.one{
+    width: 90%;
+}
+
+.lineBlack.two{
+    width: 85%;
+}
+
+.lineBlack.three{
+    width: 75%;
+}
+
+.lineBlack.four{
+    width: 70%;
+}
+
+.lineBlack.five{
+    width: 85%;
+}
+
+.lineBlack.six{
+    width: 85%;
+}
+
+.lineBlack span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: #29a587;
+    box-shadow: 5px 5px rgba(0,0,0,.2);
 }
 
 
