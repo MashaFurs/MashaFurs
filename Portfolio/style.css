@@ -80,6 +80,8 @@
     margin-right: 30px;
     position: relative;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(.3,0,.3,1);
+    -webkit-transition: all 0.3s cubic-bezier(.3,0,.3,1);
 }
 
 .points li:hover{
@@ -178,10 +180,13 @@
 
 .social{
     margin-top: 30px;
+    
 }
 
 .social svg{
     margin-right: 15px;
+    transition: all 0.3s cubic-bezier(.3,0,.3,1);
+    -webkit-transition: all 0.3s cubic-bezier(.3,0,.3,1);
 }
 
 .social svg:hover{
@@ -431,5 +436,157 @@
     left: 99%;
     top: 96%;
 }
+
+/*Стилизация блока с работами*/
+
+.portfolioCont{
+    position: relative;
+}
+
+.subtitle-works{
+    margin-bottom: 20px;
+}
+
+.works-items{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 70px;
+    
+}
+
+.item-wrap{
+    padding: 40px 40px 0;  
+    width: 33.3%;
+}
+
+.item{
+    
+    padding: 30px;
+    /* background: #fff; */
+    background-color: #f0ebe3;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.item-text{
+    margin-top: 30px;
+}
+
+.work-img{
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.work-img img{
+    height: 240px;
+    width: 100%;
+    border-radius: 18px;
+    object-fit: cover;
+    transition: all 1.3s cubic-bezier(.3,0,.3,1);
+    -webkit-transition: all 1.3s cubic-bezier(.3,0,.3,1);
+}
+
+.work-type{
+    font-family: "Jost",sans-serif;
+    line-height: 1.7;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    color: #29a587;
+}
+
+.work-name{
+    font-family: "Jost",sans-serif;
+    font-size: 24px;
+    color: #000;
+    font-weight: 700;
+    line-height: 1.3;  
+}
+
+.work-text{
+    min-height: 125px;
+    margin: 30px 0;
+    color: #262626;
+    font-family: "Jost",sans-serif;
+    font-size: 18px;
+    opacity: 0.8;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-align: justify;
+}
+
+.open-work{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 70px;
+    cursor: pointer;
+}
+
+.open-link{
+    font-family: "Jost",sans-serif;
+    font-size: 16px;
+    color: #000;
+    font-weight: 700;
+    line-height: 22px;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+.open-link+img{
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+}
+
+.works-img{
+    width: 141px;
+    height: 141px;
+    background-image: url(img/circles.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: -61px;
+    bottom: -54px;
+}
+
+.open-work div:first-child:hover .open-link+img{
+    margin-left: 10px;
+    transition: all .3s cubic-bezier(.3,0,.3,1);
+    -webkit-transition: all .3s cubic-bezier(.3,0,.3,1);
+}
+
+.item-wrap:hover .work-img img{
+    transform: scale(1.2);  
+    transition: all 1.3s cubic-bezier(.3,0,.3,1);
+    -webkit-transition: all 1.3s cubic-bezier(.3,0,.3,1);
+}
+
+.skills.two{
+    border-left: 2px solid black;
+}
+
+.circle.five{
+    left: -1%;
+    top: 0%;
+}
+
+.circle.six{
+    left: -1%;
+    top: 99%;
+}
+
+/*Стилизация Resume*/
+
+.skills.three{
+    margin-top: 170px;
+}
+
+
 
 
