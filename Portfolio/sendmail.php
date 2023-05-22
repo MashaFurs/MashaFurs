@@ -13,7 +13,7 @@
 
 
     //От кого письмо
-    $mail ->setFrom('info@fls.guru', 'Фрилансер по жизни');
+    $mail ->setFrom('maryia.furs@gmail.com', 'Фрилансер по жизни');
     
     //Кому отправить
     $mail ->addAddress('Mashafurs3371403@yandex.ru');
