@@ -18,7 +18,30 @@ function submitForm() {
 
        if(!/\S+/.test(nameInput.value)) {
         nameInput.classList.add('_error');
-        return
+        return;
+       } else {
+        nameInput.classList.remove('_error');
+       }
+
+       if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value)) {
+        nameInput.classList.add('_error');
+        return;
+       } else {
+        nameInput.classList.remove('_error');
+       }
+
+       if(!/\S+/.test(textInput.value)) {
+        nameInput.classList.add('_error');
+        return;
+       } else {
+        nameInput.classList.remove('_error');
+       }
+
+       if(!/\S+/.test(textArea.value)) {
+        nameInput.classList.add('_error');
+        return;
+       } else {
+        nameInput.classList.remove('_error');
        }
 
 
