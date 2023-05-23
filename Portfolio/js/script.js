@@ -3,6 +3,8 @@ function submitForm() {
     
     let form = document.getElementById('form');
 
+    let inputs = form.getElementsByTagName("input");
+
     let nameInput = document.getElementById('input_name');
     let emailInput = document.getElementById('input_email');
     let textInput = document.getElementById('input_text');
@@ -20,40 +22,59 @@ function submitForm() {
 
 
 
+    for( let i=0; i<inputs.length; i++) {
+        let input= inputs[i];
+
+        if( input.type === "text" && !/\S+/.test(input.value) ||
+            input.type === "text" && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(input.value) ||
+            input.type === "textarea" && !/\S+/.test(input.value)) {
+                input.classList.add('_error');
+                isValid = false;
+
+            } else {
+                input.classList.remove('_error');
+            }
+    }
+
+    if (!isValid) {
+            alert("Заполните поля");
+            return;
+           }
 
 
-       if(!/\S+/.test(nameInput.value)) {
-        nameInput.classList.add('_error');
-        isValid = false;
-       } else {
-        nameInput.classList.remove('_error');
-       }
 
-       if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value)) {
-        nameInput.classList.add('_error');
-        isValid = false;
-       } else {
-        nameInput.classList.remove('_error');
-       }
+    //    if(!/\S+/.test(nameInput.value)) {
+    //     nameInput.classList.add('_error');
+    //     isValid = false;
+    //    } else {
+    //     nameInput.classList.remove('_error');
+    //    }
 
-       if(!/\S+/.test(textInput.value)) {
-        nameInput.classList.add('_error');
-        isValid = false;
-       } else {
-        nameInput.classList.remove('_error');
-       }
+    //    if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value)) {
+    //     nameInput.classList.add('_error');
+    //     isValid = false;
+    //    } else {
+    //     nameInput.classList.remove('_error');
+    //    }
 
-       if(!/\S+/.test(textArea.value)) {
-        nameInput.classList.add('_error');
-        isValid = false;
-       } else {
-        nameInput.classList.remove('_error');
-       }
+    //    if(!/\S+/.test(textInput.value)) {
+    //     nameInput.classList.add('_error');
+    //     isValid = false;
+    //    } else {
+    //     nameInput.classList.remove('_error');
+    //    }
 
-       if (!isValid) {
-        alert("Заполните поля");
-        return;
-       }
+    //    if(!/\S+/.test(textArea.value)) {
+    //     nameInput.classList.add('_error');
+    //     isValid = false;
+    //    } else {
+    //     nameInput.classList.remove('_error');
+    //    }
+
+    //    if (!isValid) {
+    //     alert("Заполните поля");
+    //     return;
+    //    }
 
 
 
