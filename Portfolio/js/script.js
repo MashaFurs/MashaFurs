@@ -8,12 +8,17 @@ function submitForm() {
     let textInput = document.getElementById('input_text');
     let textArea = document.getElementById('textarea');
 
-    if(!/\S+/.test(nameInput.value) ||
-       !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value) ||
-       !/\S+/.test(textInput.value) ||
-       !/\S+/.test(textArea.value)) {
-        alert("Заполните все поля формы");
-        return;
+    // if(!/\S+/.test(nameInput.value) ||
+    //    !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value) ||
+    //    !/\S+/.test(textInput.value) ||
+    //    !/\S+/.test(textArea.value)) {
+    //     alert("Заполните все поля формы");
+    //     return;
+    //    }
+
+       if(!/\S+/.test(nameInput.value)) {
+        nameInput.classList.add('_error');
+        return
        }
 
 
