@@ -8,6 +8,8 @@ function submitForm() {
     let textInput = document.getElementById('input_text');
     let textArea = document.getElementById('textarea');
 
+    let isValid = true;
+
     // if(!/\S+/.test(nameInput.value) ||
     //    !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value) ||
     //    !/\S+/.test(textInput.value) ||
@@ -22,31 +24,37 @@ function submitForm() {
 
        if(!/\S+/.test(nameInput.value)) {
         nameInput.classList.add('_error');
-        return;
+        isValid = false;
        } else {
         nameInput.classList.remove('_error');
        }
 
        if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value)) {
         nameInput.classList.add('_error');
-        return;
+        isValid = false;
        } else {
         nameInput.classList.remove('_error');
        }
 
        if(!/\S+/.test(textInput.value)) {
         nameInput.classList.add('_error');
-        return;
+        isValid = false;
        } else {
         nameInput.classList.remove('_error');
        }
 
        if(!/\S+/.test(textArea.value)) {
         nameInput.classList.add('_error');
-        return;
+        isValid = false;
        } else {
         nameInput.classList.remove('_error');
        }
+
+       if (!isValid) {
+        alert("Заполните поля");
+        return;
+       }
+
 
 
     // function validate() {
