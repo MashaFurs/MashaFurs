@@ -19,7 +19,6 @@ function submitForm() {
     }
 
     if (!isValid) {
-            alert("Заполните поля");
             return;
            }
 
