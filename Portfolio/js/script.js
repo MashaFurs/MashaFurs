@@ -20,51 +20,51 @@ function submitForm() {
 
 
 
-    //    if(!/\S+/.test(nameInput.value)) {
-    //     nameInput.classList.add('_error');
-    //     return;
-    //    } else {
-    //     nameInput.classList.remove('_error');
-    //    }
-
-    //    if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value)) {
-    //     nameInput.classList.add('_error');
-    //     return;
-    //    } else {
-    //     nameInput.classList.remove('_error');
-    //    }
-
-    //    if(!/\S+/.test(textInput.value)) {
-    //     nameInput.classList.add('_error');
-    //     return;
-    //    } else {
-    //     nameInput.classList.remove('_error');
-    //    }
-
-    //    if(!/\S+/.test(textArea.value)) {
-    //     nameInput.classList.add('_error');
-    //     return;
-    //    } else {
-    //     nameInput.classList.remove('_error');
-    //    }
-
-
-    function validate() {
-
-        let formReq= document.querySelectorAll('._req');
-
-        for( let i=0; i<formReq.length; i++) {
-            const input= formReq[i];
-            input.classList.remove('_error');
-    
-            if (input.value === "") {
-                input.classList.add('_error');
-            }
-        }
+       if(!/\S+/.test(nameInput.value)) {
+        nameInput.classList.add('_error');
         return;
-    }
+       } else {
+        nameInput.classList.remove('_error');
+       }
 
-    validate();
+       if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value)) {
+        nameInput.classList.add('_error');
+        return;
+       } else {
+        nameInput.classList.remove('_error');
+       }
+
+       if(!/\S+/.test(textInput.value)) {
+        nameInput.classList.add('_error');
+        return;
+       } else {
+        nameInput.classList.remove('_error');
+       }
+
+       if(!/\S+/.test(textArea.value)) {
+        nameInput.classList.add('_error');
+        return;
+       } else {
+        nameInput.classList.remove('_error');
+       }
+
+
+    // function validate() {
+
+    //     let formReq= document.querySelectorAll('._req');
+
+    //     for( let i=0; i<formReq.length; i++) {
+    //         const input= formReq[i];
+    //         input.classList.remove('_error');
+    
+    //         if (input.value === "") {
+    //             input.classList.add('_error');
+    //         }
+    //     }
+    //     return;
+    // }
+
+    // validate();
     
 
 
