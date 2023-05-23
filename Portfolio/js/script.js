@@ -38,3 +38,10 @@ function submitForm() {
      }
      xhr.send( new FormData(form));
 }
+
+
+function changeMapLanguage() {
+    const mapIframe = document.querySelector('iframe');
+    mapIframe.contentWindow.postMessage('{"event":"command","func":"setOptions","args":[{"language":"en"}]}', '*');
+}
+window.addEventListener('load', changeMapLanguage);
