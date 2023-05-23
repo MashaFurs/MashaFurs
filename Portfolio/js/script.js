@@ -3,7 +3,7 @@ function submitForm() {
     
     let form = document.getElementById('form');
 
-    let inputs = form.getElementsByTagName("input");
+    let inputs = document.querySelectorAll('._req');
 
     let nameInput = document.getElementById('input_name');
     let emailInput = document.getElementById('input_email');
@@ -26,7 +26,7 @@ function submitForm() {
         let input= inputs[i];
 
         if( input.type === "text" && !/\S+/.test(input.value) ||
-            input.type === "text" && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(input.value) ||
+            input.type === "email" && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(input.value) ||
             input.type === "textarea" && !/\S+/.test(input.value)) {
                 input.classList.add('_error');
                 isValid = false;
