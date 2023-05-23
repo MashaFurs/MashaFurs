@@ -3,6 +3,21 @@ function submitForm() {
     
     let form = document.getElementById('form');
 
+    let nameInput = document.getElementById('input_name');
+    let emailInput = document.getElementById('input_email');
+    let textInput = document.getElementById('input_text');
+    let textArea = document.getElementById('textarea');
+
+    if(!/\S+/.test(nameInput.value) ||
+       !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value) ||
+       !/\S+/.test(textInput.value) ||
+       !/\S+/.test(textArea.value)) {
+        alert("Заполните все поля формы");
+        return;
+       }
+
+
+
     //Отправка формы через Formspare
      let xhr = new XMLHttpRequest();
      xhr.open(form.method, form.action);
