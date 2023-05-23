@@ -967,6 +967,7 @@ textarea{
 
 ._error{
 box-shadow: 0 0 15px red;
+border-color: red;
 }
 
 
