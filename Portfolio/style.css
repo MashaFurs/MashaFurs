@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Jost:wght@400;700;800&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -272,6 +276,10 @@
 }
 /*Стилизация зеленого круга и главного фото*/
 
+/* .content-foto{
+    position: relative;
+   
+} */
 .green-circle{
     width: 650px;
     height: 650px;
@@ -308,7 +316,7 @@
     width: 226px;
     height: 226px;
     position: absolute;
-    top: 15%;
+    top: -3%;
     left: 82%;
 }
 
@@ -616,7 +624,7 @@
 
 .education{
     position: relative;
-    padding-bottom: 63px;
+    padding-bottom: 140px;
     border-right: 2px solid black;
     position: relative;
 }
@@ -634,7 +642,7 @@
 
 .education-wrap{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding-top: 60px;
 }
 
