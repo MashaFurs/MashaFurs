@@ -135,7 +135,7 @@ html{
     display: flex;
     padding: 10px;
     padding-left: 100px;
-    margin-top: 80px;
+    margin-top: 43px;
 }
 .content-text{
     padding-top: 40px;
@@ -1035,6 +1035,8 @@ iframe{
     justify-content: space-between;
     padding-top: 60px;
     padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .footer_icon .social{
@@ -1065,6 +1067,179 @@ iframe{
 
 .footer_left span{
     color: var(--color-green);
+}
+
+
+/*Медиазапросы*/
+
+@media all and (max-width: 1480px) {
+    .circle{
+        display: none;
+    }
+
+    .main, .skills.one, .skills.two, .education, .skills.four{
+        border: none;
+    }
+}
+
+@media all and (max-width: 1253px) {
+    .circlesBig{
+        left: 79%;
+    }
+
+    .circlesTwo{
+        left: 86%;
+    }
+}
+
+@media all and (max-width: 1148px) {
+    .green-circle{
+        width: 610px;
+        height: 610px;
+    }
+
+    .mainPhoto{
+        width: 599px;
+    }
+
+    .circlesBig{
+        left: 78%;
+        top: -1%;
+    }
+
+    .circlesTwo{
+        left: 83%;
+        top: 73%;
+    }
+
+    .content-text h1{
+        font-size: 76px;
+        line-height: 1.1;
+    }
+
+    .content-text h1+div {
+        font-size: 13px;
+    }
+
+    .description{
+        padding: 19px 0px;
+    }
+
+    .description p {
+        font-size: 17px;
+    }
+
+    .social{
+        margin-top: 13px;
+    }
+
+    .skills.two{
+        margin-top: 63px;
+    }
+
+    .circlesOne{
+        top: 77%;
+        left: 50%;
+    }
+
+    .content-text {
+        padding-top: 7px;
+    }
+
+    .btnCV a {
+        padding: 0px 20px;
+        height: 47px;
+        vertical-align: middle;
+    }
+
+    .btnCV a span {
+        font-size: 12px;
+    }
+
+    .header img {
+        width: 63px;
+    }
+
+    .points li {
+        font-size: 18px;
+    }
+
+    .subtitle{
+        margin-bottom: 0px;
+    }
+
+    .item-wrap {
+        padding: 40px 20px 0;
+    }
+
+    .work-text {
+        font-size: 15px;
+        margin: 15px 0;
+    }
+
+    .work-img img {
+        height: 198px;
+    }
+
+    .item-text {
+        margin-top: 15px;
+    }
+
+    .work-name {
+        font-size: 21px;
+    }
+
+    .work-type {
+        font-size: 12px;
+    }
+
+    .works-img {
+        width: 120px;
+        height: 120px;
+        right: -54px;
+    }
+
+    .open-work {
+        margin-top: 58px;
+    }
+
+    .skills.three {
+        margin-top: 120px;
+    }
+
+    .education-foto img{
+        object-fit: contain;
+    }
+
+    .education-block h6 {
+        font-size: 18px;
+        padding: 25px;
+
+    }
+
+    .education-description span {
+        font-size: 23px;
+        padding-bottom: 18px;
+        line-height: 1.2;
+    }
+
+    .education-description p {
+        font-size: 11px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
