@@ -1,11 +1,10 @@
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
-if (ScrollTrigger.isTouch !== 1) {
+if (window.matchMedia("(min-width:768px)").matches) {
 
     gsap.fromTo('.content', { opacity: 1 }, {
 		opacity: 0,
-        scale:0.4,
 		scrollTrigger: {
 			trigger: '.content',
 			start: 'center',
