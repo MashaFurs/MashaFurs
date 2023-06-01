@@ -1,14 +1,20 @@
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
+
+
+
 if (window.matchMedia("(min-width:768px)").matches) {
+
+    let masha = window.innerWidth;
+    console.log(masha)
 
     gsap.fromTo('.content', { opacity: 1 }, {
 		opacity: 0,
 		scrollTrigger: {
 			trigger: '.content',
 			start: 'center',
-			end: '600',
+			end: window.innerWidth <= 1083 ? '1000' : '600',
 			scrub: true
 		}
 	})

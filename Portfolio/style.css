@@ -1227,6 +1227,322 @@ iframe{
         font-size: 11px;
     }
 
+    @media all and (max-width: 1046px) {
+
+        .content {
+            flex-direction: column;
+            padding-left: 0px;
+            align-items: center;
+        }
+
+        .circlesBig {
+            left: 56%;
+            top: 31%;
+        }
+
+        .circlesOne {
+            top: 84%;
+            left: 19%;
+        }
+
+        .circlesTwo {
+            left: 67%;
+            top: 81%;
+        }
+
+        .hello {
+            text-align: center;
+        }
+
+        .hero_name {
+            text-align: center;
+        }
+
+        .hero_describe {
+            text-align: center;
+        }
+
+        .social {
+            text-align: center;
+        }
+
+        .content-text {
+            position: relative;
+        }
+
+        .description{
+            position: absolute;
+            top: 505%;
+            width: 100%;
+        }
+
+        .content-foto{
+            margin-top: 124px;
+        }
+
+        .description p{
+            text-align: center;
+        }
+
+        .btnCV{
+            position: absolute;
+            top: 592%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .transparent.Main {
+            padding-top: 247px;
+        }
+
+        .hero_describe{
+            margin-top: 20px;
+        }
+
+        .variants{
+            flex-direction: column;
+        }
+
+        .column{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+
+        }
+
+        .variant{
+            width: 40%;
+        }
+
+        .item-wrap{
+            width: 50%;
+        }
+
+        .work-text {
+            height: 178px;
+        }
+
+        .works-items {
+            padding: 0px 100px;
+        }
+
+        .open-work {
+            margin-top: 21px;
+        }
+
+        .works-img{
+            width: 110px;
+            height: 110px;
+            right: -55px;
+        }
+
+        .skills.two {
+            padding-bottom: 55px;
+        }
+
+        .education-foto{
+            width: 35%;
+        }
+
+        .education-block h6 {
+            padding: 20px;
+        }
+
+        .contactWrap {
+            flex-direction: column;
+        }
+
+        .widget{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .widget-line{
+            width: 50%;
+        }
+
+        .form{
+            width: 100%;
+        }
+
+        .btn{
+            padding-bottom: 15px;
+        }
+
+        .footer{
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        iframe{
+            height: 330px;
+        }
+   }
+
+   @media all and (max-width: 976px) {
+
+    .works-items{
+        padding: 0px 58px;
+    }
+
+    .education-foto {
+        width: 44%;
+    }
+
+    .education-foto img{
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .education-block h6 {
+        padding: 17px;       
+        font-size: 16px;
+
+    }
+   }
+
+   @media all and (max-width: 823px) {
+
+    iframe {
+        height: 268px;
+    }
+
+    .works-items {
+        padding: 0px 41px;
+    }
+
+    .skills.three {
+        margin-top: 90px;
+    }
+
+    .points li {
+        font-size: 17px;
+        margin-right: 20px;
+    }
+
+    .green-circle {
+        width: 585px;
+        height: 585px;
+    }
+
+    .mainPhoto{
+        width: 576px;
+    }
+
+    .footer {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .btn {
+        padding-bottom: 53px;
+    }
+
+    .education {
+        padding-bottom: 107px;
+    }
+   }
+
+   @media all and (max-width: 772px) {
+
+    .column {
+        flex-direction: column;
+    }
+
+    .variant {
+        width: 100%;
+    }
+
+    .variants div:first-child {
+       padding-bottom: 0px;
+    }
+
+    .variants div:nth-child(2) {
+        padding-top: 0px;
+        padding-bottom: 0px;
+     }
+
+     .variants div:last-child {
+        padding-top: 0px;
+     }
+
+     .variantType{
+        margin-left: 0px;
+     }
+
+     .works-items {
+        padding: 0px 22px;
+     }
+
+     .work-text {
+        font-size: 14px;
+        margin-bottom: 0px;
+     }
+
+     .work-name {
+        font-size: 20px;
+     }
+
+     .work-type {
+        font-size: 11px;
+     }
+
+     .open-link {
+        font-size: 15px;
+     }
+
+     .works-img {
+        width: 98px;
+        height: 98px;
+        right: -43px;
+        top: -30px;
+     }
+
+     .work-img img {
+        height: 179px;
+     }
+
+     .item {
+        padding: 26px;
+     }
+
+     .education-wrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+     }
+
+     .education-foto img{
+        display: none;
+     }
+
+     .education-blocks {
+        width: 70%;
+     }
+
+     .education {
+        padding-bottom: 50px;
+     }
+
+     .social a svg {
+        margin-right: 9px;
+     }
+
+     .footer_medium {
+        font-size: 11px;
+     }
+
+     .footer_left {
+        font-size: 11px;
+     }
+
+     .social a svg {
+        transform: scale(0.9);
+     }
+
+
+   }
 
 
 
