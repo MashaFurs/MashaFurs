@@ -1669,8 +1669,7 @@ iframe{
     
     .menu_icon span {
         position: absolute;
-        transform: translateY(-50%);
-        top: 50%;
+        top: calc(50% - 1px);
         left: 0;
         width: 100%;
         height: 2px;
@@ -1683,23 +1682,22 @@ iframe{
     }
     
     .menu_icon span:first-child {
-        top: 0;
-        transform: translateY(0);
+        top: 0;  
     }
     
     .menu_icon span:last-child {
         top: auto;
-        bottom: 0;
-        transform: translateY(0);
+        bottom: 0;  
     }
     
     .menu_icon.active span:first-child {
         transform: rotate(-45deg);
-        
+        top: calc(50% - 1px);
     }
     
     .menu_icon.active span:last-child {
         transform: rotate(45deg);
+        bottom: calc(50% - 1px);
     }
 
      .menu_body {
