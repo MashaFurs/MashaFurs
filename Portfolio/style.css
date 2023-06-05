@@ -130,6 +130,9 @@ body.lock{
     transform: rotate(45deg);
 } */
 
+.circle.circleBurgOne, .circle.circleBurgTwo {
+    display: none;
+}
 
 .social_burger{
     display: none;
@@ -138,6 +141,7 @@ body.lock{
 .points{
     display: flex;
     list-style-type: none;
+    position: relative;
 }
 
 .points li {
@@ -1139,6 +1143,26 @@ iframe{
     }
 }
 
+@media all and (max-width: 1401px) {
+
+    .item-wrap{
+        padding: 40px 35px 0;
+    }
+
+    .work-text  {
+        height: 180px;
+    }
+
+}
+
+@media all and (max-width: 1321px) {
+    .works-img {     
+        width: 125px;
+        height: 125px;
+
+    }
+}
+
 @media all and (max-width: 1253px) {
     .circlesBig{
         left: 79%;
@@ -1146,6 +1170,10 @@ iframe{
 
     .circlesTwo{
         left: 86%;
+    }
+
+    .work-text {
+        font-size: 17px;
     }
 }
 
@@ -1659,6 +1687,22 @@ iframe{
         left: 0;
      }
 
+     .circle.circleBurgOne.active, .circle.circleBurgTwo.active {
+        display: block;
+    }
+
+    .circle.circleBurgOne.active {
+        position: absolute;
+        left: -5%;
+        top: -1%;
+    }
+
+    .circle.circleBurgTwo.active {
+        position: absolute;
+        left: -5%;
+        top: 96%;
+    }
+
      .points{
         flex-direction: column;
         padding: 50px;
@@ -2168,6 +2212,11 @@ iframe{
         width: 52px;
         height: 52px;
     }
+
+    .circlesBigContact {
+        width: 186px;
+        height: 186px;
+    }
   }
 
   @media all and (max-width: 388px) {
@@ -2234,6 +2283,7 @@ iframe{
     .variant {
         margin-bottom: 40px;
     }
+
   }
 
 

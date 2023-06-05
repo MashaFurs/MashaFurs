@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
 
 
-if (window.matchMedia("(min-width:768px)").matches) {
+if (window.matchMedia("(min-width:769px)").matches) {
 
     let masha = window.innerWidth;
     console.log(masha)
@@ -193,6 +193,8 @@ const menu = document.querySelector('.menu_body');
 const menuBtn = document.querySelector('.menu_icon');
 const socialBurger = document.querySelector('.social_burger');
 const borderBurger = document.querySelector('.points');
+const circleBurgOne = document.querySelector('.circleBurgOne');
+const circleBurgTwo = document.querySelector('.circleBurgTwo');
 
 const body = document.body;
 
@@ -203,6 +205,8 @@ if (menu && menuBtn) {
         menuBtn.classList.toggle('active');
         socialBurger.classList.toggle('active');
         borderBurger.classList.toggle('active');
+        circleBurgOne.classList.toggle('active');
+        circleBurgTwo.classList.toggle('active');
 
         body.classList.toggle('lock');
     })
@@ -213,6 +217,8 @@ if (menu && menuBtn) {
             menuBtn.classList.remove('active');
             socialBurger.classList.remove('active');
             borderBurger.classList.remove('active');
+            circleBurgOne.classList.remove('active');
+            circleBurgTwo.classList.remove('active');
 
             body.classList.remove('lock');
         })
