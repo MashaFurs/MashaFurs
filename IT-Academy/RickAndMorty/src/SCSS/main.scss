@@ -1,0 +1,43 @@
+body{
+    background-color: #e0e0e0;
+
+    .wrapper{
+        max-width: 1300px;
+        padding: 20px;
+        margin: 40px auto;
+
+        .character_list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            .character_card{
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 60px;
+                border-radius: 5px;
+                cursor: pointer;
+
+                img{
+                    width: 80%;
+                    border-radius: 5px;
+                    box-shadow: -1px 11px 17px 7px rgba(34,60,80,.2);
+                    margin-top: -20px;
+                    transition: all .5s;
+
+                    &:hover{
+                        margin-top: -40px; 
+                    }
+                }
+
+                p{
+                    font-weight:900;
+                }
+            }
+        }
+    }
+}
+
