@@ -2,6 +2,8 @@ import React, { useState, useEffect} from "react";
 import axios from 'axios';
 
 import CharacterCard from "./CharacterCard";
+import ButtonUp from "./ButtonUp";
+import Loader from "./Loader";
 
 const CharacterList = ()=>{
 
@@ -53,9 +55,14 @@ const CharacterList = ()=>{
 
 
     return ( <div className="character_list">
+
+                {fetching && <Loader/>}
+                <ButtonUp></ButtonUp>
+
                 {characters.map ((character) => (
                     <CharacterCard key={character.id} character={character}/>
                 ))}
+
             </div>
           )
 
