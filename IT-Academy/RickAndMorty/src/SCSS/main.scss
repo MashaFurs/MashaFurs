@@ -122,7 +122,29 @@ body{
                     display: block;
                   }
               }
-        }
+            }
+    }
+
+    .modal{
+      display: flex;
+      justify-content: space-between;
+
+        div:first-child{
+        margin-right: 50px;
+      }
+
+      & p{
+        margin: 8px;
+      }
+
+      & .point{
+        font-weight: 800;
+      } 
+    }
+
+    .btn_close {
+      display: flex;
+      justify-content: end;
     }
 }
 
