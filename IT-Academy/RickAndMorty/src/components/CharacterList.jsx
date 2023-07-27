@@ -17,6 +17,7 @@ const CharacterList = ()=>{
             const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${currentPage}`);
             setCharacters([...characters, ...response.data.results ]);
             setCurrentPage( prevState => prevState +1);
+            
         } catch (error) {
             console.error('Error fetching characters:', error)
         } finally {
@@ -32,7 +33,14 @@ const CharacterList = ()=>{
             fetchCharacters();
         }
 
-    },[fetching]);
+    },[fetching, currentPage ]);
+
+    const scrollHandler =(e)=>{
+
+        if(e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100) {
+            setFetching(true);
+        }
+    };
 
 
     useEffect( ()=>{
@@ -44,14 +52,6 @@ const CharacterList = ()=>{
         };
 
     },[]);
-
-    const scrollHandler =(e)=>{
-
-        if(e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100) {
-            setFetching(true);
-        }
-    };
-
 
 
     return ( <div className="character_list">
