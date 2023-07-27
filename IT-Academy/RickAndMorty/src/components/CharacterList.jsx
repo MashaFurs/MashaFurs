@@ -85,7 +85,7 @@ const CharacterList = ()=>{
                             backgroundColor: "#2b2a2ac4",
                             display: "flex",
                             justifyContent: "center",
-                            alignItems: "center",
+                            paddingTop: "5%",
                         },
                         content: {
                             width: "fit-content",
@@ -101,12 +101,12 @@ const CharacterList = ()=>{
                                 <div>
                                     <img src={selectedCard.image} alt={selectedCard.name} title={selectedCard.name}/>
                                 </div>
-                                <div>
+                                <div className="second">
                                     <div><p className="point">Name:</p><p>{selectedCard.name}</p></div>
                                     <div><p className="point">Status:</p><p>{selectedCard.status}</p></div>
                                     <div><p className="point">Species:</p><p>{selectedCard.species}</p></div>
                                 </div>
-                                <div>
+                                <div className="third">
                                     <div><p className="point">Origin:</p><p>{selectedCard.origin.name}</p></div>
                                     <div><p className="point">Location:</p><p>{selectedCard.location.name}</p></div>
                                     <div><p className="point">Gender:</p><p>{selectedCard.gender}</p></div>
