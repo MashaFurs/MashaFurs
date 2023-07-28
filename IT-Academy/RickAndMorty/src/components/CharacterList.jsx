@@ -15,8 +15,8 @@ const CharacterList = ()=>{
     const[currentPage, setCurrentPage]= useState(1);
     const[fetching, setFetching]= useState(true);
     const[selectedCard, setSelectedCard]= useState(null);
+    const[episodeInfo, setEpisodeInfo]= useState(null);
     
-
     const fetchCharacters= async () => {
         try {
             const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${currentPage}`);
@@ -24,13 +24,23 @@ const CharacterList = ()=>{
             setCurrentPage( prevState => prevState +1);
             
         } catch (error) {
-            console.error('Error fetching characters:', error)
+            console.error('Error fetching characters:', error);
         } finally {
             setFetching(false);
         }
     };
 
+    const fetchEpisodeInfo= async (episodeId) => {
+        try {
+            const response = await axios.get(`https://rickandmortyapi.com/api/episode/${episodeId}`);
+            setEpisodeInfo(response.data);
+        } catch (error) {
+            console.error('Error fetching episode info:', error);
+            setEpisodeInfo(null);
+        }
+    };
 
+    
     useEffect( ()=>{
 
         if(fetching) {
@@ -39,6 +49,7 @@ const CharacterList = ()=>{
         }
 
     },[fetching, currentPage ]);
+
 
     const scrollHandler =(e)=>{
 
@@ -58,12 +69,21 @@ const CharacterList = ()=>{
 
     },[]);
 
-    const handleCardClick = (character) => {
+    const handleCardClick = async (character) => {
         setSelectedCard(character);
+
+        try{
+            await fetchEpisodeInfo(character.episode[0].split('/').slice(-1)[0]);
+        } catch (error) {
+            console.log('Error fetching episode info:', error);
+            setEpisodeInfo(null);
+        }
+        
     };
 
     const closeModal = () => {
         setSelectedCard(null);
+        setEpisodeInfo(null);
     };
 
 
@@ -98,7 +118,7 @@ const CharacterList = ()=>{
                     {selectedCard && (
                         <div >
                             <div className="modal">
-                                <div>
+                                <div className="img_modal">
                                     <img src={selectedCard.image} alt={selectedCard.name} title={selectedCard.name}/>
                                 </div>
                                 <div className="second">
@@ -111,6 +131,13 @@ const CharacterList = ()=>{
                                     <div><p className="point">Location:</p><p>{selectedCard.location.name}</p></div>
                                     <div><p className="point">Gender:</p><p>{selectedCard.gender}</p></div>
                                 </div>
+
+                                {episodeInfo && (
+                                    <div className="fourth">
+                                        <div><p className="point">Episode:</p><p>{episodeInfo.name}</p></div>
+                                        <div><p className="point">Number:</p><p>{episodeInfo.episode}</p></div>
+                                    </div>
+                                )}
                             </div>
                             
                             <div className="btn_close"><button onClick={closeModal}>Close</button></div>
